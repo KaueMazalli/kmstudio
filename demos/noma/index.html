@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Noma — catálogo digital de produtos selecionados. Escolha seus produtos e entre em contato pelo WhatsApp.">
+
+    <title>Noma — Catálogo Digital</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-main">Noma</span>
+                <span class="logo-sub">Catálogo Digital</span>
+            </a>
+
+            <nav class="nav">
+                <a href="#inicio">Início</a>
+                <a href="#categorias">Categorias</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    CATÁLOGO DIGITAL · 2026
+                </p>
+
+                <h1>
+                    Escolhas que<br>
+                    fazem sentido.
+                </h1>
+
+                <p class="hero-text">
+                    Produtos selecionados para fazer parte
+                    do seu espaço, do seu estilo e da sua rotina.
+                </p>
+
+                <a href="#produtos" class="hero-button">
+                    Explorar produtos
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRO -->
+        <section class="intro">
+
+            <div class="container intro-grid">
+
+                <div class="section-label">
+                    01 / NOMA
+                </div>
+
+                <div class="intro-content">
+
+                    <h2>
+                        Seu produto.<br>
+                        Do seu jeito.
+                    </h2>
+
+                    <p>
+                        Um catálogo digital pensado para apresentar produtos
+                        com clareza, estética e personalidade.
+                    </p>
+
+                    <p>
+                        Escolha o que você procura, conheça os detalhes
+                        e entre em contato diretamente pelo WhatsApp.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categories" id="categorias">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        02 / CATEGORIAS
+                    </div>
+
+                    <h2>
+                        Encontre o que<br>
+                        procura.
+                    </h2>
+
+                </div>
+
+                <div class="category-grid">
+
+                    <a href="#produtos" class="category-card">
+                        <span>01</span>
+                        <h3>Casa</h3>
+                        <p>Móveis, iluminação e objetos.</p>
+                    </a>
+
+                    <a href="#produtos" class="category-card">
+                        <span>02</span>
+                        <h3>Estilo</h3>
+                        <p>Peças para expressar sua identidade.</p>
+                    </a>
+
+                    <a href="#produtos" class="category-card">
+                        <span>03</span>
+                        <h3>Essenciais</h3>
+                        <p>Objetos escolhidos para o dia a dia.</p>
+                    </a>
+
+                    <a href="#produtos" class="category-card">
+                        <span>04</span>
+                        <h3>Presentes</h3>
+                        <p>Ideias para momentos especiais.</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUTOS EM DESTAQUE -->
+        <section class="products" id="produtos">
+
+            <div class="container">
+
+                <div class="section-heading products-heading">
+
+                    <div>
+
+                        <div class="section-label">
+                            03 / DESTAQUES
+                        </div>
+
+                        <h2>
+                            Seleção<br>
+                            Noma.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product-grid">
+
+                    <!-- PRODUTO 01 -->
+                    <article class="product-card">
+
+                        <a href="produtos.html" class="product-image">
+                            <img
+                                src="assets/product-01.jpg"
+                                alt="Mesa Aurora"
+                                loading="lazy">
+                        </a>
+
+                        <div class="product-info">
+
+                            <div>
+
+                                <span class="product-category">
+                                    CASA
+                                </span>
+
+                                <h3>Mesa Aurora</h3>
+
+                                <p>R$ 890</p>
+
+                            </div>
+
+                            <button
+                                class="product-button"
+                                data-product="Mesa Aurora">
+                                Tenho interesse
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 02 -->
+                    <article class="product-card">
+
+                        <a href="produtos.html" class="product-image">
+                            <img
+                                src="assets/product-02.jpg"
+                                alt="Cadeira Nilo"
+                                loading="lazy">
+                        </a>
+
+                        <div class="product-info">
+
+                            <div>
+
+                                <span class="product-category">
+                                    CASA
+                                </span>
+
+                                <h3>Cadeira Nilo</h3>
+
+                                <p>R$ 620</p>
+
+                            </div>
+
+                            <button
+                                class="product-button"
+                                data-product="Cadeira Nilo">
+                                Tenho interesse
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 03 -->
+                    <article class="product-card">
+
+                        <a href="produtos.html" class="product-image">
+                            <img
+                                src="assets/product-03.jpg"
+                                alt="Bolsa Forma"
+                                loading="lazy">
+                        </a>
+
+                        <div class="product-info">
+
+                            <div>
+
+                                <span class="product-category">
+                                    ESTILO
+                                </span>
+
+                                <h3>Bolsa Forma</h3>
+
+                                <p>R$ 480</p>
+
+                            </div>
+
+                            <button
+                                class="product-button"
+                                data-product="Bolsa Forma">
+                                Tenho interesse
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 04 -->
+                    <article class="product-card">
+
+                        <a href="produtos.html" class="product-image">
+                            <img
+                                src="assets/product-04.jpg"
+                                alt="Vaso Terra"
+                                loading="lazy">
+                        </a>
+
+                        <div class="product-info">
+
+                            <div>
+
+                                <span class="product-category">
+                                    ESSENCIAIS
+                                </span>
+
+                                <h3>Vaso Terra</h3>
+
+                                <p>R$ 240</p>
+
+                            </div>
+
+                            <button
+                                class="product-button"
+                                data-product="Vaso Terra">
+                                Tenho interesse
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- CATÁLOGO COMPLETO -->
+                <div class="products-footer">
+
+                    <a href="produtos.html" class="view-all-button">
+                        Ver todos os produtos
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section class="about" id="sobre">
+
+            <div class="container about-grid">
+
+                <div class="section-label">
+                    04 / SOBRE
+                </div>
+
+                <div class="about-content">
+
+                    <h2>
+                        Comprar também<br>
+                        pode ser uma experiência.
+                    </h2>
+
+                    <p>
+                        A Noma apresenta produtos de forma simples,
+                        organizada e visualmente cuidadosa.
+                    </p>
+
+                    <p>
+                        Aqui você encontra o produto, conhece suas
+                        características e fala diretamente com quem vende.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+        <section class="contact" id="contato">
+
+            <div class="container contact-inner">
+
+                <div class="section-label">
+                    05 / CONTATO
+                </div>
+
+                <h2>
+                    Encontrou<br>
+                    o que procurava?
+                </h2>
+
+                <p>
+                    Fale conosco pelo WhatsApp e descubra mais
+                    sobre disponibilidade, pagamento e entrega.
+                </p>
+
+                <a
+                    href="#"
+                    id="whatsapp-link"
+                    class="contact-button">
+                    Falar pelo WhatsApp
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <span class="logo-main">
+                    Noma
+                </span>
+
+                <span class="logo-sub">
+                    Catálogo Digital
+                </span>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="produtos.html">
+                    Produtos
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#contato">
+                    Contato
+                </a>
+
+                <a
+                    href="#"
+                    id="footer-whatsapp">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span id="current-year"></span> Noma
+                </span>
+
+                <span>
+                    Catálogo Digital
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
