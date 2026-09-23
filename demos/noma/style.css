@@ -213,14 +213,7 @@ button {
 
     overflow: hidden;
 
-    background: var(--dark);
-
     color: #f2efe9;
-}
-
-.hero-image {
-    position: absolute;
-    inset: 0;
 
     background:
         linear-gradient(
@@ -233,8 +226,6 @@ button {
 
     background-size: cover;
     background-position: center;
-
-    transform: scale(1.02);
 
     animation: heroZoom 12s ease-out forwards;
 }
