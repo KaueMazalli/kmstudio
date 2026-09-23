@@ -397,7 +397,7 @@ section {
             rgba(5, 10, 16, 0.66) 58%,
             rgba(5, 10, 16, 0.72) 100%
         ),
-        url("assets/hero.jpg");
+        url("assets/hero.webp");
 
     background-size: cover;
 
@@ -1635,7 +1635,7 @@ section {
                 rgba(5, 10, 16, 0.88) 60%,
                 rgba(5, 10, 16, 0.72) 100%
             ),
-            url("assets/hero.jpg");
+            url("assets/hero.webp");
     }
 
     .hero-content {
