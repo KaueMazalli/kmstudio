@@ -3,30 +3,44 @@
 
     <url>
         <loc>https://kmstudios.pages.dev/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/elan.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/noma.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/forma.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/lume.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/noir.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://kmstudios.pages.dev/projetos/atelier.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
