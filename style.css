@@ -393,7 +393,6 @@ section {
 @keyframes heroContent {
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
 }
@@ -658,29 +657,35 @@ section {
 .services-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     border-top: 1px solid var(--border);
 
-    border-bottom: 1px solid var(--border);
+    border-left: 1px solid var(--border);
 }
 
 .service-card {
     position: relative;
 
-    min-height: 350px;
+    min-height: 330px;
 
     padding: 38px 35px;
 
     border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
 
     transition:
         background 0.4s ease,
         transform 0.4s ease;
 }
 
-.service-card:last-child {
+.service-card:nth-child(2n) {
     border-right: none;
+}
+
+.service-card:nth-child(n+3) {
+    border-bottom: none;
 }
 
 .service-card:hover {
@@ -714,13 +719,88 @@ section {
 }
 
 .service-card p {
-    max-width: 300px;
+    max-width: 330px;
 
     margin-top: 18px;
 
     color: var(--muted);
 
     font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BENEFITS / WHAT YOU RECEIVE
+========================================================= */
+
+.benefits {
+    padding: 120px 0;
+
+    background: #080e16;
+}
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 65px;
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+}
+
+.benefit-card {
+    min-height: 230px;
+
+    padding: 32px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: rgba(16, 40, 67, 0.16);
+
+    transform: translateY(-3px);
+}
+
+.benefit-number {
+    color: var(--blue);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.benefit-card h3 {
+    margin-top: 45px;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    color: var(--white);
+}
+
+.benefit-card p {
+    max-width: 240px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 11px;
 
     line-height: 1.8;
 }
@@ -841,6 +921,49 @@ section {
 
 .project-card:hover .project-info h3 {
     color: var(--gold);
+}
+
+
+/* =========================================================
+   PROJECT CTA
+========================================================= */
+
+.projects-cta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-top: 100px;
+
+    padding: 55px 0;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-cta h3 {
+    max-width: 650px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(30px, 3.5vw, 48px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: var(--white);
+}
+
+.projects-cta h3 em {
+    color: var(--gold);
+
+    font-style: italic;
 }
 
 
@@ -967,6 +1090,49 @@ section {
     color: var(--muted);
 
     font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    padding: 130px 0;
+}
+
+.faq-list {
+    margin-top: 65px;
+
+    border-top: 1px solid var(--border);
+}
+
+.faq-item {
+    padding: 30px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item h3 {
+    color: var(--white);
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+.faq-item p {
+    max-width: 700px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 12px;
 
     line-height: 1.8;
 }
@@ -1240,18 +1406,26 @@ section {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .service-card {
-        min-height: 300px;
-
+    .service-card:nth-child(2n) {
         border-right: none;
-
-        border-bottom: 1px solid var(--border);
     }
 
-    .service-card:last-child {
+    .service-card:nth-child(n+3) {
+        border-bottom: none;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefit-card:nth-child(2n) {
+        border-right: none;
+    }
+
+    .benefit-card:nth-child(n+3) {
         border-bottom: none;
     }
 
@@ -1424,7 +1598,9 @@ section {
     .projects,
     .about,
     .process,
-    .contact {
+    .contact,
+    .benefits,
+    .faq {
         padding: 90px 0;
     }
 
@@ -1451,14 +1627,62 @@ section {
         margin-top: 45px;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .service-card {
         min-height: 280px;
 
         padding: 30px 25px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .service-card:nth-child(n) {
+        border-right: none;
+    }
+
+    .service-card:nth-child(n) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
     }
 
     .service-card h3 {
         font-size: 26px;
+    }
+
+    .benefits {
+        padding: 90px 0;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        min-height: 200px;
+
+        padding: 28px 25px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .benefit-card:nth-child(n) {
+        border-right: none;
+    }
+
+    .benefit-card:nth-child(n) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .benefit-card:last-child {
+        border-bottom: none;
     }
 
     .projects-grid {
@@ -1485,6 +1709,24 @@ section {
         font-size: 8px;
     }
 
+    .projects-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-top: 70px;
+
+        padding: 40px 0;
+    }
+
+    .projects-cta h3 {
+        font-size: 34px;
+    }
+
+    .projects-cta .btn {
+        width: 100%;
+    }
+
     .process-item {
         grid-template-columns: 45px 1fr;
 
@@ -1501,6 +1743,22 @@ section {
 
     .process-item p {
         grid-column: 2;
+    }
+
+    .faq {
+        padding: 90px 0;
+    }
+
+    .faq-list {
+        margin-top: 45px;
+    }
+
+    .faq-item {
+        padding: 25px 0;
+    }
+
+    .faq-item h3 {
+        font-size: 20px;
     }
 
     .contact h2 {
@@ -1543,6 +1801,10 @@ section {
         font-size: 36px;
     }
 
+    .projects-cta h3 {
+        font-size: 31px;
+    }
+
     .contact h2 {
         font-size: 41px;
     }
@@ -1577,8 +1839,6 @@ section {
         transition-duration: 0.01ms !important;
     }
 }
-
-
 
 
 /* =========================================================
