@@ -7,10 +7,58 @@ const nav = document.querySelector(".nav");
 
 if (menuButton && nav) {
 
+    const closeMenu = () => {
+
+        nav.classList.remove("active");
+
+        menuButton.classList.remove("active");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
+
+    };
+
+
+    const openMenu = () => {
+
+        nav.classList.add("active");
+
+        menuButton.classList.add("active");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Fechar menu"
+        );
+
+    };
+
+
     menuButton.addEventListener("click", () => {
 
-        nav.classList.toggle("active");
-        menuButton.classList.toggle("active");
+        const isOpen =
+            nav.classList.contains("active");
+
+        if (isOpen) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
 
     });
 
@@ -21,10 +69,22 @@ if (menuButton && nav) {
 
         link.addEventListener("click", () => {
 
-            nav.classList.remove("active");
-            menuButton.classList.remove("active");
+            closeMenu();
 
         });
+
+    });
+
+
+    /* Fechar menu com ESC */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            closeMenu();
+
+        }
 
     });
 
@@ -41,15 +101,10 @@ if (header) {
 
     const updateHeader = () => {
 
-        if (window.scrollY > 50) {
-
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 50
+        );
 
     };
 
@@ -67,7 +122,16 @@ if (header) {
 ========================================================= */
 
 const revealElements = document.querySelectorAll(
-    ".service-card, .project-card, .process-item, .about-content, .intro-content"
+    [
+        ".service-card",
+        ".benefit-card",
+        ".project-card",
+        ".projects-cta",
+        ".process-item",
+        ".faq-item",
+        ".about-content",
+        ".intro-content"
+    ].join(", ")
 );
 
 
@@ -78,13 +142,13 @@ if ("IntersectionObserver" in window) {
 
             entries.forEach((entry) => {
 
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
+                if (!entry.isIntersecting) {
+                    return;
                 }
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
 
             });
 
