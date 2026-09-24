@@ -1,241 +1,379 @@
-
 /* =========================================
    NOIR — SCRIPT
 ========================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-/* =========================================
-   CUSTOM CURSOR
-========================================= */
+    /* =========================================
+       CUSTOM CURSOR
+    ========================================= */
 
-const cursor = document.querySelector(".cursor");
+    const cursor = document.querySelector(".cursor");
 
-let mouseX = 0;
-let mouseY = 0;
+    const canUseCustomCursor =
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-let cursorX = 0;
-let cursorY = 0;
+    if (cursor && canUseCustomCursor) {
 
-document.addEventListener("mousemove", (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-});
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
 
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
+        let cursorX = mouseX;
+        let cursorY = mouseY;
 
-    if (cursor) {
-        cursor.style.left = `${cursorX}px`;
-        cursor.style.top = `${cursorY}px`;
+        document.addEventListener("mousemove", (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        function animateCursor() {
+
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+
+            cursor.style.left = `${cursorX}px`;
+            cursor.style.top = `${cursorY}px`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+
+        /* =========================================
+           CURSOR HOVER
+        ========================================= */
+
+        const hoverElements = document.querySelectorAll(
+            "a, button, .work-item, .studio-image, .hero-image"
+        );
+
+        hoverElements.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.add("cursor-large");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("cursor-large");
+            });
+
+        });
+
     }
 
-    requestAnimationFrame(animateCursor);
-}
 
-animateCursor();
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav");
 
-/* =========================================
-   CURSOR HOVER
-========================================= */
+    if (menuButton && navigation) {
 
-const hoverElements = document.querySelectorAll(
-    "a, button, .work-item, .studio-image, .hero-image"
-);
+        const openMenu = () => {
 
-hoverElements.forEach((element) => {
+            navigation.classList.add("menu-open");
 
-    element.addEventListener("mouseenter", () => {
+            menuButton.textContent = "Fechar";
 
-        if (cursor) {
-            cursor.classList.add("cursor-large");
-        }
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
-    });
+            menuButton.setAttribute(
+                "aria-label",
+                "Fechar menu"
+            );
 
-    element.addEventListener("mouseleave", () => {
-
-        if (cursor) {
-            cursor.classList.remove("cursor-large");
-        }
-
-    });
-
-});
+            document.body.classList.add("menu-open");
+        };
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".nav");
-
-if (menuButton && navigation) {
-
-    menuButton.addEventListener("click", () => {
-
-        navigation.classList.toggle("menu-open");
-
-        const isOpen = navigation.classList.contains("menu-open");
-
-        menuButton.textContent = isOpen ? "Fechar" : "Menu";
-
-    });
-
-    const navigationLinks = navigation.querySelectorAll("a");
-
-    navigationLinks.forEach((link) => {
-
-        link.addEventListener("click", () => {
+        const closeMenu = () => {
 
             navigation.classList.remove("menu-open");
 
             menuButton.textContent = "Menu";
 
-        });
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-    });
+            menuButton.setAttribute(
+                "aria-label",
+                "Abrir menu"
+            );
 
-}
+            document.body.classList.remove("menu-open");
+        };
 
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
+        menuButton.addEventListener("click", () => {
 
-const revealElements = document.querySelectorAll(
-    ".intro-content, .work-item, .studio-content, .booking-content"
-);
+            const isOpen =
+                navigation.classList.contains("menu-open");
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(entry.target);
-
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
             }
 
         });
 
-    },
-    {
-        threshold: 0.12
-    }
-);
 
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
-});
+        const navigationLinks =
+            navigation.querySelectorAll("a");
+
+        navigationLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+                closeMenu();
+            });
+
+        });
 
 
-/* =========================================
-   HERO PARALLAX
-========================================= */
+        document.addEventListener("keydown", (event) => {
 
-const heroImage = document.querySelector(".hero-image img");
+            if (event.key === "Escape") {
+                closeMenu();
+            }
 
-window.addEventListener("scroll", () => {
+        });
 
-    if (!heroImage) {
-        return;
-    }
 
-    const scrollPosition = window.scrollY;
+        window.addEventListener("resize", () => {
 
-    const heroSection = document.querySelector(".hero");
+            if (
+                window.innerWidth > 700 &&
+                navigation.classList.contains("menu-open")
+            ) {
+                closeMenu();
+            }
 
-    if (!heroSection) {
-        return;
-    }
-
-    const heroHeight = heroSection.offsetHeight;
-
-    if (scrollPosition <= heroHeight) {
-
-        const movement = scrollPosition * 0.12;
-
-        heroImage.style.transform = `translateY(${movement}px)`;
+        });
 
     }
 
-});
 
+    /* =========================================
+       SMOOTH ANCHOR SCROLL
+    ========================================= */
 
-/* =========================================
-   SMOOTH ANCHOR SCROLL
-========================================= */
+    const anchorLinks =
+        document.querySelectorAll('a[href^="#"]');
 
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach((link) => {
 
-anchorLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
 
-    link.addEventListener("click", (event) => {
+            const targetId =
+                link.getAttribute("href");
 
-        const targetId = link.getAttribute("href");
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
 
-        if (!targetId || targetId === "#") {
-            return;
-        }
+            const target =
+                document.querySelector(targetId);
 
-        const target = document.querySelector(targetId);
+            if (!target) {
+                return;
+            }
 
-        if (!target) {
-            return;
-        }
+            event.preventDefault();
 
-        event.preventDefault();
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
         });
 
     });
 
-});
+
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".intro-content, .work-item, .studio-content, .booking-content"
+        );
 
 
-/* =========================================
-   IMAGE LOAD EFFECT
-========================================= */
+    if ("IntersectionObserver" in window) {
 
-const images = document.querySelectorAll("img");
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
 
-images.forEach((image) => {
+                    entries.forEach((entry) => {
 
-    if (image.complete) {
+                        if (entry.isIntersecting) {
 
-        image.classList.add("loaded");
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+            revealObserver.observe(element);
+        });
 
     } else {
 
-        image.addEventListener("load", () => {
-
-            image.classList.add("loaded");
-
+        revealElements.forEach((element) => {
+            element.classList.add("visible");
         });
 
     }
 
+
+    /* =========================================
+       HERO PARALLAX
+    ========================================= */
+
+    const heroImage =
+        document.querySelector(".hero-image img");
+
+    const heroSection =
+        document.querySelector(".hero");
+
+
+    if (
+        heroImage &&
+        heroSection &&
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+
+        let ticking = false;
+
+        const updateParallax = () => {
+
+            const scrollPosition =
+                window.scrollY;
+
+            const heroHeight =
+                heroSection.offsetHeight;
+
+            if (scrollPosition <= heroHeight) {
+
+                const movement =
+                    scrollPosition * 0.08;
+
+                heroImage.style.transform =
+                    `translateY(${movement}px)`;
+
+            } else {
+
+                heroImage.style.transform =
+                    "translateY(0)";
+
+            }
+
+            ticking = false;
+        };
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (!ticking) {
+
+                    window.requestAnimationFrame(
+                        updateParallax
+                    );
+
+                    ticking = true;
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       IMAGE LOAD EFFECT
+    ========================================= */
+
+    const images =
+        document.querySelectorAll("img");
+
+
+    images.forEach((image) => {
+
+        const showImage = () => {
+            image.classList.add("loaded");
+        };
+
+
+        if (image.complete) {
+
+            showImage();
+
+        } else {
+
+            image.addEventListener(
+                "load",
+                showImage,
+                {
+                    once: true
+                }
+            );
+
+            image.addEventListener(
+                "error",
+                showImage,
+                {
+                    once: true
+                }
+            );
+
+        }
+
+    });
+
+
+    /* =========================================
+       CURRENT YEAR
+    ========================================= */
+
+    const year =
+        document.querySelector(".current-year");
+
+    if (year) {
+        year.textContent =
+            new Date().getFullYear();
+    }
+
 });
-
-
-/* =========================================
-   CURRENT YEAR
-========================================= */
-
-const yearElements = document.querySelectorAll(".current-year");
-
-yearElements.forEach((element) => {
-
-    element.textContent = new Date().getFullYear();
-
-});
-
