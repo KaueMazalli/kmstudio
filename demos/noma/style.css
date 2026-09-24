@@ -61,8 +61,15 @@ button {
 }
 
 .container {
-    width: min(1240px, calc(100% - 100px));
+    width: min(1240px, calc(100% - 80px));
     margin: 0 auto;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 
@@ -988,6 +995,10 @@ button {
 
     .container {
         width: calc(100% - 36px);
+    }
+
+    .header-inner {
+        padding: 0;
     }
 
 
