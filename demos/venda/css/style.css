@@ -480,13 +480,20 @@ textarea {
 ========================================================= */
 
 .product-image-link {
+    position: relative;
+    z-index: 1;
 
     display: block;
 
     overflow: hidden;
 
-    background: #eeeeee;
+    cursor: pointer;
 
+    background: #eee;
+}
+
+.product-image-link img {
+    pointer-events: none;
 }
 
 
