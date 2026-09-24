@@ -8,7 +8,7 @@
     <meta name="description"
         content="Noma — catálogo completo de produtos. Conheça nossa seleção e entre em contato pelo WhatsApp.">
 
-    <title>Noma — Produtos</title>
+    <title>Noma | Produtos</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,12 +28,23 @@
 
         <div class="container header-inner">
 
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Noma — início">
                 <span class="logo-main">Noma</span>
                 <span class="logo-sub">Catálogo Digital</span>
             </a>
 
-            <nav class="nav">
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav">
 
                 <a href="index.html#inicio">
                     Início
@@ -43,7 +54,7 @@
                     Categorias
                 </a>
 
-                <a href="produtos.html ">
+                <a href="produtos.html">
                     Produtos
                 </a>
 
@@ -64,32 +75,30 @@
 
     <main>
 
-        
-<!-- HERO DA PÁGINA -->
-<section class="page-hero">
+        <!-- HERO -->
+        <section class="page-hero">
 
-    <div class="page-hero-overlay"></div>
+            <div class="page-hero-overlay"></div>
 
-    <div class="container page-hero-content">
+            <div class="container page-hero-content">
 
-        <p class="eyebrow">
-            NOMA · CATÁLOGO
-        </p>
+                <p class="eyebrow">
+                    NOMA · CATÁLOGO
+                </p>
 
-        <h1>
-            O que<br>
-            escolhemos.
-        </h1>
+                <h1>
+                    O que<br>
+                    escolhemos.
+                </h1>
 
-        <p>
-            Uma seleção de peças pensadas para diferentes espaços,
-            estilos e momentos.
-        </p>
+                <p>
+                    Uma seleção de peças pensadas para diferentes espaços,
+                    estilos e momentos.
+                </p>
 
-    </div>
+            </div>
 
-</section>
-
+        </section>
 
 
         <!-- CATÁLOGO -->
@@ -117,34 +126,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-01.jpg"
                                 alt="Mesa Aurora"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     CASA
                                 </span>
 
-                                <h3>
-                                    Mesa Aurora
-                                </h3>
+                                <h3>Mesa Aurora</h3>
 
-                                <p>
-                                    R$ 890
-                                </p>
-
+                                <p>R$ 890</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Mesa Aurora">
                                 Tenho interesse
                             </button>
@@ -158,34 +160,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-02.jpg"
                                 alt="Cadeira Nilo"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     CASA
                                 </span>
 
-                                <h3>
-                                    Cadeira Nilo
-                                </h3>
+                                <h3>Cadeira Nilo</h3>
 
-                                <p>
-                                    R$ 620
-                                </p>
-
+                                <p>R$ 620</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Cadeira Nilo">
                                 Tenho interesse
                             </button>
@@ -199,34 +194,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-03.jpg"
                                 alt="Bolsa Forma"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     ESTILO
                                 </span>
 
-                                <h3>
-                                    Bolsa Forma
-                                </h3>
+                                <h3>Bolsa Forma</h3>
 
-                                <p>
-                                    R$ 480
-                                </p>
-
+                                <p>R$ 480</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Bolsa Forma">
                                 Tenho interesse
                             </button>
@@ -240,34 +228,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-04.jpg"
                                 alt="Vaso Terra"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     ESSENCIAIS
                                 </span>
 
-                                <h3>
-                                    Vaso Terra
-                                </h3>
+                                <h3>Vaso Terra</h3>
 
-                                <p>
-                                    R$ 240
-                                </p>
-
+                                <p>R$ 240</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Vaso Terra">
                                 Tenho interesse
                             </button>
@@ -281,34 +262,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-05.jpg"
                                 alt="Luminária Noa"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     CASA
                                 </span>
 
-                                <h3>
-                                    Luminária Noa
-                                </h3>
+                                <h3>Luminária Noa</h3>
 
-                                <p>
-                                    R$ 390
-                                </p>
-
+                                <p>R$ 390</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Luminária Noa">
                                 Tenho interesse
                             </button>
@@ -322,34 +296,27 @@
                     <article class="product-card">
 
                         <div class="product-image">
-
                             <img
                                 src="assets/product-06.jpg"
                                 alt="Kit Essencial"
                                 loading="lazy">
-
                         </div>
 
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     PRESENTES
                                 </span>
 
-                                <h3>
-                                    Kit Essencial
-                                </h3>
+                                <h3>Kit Essencial</h3>
 
-                                <p>
-                                    R$ 320
-                                </p>
-
+                                <p>R$ 320</p>
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Kit Essencial">
                                 Tenho interesse
                             </button>
@@ -364,8 +331,9 @@
 
         </section>
 
+    </main>
 
-       
+
     <!-- FOOTER -->
     <footer class="footer">
 
@@ -374,15 +342,8 @@
             <div class="footer-brand">
 
                 <a href="index.html" class="logo">
-
-                    <span class="logo-main">
-                        Noma
-                    </span>
-
-                    <span class="logo-sub">
-                        Catálogo Digital
-                    </span>
-
+                    <span class="logo-main">Noma</span>
+                    <span class="logo-sub">Catálogo Digital</span>
                 </a>
 
             </div>
