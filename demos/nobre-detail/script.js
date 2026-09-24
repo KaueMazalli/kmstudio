@@ -8,7 +8,7 @@
    CONFIGURAÇÕES
 ========================================================= */
 
-const WHATSAPP_NUMBER = "5517997219302";
+const WHATSAPP_NUMBER = "5517999999999";
 
 
 /* =========================================================
@@ -16,7 +16,9 @@ const WHATSAPP_NUMBER = "5517997219302";
 ========================================================= */
 
 if (typeof lucide !== "undefined") {
+
     lucide.createIcons();
+
 }
 
 
@@ -33,48 +35,69 @@ const mobileNav =
 
 if (menuButton && mobileNav) {
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener(
+        "click",
+        () => {
 
-        const isOpen =
-            mobileNav.classList.toggle("active");
+            const isOpen =
+                mobileNav.classList.toggle(
+                    "active"
+                );
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen.toString()
-        );
 
-        menuButton.innerHTML = isOpen
-            ? '<i data-lucide="x"></i>'
-            : '<i data-lucide="menu"></i>';
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen.toString()
+            );
 
-        if (typeof lucide !== "undefined") {
-            lucide.createIcons();
+
+            menuButton.innerHTML =
+                isOpen
+                    ? '<i data-lucide="x"></i>'
+                    : '<i data-lucide="menu"></i>';
+
+
+            if (typeof lucide !== "undefined") {
+
+                lucide.createIcons();
+
+            }
+
         }
-
-    });
+    );
 
 
     document
         .querySelectorAll(".mobile-nav a")
         .forEach(link => {
 
-            link.addEventListener("click", () => {
+            link.addEventListener(
+                "click",
+                () => {
 
-                mobileNav.classList.remove("active");
+                    mobileNav.classList.remove(
+                        "active"
+                    );
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
 
-                menuButton.innerHTML =
-                    '<i data-lucide="menu"></i>';
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-                if (typeof lucide !== "undefined") {
-                    lucide.createIcons();
+
+                    menuButton.innerHTML =
+                        '<i data-lucide="menu"></i>';
+
+
+                    if (typeof lucide !== "undefined") {
+
+                        lucide.createIcons();
+
+                    }
+
                 }
-
-            });
+            );
 
         });
 
@@ -91,21 +114,24 @@ const siteHeader =
 
 if (siteHeader) {
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener(
+        "scroll",
+        () => {
 
-        if (window.scrollY > 40) {
+            if (window.scrollY > 40) {
 
-            siteHeader.style.background =
-                "rgba(10, 11, 12, .96)";
+                siteHeader.style.background =
+                    "rgba(10, 11, 12, .96)";
 
-        } else {
+            } else {
 
-            siteHeader.style.background =
-                "rgba(10, 11, 12, .88)";
+                siteHeader.style.background =
+                    "rgba(10, 11, 12, .88)";
+
+            }
 
         }
-
-    });
+    );
 
 }
 
@@ -133,23 +159,36 @@ function updateComparison(clientX) {
         !comparisonAfter ||
         !comparisonHandle
     ) {
+
         return;
+
     }
+
 
     const rect =
         comparison.getBoundingClientRect();
 
+
     let position =
-        ((clientX - rect.left) / rect.width) * 100;
+        (
+            (clientX - rect.left) /
+            rect.width
+        ) * 100;
+
 
     position =
         Math.max(
             0,
-            Math.min(100, position)
+            Math.min(
+                100,
+                position
+            )
         );
+
 
     comparisonAfter.style.width =
         `${position}%`;
+
 
     comparisonHandle.style.left =
         `${position}%`;
@@ -245,20 +284,13 @@ if (comparison) {
 
 let vehicleMultiplier = 1.2;
 
+let selectedVehicle =
+    "Sedan / SUV Médio";
 
-const vehicleNames = {
 
-    hatch:
-        "Compacto / Hatch",
-
-    sedan:
-        "Sedan / SUV Médio",
-
-    pickup:
-        "SUV Grande / Pick-up"
-
-};
-
+/* =========================================================
+   SELECIONAR VEÍCULO
+========================================================= */
 
 function setVehicle(button) {
 
@@ -266,25 +298,43 @@ function setVehicle(button) {
 
 
     document
-        .querySelectorAll(".vehicle-option")
+        .querySelectorAll(
+            ".vehicle-option"
+        )
         .forEach(option => {
 
-            option.classList.remove("active");
+            option.classList.remove(
+                "active"
+            );
 
         });
 
 
-    button.classList.add("active");
+    button.classList.add(
+        "active"
+    );
 
 
     vehicleMultiplier =
-        Number(button.dataset.multiplier) || 1;
+        Number(
+            button.dataset.multiplier
+        ) || 1;
+
+
+    selectedVehicle =
+        button.dataset.vehicle ||
+        button.textContent
+            .trim();
 
 
     calculateTotal();
 
 }
 
+
+/* =========================================================
+   CALCULAR TOTAL
+========================================================= */
 
 function calculateTotal() {
 
@@ -293,29 +343,34 @@ function calculateTotal() {
 
     document
         .querySelectorAll(
-            ".calculator-service input:checked"
+            '.calculator-service input[type="checkbox"]:checked'
         )
         .forEach(input => {
 
             total +=
-                Number(input.value) || 0;
+                Number(
+                    input.value
+                ) || 0;
 
         });
 
 
     const finalValue =
         Math.round(
-            total * vehicleMultiplier
+            total *
+            vehicleMultiplier
         );
 
 
-    const totalElement =
-        document.getElementById("totalPrice");
+    const totalPrice =
+        document.getElementById(
+            "totalPrice"
+        );
 
 
-    if (totalElement) {
+    if (totalPrice) {
 
-        totalElement.textContent =
+        totalPrice.textContent =
             finalValue.toLocaleString(
                 "pt-BR",
                 {
@@ -333,7 +388,7 @@ function calculateTotal() {
 
 
 /* =========================================================
-   CALCULATOR — LISTA DE SERVIÇOS
+   PEGAR SERVIÇOS SELECIONADOS
 ========================================================= */
 
 function getSelectedCalculatorServices() {
@@ -343,59 +398,28 @@ function getSelectedCalculatorServices() {
 
     document
         .querySelectorAll(
-            ".calculator-service input:checked"
+            '.calculator-service input[type="checkbox"]:checked'
         )
         .forEach(input => {
 
-            const container =
-                input.closest(
-                    ".calculator-service"
-                );
-
-
-            let serviceName =
+            const serviceName =
+                input.dataset.service ||
                 "Serviço";
 
 
-            if (container) {
-
-                const nameElement =
-                    container.querySelector(
-                        ".font-medium"
-                    );
-
-
-                if (nameElement) {
-
-                    serviceName =
-                        nameElement.textContent.trim();
-
-                } else {
-
-                    const label =
-                        container.querySelector("label");
-
-
-                    if (label) {
-
-                        serviceName =
-                            label.textContent
-                                .trim()
-                                .replace(/\s+/g, " ");
-
-                    }
-
-                }
-
-            }
+            const price =
+                Number(
+                    input.value
+                ) || 0;
 
 
             services.push({
 
-                name: serviceName,
+                name:
+                    serviceName,
 
                 price:
-                    Number(input.value) || 0
+                    price
 
             });
 
@@ -408,81 +432,20 @@ function getSelectedCalculatorServices() {
 
 
 /* =========================================================
-   CALCULATOR — WHATSAPP
+   SIMULADOR → WHATSAPP
 ========================================================= */
 
-function sendSimulatorToWhatsApp() {
+function openBookingModalWithSimulatedData() {
 
-    const activeVehicle =
-        document.querySelector(
-            ".vehicle-option.active"
-        );
-
-
-    let vehicleName =
-        "Sedan / SUV Médio";
-
-
-    if (activeVehicle) {
-
-        vehicleName =
-            activeVehicle.dataset.vehicle ||
-            vehicleNames[
-                activeVehicle.dataset.vehicle
-            ] ||
-            activeVehicle.textContent
-                .trim()
-                .replace(/\s+/g, " ");
-
-    }
-
-
-    /*
-     * Caso o botão não tenha data-vehicle,
-     * tenta identificar pelo texto.
-     */
-
-    if (
-        !activeVehicle?.dataset.vehicle &&
-        activeVehicle
-    ) {
-
-        const text =
-            activeVehicle.textContent
-                .toLowerCase();
-
-
-        if (text.includes("compact")) {
-
-            vehicleName =
-                "Compacto / Hatch";
-
-        } else if (
-            text.includes("sedan") ||
-            text.includes("médio")
-        ) {
-
-            vehicleName =
-                "Sedan / SUV Médio";
-
-        } else if (
-            text.includes("grande") ||
-            text.includes("pick")
-        ) {
-
-            vehicleName =
-                "SUV Grande / Pick-up";
-
-        }
-
-    }
-
-
-    const selectedServices =
+    const services =
         getSelectedCalculatorServices();
 
 
-    if (selectedServices.length === 0) {
+    /* -----------------------------------------------------
+       Nenhum serviço selecionado
+    ----------------------------------------------------- */
+
+    if (services.length === 0) {
 
         showToast(
             "Selecione pelo menos um serviço."
@@ -493,15 +456,23 @@ function sendSimulatorToWhatsApp() {
     }
 
 
+    /* -----------------------------------------------------
+       Calcula o total novamente
+    ----------------------------------------------------- */
+
     const total =
         calculateTotal();
 
 
+    /* -----------------------------------------------------
+       Monta lista dos serviços
+    ----------------------------------------------------- */
+
     const servicesText =
-        selectedServices
+        services
             .map(service => {
 
-                const formattedPrice =
+                const price =
                     service.price.toLocaleString(
                         "pt-BR",
                         {
@@ -511,11 +482,17 @@ function sendSimulatorToWhatsApp() {
                     );
 
 
-                return `• ${service.name} — ${formattedPrice}`;
+                return (
+                    `• ${service.name} — ${price}`
+                );
 
             })
             .join("\n");
 
+
+    /* -----------------------------------------------------
+       Formata o total
+    ----------------------------------------------------- */
 
     const formattedTotal =
         total.toLocaleString(
@@ -527,20 +504,30 @@ function sendSimulatorToWhatsApp() {
         );
 
 
+    /* -----------------------------------------------------
+       Mensagem
+    ----------------------------------------------------- */
+
     const message =
 `Olá, Nobre Detail!
 
-Gostaria de solicitar um orçamento.
+Gostaria de solicitar um orçamento com base no simulador.
 
-*Veículo:* ${vehicleName}
+*Porte do veículo:*
+${selectedVehicle}
 
 *Serviços selecionados:*
 ${servicesText}
 
-*Estimativa:* ${formattedTotal}
+*Valor estimado:*
+${formattedTotal}
 
 Gostaria de confirmar o orçamento e verificar a disponibilidade.`;
 
+
+    /* -----------------------------------------------------
+       Abre WhatsApp
+    ----------------------------------------------------- */
 
     const whatsappUrl =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -559,17 +546,26 @@ Gostaria de confirmar o orçamento e verificar a disponibilidade.`;
 ========================================================= */
 
 const bookingModal =
-    document.getElementById("bookingModal");
+    document.getElementById(
+        "bookingModal"
+    );
+
 
 const serviceSelect =
-    document.getElementById("serviceSelect");
+    document.getElementById(
+        "serviceSelect"
+    );
 
 
 function openBookingModal() {
 
     if (!bookingModal) return;
 
-    bookingModal.classList.add("active");
+
+    bookingModal.classList.add(
+        "active"
+    );
+
 
     document.body.classList.add(
         "modal-open"
@@ -582,7 +578,11 @@ function closeBookingModal() {
 
     if (!bookingModal) return;
 
-    bookingModal.classList.remove("active");
+
+    bookingModal.classList.remove(
+        "active"
+    );
+
 
     document.body.classList.remove(
         "modal-open"
@@ -590,6 +590,10 @@ function closeBookingModal() {
 
 }
 
+
+/* =========================================================
+   SERVIÇO → MODAL
+========================================================= */
 
 function selectService(service) {
 
@@ -607,7 +611,7 @@ function selectService(service) {
 
 
 /* =========================================================
-   BOOKING MODAL — ESC
+   ESC → FECHAR MODAL
 ========================================================= */
 
 document.addEventListener(
@@ -617,7 +621,9 @@ document.addEventListener(
         if (
             event.key === "Escape" &&
             bookingModal &&
-            bookingModal.classList.contains("active")
+            bookingModal.classList.contains(
+                "active"
+            )
         ) {
 
             closeBookingModal();
@@ -629,7 +635,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   BOOKING MODAL — CLICK FORA
+   CLICK FORA DO MODAL
 ========================================================= */
 
 if (bookingModal) {
@@ -639,7 +645,8 @@ if (bookingModal) {
         event => {
 
             if (
-                event.target === bookingModal
+                event.target ===
+                bookingModal
             ) {
 
                 closeBookingModal();
@@ -657,7 +664,9 @@ if (bookingModal) {
 ========================================================= */
 
 const bookingForm =
-    document.getElementById("bookingForm");
+    document.getElementById(
+        "bookingForm"
+    );
 
 
 if (bookingForm) {
@@ -671,21 +680,27 @@ if (bookingForm) {
 
             const name =
                 document
-                    .getElementById("clientName")
+                    .getElementById(
+                        "clientName"
+                    )
                     ?.value
                     .trim() || "";
 
 
             const phone =
                 document
-                    .getElementById("clientPhone")
+                    .getElementById(
+                        "clientPhone"
+                    )
                     ?.value
                     .trim() || "";
 
 
             const car =
                 document
-                    .getElementById("clientCar")
+                    .getElementById(
+                        "clientCar"
+                    )
                     ?.value
                     .trim() || "";
 
@@ -695,7 +710,11 @@ if (bookingForm) {
                 "Não informado";
 
 
-            if (!name || !phone || !car) {
+            if (
+                !name ||
+                !phone ||
+                !car
+            ) {
 
                 showToast(
                     "Preencha todos os campos."
@@ -741,17 +760,6 @@ Gostaria de saber a disponibilidade e o valor do serviço.`;
 
         }
     );
-
-}
-
-
-/* =========================================================
-   SIMULADOR → MODAL / WHATSAPP
-========================================================= */
-
-function openBookingModalWithSimulatedData() {
-
-    sendSimulatorToWhatsApp();
 
 }
 
@@ -805,10 +813,12 @@ function openWhatsApp() {
 
 
 /* =========================================================
-   SERVIÇO → MODAL
+   SERVIÇO → ORÇAMENTO
 ========================================================= */
 
-function selectServiceForQuote(serviceName) {
+function selectServiceForQuote(
+    serviceName
+) {
 
     if (!serviceSelect) {
 
@@ -925,7 +935,10 @@ let toastTimeout;
 function showToast(message) {
 
     const toast =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
+
 
     const toastMessage =
         document.getElementById(
@@ -933,8 +946,13 @@ function showToast(message) {
         );
 
 
-    if (!toast || !toastMessage) {
+    if (
+        !toast ||
+        !toastMessage
+    ) {
+
         return;
+
     }
 
 
@@ -942,7 +960,9 @@ function showToast(message) {
         message;
 
 
-    toast.classList.add("show");
+    toast.classList.add(
+        "show"
+    );
 
 
     clearTimeout(
@@ -966,12 +986,12 @@ function showToast(message) {
 
 
 /* =========================================================
-   CALCULADORA — INICIALIZAÇÃO
+   CALCULADORA — EVENTOS
 ========================================================= */
 
 document
     .querySelectorAll(
-        ".calculator-service input"
+        '.calculator-service input[type="checkbox"]'
     )
     .forEach(input => {
 
@@ -984,7 +1004,7 @@ document
 
 
 /* =========================================================
-   CALCULADORA — VALOR INICIAL
+   CALCULADORA — INICIALIZAÇÃO
 ========================================================= */
 
 calculateTotal();
