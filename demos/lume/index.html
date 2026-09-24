@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Lume — Fotografia</title>
+    <title>Lume | Fotografia</title>
 
     <meta
         name="description"
@@ -38,7 +38,7 @@
 <body>
 
     <!-- =========================================
-         HEADER
+         CABEÇALHO
     ========================================== -->
 
     <header class="site-header">
@@ -48,7 +48,10 @@
         </a>
 
 
-        <nav class="main-nav">
+        <nav
+            class="main-nav" id="main-navigation"
+            aria-label="Navegação principal"
+        >
 
             <a href="#trabalhos">
                 Trabalhos
@@ -69,6 +72,8 @@
             class="menu-button"
             type="button"
             aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="main-navigation"
         >
             Menu
         </button>
@@ -88,7 +93,7 @@
             <div class="hero-content">
 
                 <span class="eyebrow">
-                    PHOTOGRAPHY · CREATIVE STUDIO
+                    FOTOGRAFIA · ESTÚDIO CRIATIVO
                 </span>
 
 
@@ -110,7 +115,7 @@
                     class="hero-link"
                 >
                     Ver trabalhos
-                    <span>↓</span>
+                    <span aria-hidden="true">↓</span>
                 </a>
 
             </div>
@@ -171,7 +176,7 @@
 
                         <img
                             src="assets/project-01.jpg"
-                            alt="Projeto fotográfico 01"
+                            alt="Projeto fotográfico Silêncio"
                             loading="lazy"
                         >
 
@@ -213,7 +218,7 @@
 
                         <img
                             src="assets/project-02.jpg"
-                            alt="Projeto fotográfico 02"
+                            alt="Projeto fotográfico Presença"
                             loading="lazy"
                         >
 
@@ -225,7 +230,7 @@
                         <div>
 
                             <span>
-                                Portrait
+                                Retrato
                             </span>
 
                             <h2>
@@ -255,7 +260,7 @@
 
                         <img
                             src="assets/project-03.jpg"
-                            alt="Projeto fotográfico 03"
+                            alt="Projeto fotográfico Matéria"
                             loading="lazy"
                         >
 
@@ -370,7 +375,7 @@
 
 
     <!-- =========================================
-         FOOTER
+         RODAPÉ
     ========================================== -->
 
     <footer class="site-footer">
