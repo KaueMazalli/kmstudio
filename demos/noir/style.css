@@ -1,7 +1,6 @@
-
 /* =========================================================
-NOIR
-Tattoo / Art
+   NOIR
+   Tatuagem / Arte
 ========================================================= */
 
 * {
@@ -22,6 +21,10 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 img {
     display: block;
     width: 100%;
@@ -36,64 +39,99 @@ button {
     font: inherit;
 }
 
+
 /* =========================================================
-CURSOR
+   CURSOR
 ========================================================= */
 
 .cursor {
     position: fixed;
+    top: 0;
+    left: 0;
+
     width: 7px;
     height: 7px;
+
     border-radius: 50%;
+
     background: #eeeeeb;
+
     pointer-events: none;
-    transform: translate(-50%, -50%);
+
+    transform: translate(-50%, -50%) scale(1);
+
     z-index: 9999;
+
     mix-blend-mode: difference;
+
+    transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        transform 0.25s ease;
 }
 
+.cursor.cursor-large {
+    width: 30px;
+    height: 30px;
+}
+
+
 /* =========================================================
-HEADER
+   HEADER
 ========================================================= */
 
 .header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 90px;
+
     padding: 0 45px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    z-index: 100;
+    z-index: 1000;
 
     mix-blend-mode: difference;
+
     color: #fff;
 }
 
 .logo {
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
+
     letter-spacing: 4px;
 }
 
 .nav {
     display: flex;
+
+    align-items: center;
+
     gap: 40px;
 }
 
 .nav a,
 .menu-toggle {
     color: inherit;
+
     background: none;
+
     border: 0;
 
     font-family: "DM Mono", monospace;
+
     font-size: 8px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 
     cursor: pointer;
@@ -107,6 +145,7 @@ HEADER
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -6px;
 
@@ -124,10 +163,15 @@ HEADER
 
 .menu-toggle {
     display: none;
+
+    position: relative;
+
+    z-index: 1100;
 }
 
+
 /* =========================================================
-HERO
+   HERO
 ========================================================= */
 
 .hero {
@@ -145,26 +189,25 @@ HERO
     position: relative;
 }
 
-/* TOP INFORMATION */
-
 .hero-top {
     grid-column: 1 / -1;
 
     display: flex;
+
     justify-content: space-between;
 
     margin-bottom: 60px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
 
     text-transform: uppercase;
+
     letter-spacing: 0.15em;
 
     color: #888;
 }
-
-/* TITLE */
 
 .hero-title {
     grid-column: 1;
@@ -222,7 +265,10 @@ HERO
     letter-spacing: -0.02em;
 }
 
-/* HERO IMAGE */
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-image {
     grid-column: 2;
@@ -248,18 +294,15 @@ HERO
 
     filter: grayscale(100%);
 
+    will-change: transform;
+
     transition:
-        transform 1.2s cubic-bezier(.2, .7, .2, 1),
         filter 0.8s ease;
 }
 
 .hero-image:hover img {
-    transform: scale(1.035);
-
     filter: grayscale(70%);
 }
-
-/* IMAGE LABEL */
 
 .hero-image-label {
     position: absolute;
@@ -280,8 +323,9 @@ HERO
     color: #fff;
 }
 
+
 /* =========================================================
-INTRO
+   INTRO
 ========================================================= */
 
 .intro {
@@ -352,8 +396,9 @@ INTRO
     color: #888;
 }
 
+
 /* =========================================================
-WORK
+   WORK
 ========================================================= */
 
 .work {
@@ -363,8 +408,6 @@ WORK
 
     padding: 180px 0 220px;
 }
-
-/* HEADER */
 
 .section-header {
     display: flex;
@@ -386,8 +429,9 @@ WORK
     color: #666;
 }
 
+
 /* =========================================================
-WORK ITEMS
+   WORK ITEMS
 ========================================================= */
 
 .work-item {
@@ -423,8 +467,9 @@ WORK ITEMS
     filter: grayscale(65%);
 }
 
+
 /* =========================================================
-BLACKWORK
+   BLACKWORK
 ========================================================= */
 
 .work-item-large {
@@ -439,8 +484,9 @@ BLACKWORK
     aspect-ratio: 4 / 5;
 }
 
+
 /* =========================================================
-ABSTRACT
+   ABSTRATO
 ========================================================= */
 
 .work-item-small {
@@ -457,8 +503,9 @@ ABSTRACT
     aspect-ratio: 3 / 4;
 }
 
+
 /* =========================================================
-FINE LINE
+   TRAÇO FINO
 ========================================================= */
 
 .work-item-medium {
@@ -473,8 +520,9 @@ FINE LINE
     aspect-ratio: 4 / 5;
 }
 
+
 /* =========================================================
-EXPERIMENTAL
+   EXPERIMENTAL
 ========================================================= */
 
 .work-item-last {
@@ -487,8 +535,9 @@ EXPERIMENTAL
     aspect-ratio: 3 / 4;
 }
 
+
 /* =========================================================
-NUMBERS
+   NUMBERS
 ========================================================= */
 
 .work-number {
@@ -506,8 +555,9 @@ NUMBERS
     color: #fff;
 }
 
+
 /* =========================================================
-INFO
+   INFO
 ========================================================= */
 
 .work-info {
@@ -544,11 +594,57 @@ INFO
     color: #666;
 }
 
+
 /* =========================================================
-WORK — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
+
+    .header {
+        padding: 0 30px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto auto auto;
+
+        padding: 110px 6vw 50px;
+
+        row-gap: 45px;
+    }
+
+    .hero-top {
+        grid-column: 1;
+
+        margin-bottom: 0;
+    }
+
+    .hero-title {
+        grid-column: 1;
+
+        grid-row: 2;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(3.5rem, 13vw, 6rem);
+    }
+
+    .hero-image {
+        grid-column: 1;
+
+        grid-row: 3;
+
+        width: 100%;
+
+        height: 65vh;
+
+        margin-left: 0;
+    }
+
+
+    /* WORK */
 
     .work {
         width: calc(100% - 60px);
@@ -589,10 +685,33 @@ WORK — TABLET
 
         margin-left: 62%;
     }
+
+
+    /* STUDIO */
+
+    .studio {
+        padding: 180px 35px;
+    }
+
+    .studio-content {
+        gap: 60px;
+    }
+
+
+    /* BOOKING */
+
+    .booking {
+        padding: 190px 35px;
+    }
+
+    .booking h2 {
+        font-size: clamp(70px, 10vw, 130px);
+    }
 }
 
+
 /* =========================================================
-STUDIO
+   STUDIO
 ========================================================= */
 
 .studio {
@@ -628,7 +747,8 @@ STUDIO
 .studio-image img {
     filter: grayscale(100%);
 
-    transition: transform 1s ease;
+    transition:
+        transform 1s ease;
 }
 
 .studio-image:hover img {
@@ -677,8 +797,9 @@ STUDIO
     color: #555;
 }
 
+
 /* =========================================================
-BOOKING
+   BOOKING
 ========================================================= */
 
 .booking {
@@ -745,14 +866,22 @@ BOOKING
     letter-spacing: 2px;
 
     text-transform: uppercase;
+
+    transition:
+        gap 0.3s ease;
+}
+
+.booking-link:hover {
+    gap: 40px;
 }
 
 .booking-link span {
     font-size: 13px;
 }
 
+
 /* =========================================================
-FOOTER
+   FOOTER
 ========================================================= */
 
 .footer {
@@ -779,117 +908,122 @@ FOOTER
     color: #555;
 }
 
-/* =========================================================
-TABLET / MOBILE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-
-        grid-template-rows: auto auto auto;
-
-        padding: 110px 6vw 50px;
-
-        row-gap: 45px;
-    }
-
-    .hero-top {
-        grid-column: 1;
-
-        margin-bottom: 0;
-    }
-
-    .hero-title {
-        grid-column: 1;
-
-        grid-row: 2;
-    }
-
-    .hero-title h1 {
-        font-size: clamp(3.5rem, 13vw, 6rem);
-    }
-
-    .hero-image {
-        grid-column: 1;
-
-        grid-row: 3;
-
-        width: 100%;
-
-        height: 65vh;
-    }
-}
 
 /* =========================================================
-MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
+
+    /* HEADER */
 
     .header {
         height: 70px;
 
         padding: 0 20px;
+
+        mix-blend-mode: difference;
     }
 
-    /* MOBILE MENU */
+    .logo {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* MENU */
 
     .nav {
-        display: none;
-    }
-
-    .nav.menu-open {
-        display: flex;
-
         position: fixed;
 
-        top: 70px;
+        top: 0;
         left: 0;
 
         width: 100%;
+        height: 100vh;
 
-        padding: 30px 20px;
+        padding: 100px 30px 50px;
+
+        display: flex;
 
         flex-direction: column;
 
-        gap: 25px;
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 30px;
 
         background: #090909;
 
-        border-top: 1px solid #222;
+        color: #eeeeeb;
 
-        z-index: 99;
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        z-index: 1050;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.35s ease,
+            visibility 0.35s ease,
+            transform 0.35s ease;
+
+        mix-blend-mode: normal;
     }
 
-    .nav.menu-open a {
-        font-size: 10px;
+    .nav.menu-open {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
     }
+
+    .nav a {
+        font-family: "Playfair Display", serif;
+
+        font-size: 28px;
+
+        font-weight: 400;
+
+        letter-spacing: -0.5px;
+
+        text-transform: none;
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+
+    /* BUTTON */
 
     .menu-toggle {
         display: block;
 
-        color: inherit;
+        position: relative;
 
-        background: none;
-
-        border: 0;
-
-        font-family: "DM Mono", monospace;
+        z-index: 1100;
 
         font-size: 8px;
 
         letter-spacing: 2px;
-
-        text-transform: uppercase;
-
-        cursor: pointer;
     }
+
 
     /* HERO */
 
     .hero {
+        min-height: auto;
+
         padding: 100px 20px 40px;
 
         display: block;
@@ -897,16 +1031,38 @@ MOBILE
 
     .hero-top {
         margin-bottom: 0;
+
+        font-size: 9px;
     }
 
     .hero-title {
-        padding: 80px 0 70px;
+        padding: 80px 0 65px;
     }
 
     .hero-title h1 {
-        font-size: 25vw;
+        font-size: clamp(3.5rem, 17vw, 6rem);
 
-        letter-spacing: -5px;
+        line-height: 0.88;
+
+        letter-spacing: -4px;
+    }
+
+    .hero-title h1 span:nth-child(2) {
+        margin-left: 8vw;
+    }
+
+    .hero-title h1 span:nth-child(3) {
+        margin-left: 3vw;
+    }
+
+    .hero-title h1 span:nth-child(4) {
+        margin-left: 10vw;
+    }
+
+    .hero-title h1 span:last-child {
+        margin-top: 12px;
+
+        font-size: 0.42em;
     }
 
     .hero-image {
@@ -914,25 +1070,39 @@ MOBILE
 
         height: 58vh;
 
+        min-height: 430px;
+
         margin-left: 0;
     }
+
+    .hero-image-label {
+        right: 15px;
+        bottom: 15px;
+
+        gap: 15px;
+
+        font-size: 6px;
+    }
+
 
     /* INTRO */
 
     .intro {
         width: calc(100% - 40px);
 
-        padding: 140px 0;
+        padding: 130px 0;
 
         display: block;
     }
 
     .intro-content {
-        margin-top: 50px;
+        margin-top: 45px;
     }
 
     .intro-title {
-        font-size: 58px;
+        font-size: clamp(48px, 15vw, 70px);
+
+        line-height: 0.9;
 
         letter-spacing: -3px;
     }
@@ -940,23 +1110,32 @@ MOBILE
     .intro-text {
         display: block;
 
-        margin-top: 75px;
+        margin-top: 70px;
+    }
+
+    .intro-text p {
+        font-size: 10px;
+
+        line-height: 1.9;
     }
 
     .intro-text p + p {
         margin-top: 25px;
     }
 
+
     /* WORK */
 
     .work {
         width: calc(100% - 40px);
 
-        padding: 0 0 150px;
+        padding: 0 0 140px;
     }
 
     .section-header {
         margin-bottom: 60px;
+
+        font-size: 6px;
     }
 
     .work-item-large {
@@ -989,9 +1168,18 @@ MOBILE
         margin-left: 25%;
     }
 
-    .work-info h2 {
-        font-size: 26px;
+    .work-info {
+        margin-top: 14px;
     }
+
+    .work-info h2 {
+        font-size: 22px;
+    }
+
+    .work-info span {
+        font-size: 6px;
+    }
+
 
     /* STUDIO */
 
@@ -1008,14 +1196,23 @@ MOBILE
     }
 
     .studio-copy {
-        margin-top: 70px;
+        margin-top: 65px;
     }
 
     .studio h2 {
-        font-size: 65px;
+        margin: 45px 0;
+
+        font-size: clamp(50px, 15vw, 70px);
 
         letter-spacing: -3px;
     }
+
+    .studio-copy p {
+        font-size: 10px;
+
+        line-height: 1.9;
+    }
+
 
     /* BOOKING */
 
@@ -1032,10 +1229,23 @@ MOBILE
     .booking h2 {
         margin: 50px 0;
 
-        font-size: 65px;
+        font-size: clamp(52px, 15vw, 72px);
+
+        line-height: 0.86;
 
         letter-spacing: -3px;
     }
+
+    .booking-content > p {
+        margin-bottom: 35px;
+    }
+
+    .booking-link {
+        font-size: 7px;
+
+        gap: 20px;
+    }
+
 
     /* FOOTER */
 
@@ -1052,28 +1262,115 @@ MOBILE
     }
 }
 
+
 /* =========================================================
-SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 420px) {
 
     .hero {
-        padding: 100px 20px 40px;
+        padding-top: 95px;
     }
 
-    .hero-top {
-        font-size: 9px;
+    .hero-title {
+        padding: 65px 0 55px;
     }
 
     .hero-title h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
+        font-size: 16vw;
 
-        line-height: 0.9;
+        letter-spacing: -3px;
     }
 
     .hero-image {
-        height: 60vh;
+        height: 52vh;
+
+        min-height: 370px;
+    }
+
+    .intro {
+        padding: 110px 0;
+    }
+
+    .intro-title {
+        font-size: 50px;
+    }
+
+    .work {
+        padding-bottom: 110px;
+    }
+
+    .work-item-large {
+        width: 88%;
+    }
+
+    .work-item-small:not(.work-item-last) {
+        width: 76%;
+
+        margin-left: 12%;
+    }
+
+    .work-item-medium {
+        width: 82%;
+
+        margin-left: 5%;
+    }
+
+    .work-item-last {
+        width: 72%;
+
+        margin-left: 20%;
+    }
+
+    .studio {
+        padding: 110px 20px;
+    }
+
+    .booking {
+        padding: 115px 20px;
+    }
+
+    .booking h2 {
+        font-size: 52px;
     }
 }
 
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none), (pointer: coarse) {
+
+    .cursor {
+        display: none;
+    }
+
+    .hero-image:hover img,
+    .work-item:hover .work-image img,
+    .studio-image:hover img {
+        transform: none;
+
+        filter: grayscale(100%);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
