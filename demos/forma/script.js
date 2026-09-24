@@ -5,20 +5,42 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
-       MOBILE MENU
+       ELEMENTS
     ========================================= */
 
     const menuButton = document.querySelector(".menu-button");
-    const nav = document.querySelector(".main-nav");
+    const nav = document.querySelector(".nav");
+    const header = document.querySelector(".header");
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
     if (menuButton && nav) {
 
         menuButton.addEventListener("click", () => {
 
-            nav.classList.toggle("active");
-            menuButton.classList.toggle("active");
+            const isOpen = menuButton.classList.toggle("active");
+
+            nav.classList.toggle("active", isOpen);
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Fechar menu" : "Abrir menu"
+            );
+
+            document.body.style.overflow = isOpen
+                ? "hidden"
+                : "";
 
         });
+
 
         /* Fecha o menu ao clicar em um link */
 
@@ -28,8 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.addEventListener("click", () => {
 
-                nav.classList.remove("active");
                 menuButton.classList.remove("active");
+                nav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
+
+                document.body.style.overflow = "";
 
             });
 
@@ -76,25 +110,26 @@ document.addEventListener("DOMContentLoaded", () => {
        HEADER — SCROLL
     ========================================= */
 
-    const header = document.querySelector(".site-header");
-
     if (header) {
 
-        let lastScroll = 0;
+        const updateHeader = () => {
 
-        window.addEventListener("scroll", () => {
-
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > 80) {
+            if (window.scrollY > 80) {
                 header.classList.add("scrolled");
             } else {
                 header.classList.remove("scrolled");
             }
 
-            lastScroll = currentScroll;
+        };
 
-        });
+
+        updateHeader();
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
 
     }
 
@@ -109,9 +144,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projectImages.forEach(image => {
 
-        image.addEventListener("load", () => {
+        const showImage = () => {
             image.classList.add("loaded");
-        });
+        };
+
+
+        /*
+         * Caso a imagem já esteja carregada
+         * quando o script for executado.
+         */
+
+        if (image.complete) {
+            showImage();
+        } else {
+            image.addEventListener(
+                "load",
+                showImage,
+                { once: true }
+            );
+        }
+
+
+        /*
+         * Caso a imagem não consiga carregar,
+         * ela continua visível sem a animação.
+         */
+
+        image.addEventListener(
+            "error",
+            showImage,
+            { once: true }
+        );
 
     });
 
