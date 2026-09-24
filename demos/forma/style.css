@@ -1,11 +1,11 @@
-/* =========================================================
+/* =========================================
    FORMA — ARCHITECTURE & INTERIORS
-========================================================= */
+========================================= */
 
 
-/* =========================================================
+/* =========================================
    RESET
-========================================================= */
+========================================= */
 
 * {
     margin: 0;
@@ -20,9 +20,7 @@ html {
 body {
     background: #e9e7e1;
     color: #171715;
-
     font-family: "Montserrat", sans-serif;
-
     overflow-x: hidden;
 }
 
@@ -41,12 +39,11 @@ button {
 }
 
 
-/* =========================================================
+/* =========================================
    VARIABLES
-========================================================= */
+========================================= */
 
 :root {
-
     --background: #e9e7e1;
     --surface: #dedcd5;
 
@@ -61,12 +58,11 @@ button {
 }
 
 
-/* =========================================================
+/* =========================================
    HEADER
-========================================================= */
+========================================= */
 
 .header {
-
     position: absolute;
 
     top: 0;
@@ -75,49 +71,54 @@ button {
     transform: translateX(-50%);
 
     width: min(var(--max-width), calc(100% - 80px));
-
     height: 100px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    z-index: 10;
+    z-index: 100;
 
     border-bottom: 1px solid var(--line);
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        backdrop-filter 0.4s ease;
+}
+
+.header.scrolled {
+    background: rgba(233, 231, 225, 0.92);
+    backdrop-filter: blur(12px);
 }
 
 
-/* LOGO */
+/* =========================================
+   LOGO
+========================================= */
 
 .logo {
-
     font-family: "Playfair Display", serif;
-
     font-size: 22px;
-
     letter-spacing: 1px;
 }
 
 
-/* NAV */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .nav {
-
     display: flex;
     align-items: center;
-
     gap: 42px;
 }
 
 .nav a {
-
     position: relative;
 
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 1.8px;
 
     text-transform: uppercase;
@@ -132,10 +133,11 @@ button {
 }
 
 
-/* MENU */
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
 
 .menu-button {
-
     display: none;
 
     width: 34px;
@@ -144,14 +146,15 @@ button {
     padding: 0;
 
     border: 0;
-
     background: transparent;
 
     cursor: pointer;
+
+    position: relative;
+    z-index: 110;
 }
 
 .menu-button span {
-
     display: block;
 
     width: 22px;
@@ -160,15 +163,29 @@ button {
     margin: 6px auto;
 
     background: var(--text);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 
-/* =========================================================
+/* MENU → X */
+
+.menu-button.active span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-button.active span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+
+/* =========================================
    HERO
-========================================================= */
+========================================= */
 
 .hero {
-
     position: relative;
 
     min-height: 100vh;
@@ -184,25 +201,22 @@ button {
 }
 
 
-/* HERO CONTENT */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
-
     width: 760px;
-
     padding-top: 70px;
 }
 
 .eyebrow {
-
     display: block;
 
     margin-bottom: 32px;
 
     font-size: 9px;
-
     font-weight: 500;
-
     letter-spacing: 3px;
 
     text-transform: uppercase;
@@ -211,10 +225,11 @@ button {
 }
 
 
-/* HERO TITLE */
+/* =========================================
+   HERO TITLE
+========================================= */
 
 .hero h1 {
-
     max-width: 850px;
 
     margin-bottom: 45px;
@@ -222,16 +237,13 @@ button {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(70px, 9vw, 135px);
-
     font-weight: 400;
 
     line-height: 0.88;
-
     letter-spacing: -5px;
 }
 
 .hero h1 em {
-
     display: block;
 
     margin-left: 11vw;
@@ -242,26 +254,27 @@ button {
 }
 
 
-/* HERO TEXT */
+/* =========================================
+   HERO TEXT
+========================================= */
 
 .hero-content > p {
-
     max-width: 360px;
 
     margin-bottom: 40px;
 
     font-size: 12px;
-
     line-height: 1.9;
 
     color: var(--muted);
 }
 
 
-/* HERO LINK */
+/* =========================================
+   HERO LINK
+========================================= */
 
 .hero-link {
-
     display: inline-flex;
     align-items: center;
 
@@ -272,9 +285,7 @@ button {
     border-bottom: 1px solid var(--text);
 
     font-size: 9px;
-
     font-weight: 500;
-
     letter-spacing: 2px;
 
     text-transform: uppercase;
@@ -285,43 +296,38 @@ button {
 }
 
 .hero-link:hover {
-
     gap: 35px;
-
     opacity: 0.6;
 }
 
 .hero-link span {
-
     font-size: 15px;
-
     line-height: 1;
 }
 
 
-/* HERO INDEX */
+/* =========================================
+   HERO INDEX
+========================================= */
 
 .hero-index {
-
     position: absolute;
 
     right: 0;
     bottom: 45px;
 
     font-size: 9px;
-
     letter-spacing: 2px;
 
     color: var(--muted);
 }
 
 
-/* =========================================================
+/* =========================================
    SECTION HEADER
-========================================================= */
+========================================= */
 
 .section-header {
-
     display: grid;
 
     grid-template-columns: 100px 1fr;
@@ -329,27 +335,21 @@ button {
     align-items: center;
 
     margin-bottom: 70px;
-
     padding-bottom: 20px;
 
     border-bottom: 1px solid var(--line);
 }
 
 .section-header span {
-
     font-size: 9px;
-
     letter-spacing: 2px;
 
     color: var(--muted);
 }
 
 .section-header p {
-
     font-size: 9px;
-
     font-weight: 500;
-
     letter-spacing: 2px;
 
     text-transform: uppercase;
@@ -358,22 +358,22 @@ button {
 }
 
 
-/* =========================================================
+/* =========================================
    PROJECTS
-========================================================= */
+========================================= */
 
 .projects {
-
     width: min(var(--max-width), calc(100% - 80px));
 
     margin: 180px auto;
 }
 
 
-/* GRID */
+/* =========================================
+   PROJECT GRID
+========================================= */
 
 .projects-grid {
-
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -382,23 +382,24 @@ button {
 }
 
 
-/* PROJECT */
+/* =========================================
+   PROJECT
+========================================= */
 
 .project {
-
     min-width: 0;
 }
 
 .project-large {
-
     grid-column: span 2;
 }
 
 
-/* IMAGE */
+/* =========================================
+   PROJECT IMAGE
+========================================= */
 
 .project-image {
-
     width: 100%;
 
     aspect-ratio: 4 / 3;
@@ -411,31 +412,36 @@ button {
 }
 
 .project-large .project-image {
-
     aspect-ratio: 16 / 9;
 }
 
 .project-image img {
-
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 
+    opacity: 0;
+
     transition:
-        transform 0.8s cubic-bezier(.2,.7,.2,1);
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.project-image img.loaded {
+    opacity: 1;
 }
 
 .project:hover .project-image img {
-
     transform: scale(1.025);
 }
 
 
-/* PROJECT INFO */
+/* =========================================
+   PROJECT INFO
+========================================= */
 
 .project-info {
-
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -444,54 +450,45 @@ button {
 }
 
 .project-info > div > span {
-
     display: block;
 
     margin-bottom: 9px;
 
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: 2px;
 
     color: var(--muted);
 }
 
 .project-info h2 {
-
     font-family: "Playfair Display", serif;
 
     font-size: 27px;
-
     font-weight: 400;
 }
 
 .project-year {
-
     padding-top: 18px;
 
     font-size: 8px;
-
     letter-spacing: 1.5px;
 
     color: var(--muted);
 }
 
 
-/* =========================================================
+/* =========================================
    STUDIO
-========================================================= */
+========================================= */
 
 .studio {
-
     width: min(var(--max-width), calc(100% - 80px));
 
     margin: 220px auto;
 }
 
 .studio-content {
-
     display: grid;
 
     grid-template-columns: 1.4fr 0.6fr;
@@ -502,52 +499,43 @@ button {
 }
 
 .studio-content h2 {
-
     max-width: 850px;
 
     font-family: "Playfair Display", serif;
 
     font-size: clamp(65px, 8vw, 115px);
-
     font-weight: 400;
 
     line-height: 0.9;
-
     letter-spacing: -4px;
 }
 
 .studio-content h2 em {
-
     font-weight: 400;
-
     color: var(--muted);
 }
 
 .studio-text {
-
     padding-top: 15px;
 }
 
 .studio-text p {
-
     max-width: 300px;
 
     margin-bottom: 30px;
 
     font-size: 12px;
-
     line-height: 1.9;
 
     color: var(--muted);
 }
 
 
-/* =========================================================
+/* =========================================
    CONTACT
-========================================================= */
+========================================= */
 
 .contact {
-
     width: min(var(--max-width), calc(100% - 80px));
 
     min-height: 75vh;
@@ -568,12 +556,10 @@ button {
 }
 
 .contact .eyebrow {
-
     margin-bottom: 35px;
 }
 
 .contact h2 {
-
     max-width: 900px;
 
     margin-bottom: 65px;
@@ -581,28 +567,25 @@ button {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(70px, 10vw, 145px);
-
     font-weight: 400;
 
     line-height: 0.85;
-
     letter-spacing: -5px;
 }
 
 .contact h2 em {
-
     display: block;
 
     font-weight: 400;
-
     color: var(--muted);
 }
 
 
-/* CONTACT LINK */
+/* =========================================
+   CONTACT LINK
+========================================= */
 
 .contact-link {
-
     display: inline-flex;
     align-items: center;
 
@@ -613,7 +596,6 @@ button {
     border-bottom: 1px solid var(--text);
 
     font-size: 10px;
-
     letter-spacing: 2px;
 
     transition:
@@ -622,24 +604,20 @@ button {
 }
 
 .contact-link:hover {
-
     gap: 35px;
-
     opacity: 0.6;
 }
 
 .contact-link span {
-
     font-size: 15px;
 }
 
 
-/* =========================================================
+/* =========================================
    FOOTER
-========================================================= */
+========================================= */
 
 .footer {
-
     width: min(var(--max-width), calc(100% - 80px));
 
     height: 100px;
@@ -653,16 +631,15 @@ button {
     border-top: 1px solid var(--line);
 
     font-size: 8px;
-
     letter-spacing: 2px;
 
     color: var(--muted);
 }
 
 
-/* =========================================================
+/* =========================================
    TABLET
-========================================================= */
+========================================= */
 
 @media (max-width: 900px) {
 
@@ -672,122 +649,108 @@ button {
     .studio,
     .contact,
     .footer {
-
         width: calc(100% - 50px);
     }
 
 
     .hero-content {
-
         width: 100%;
     }
 
 
     .hero h1 {
-
         font-size: clamp(65px, 11vw, 100px);
     }
 
 
     .projects-grid {
-
         gap: 70px 25px;
     }
 
 
     .studio-content {
-
         grid-template-columns: 1fr;
-
         gap: 50px;
     }
 
 
     .studio-content h2 {
-
         font-size: clamp(60px, 10vw, 100px);
     }
 
 
     .contact {
-
         min-height: 65vh;
     }
+
+
+    /* MOBILE NAVIGATION */
+
     .menu-button {
-    display: block;
-    position: relative;
-    z-index: 20;
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 105;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+
+        background: var(--background);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.4s ease,
+            visibility 0.4s ease;
+    }
+
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav a {
+        font-family: "Playfair Display", serif;
+
+        font-size: 42px;
+
+        letter-spacing: -1px;
+
+        color: var(--text);
+    }
+
 }
 
-.main-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 30px;
-
-    background: #e9e7e1;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
-}
-
-.main-nav.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.main-nav a {
-    font-family: "Playfair Display", serif;
-    font-size: 42px;
-    letter-spacing: -1px;
-}
-
-}
-
-
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
 @media (max-width: 600px) {
-
 
     /* HEADER */
 
     .header {
-
         width: calc(100% - 30px);
-
         height: 75px;
     }
 
 
-    .nav {
-
-        display: none;
-    }
-
-
-    .menu-button {
-
-        display: block;
-    }
-
-
     .logo {
-
         font-size: 20px;
     }
 
@@ -795,31 +758,25 @@ button {
     /* HERO */
 
     .hero {
-
         width: calc(100% - 30px);
-
         min-height: 100svh;
     }
 
 
     .hero-content {
-
         padding-top: 40px;
     }
 
 
     .eyebrow {
-
         margin-bottom: 25px;
 
         font-size: 8px;
-
         letter-spacing: 2.5px;
     }
 
 
     .hero h1 {
-
         margin-bottom: 35px;
 
         font-size: clamp(58px, 17vw, 90px);
@@ -829,23 +786,18 @@ button {
 
 
     .hero h1 em {
-
         margin-left: 12vw;
     }
 
 
     .hero-content > p {
-
         max-width: 290px;
-
         font-size: 11px;
     }
 
 
     .hero-index {
-
         bottom: 30px;
-
         font-size: 8px;
     }
 
@@ -853,9 +805,7 @@ button {
     /* SECTION HEADER */
 
     .section-header {
-
         grid-template-columns: 55px 1fr;
-
         margin-bottom: 40px;
     }
 
@@ -863,36 +813,29 @@ button {
     /* PROJECTS */
 
     .projects {
-
         width: calc(100% - 30px);
-
         margin: 110px auto;
     }
 
 
     .projects-grid {
-
         display: block;
     }
 
 
     .project {
-
         margin-bottom: 65px;
     }
 
 
     .project-large .project-image,
     .project-image {
-
         aspect-ratio: 4 / 5;
-
         margin-bottom: 18px;
     }
 
 
     .project-info h2 {
-
         font-size: 24px;
     }
 
@@ -900,23 +843,18 @@ button {
     /* STUDIO */
 
     .studio {
-
         width: calc(100% - 30px);
-
         margin: 120px auto;
     }
 
 
     .studio-content h2 {
-
         font-size: 58px;
-
         letter-spacing: -2px;
     }
 
 
     .studio-text {
-
         padding-top: 0;
     }
 
@@ -924,7 +862,6 @@ button {
     /* CONTACT */
 
     .contact {
-
         width: calc(100% - 30px);
 
         min-height: 70vh;
@@ -934,7 +871,6 @@ button {
 
 
     .contact h2 {
-
         font-size: 65px;
 
         letter-spacing: -3px;
@@ -946,7 +882,6 @@ button {
     /* FOOTER */
 
     .footer {
-
         width: calc(100% - 30px);
 
         height: 80px;
@@ -954,51 +889,4 @@ button {
         font-size: 7px;
     }
 
-}
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-.menu-button {
-    display: none;
-    border: 0;
-    background: transparent;
-    font-family: "Montserrat", sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #171715;
-    cursor: pointer;
-}
-
-
-/* =========================================
-   HEADER SCROLL
-========================================= */
-
-.site-header {
-    transition:
-        background 0.4s ease,
-        border-color 0.4s ease;
-}
-
-.site-header.scrolled {
-    background: rgba(233, 231, 225, 0.92);
-    backdrop-filter: blur(12px);
-}
-
-
-/* =========================================
-   IMAGE LOAD
-========================================= */
-
-.project-image img {
-    opacity: 0;
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.project-image img.loaded {
-    opacity: 1;
 }
