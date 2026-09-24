@@ -1,6 +1,6 @@
 /* =========================================
    LUME
-   Photography / Creative Studio
+   Fotografia / Estúdio Criativo
 ========================================= */
 
 
@@ -41,7 +41,7 @@ button {
 
 
 /* =========================================
-   VARIABLES
+   VARIÁVEIS
 ========================================= */
 
 :root {
@@ -59,7 +59,8 @@ button {
 ========================================= */
 
 .site-header {
-    position: absolute;
+    position: fixed;
+
     top: 0;
     left: 50%;
 
@@ -73,18 +74,17 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    z-index: 20;
+    z-index: 1000;
 
     border-bottom: 1px solid var(--line);
 
     transition:
         background 0.4s ease,
-        border-color 0.4s ease;
+        border-color 0.4s ease,
+        backdrop-filter 0.4s ease;
 }
 
 .site-header.scrolled {
-    position: fixed;
-
     background: rgba(11, 11, 11, 0.88);
 
     backdrop-filter: blur(14px);
@@ -105,57 +105,23 @@ button {
 
 
 /* =========================================
-   NAV
+   NAVEGAÇÃO
 ========================================= */
 
 .main-nav {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    z-index: 10;
-
     display: flex;
 
-    flex-direction: column;
-
     align-items: center;
-    justify-content: center;
 
-    gap: 26px;
-
-    margin: 0;
-    padding: 0;
-
-    background: var(--bg);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: none;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
-}
-
-.main-nav.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    transform: none;
+    gap: 42px;
 }
 
 .main-nav a {
     position: relative;
 
     font-size: 9px;
+
+    font-weight: 500;
 
     letter-spacing: 2.5px;
 
@@ -192,11 +158,16 @@ button {
 
 
 /* =========================================
-   MENU BUTTON
+   BOTÃO DO MENU
 ========================================= */
 
 .menu-button {
     display: none;
+
+    width: 48px;
+    height: 34px;
+
+    padding: 0;
 
     border: 0;
 
@@ -333,7 +304,7 @@ button {
 
 
 /* =========================================
-   HERO IMAGE
+   IMAGEM DO HERO
 ========================================= */
 
 .hero-image {
@@ -373,7 +344,7 @@ button {
 
 
 /* =========================================
-   HERO INDEX
+   ÍNDICE DO HERO
 ========================================= */
 
 .hero-index {
@@ -392,7 +363,7 @@ button {
 
 
 /* =========================================
-   PROJECTS
+   TRABALHOS
 ========================================= */
 
 .projects {
@@ -437,7 +408,7 @@ button {
 
 
 /* =========================================
-   PROJECT GRID
+   GRID DE PROJETOS
 ========================================= */
 
 .project-grid {
@@ -454,7 +425,7 @@ button {
 
 
 /* =========================================
-   PROJECT
+   PROJETO
 ========================================= */
 
 .project {
@@ -475,10 +446,7 @@ button {
     background: var(--surface);
 }
 
-.project-large .project-image {
-    aspect-ratio: 4 / 5;
-}
-
+.project-large .project-image,
 .project-small .project-image {
     aspect-ratio: 4 / 5;
 }
@@ -488,10 +456,6 @@ button {
     height: 100%;
 
     object-fit: cover;
-
-    transition:
-        transform 1s cubic-bezier(0.2, 0.7, 0.2, 1),
-        filter 0.8s ease;
 }
 
 .project:hover .project-image img {
@@ -502,7 +466,7 @@ button {
 
 
 /* =========================================
-   PROJECT INFO
+   INFORMAÇÕES DO PROJETO
 ========================================= */
 
 .project-info {
@@ -553,7 +517,7 @@ button {
 
 
 /* =========================================
-   ABOUT
+   SOBRE
 ========================================= */
 
 .about {
@@ -622,7 +586,7 @@ button {
 
 
 /* =========================================
-   CONTACT
+   CONTATO
 ========================================= */
 
 .contact {
@@ -687,7 +651,7 @@ button {
 
 
 /* =========================================
-   FOOTER
+   RODAPÉ
 ========================================= */
 
 .site-footer {
@@ -716,10 +680,30 @@ button {
 
 
 /* =========================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================= */
 
 @media (max-width: 900px) {
+
+    .site-header {
+        width: calc(100% - 50px);
+    }
+
+    .hero {
+        width: calc(100% - 50px);
+    }
+
+    .projects {
+        width: calc(100% - 50px);
+    }
+
+    .contact {
+        width: calc(100% - 50px);
+    }
+
+    .site-footer {
+        width: calc(100% - 50px);
+    }
 
     .hero-content {
         width: 70%;
@@ -736,14 +720,15 @@ button {
     }
 
     .about {
+        width: calc(100% - 50px);
+
         gap: 50px;
     }
-
 }
 
 
 /* =========================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
@@ -751,17 +736,41 @@ button {
     /* HEADER */
 
     .site-header {
+        position: fixed;
+
+        top: 0;
+        left: 20px;
+
         width: calc(100% - 40px);
 
-        height: 80px;
+        height: 75px;
+
+        transform: none;
     }
+
+    .site-header.scrolled {
+        background: rgba(11, 11, 11, 0.92);
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+
+    /* MENU */
 
     .main-nav {
         position: fixed;
 
-        inset: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
-        z-index: 10;
+        width: 100%;
+        height: 100vh;
+
+        z-index: 900;
 
         display: flex;
 
@@ -771,14 +780,12 @@ button {
 
         justify-content: center;
 
-        gap: 26px;
+        gap: 30px;
 
         background: var(--bg);
 
         opacity: 0;
-
         visibility: hidden;
-
         pointer-events: none;
 
         transition:
@@ -795,15 +802,17 @@ button {
     }
 
     .main-nav a {
-        font-family: "Montserrat", sans-serif;
+        display: block;
 
-        font-size: 11px;
+        font-family: "Playfair Display", serif;
+
+        font-size: 28px;
 
         font-weight: 400;
 
-        letter-spacing: 3px;
+        letter-spacing: 0;
 
-        text-transform: uppercase;
+        text-transform: none;
 
         color: var(--text);
     }
@@ -812,80 +821,107 @@ button {
         display: none;
     }
 
+
+    /* BOTÃO */
+
     .menu-button {
         display: block;
 
         position: relative;
 
-        z-index: 20;
+        z-index: 1000;
+
+        width: auto;
     }
 
 
     /* HERO */
 
     .hero {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
-        min-height: 850px;
+        min-height: 760px;
 
         display: block;
 
-        padding-top: 180px;
+        padding-top: 145px;
     }
 
     .hero-content {
         width: 100%;
     }
 
-    .hero h1 {
-        font-size: clamp(60px, 17vw, 100px);
+    .eyebrow {
+        margin-bottom: 25px;
 
-        letter-spacing: -4px;
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(55px, 16vw, 85px);
+
+        letter-spacing: -3px;
     }
 
     .hero h1 em {
-        margin-left: 12vw;
+        margin-left: 10vw;
     }
 
     .hero p {
-        margin-top: 40px;
+        max-width: 290px;
+
+        margin-top: 35px;
+
+        font-size: 11px;
+    }
+
+    .hero-link {
+        margin-top: 30px;
     }
 
     .hero-image {
-        position: absolute;
-
         top: auto;
 
         right: 0;
 
-        bottom: 70px;
+        bottom: 65px;
 
-        width: 65%;
+        width: 68%;
 
-        height: 40%;
+        height: 38%;
     }
 
     .hero-index {
-        bottom: 25px;
+        right: 0;
+
+        bottom: 22px;
     }
 
 
-    /* PROJECTS */
+    /* TRABALHOS */
 
     .projects {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
-        padding: 110px 0 120px;
+        padding: 100px 0 110px;
     }
 
     .section-intro {
         display: block;
 
-        margin-bottom: 60px;
+        margin-bottom: 55px;
     }
 
     .section-intro p {
-        margin-top: 25px;
+        max-width: 290px;
+
+        margin-top: 22px;
+
+        font-size: 11px;
     }
 
     .project-grid {
@@ -893,7 +929,7 @@ button {
     }
 
     .project {
-        margin-bottom: 80px;
+        margin-bottom: 70px;
     }
 
     .project-small {
@@ -905,82 +941,120 @@ button {
         aspect-ratio: 4 / 5;
     }
 
+    .project-info {
+        padding-top: 18px;
+    }
+
     .project-info h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
 
-    /* ABOUT */
+    /* SOBRE */
 
     .about {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
         display: block;
 
-        padding: 120px 0;
+        padding: 110px 0;
     }
 
     .about-number {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
 
     .about h2 {
-        font-size: clamp(55px, 15vw, 90px);
+        margin-bottom: 40px;
+
+        font-size: clamp(52px, 15vw, 82px);
 
         letter-spacing: -3px;
+    }
 
-        margin-bottom: 40px;
+    .about-content p {
+        max-width: 100%;
+
+        font-size: 11px;
+
+        line-height: 1.9;
     }
 
 
-    /* CONTACT */
+    /* CONTATO */
 
     .contact {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
-        padding: 120px 0;
+        padding: 110px 0;
+    }
+
+    .contact .eyebrow {
+        margin-bottom: 30px;
     }
 
     .contact h2 {
-        font-size: clamp(55px, 15vw, 90px);
+        margin-bottom: 45px;
+
+        font-size: clamp(52px, 15vw, 82px);
 
         letter-spacing: -3px;
-
-        margin-bottom: 50px;
     }
 
 
-    /* FOOTER */
+    /* RODAPÉ */
 
     .site-footer {
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
 
-        min-height: 80px;
+        min-height: 75px;
     }
 
+    .site-footer span {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
 }
 
 
 /* =========================================
-   EXTRA SMALL
+   CELULARES PEQUENOS
 ========================================= */
 
 @media (max-width: 420px) {
 
-    .hero {
-        min-height: 780px;
+    .site-header {
+        left: 15px;
 
-        padding-top: 150px;
+        width: calc(100% - 30px);
+    }
+
+    .hero {
+        width: calc(100% - 30px);
+
+        min-height: 720px;
+
+        padding-top: 135px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 15vw, 75px);
     }
 
     .hero-image {
         width: 72%;
 
-        height: 38%;
+        height: 36%;
+
+        bottom: 60px;
     }
 
     .project-info h2 {
-        font-size: 27px;
+        font-size: 26px;
     }
 
+    .site-footer span:last-child {
+        display: none;
+    }
 }
