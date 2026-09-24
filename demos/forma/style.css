@@ -208,7 +208,7 @@ button {
 .hero-content {
     width: 760px;
     padding-top: 70px;
-}
+}a
 
 .eyebrow {
     display: block;
@@ -724,13 +724,10 @@ button {
     }
 
     .nav a {
-        font-family: "Playfair Display", serif;
-
-        font-size: 42px;
-
-        letter-spacing: -1px;
-
-        color: var(--text);
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    color: var(--text);
     }
 
 }
