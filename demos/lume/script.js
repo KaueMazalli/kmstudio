@@ -5,40 +5,95 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
-       MOBILE MENU
+       ELEMENTOS
     ========================================= */
 
     const menuButton = document.querySelector(".menu-button");
     const nav = document.querySelector(".main-nav");
+    const header = document.querySelector(".site-header");
+
+
+    /* =========================================
+       MENU MOBILE
+    ========================================= */
 
     if (menuButton && nav) {
 
-        menuButton.addEventListener("click", () => {
+        const openMenu = () => {
 
-            nav.classList.toggle("active");
-            menuButton.classList.toggle("active");
+            nav.classList.add("active");
+            menuButton.classList.add("active");
+
+            menuButton.textContent = "Fechar";
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Fechar menu"
+            );
+
+            document.body.style.overflow = "hidden";
+        };
+
+
+        const closeMenu = () => {
+
+            nav.classList.remove("active");
+            menuButton.classList.remove("active");
+
+            menuButton.textContent = "Menu";
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Abrir menu"
+            );
+
+            document.body.style.overflow = "";
+        };
+
+
+        menuButton.addEventListener("click", () => {
 
             const isOpen = nav.classList.contains("active");
 
-            menuButton.textContent = isOpen
-                ? "Fechar"
-                : "Menu";
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
 
         });
 
+
+        /* Fecha ao clicar em um link */
 
         const navLinks = nav.querySelectorAll("a");
 
         navLinks.forEach(link => {
 
             link.addEventListener("click", () => {
-
-                nav.classList.remove("active");
-                menuButton.classList.remove("active");
-
-                menuButton.textContent = "Menu";
-
+                closeMenu();
             });
+
+        });
+
+
+        /* Fecha com ESC */
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape") {
+                closeMenu();
+            }
 
         });
 
@@ -46,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       SMOOTH SCROLL
+       ROLAGEM SUAVE
     ========================================= */
 
     const internalLinks = document.querySelectorAll(
@@ -82,10 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       HEADER SCROLL
+       HEADER — SCROLL
     ========================================= */
-
-    const header = document.querySelector(".site-header");
 
     if (header) {
 
@@ -103,19 +156,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         };
 
+        updateHeader();
+
         window.addEventListener(
             "scroll",
             updateHeader,
             { passive: true }
         );
 
-        updateHeader();
-
     }
 
 
     /* =========================================
-       IMAGE REVEAL
+       CARREGAMENTO DAS IMAGENS
     ========================================= */
 
     const images = document.querySelectorAll(
@@ -124,27 +177,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     images.forEach(image => {
 
+        const showImage = () => {
+            image.classList.add("loaded");
+        };
+
+
         if (image.complete) {
 
-            image.classList.add("loaded");
+            showImage();
 
         } else {
 
             image.addEventListener(
                 "load",
-                () => {
-                    image.classList.add("loaded");
-                },
+                showImage,
                 { once: true }
             );
 
         }
 
+
+        /* Evita que a imagem fique invisível
+           caso o arquivo não carregue. */
+
+        image.addEventListener(
+            "error",
+            showImage,
+            { once: true }
+        );
+
     });
 
 
     /* =========================================
-       CURRENT YEAR
+       ANO ATUAL
     ========================================= */
 
     const year = document.querySelector("[data-year]");
@@ -155,27 +221,5 @@ document.addEventListener("DOMContentLoaded", () => {
             new Date().getFullYear();
 
     }
-
-
-    /* =========================================
-       ESC — CLOSE MOBILE MENU
-    ========================================= */
-
-    document.addEventListener("keydown", event => {
-
-        if (event.key !== "Escape") {
-            return;
-        }
-
-        if (!nav || !menuButton) {
-            return;
-        }
-
-        nav.classList.remove("active");
-        menuButton.classList.remove("active");
-
-        menuButton.textContent = "Menu";
-
-    });
 
 });
