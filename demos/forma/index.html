@@ -23,12 +23,12 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.googleapis.com"
+        href="https://fonts.gstatic.com"
         crossorigin
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet"
     >
 
@@ -48,12 +48,12 @@
 
     <header class="header">
 
-        <a href="#" class="logo">
+        <a href="#" class="logo" aria-label="Forma — início">
             FORMA
         </a>
 
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Navegação principal">
 
             <a href="#projetos">
                 Projetos
@@ -70,7 +70,13 @@
         </nav>
 
 
-        <button class="menu-button" aria-label="Abrir menu">
+        <button
+            class="menu-button"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+        >
 
             <span></span>
             <span></span>
@@ -116,7 +122,7 @@
                     class="hero-link"
                 >
                     Explorar projetos
-                    <span>↘</span>
+                    <span aria-hidden="true">↘</span>
                 </a>
 
             </div>
@@ -164,6 +170,7 @@
                         <img
                             src="assets/project-01.jpg"
                             alt="Projeto residencial contemporâneo"
+                            loading="eager"
                         >
 
                     </div>
@@ -200,6 +207,7 @@
                         <img
                             src="assets/project-02.jpg"
                             alt="Interior contemporâneo"
+                            loading="lazy"
                         >
 
                     </div>
@@ -236,6 +244,7 @@
                         <img
                             src="assets/project-03.jpg"
                             alt="Projeto arquitetônico"
+                            loading="lazy"
                         >
 
                     </div>
@@ -351,7 +360,7 @@
                 class="contact-link"
             >
                 hello@forma.studio
-                <span>↗</span>
+                <span aria-hidden="true">↗</span>
             </a>
 
 
@@ -369,7 +378,7 @@
     <footer class="footer">
 
         <span>
-            © 2026 FORMA
+            © <span data-year>2026</span> FORMA
         </span>
 
         <span>
