@@ -8,7 +8,7 @@
     <meta name="description"
         content="Noma — catálogo digital de produtos selecionados. Escolha seus produtos e entre em contato pelo WhatsApp.">
 
-    <title>Noma — Catálogo Digital</title>
+    <title>Noma | Catálogo Digital</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,22 +24,41 @@
 
     <!-- HEADER -->
     <header class="header">
+
         <div class="container header-inner">
 
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Noma — início">
                 <span class="logo-main">Noma</span>
                 <span class="logo-sub">Catálogo Digital</span>
             </a>
 
-            <nav class="nav">
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav">
+
                 <a href="#inicio">Início</a>
+
                 <a href="#categorias">Categorias</a>
+
                 <a href="produtos.html">Produtos</a>
+
                 <a href="#sobre">Sobre</a>
+
                 <a href="#contato">Contato</a>
+
             </nav>
 
         </div>
+
     </header>
 
 
@@ -197,7 +216,6 @@
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     CASA
                                 </span>
@@ -205,11 +223,11 @@
                                 <h3>Mesa Aurora</h3>
 
                                 <p>R$ 890</p>
-
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Mesa Aurora">
                                 Tenho interesse
                             </button>
@@ -232,7 +250,6 @@
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     CASA
                                 </span>
@@ -240,11 +257,11 @@
                                 <h3>Cadeira Nilo</h3>
 
                                 <p>R$ 620</p>
-
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Cadeira Nilo">
                                 Tenho interesse
                             </button>
@@ -267,7 +284,6 @@
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     ESTILO
                                 </span>
@@ -275,11 +291,11 @@
                                 <h3>Bolsa Forma</h3>
 
                                 <p>R$ 480</p>
-
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Bolsa Forma">
                                 Tenho interesse
                             </button>
@@ -302,7 +318,6 @@
                         <div class="product-info">
 
                             <div>
-
                                 <span class="product-category">
                                     ESSENCIAIS
                                 </span>
@@ -310,11 +325,11 @@
                                 <h3>Vaso Terra</h3>
 
                                 <p>R$ 240</p>
-
                             </div>
 
                             <button
                                 class="product-button"
+                                type="button"
                                 data-product="Vaso Terra">
                                 Tenho interesse
                             </button>
@@ -326,7 +341,6 @@
                 </div>
 
 
-                <!-- CATÁLOGO COMPLETO -->
                 <div class="products-footer">
 
                     <a href="produtos.html" class="view-all-button">
@@ -415,13 +429,10 @@
 
             <div class="footer-brand">
 
-                <span class="logo-main">
-                    Noma
-                </span>
-
-                <span class="logo-sub">
-                    Catálogo Digital
-                </span>
+                <a href="index.html" class="logo">
+                    <span class="logo-main">Noma</span>
+                    <span class="logo-sub">Catálogo Digital</span>
+                </a>
 
             </div>
 
@@ -440,9 +451,7 @@
                     Contato
                 </a>
 
-                <a
-                    href="#"
-                    id="footer-whatsapp">
+                <a href="#" id="footer-whatsapp">
                     WhatsApp
                 </a>
 
