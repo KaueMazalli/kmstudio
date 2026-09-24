@@ -17,18 +17,28 @@ const whatsappNumber = "5511999999999";
 
 
 /* =========================================================
-   HEADER
+   DOM
 ========================================================= */
 
 const header = document.querySelector(".header");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 if (header) {
+
     const updateHeader = () => {
+
         if (window.scrollY > 50) {
             header.classList.add("scrolled");
         } else {
             header.classList.remove("scrolled");
         }
+
     };
 
     updateHeader();
@@ -36,6 +46,93 @@ if (header) {
     window.addEventListener("scroll", updateHeader, {
         passive: true
     });
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+if (menuToggle && nav) {
+
+    const closeMenu = () => {
+
+        menuToggle.classList.remove("active");
+        nav.classList.remove("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
+
+        document.body.classList.remove("menu-open");
+    };
+
+
+    const openMenu = () => {
+
+        menuToggle.classList.add("active");
+        nav.classList.add("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Fechar menu"
+        );
+
+        document.body.classList.add("menu-open");
+    };
+
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            nav.classList.contains("open");
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+
+    });
+
+
+    nav.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+            closeMenu();
+        });
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+
+    });
+
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 700) {
+            closeMenu();
+        }
+
+    });
+
 }
 
 
@@ -48,20 +145,29 @@ function openWhatsApp(productName = "") {
     let message;
 
     if (productName) {
+
         message =
             `Olá! Tenho interesse no produto "${productName}". ` +
             `Gostaria de saber mais sobre disponibilidade e pagamento.`;
+
     } else {
+
         message =
             "Olá! Gostaria de conhecer melhor os produtos do catálogo.";
+
     }
 
-    const encodedMessage = encodeURIComponent(message);
+    const encodedMessage =
+        encodeURIComponent(message);
 
     const url =
         `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
 }
 
 
@@ -87,7 +193,7 @@ productButtons.forEach((button) => {
 
 
 /* =========================================================
-   MAIN WHATSAPP BUTTON
+   MAIN WHATSAPP
 ========================================================= */
 
 const whatsappLink =
@@ -150,6 +256,21 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
         event.preventDefault();
 
+        if (nav && nav.classList.contains("open")) {
+
+            nav.classList.remove("open");
+
+            if (menuToggle) {
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
+            document.body.classList.remove("menu-open");
+        }
+
         const headerHeight =
             header ? header.offsetHeight : 0;
 
@@ -172,15 +293,19 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements = document.querySelectorAll(
-    ".intro-content, " +
-    ".category-card, " +
-    ".product-card, " +
-    ".step, " +
-    ".contact-inner"
-);
+const revealElements =
+    document.querySelectorAll(
+        ".intro-content, " +
+        ".category-card, " +
+        ".product-card, " +
+        ".contact-inner"
+    );
 
-if ("IntersectionObserver" in window) {
+
+if (
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
 
     const observer =
         new IntersectionObserver(
@@ -192,7 +317,9 @@ if ("IntersectionObserver" in window) {
 
                         entry.target.classList.add("visible");
 
-                        observer.unobserve(entry.target);
+                        observer.unobserve(
+                            entry.target
+                        );
 
                     }
 
@@ -204,9 +331,13 @@ if ("IntersectionObserver" in window) {
             }
         );
 
-    revealElements.forEach((element) => {
+
+    revealElements.forEach((element, index) => {
 
         element.classList.add("reveal");
+
+        element.style.transitionDelay =
+            `${Math.min(index * 0.06, 0.3)}s`;
 
         observer.observe(element);
 
@@ -235,11 +366,13 @@ document.querySelectorAll("img").forEach((image) => {
 
     } else {
 
-        image.addEventListener("load", () => {
-
-            image.classList.add("loaded");
-
-        });
+        image.addEventListener(
+            "load",
+            () => {
+                image.classList.add("loaded");
+            },
+            { once: true }
+        );
 
     }
 
@@ -251,7 +384,9 @@ document.querySelectorAll("img").forEach((image) => {
 ========================================================= */
 
 const yearElements =
-    document.querySelectorAll("[data-year]");
+    document.querySelectorAll(
+        "#current-year, [data-year]"
+    );
 
 yearElements.forEach((element) => {
 
