@@ -81,6 +81,92 @@
         padding: 9px 11px;
     }
 }
+
+.model-card-no-image .model-cover {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 42px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.45s ease, border-color 0.35s ease;
+}
+
+.model-card-no-image .model-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(217,199,166,0.12), transparent 40%);
+}
+
+.model-card-no-image:hover .model-cover {
+    transform: scale(1.01);
+    border-color: rgba(217,199,166,0.5);
+}
+
+.model-cover > * {
+    position: relative;
+    z-index: 1;
+}
+
+.model-cover > span:first-child {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.model-cover strong {
+    margin-top: 12px;
+    font-family: var(--serif);
+    font-size: clamp(38px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.model-cover small {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.model-cover .model-preview-label {
+    top: auto;
+    right: 20px;
+    bottom: 18px;
+}
+
+.model-cover-livros {
+    background: linear-gradient(135deg, #17120e, #30251b 55%, #10161a);
+}
+
+.model-cover-nobre {
+    background: linear-gradient(135deg, #080b0e, #1b252c 55%, #0b1014);
+}
+
+.model-cover-pataecia {
+    background: linear-gradient(135deg, #10243a, #254e68 55%, #101820);
+}
+
+.model-cover-venda {
+    background: linear-gradient(135deg, #111827, #243a52 55%, #0a0f1a);
+}
+
+@media (max-width: 700px) {
+    .model-card-no-image .model-cover {
+        min-height: 280px;
+        padding: 30px 26px;
+    }
+
+    .model-cover .model-preview-label {
+        opacity: 1;
+        transform: none;
+    }
+}
 </style>
 </head>
 
@@ -183,6 +269,59 @@
 <div class="project-info">
 <span class="project-number">06</span>
 <div><h3>Atelier</h3><p>Moda · Site navegável</p></div>
+</div>
+</a>
+
+
+<a href="demos/livros/index.html" class="project-card model-card model-card-no-image">
+<div class="model-cover model-cover-livros">
+<span>ENTRELINHAS</span>
+<strong>SEBO & LIVRARIA</strong>
+<small>Catálogo · Carrinho · Checkout</small>
+<span class="model-preview-label">ABRIR MODELO <span>↗</span></span>
+</div>
+<div class="project-info">
+<span class="project-number">07</span>
+<div><h3>Entrelinhas</h3><p>Sebo e livraria · Site navegável</p></div>
+</div>
+</a>
+
+<a href="demos/nobre-detail/index.html" class="project-card model-card model-card-no-image">
+<div class="model-cover model-cover-nobre">
+<span>NOBRE</span>
+<strong>DETAIL</strong>
+<small>Estética automotiva · Site institucional</small>
+<span class="model-preview-label">ABRIR MODELO <span>↗</span></span>
+</div>
+<div class="project-info">
+<span class="project-number">08</span>
+<div><h3>Nobre Detail</h3><p>Estética automotiva · Site navegável</p></div>
+</div>
+</a>
+
+<a href="demos/pataecia/index.html" class="project-card model-card model-card-no-image">
+<div class="model-cover model-cover-pataecia">
+<span>PATA & CIA</span>
+<strong>PET SHOP</strong>
+<small>Serviços · Produtos · Atendimento</small>
+<span class="model-preview-label">ABRIR MODELO <span>↗</span></span>
+</div>
+<div class="project-info">
+<span class="project-number">09</span>
+<div><h3>Pata & Cia</h3><p>Pet shop · Site navegável</p></div>
+</div>
+</a>
+
+<a href="demos/venda/index.html" class="project-card model-card model-card-no-image">
+<div class="model-cover model-cover-venda">
+<span>MINHA LOJA</span>
+<strong>VENDA ONLINE</strong>
+<small>Produtos · Carrinho · Checkout</small>
+<span class="model-preview-label">ABRIR MODELO <span>↗</span></span>
+</div>
+<div class="project-info">
+<span class="project-number">10</span>
+<div><h3>Minha Loja</h3><p>E-commerce · Site navegável</p></div>
 </div>
 </a>
 
