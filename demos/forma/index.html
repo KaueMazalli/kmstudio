@@ -1,410 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>FORMA | Arquitetura & Interiores</title>
-
-    <meta
-        name="description"
-        content="Forma — arquitetura, interiores e espaços contemporâneos."
-    >
-
-    <!-- FONTES -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMA — Arquitetura & Interiores</title>
+<meta name="description" content="FORMA — arquitetura e interiores com uma abordagem atemporal, funcional e sensível aos detalhes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
+<header class="header" id="header">
+  <a class="logo" href="#inicio" aria-label="FORMA — início">FORMA</a>
+  <nav class="nav" id="main-navigation" aria-label="Navegação principal">
+    <a href="#projetos">Projetos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#estudio">Estúdio</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
+</header>
 
-
-    <!-- =====================================================
-         CABEÇALHO
-    ====================================================== -->
-
-    <header class="header">
-
-        <a
-            href="#"
-            class="logo"
-            aria-label="Forma — início"
-        >
-            FORMA
-        </a>
-
-
-        <nav
-            class="nav"
-            id="main-navigation"
-            aria-label="Navegação principal"
-        >
-
-            <a href="#projetos">
-                Projetos
-            </a>
-
-            <a href="#estudio">
-                Estúdio
-            </a>
-
-            <a href="#contato">
-                Contato
-            </a>
-
-        </nav>
-
-
-        <button
-            class="menu-button"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false"
-            aria-controls="main-navigation"
-        >
-
-            <span></span>
-            <span></span>
-
-        </button>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <main>
-
-
-        <section class="hero">
-
-    <div class="hero-image"></div>
-
-    <div class="hero-overlay"></div>
-
-
-    <div class="hero-content">
-
-        <span class="eyebrow">
-            ARQUITETURA · INTERIORES
-        </span>
-
-
-        <h1>
-            Espaços que
-            <em>permanecem.</em>
-        </h1>
-
-
-        <p>
-            Arquitetura e interiores pensados
-            para criar espaços atemporais,
-            funcionais e essencialmente humanos.
-        </p>
-
-
-        <a
-            href="#projetos"
-            class="hero-link"
-        >
-            Explorar projetos
-            <span aria-hidden="true">↘</span>
-        </a>
-
-    </div>
-
-
-    <div class="hero-index">
-        01 / 04
-    </div>
-
-
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-image"></div><div class="hero-overlay"></div>
+  <div class="hero-content reveal">
+    <span class="eyebrow">ARQUITETURA · INTERIORES</span>
+    <h1>Espaços que <em>permanecem.</em></h1>
+    <p>Projetos pensados para equilibrar matéria, luz e proporção — criando ambientes contemporâneos que fazem sentido hoje e no futuro.</p>
+    <a href="#projetos" class="hero-link">Explorar projetos <span>↘</span></a>
+  </div>
+  <div class="hero-meta"><span>ESTÚDIO FORMA</span><span>01 / 04</span></div>
 </section>
 
-
-
-        <!-- =====================================================
-             PROJETOS
-        ====================================================== -->
-
-        <section
-            class="projects"
-            id="projetos"
-        >
-
-
-            <div class="section-header">
-
-                <span>
-                    01
-                </span>
-
-                <p>
-                    Projetos selecionados
-                </p>
-
-            </div>
-
-
-            <div class="projects-grid">
-
-
-                <article class="project project-large">
-
-                    <div class="project-image">
-
-                        <img
-                            src="assets/project-01.jpg"
-                            alt="Projeto residencial contemporâneo"
-                            loading="eager"
-                        >
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-
-                            <span>
-                                RESIDENCIAL
-                            </span>
-
-                            <h2>
-                                Casa Horizonte
-                            </h2>
-
-                        </div>
-
-                        <span class="project-year">
-                            2026
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-image">
-
-                        <img
-                            src="assets/project-02.jpg"
-                            alt="Interior contemporâneo"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-
-                            <span>
-                                INTERIORES
-                            </span>
-
-                            <h2>
-                                Apartamento 24
-                            </h2>
-
-                        </div>
-
-                        <span class="project-year">
-                            2026
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-image">
-
-                        <img
-                            src="assets/project-03.jpg"
-                            alt="Projeto arquitetônico"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="project-info">
-
-                        <div>
-
-                            <span>
-                                ARQUITETURA
-                            </span>
-
-                            <h2>
-                                Casa Norte
-                            </h2>
-
-                        </div>
-
-                        <span class="project-year">
-                            2025
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ESTÚDIO
-        ====================================================== -->
-
-        <section
-            class="studio"
-            id="estudio"
-        >
-
-
-            <div class="section-header">
-
-                <span>
-                    02
-                </span>
-
-                <p>
-                    O estúdio
-                </p>
-
-            </div>
-
-
-            <div class="studio-content">
-
-                <h2>
-                    Menos forma.
-                    <br>
-                    Mais <em>essência.</em>
-                </h2>
-
-
-                <div class="studio-text">
-
-                    <p>
-                        A Forma é um estúdio conceitual
-                        dedicado à arquitetura e ao design
-                        de interiores.
-                    </p>
-
-                    <p>
-                        Trabalhamos com materiais,
-                        proporções e luz para criar espaços
-                        que permanecem relevantes ao longo
-                        do tempo.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONTATO
-        ====================================================== -->
-
-        <section
-            class="contact"
-            id="contato"
-        >
-
-
-            <span class="eyebrow">
-                NOVO PROJETO
-            </span>
-
-
-            <h2>
-                Vamos criar
-                <em>um espaço.</em>
-            </h2>
-
-
-            <a
-                href="mailto:hello@forma.studio"
-                class="contact-link"
-            >
-                hello@forma.studio
-                <span aria-hidden="true">↗</span>
-            </a>
-
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         RODAPÉ
-    ====================================================== -->
-
-    <footer class="footer">
-
-        <span>
-            © <span data-year>2026</span> FORMA
-        </span>
-
-        <span>
-            ARQUITETURA · INTERIORES
-        </span>
-
-    </footer>
-
-
-
-    <!-- JS -->
-
-    <script src="script.js"></script>
-
+<section class="intro">
+  <div class="section-label"><span>01</span><span>Uma arquitetura essencial</span></div>
+  <div class="intro-grid">
+    <h2>Projetar é <em>dar sentido</em> ao espaço.</h2>
+    <div class="intro-copy">
+      <p>Cada projeto começa com uma leitura cuidadosa do lugar, da rotina e das pessoas que irão vivê-lo.</p>
+      <p>Da primeira ideia aos detalhes finais, buscamos uma arquitetura silenciosa, precisa e duradoura.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projetos">
+  <div class="section-label"><span>02</span><span>Projetos selecionados</span></div>
+  <div class="projects-grid">
+    <article class="project project-feature reveal">
+      <div class="project-image"><img src="assets/project-01.jpg" alt="Casa Horizonte — projeto residencial" loading="lazy"><span class="project-number">01</span></div>
+      <div class="project-info"><div><span>RESIDENCIAL</span><h3>Casa Horizonte</h3></div><span class="project-year">2026</span></div>
+    </article>
+    <article class="project reveal">
+      <div class="project-image"><img src="assets/project-02.jpg" alt="Apartamento 24 — projeto de interiores" loading="lazy"><span class="project-number">02</span></div>
+      <div class="project-info"><div><span>INTERIORES</span><h3>Apartamento 24</h3></div><span class="project-year">2026</span></div>
+    </article>
+    <article class="project reveal">
+      <div class="project-image"><img src="assets/project-03.jpg" alt="Casa Norte — projeto arquitetônico" loading="lazy"><span class="project-number">03</span></div>
+      <div class="project-info"><div><span>ARQUITETURA</span><h3>Casa Norte</h3></div><span class="project-year">2025</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="section-label"><span>03</span><span>Serviços</span></div>
+  <div class="services-grid">
+    <article><span>01</span><h3>Arquitetura</h3><p>Projetos residenciais e comerciais, do estudo inicial ao detalhamento necessário para a execução.</p><a href="#contato">Conversar sobre um projeto ↗</a></article>
+    <article><span>02</span><h3>Interiores</h3><p>Ambientes completos com curadoria de materiais, mobiliário, iluminação e composição.</p><a href="#contato">Conversar sobre um projeto ↗</a></article>
+    <article><span>03</span><h3>Consultoria</h3><p>Orientação para transformar um espaço existente com decisões mais seguras e coerentes.</p><a href="#contato">Conversar sobre um projeto ↗</a></article>
+  </div>
+</section>
+
+<section class="studio" id="estudio">
+  <div class="section-label"><span>04</span><span>O estúdio</span></div>
+  <div class="studio-grid">
+    <div class="studio-statement"><h2>Menos excesso.<br>Mais <em>essência.</em></h2></div>
+    <div class="studio-copy">
+      <p class="lead">A FORMA é um estúdio conceitual de arquitetura e interiores que acredita em espaços com identidade, mas sem excessos.</p>
+      <p>Trabalhamos com materiais naturais, proporções, luz e circulação para construir experiências que sejam bonitas, funcionais e verdadeiramente habitáveis.</p>
+      <div class="studio-details"><div><span>ABORDAGEM</span><strong>Contemporânea</strong></div><div><span>FOCO</span><strong>Residencial · Interiores</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-label"><span>05</span><span>Como trabalhamos</span></div>
+  <div class="process-grid">
+    <article><span>01</span><h3>Entender</h3><p>Conversamos sobre o espaço, necessidades, referências e objetivos.</p></article>
+    <article><span>02</span><h3>Conceber</h3><p>Transformamos essas informações em conceito, layout, materiais e atmosfera.</p></article>
+    <article><span>03</span><h3>Detalhar</h3><p>Refinamos cada escolha para que o projeto possa sair do papel com clareza.</p></article>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <span class="eyebrow">NOVO PROJETO</span>
+  <h2>Seu espaço pode<br>ter mais <em>sentido.</em></h2>
+  <p>Conte brevemente o que você está planejando e vamos conversar.</p>
+  <a class="contact-button" href="#" data-whatsapp>Falar sobre meu projeto <span>↗</span></a>
+  <span class="contact-note">Atendimento mediante agendamento</span>
+</section>
+</main>
+
+<footer class="footer">
+  <div><span class="footer-logo">FORMA</span><span>ARQUITETURA · INTERIORES</span></div>
+  <div><span>© <span data-year>2026</span> FORMA</span><a href="#inicio">Voltar ao topo ↑</a></div>
+</footer>
+<script src="script.js"></script>
 </body>
-
 </html>
