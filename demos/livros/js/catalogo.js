@@ -18,7 +18,7 @@ const livros = [
         estado: "Bom estado",
         ano: 1985,
         paginas: 256,
-        imagem: "assets/livros/dom-casmurro.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -30,7 +30,7 @@ const livros = [
         estado: "Muito bom",
         ano: 2012,
         paginas: 336,
-        imagem: "assets/livros/o-hobbit.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -42,7 +42,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2008,
         paginas: 96,
-        imagem: "assets/livros/o-pequeno-principe.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -54,7 +54,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2019,
         paginas: 416,
-        imagem: "assets/livros/1984.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -66,7 +66,7 @@ const livros = [
         estado: "Muito bom",
         ano: 2016,
         paginas: 96,
-        imagem: "assets/livros/a-metamorfose.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -78,7 +78,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2010,
         paginas: 592,
-        imagem: "assets/livros/o-nome-da-rosa.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -90,7 +90,7 @@ const livros = [
         estado: "Muito bom",
         ano: 2018,
         paginas: 464,
-        imagem: "assets/livros/sapiens.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -102,7 +102,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2015,
         paginas: 560,
-        imagem: "assets/livros/o-mundo-de-sofia.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -114,7 +114,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2009,
         paginas: 688,
-        imagem: "assets/livros/historia-da-arte.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -126,7 +126,7 @@ const livros = [
         estado: "Regular",
         ano: 2006,
         paginas: 624,
-        imagem: "assets/livros/grande-sertao.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -138,7 +138,7 @@ const livros = [
         estado: "Muito bom",
         ano: 2014,
         paginas: 128,
-        imagem: "assets/livros/o-estrangeiro.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     },
 
     {
@@ -150,7 +150,7 @@ const livros = [
         estado: "Bom estado",
         ano: 2011,
         paginas: 448,
-        imagem: "assets/livros/cem-anos-de-solidao.jpg"
+        imagem: "assets/garimposdasemanajpg.webp"
     }
 
 ];
