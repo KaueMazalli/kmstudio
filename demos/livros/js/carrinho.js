@@ -409,13 +409,25 @@ function handleCheckout() {
     }
 
 
-    /*
-       O WhatsApp será configurado na próxima etapa.
+    const nameInput = document.getElementById("customer-name");
+    const cityInput = document.getElementById("customer-city");
+    const noteInput = document.getElementById("customer-note");
+    const errorMessage = document.getElementById("checkout-error");
 
-       Por enquanto, o botão apenas sinaliza
-       que o pedido está pronto para finalizar.
-    */
+    const name = nameInput ? nameInput.value.trim() : "";
+    const city = cityInput ? cityInput.value.trim() : "";
+    const note = noteInput ? noteInput.value.trim() : "";
 
+    if (!name || !city) {
+        if (errorMessage) errorMessage.hidden = false;
+        if (!name && nameInput) nameInput.focus();
+        else if (cityInput) cityInput.focus();
+        return;
+    }
+
+    if (errorMessage) errorMessage.hidden = true;
+
+    /* Substitua pelo WhatsApp real do sebo antes de publicar. */
     const number = "5511999999999";
 
     const items = cart.map((item) => {
@@ -428,9 +440,24 @@ function handleCheckout() {
         return sum + ((Number(item.preco) || 0) * (Number(item.quantity) || 1));
     }, 0);
 
-    const message = `Olá! Gostaria de fazer um pedido pelo Entrelinhas.\n\n*Livros:*\n${items}\n\n*Total:* ${formatPrice(total)}`;
+    const message = [
+        "Olá! Gostaria de fazer um pedido pelo Entrelinhas.",
+        "",
+        "*Dados do cliente:*",
+        `Nome: ${name}`,
+        `Cidade: ${city}`,
+        "",
+        "*Livros:*",
+        items,
+        "",
+        `*Total:* ${formatPrice(total)}`,
+        note ? `*Observação:* ${note}` : ""
+    ].filter(Boolean).join("\n");
 
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(
+        `https://wa.me/${number}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
 
 }
 
