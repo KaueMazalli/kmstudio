@@ -891,180 +891,120 @@ textarea {
 }
 
 
+
 /* =========================================================
-   RESPONSIVO — TABLET
+   HERO / AÇÕES
 ========================================================= */
-
-@media (max-width: 900px) {
-
-    .products-grid {
-
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
-    }
-
+.hero {
+    min-height: 540px;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, rgba(20,20,20,.78), rgba(20,20,20,.34)), url("../assets/banners/hero.jpg");
+    background-size: cover;
+    background-position: center;
 }
-
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: .98; letter-spacing: -.055em; }
+.hero p { max-width: 620px; }
+.hero-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+.btn-secondary { background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); }
+.btn-secondary:hover { background:rgba(255,255,255,.2); }
 
 /* =========================================================
-   RESPONSIVO — MOBILE
+   BENEFÍCIOS
 ========================================================= */
-
-@media (max-width: 650px) {
-
-    .header-container {
-
-        width: min(
-            calc(100% - 28px),
-            var(--container)
-        );
-
-        height: 64px;
-
-    }
-
-
-    .main-nav {
-
-        gap: 18px;
-
-    }
-
-
-    .main-nav > a {
-
-        font-size: 0.88rem;
-
-    }
-
-
-    .hero {
-
-        min-height: 390px;
-
-        padding: 50px 20px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 2.2rem;
-
-    }
-
-
-    .hero p {
-
-        font-size: 0.95rem;
-
-    }
-
-
-    .products-section {
-
-        width: min(
-            calc(100% - 28px),
-            var(--container)
-        );
-
-        padding: 55px 0;
-
-    }
-
-
-    .section-header {
-
-        margin-bottom: 22px;
-
-    }
-
-
-    .section-header h2 {
-
-        font-size: 1.7rem;
-
-    }
-
-
-    .products-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 12px;
-
-    }
-
-
-    .product-info {
-
-        padding: 13px;
-
-    }
-
-
-    .product-category {
-
-        font-size: 0.65rem;
-
-    }
-
-
-    .product-title {
-
-        min-height: 44px;
-
-        font-size: 0.88rem;
-
-    }
-
-
-    .product-price {
-
-        font-size: 1rem;
-
-    }
-
-
-    .product-old-price {
-
-        display: block;
-
-        margin: 2px 0 0;
-
-    }
-
-
-    .product-info .btn {
-
-        min-height: 42px;
-
-        padding: 9px;
-
-        font-size: 0.82rem;
-
-    }
-
-
-    .radio-group {
-
-        flex-direction: column;
-
-    }
-
-
-    .footer-container {
-
-        min-height: 100px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        justify-content: center;
-
-    }
-
+.benefits-strip {
+    width:min(calc(100% - 40px),var(--container)); margin:-38px auto 0; position:relative; z-index:2;
+    display:grid; grid-template-columns:repeat(3,1fr); background:#fff; border:1px solid var(--border);
+    border-radius:16px; box-shadow:0 18px 50px rgba(0,0,0,.08);
+}
+.benefit-item { display:flex; align-items:center; gap:14px; padding:22px; }
+.benefit-item + .benefit-item { border-left:1px solid var(--border); }
+.benefit-icon { width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:50%;background:rgba(216,74,39,.09);color:var(--primary-color);font-weight:900; }
+.benefit-item strong,.benefit-item span { display:block; }
+.benefit-item strong { margin-bottom:3px;font-size:.9rem; }
+.benefit-item span { color:var(--text-light);font-size:.78rem; }
+
+/* =========================================================
+   CATÁLOGO / FILTROS
+========================================================= */
+.products-section { padding:100px 0 80px; }
+.section-header { display:flex;align-items:end;justify-content:space-between;gap:24px; }
+.section-header h2 { font-size:clamp(1.8rem,4vw,2.5rem); }
+.search-box { width:min(300px,100%);height:46px;display:flex;align-items:center;gap:9px;padding:0 14px;background:#fff;border:1px solid var(--border);border-radius:999px; }
+.search-box input { width:100%;border:0;outline:0;background:transparent;color:var(--text);font-size:.9rem; }
+.category-bar { display:flex;gap:8px;overflow-x:auto;padding:4px 0 22px;scrollbar-width:none; }
+.category-bar::-webkit-scrollbar { display:none; }
+.category-filter { flex:0 0 auto;padding:9px 15px;border:1px solid var(--border);border-radius:999px;background:#fff;color:var(--text-light);cursor:pointer;font-size:.82rem;font-weight:700;transition:.2s ease; }
+.category-filter:hover,.category-filter.active { border-color:var(--primary-color);background:var(--primary-color);color:#fff; }
+
+/* =========================================================
+   CARDS
+========================================================= */
+.product-card { border-radius:14px; }
+.product-view { position:absolute;left:12px;bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(20,20,20,.78);color:#fff;font-size:.72rem;font-weight:700;opacity:0;transform:translateY(5px);transition:.2s ease; }
+.product-card:hover .product-view { opacity:1;transform:translateY(0); }
+.product-description { display:-webkit-box;margin-bottom:18px;overflow:hidden;color:var(--text-light);font-size:.82rem;line-height:1.5;-webkit-box-orient:vertical;-webkit-line-clamp:2; }
+.product-bottom { display:flex;flex-direction:column;gap:12px;margin-top:auto; }
+.product-add { width:100%; }
+.empty-products { padding:40px 20px;border:1px dashed var(--border);border-radius:14px;background:#fff;color:var(--text-light);text-align:center; }
+
+/* =========================================================
+   COMO FUNCIONA / CTA
+========================================================= */
+.how-section { padding:90px 0;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+.how-header { width:min(calc(100% - 40px),720px);margin:0 auto 42px;text-align:center; }
+.how-header h2,.local-cta h2 { margin-bottom:12px;color:var(--text);font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em; }
+.how-header p,.local-cta p { color:var(--text-light); }
+.steps-grid { width:min(calc(100% - 40px),var(--container));margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px; }
+.step-card { padding:28px;border:1px solid var(--border);border-radius:14px;background:var(--background); }
+.step-number { display:block;margin-bottom:28px;color:var(--primary-color);font-size:.78rem;font-weight:900;letter-spacing:.12em; }
+.step-card h3 { margin-bottom:8px;font-size:1rem; }
+.step-card p { color:var(--text-light);font-size:.88rem; }
+.local-cta { width:min(calc(100% - 40px),var(--container));margin:80px auto;padding:44px;display:flex;align-items:center;justify-content:space-between;gap:30px;border-radius:18px;background:#191919;color:#fff; }
+.local-cta h2 { color:#fff; }
+.local-cta p { max-width:620px; }
+.local-cta .section-label { color:var(--accent-color); }
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+.footer-container { min-height:110px; }
+.footer-container > div span { display:block;margin-top:4px;color:var(--text-light);font-size:.78rem; }
+.footer-container > a { color:var(--text-light);font-size:.82rem;font-weight:700; }
+.footer-container > a:hover { color:var(--primary-color); }
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width:900px) {
+    .benefits-strip { grid-template-columns:1fr; }
+    .benefit-item + .benefit-item { border-left:0;border-top:1px solid var(--border); }
+    .steps-grid { grid-template-columns:1fr; }
+    .section-header { align-items:stretch;flex-direction:column; }
+    .search-box { width:100%; }
+}
+@media (max-width:650px) {
+    .header-container { width:min(calc(100% - 28px),var(--container));height:64px; }
+    .main-nav { gap:10px; }
+    .main-nav > a:not(.cart-link) { display:none; }
+    .cart-link { gap:5px;font-size:.82rem !important; }
+    .hero { min-height:500px;padding:60px 20px; }
+    .hero h1 { font-size:clamp(2.5rem,12vw,3.6rem); }
+    .hero p { font-size:.95rem; }
+    .benefits-strip { width:min(calc(100% - 28px),var(--container));margin-top:-25px;border-radius:13px; }
+    .benefit-item { padding:17px; }
+    .products-section { width:min(calc(100% - 28px),var(--container));padding:70px 0; }
+    .products-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
+    .product-info { padding:13px; }
+    .product-category { font-size:.62rem; }
+    .product-title { min-height:0;margin-bottom:8px;font-size:.88rem; }
+    .product-description { font-size:.74rem; }
+    .product-price { margin-bottom:0;font-size:.95rem; }
+    .product-old-price { display:block;margin:2px 0 0; }
+    .product-info .btn { min-height:40px;padding:8px;font-size:.78rem; }
+    .product-view { display:none; }
+    .how-section { padding:70px 0; }
+    .steps-grid { width:min(calc(100% - 28px),var(--container)); }
+    .step-card { padding:22px; }
+    .local-cta { width:min(calc(100% - 28px),var(--container));margin:60px auto;padding:28px 22px;align-items:flex-start;flex-direction:column; }
+    .footer-container { width:min(calc(100% - 28px),var(--container));min-height:120px;align-items:flex-start;justify-content:center; }
 }
