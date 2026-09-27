@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalização do pedido no Entrelinhas — Sebo & Livraria.">
+    <meta name="theme-color" content="#1c1916">
+    <title>Finalizar pedido — Entrelinhas</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="Entrelinhas — início">Entrelinhas</a>
+            <nav class="desktop-nav" aria-label="Navegação principal">
+                <a href="livros.html">Livros</a>
+                <a href="index.html#categorias">Categorias</a>
+                <a href="index.html#sobre">Sobre</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-button" type="button" aria-label="Pesquisar"><i data-lucide="search"></i></button>
+                <a href="carrinho.html" class="cart-button" aria-label="Abrir carrinho">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação mobile">
+            <a href="livros.html">Livros</a>
+            <a href="index.html#categorias">Categorias</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout-section">
+            <div class="container">
+                <div class="page-heading">
+                    <p class="eyebrow">Finalização</p>
+                    <h1>Dados para envio</h1>
+                    <p class="page-intro">Preencha o endereço de entrega. Depois, seu pedido será enviado pelo WhatsApp para confirmação.</p>
+                </div>
+
+                <div class="checkout-layout">
+                    <form class="checkout-form" id="checkout-form" novalidate>
+                        <div class="form-section">
+                            <div class="form-section-heading">
+                                <span>01</span>
+                                <div>
+                                    <p class="eyebrow">Destinatário</p>
+                                    <h2>Seus dados</h2>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-field form-field-full">
+                                    <label for="customer-name">Nome completo *</label>
+                                    <input type="text" id="customer-name" autocomplete="name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-cpf">CPF *</label>
+                                    <input type="text" id="customer-cpf" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="000.000.000-00" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-phone">Telefone / WhatsApp *</label>
+                                    <input type="tel" id="customer-phone" inputmode="tel" autocomplete="tel" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="form-section-heading">
+                                <span>02</span>
+                                <div>
+                                    <p class="eyebrow">Entrega</p>
+                                    <h2>Endereço</h2>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="customer-cep">CEP *</label>
+                                    <input type="text" id="customer-cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000" required>
+                                </div>
+                                <div class="form-field form-field-wide">
+                                    <label for="customer-address">Endereço *</label>
+                                    <input type="text" id="customer-address" autocomplete="street-address" placeholder="Rua, avenida..." required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-number">Número *</label>
+                                    <input type="text" id="customer-number" autocomplete="address-line2" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-complement">Complemento</label>
+                                    <input type="text" id="customer-complement" placeholder="Apto., bloco, casa...">
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-neighborhood">Bairro *</label>
+                                    <input type="text" id="customer-neighborhood" autocomplete="address-level3" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-city">Cidade *</label>
+                                    <input type="text" id="customer-city" autocomplete="address-level2" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="customer-state">Estado *</label>
+                                    <select id="customer-state" autocomplete="address-level1" required>
+                                        <option value="">Selecione</option>
+                                        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                                        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                                        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                                        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                                        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                                        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                                        <option>SP</option><option>SE</option><option>TO</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="form-section-heading">
+                                <span>03</span>
+                                <div>
+                                    <p class="eyebrow">Pedido</p>
+                                    <h2>Observações</h2>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="customer-note">Observação</label>
+                                <textarea id="customer-note" rows="4" placeholder="Alguma informação importante para o envio?"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="form-error" id="checkout-error" hidden>Preencha todos os campos obrigatórios para continuar.</p>
+
+                        <button type="submit" class="button button-dark checkout-submit">
+                            Enviar pedido pelo WhatsApp
+                            <i data-lucide="message-circle"></i>
+                        </button>
+
+                        <a href="carrinho.html" class="back-link">
+                            <i data-lucide="arrow-left"></i>
+                            Voltar ao carrinho
+                        </a>
+                    </form>
+
+                    <aside class="order-summary">
+                        <div class="summary-heading">
+                            <span>Seu pedido</span>
+                            <span id="summary-items">0 itens</span>
+                        </div>
+                        <div id="checkout-items" class="checkout-items"></div>
+                        <div class="summary-total">
+                            <span>Total dos livros</span>
+                            <strong id="checkout-total">R$ 0,00</strong>
+                        </div>
+                        <p class="summary-note">O frete e a forma de pagamento serão combinados pelo WhatsApp após o envio do pedido.</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Entrelinhas</a>
+                <p>Livros que já viveram outras histórias.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navegação</h3>
+                <a href="livros.html">Livros</a>
+                <a href="index.html#categorias">Categorias</a>
+                <a href="index.html#sobre">Sobre</a>
+            </div>
+            <div class="footer-column">
+                <h3>Atendimento</h3>
+                <a href="#">WhatsApp</a>
+                <a href="#">Instagram</a>
+                <a href="#">contato@exemplo.com</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Entrelinhas. Todos os direitos reservados.</span>
+            <span>Modelo demonstrativo KM Studio</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
