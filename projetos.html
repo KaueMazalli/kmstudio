@@ -33,13 +33,10 @@
 </div>
 
 <div class="portfolio-grid">
-<a href="https://mazallipiscinas.pages.dev/" class="project-card" target="_blank" rel="noopener noreferrer">
-<div class="project-image">
-<div class="completed-project-cover">
-<span>MAZALLI</span>
-<strong>PISCINAS</strong>
-<small>Site institucional · Projeto publicado</small>
-</div>
+<a href="https://mazallipiscinas.pages.dev/" class="project-card completed-project-card" target="_blank" rel="noopener noreferrer">
+<div class="project-image completed-project-preview">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fmazallipiscinas.pages.dev%2F&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia automática do site Mazalli Piscinas" loading="lazy" width="1200" height="800">
+<span class="completed-project-label">ABRIR PROJETO <span>↗</span></span>
 </div>
 <div class="project-info">
 <span class="project-number">01</span>
@@ -65,52 +62,55 @@
 <script src="script.js"></script>
 
 <style>
-.completed-project-cover{
-    min-height:320px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:42px;
-    box-sizing:border-box;
-    background:linear-gradient(135deg,#063b70,#07529a 55%,#12b8c4);
+.completed-project-preview{
     position:relative;
     overflow:hidden;
+    aspect-ratio:3/2;
 }
-.completed-project-cover::after{
+.completed-project-preview img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .55s ease,filter .35s ease;
+}
+.completed-project-preview::after{
     content:"";
     position:absolute;
-    width:280px;
-    height:280px;
-    right:-90px;
-    bottom:-120px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:50%;
-    box-shadow:0 0 0 45px rgba(255,255,255,.04),0 0 0 90px rgba(255,255,255,.025);
+    inset:0;
+    background:linear-gradient(180deg,transparent 45%,rgba(6,11,17,.72) 100%);
+    opacity:0;
+    transition:opacity .35s ease;
+    pointer-events:none;
 }
-.completed-project-cover>*{position:relative;z-index:1}
-.completed-project-cover span{
-    font-size:10px;
-    letter-spacing:4px;
-    font-weight:600;
-    color:#fff;
+.completed-project-card:hover .completed-project-preview img{
+    transform:scale(1.035);
+    filter:brightness(.78);
 }
-.completed-project-cover strong{
-    margin-top:10px;
-    font-family:var(--serif);
-    font-size:clamp(42px,5vw,68px);
-    font-weight:400;
-    line-height:1;
-    color:#fff;
+.completed-project-card:hover .completed-project-preview::after{
+    opacity:1;
 }
-.completed-project-cover small{
-    margin-top:22px;
-    font-size:10px;
-    letter-spacing:1px;
-    color:rgba(255,255,255,.75);
+.completed-project-label{
+    position:absolute;
+    z-index:2;
+    right:20px;
+    bottom:18px;
+    padding:10px 13px;
+    border:1px solid rgba(217,199,166,.55);
+    background:rgba(6,11,17,.72);
+    color:var(--gold);
+    font-size:8px;
+    font-weight:500;
+    letter-spacing:1.5px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .35s ease,transform .35s ease;
+    backdrop-filter:blur(8px);
 }
+.completed-project-label span{margin-left:7px;font-size:11px}
+.completed-project-card:hover .completed-project-label{opacity:1;transform:translateY(0)}
 @media(max-width:700px){
-    .completed-project-cover{min-height:280px;padding:30px 26px}
+    .completed-project-label{opacity:1;transform:none;right:14px;bottom:14px;padding:9px 11px}
 }
 </style>
 </body>
