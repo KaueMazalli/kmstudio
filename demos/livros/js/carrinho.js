@@ -416,9 +416,21 @@ function handleCheckout() {
        que o pedido está pronto para finalizar.
     */
 
-    alert(
-        "O pedido está pronto para ser enviado. Vamos configurar o WhatsApp na próxima etapa."
-    );
+    const number = "5511999999999";
+
+    const items = cart.map((item) => {
+        const quantity = Number(item.quantity) || 1;
+        const total = (Number(item.preco) || 0) * quantity;
+        return `• ${item.titulo} — ${quantity}x — ${formatPrice(total)}`;
+    }).join("\n");
+
+    const total = cart.reduce((sum, item) => {
+        return sum + ((Number(item.preco) || 0) * (Number(item.quantity) || 1));
+    }, 0);
+
+    const message = `Olá! Gostaria de fazer um pedido pelo Entrelinhas.\n\n*Livros:*\n${items}\n\n*Total:* ${formatPrice(total)}`;
+
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
 
 }
 
