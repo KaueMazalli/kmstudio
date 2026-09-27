@@ -1253,6 +1253,37 @@ em {
 .how-to {
     background-size: cover;
     background-position: center;
+    color: var(--white);
+}
+
+.how-to .eyebrow {
+    color: var(--brown-light);
+}
+
+.how-to h2 {
+    color: var(--white);
+}
+
+.how-to .steps-grid {
+    border-top-color: rgba(255, 255, 255, 0.28);
+    border-bottom-color: rgba(255, 255, 255, 0.28);
+}
+
+.how-to .step {
+    border-right-color: rgba(255, 255, 255, 0.28);
+}
+
+.how-to .step > span {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.how-to .step > svg,
+.how-to .step h3 {
+    color: var(--white);
+}
+
+.how-to .step p {
+    color: rgba(255, 255, 255, 0.72);
 }
 
 .final-cta {
