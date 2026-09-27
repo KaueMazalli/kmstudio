@@ -1,0 +1,493 @@
+/* =========================================================
+   ENTRELINHAS — CATÁLOGO
+========================================================= */
+
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+
+.catalog-hero {
+    padding: 100px 0 90px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.catalog-hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(
+        3.2rem,
+        6vw,
+        6rem
+    );
+
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.catalog-hero > .container > p:last-child {
+    max-width: 520px;
+
+    margin-top: 30px;
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   CATALOG SECTION
+========================================================= */
+
+.catalog-section {
+    padding: 80px 0 120px;
+}
+
+.catalog-layout {
+    display: grid;
+
+    grid-template-columns: 230px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.catalog-filters {
+    position: sticky;
+    top: 30px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-header h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+}
+
+.filter-header button {
+    color: var(--text-soft);
+
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.filter-group {
+    padding: 24px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-group label {
+    display: block;
+
+    margin-bottom: 11px;
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.search-field {
+    position: relative;
+}
+
+.search-field svg {
+    position: absolute;
+
+    top: 50%;
+    left: 12px;
+
+    width: 15px;
+    height: 15px;
+
+    color: var(--text-soft);
+
+    transform: translateY(-50%);
+}
+
+.search-field input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px 0 38px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0;
+
+    color: var(--text);
+
+    font-size: 0.7rem;
+
+    outline: none;
+}
+
+.search-field input:focus {
+    border-color: var(--text);
+}
+
+.catalog-filters select {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    appearance: none;
+
+    background-color: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 0;
+
+    color: var(--text);
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.catalog-filters select:focus {
+    border-color: var(--text);
+}
+
+.price-fields {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.price-fields input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 9px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0;
+
+    color: var(--text);
+
+    font-family: var(--sans);
+    font-size: 0.68rem;
+
+    outline: none;
+}
+
+.price-fields input:focus {
+    border-color: var(--text);
+}
+
+.price-fields span {
+    color: var(--text-soft);
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.catalog-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+#results-count {
+    color: var(--text-soft);
+
+    font-size: 0.68rem;
+}
+
+.sort-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.sort-wrapper label {
+    color: var(--text-soft);
+
+    font-size: 0.62rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.sort-wrapper select {
+    padding: 5px 0;
+
+    background: transparent;
+
+    border: 0;
+
+    color: var(--text);
+
+    font-family: var(--sans);
+    font-size: 0.68rem;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.catalog-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 50px 22px;
+}
+
+
+/* =========================================================
+   BOOK CARD OVERRIDES
+========================================================= */
+
+.catalog-grid .book-image {
+    aspect-ratio: 0.76;
+}
+
+
+/* =========================================================
+   ADDED STATE
+========================================================= */
+
+.catalog-grid .add-button.added {
+    background: var(--brown);
+    color: var(--white);
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    text-align: center;
+}
+
+.empty-state[hidden] {
+    display: none;
+}
+
+.empty-state > svg {
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 24px;
+
+    color: var(--brown);
+
+    stroke-width: 1.3;
+}
+
+.empty-state h2 {
+    margin-bottom: 12px;
+
+    font-size: 2rem;
+}
+
+.empty-state p {
+    max-width: 350px;
+
+    margin-bottom: 28px;
+
+    color: var(--text-soft);
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   MOBILE FILTER
+========================================================= */
+
+.filter-mobile-button {
+    display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .catalog-layout {
+        grid-template-columns: 200px minmax(0, 1fr);
+
+        gap: 40px;
+    }
+
+    .catalog-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .catalog-hero {
+        padding: 70px 0 65px;
+    }
+
+    .catalog-hero h1 {
+        font-size: clamp(
+            3rem,
+            12vw,
+            5rem
+        );
+    }
+
+    .catalog-section {
+        padding: 55px 0 80px;
+    }
+
+    .filter-mobile-button {
+        width: 100%;
+        min-height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 9px;
+
+        margin-bottom: 20px;
+
+        background: var(--text);
+        color: var(--white);
+
+        font-size: 0.68rem;
+        font-weight: 700;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .filter-mobile-button svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .catalog-layout {
+        display: block;
+    }
+
+    .catalog-filters {
+        position: static;
+
+        display: none;
+
+        margin-bottom: 35px;
+
+        padding: 0 18px;
+
+        border: 1px solid var(--border);
+    }
+
+    .catalog-filters.is-open {
+        display: block;
+    }
+
+    .catalog-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .sort-wrapper {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .catalog-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 38px 14px;
+    }
+
+    .catalog-grid .book-info h3 {
+        font-size: 1.05rem;
+    }
+
+    .catalog-grid .book-author {
+        font-size: 0.65rem;
+    }
+
+}

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Entrelinhas — Sebo e livraria. Encontre clássicos, descobertas e livros que merecem uma nova estante."
+    >
+
+    <meta name="theme-color" content="#1c1916">
+
+    <title>Entrelinhas — Sebo & Livraria</title>
+
+    <!-- FAVICON -->
+    <link
+        rel="icon"
+        href="assets/favicon.svg"
+        type="image/svg+xml"
+    >
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo" aria-label="Entrelinhas — início">
+                Entrelinhas
+            </a>
+
+            <nav class="desktop-nav" aria-label="Navegação principal">
+
+                <a href="livros.html">Livros</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#sobre">Sobre</a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                    aria-label="Pesquisar"
+                >
+                    <i data-lucide="search"></i>
+                </button>
+
+                <a
+                    href="carrinho.html"
+                    class="cart-button"
+                    aria-label="Abrir carrinho"
+                >
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <button
+                    class="menu-button"
+                    id="menu-button"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <i data-lucide="menu"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <nav
+            class="mobile-menu"
+            id="mobile-menu"
+            aria-label="Navegação mobile"
+        >
+
+            <a href="livros.html">Livros</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#sobre">Sobre</a>
+            <a href="carrinho.html">Carrinho</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        Sebo & Livraria
+                    </p>
+
+                    <h1>
+                        Livros que já
+                        <em>viveram</em>
+                        outras histórias.
+                    </h1>
+
+                    <p class="hero-description">
+                        Clássicos, descobertas e exemplares que
+                        merecem encontrar uma nova estante.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="livros.html"
+                            class="button button-primary"
+                        >
+                            Explorar acervo
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                        <a
+                            href="#sobre"
+                            class="text-link"
+                        >
+                            Conheça o sebo
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-image">
+
+                        <img
+                            src="assets/livros/hero-livros.jpg"
+                            alt="Livros antigos organizados em uma estante"
+                        >
+
+                    </div>
+
+                    <div class="hero-note">
+                        <span>Desde</span>
+                        <strong>1998</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+
+        <section
+            class="categories section"
+            id="categorias"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Explore
+                        </p>
+
+                        <h2>
+                            Encontre sua próxima leitura.
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="livros.html"
+                        class="text-link"
+                    >
+                        Ver todo o acervo
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a href="livros.html?categoria=literatura" class="category-card">
+                        <span>01</span>
+                        <h3>Literatura</h3>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="livros.html?categoria=historia" class="category-card">
+                        <span>02</span>
+                        <h3>História</h3>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="livros.html?categoria=filosofia" class="category-card">
+                        <span>03</span>
+                        <h3>Filosofia</h3>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="livros.html?categoria=arte" class="category-card">
+                        <span>04</span>
+                        <h3>Arte</h3>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DESTAQUES
+        ================================================== -->
+
+        <section class="featured section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Seleção
+                        </p>
+
+                        <h2>
+                            Destaques do acervo.
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="livros.html"
+                        class="text-link"
+                    >
+                        Ver todos
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="books-grid">
+
+                    <article class="book-card">
+
+                        <a
+                            href="produto.html?id=1"
+                            class="book-image"
+                        >
+
+                            <img
+                                src="assets/livros/dom-casmurro.jpg"
+                                alt="Dom Casmurro"
+                                loading="lazy"
+                            >
+
+                            <span class="book-status">
+                                Bom estado
+                            </span>
+
+                        </a>
+
+                        <div class="book-info">
+
+                            <p class="book-category">
+                                Literatura
+                            </p>
+
+                            <h3>
+                                <a href="produto.html?id=1">
+                                    Dom Casmurro
+                                </a>
+                            </h3>
+
+                            <p class="book-author">
+                                Machado de Assis
+                            </p>
+
+                            <div class="book-bottom">
+
+                                <strong>
+                                    R$ 28,00
+                                </strong>
+
+                                <button
+                                    type="button"
+                                    class="add-button"
+                                    aria-label="Adicionar Dom Casmurro ao carrinho"
+                                >
+                                    <i data-lucide="plus"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="book-card">
+
+                        <a
+                            href="produto.html?id=2"
+                            class="book-image"
+                        >
+
+                            <img
+                                src="assets/livros/o-hobbit.jpg"
+                                alt="O Hobbit"
+                                loading="lazy"
+                            >
+
+                            <span class="book-status">
+                                Muito bom
+                            </span>
+
+                        </a>
+
+                        <div class="book-info">
+
+                            <p class="book-category">
+                                Fantasia
+                            </p>
+
+                            <h3>
+                                <a href="produto.html?id=2">
+                                    O Hobbit
+                                </a>
+                            </h3>
+
+                            <p class="book-author">
+                                J. R. R. Tolkien
+                            </p>
+
+                            <div class="book-bottom">
+
+                                <strong>
+                                    R$ 35,00
+                                </strong>
+
+                                <button
+                                    type="button"
+                                    class="add-button"
+                                    aria-label="Adicionar O Hobbit ao carrinho"
+                                >
+                                    <i data-lucide="plus"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="book-card">
+
+                        <a
+                            href="produto.html?id=3"
+                            class="book-image"
+                        >
+
+                            <img
+                                src="assets/livros/o-pequeno-principe.jpg"
+                                alt="O Pequeno Príncipe"
+                                loading="lazy"
+                            >
+
+                            <span class="book-status">
+                                Bom estado
+                            </span>
+
+                        </a>
+
+                        <div class="book-info">
+
+                            <p class="book-category">
+                                Literatura
+                            </p>
+
+                            <h3>
+                                <a href="produto.html?id=3">
+                                    O Pequeno Príncipe
+                                </a>
+                            </h3>
+
+                            <p class="book-author">
+                                Antoine de Saint-Exupéry
+                            </p>
+
+                            <div class="book-bottom">
+
+                                <strong>
+                                    R$ 24,00
+                                </strong>
+
+                                <button
+                                    type="button"
+                                    class="add-button"
+                                    aria-label="Adicionar O Pequeno Príncipe ao carrinho"
+                                >
+                                    <i data-lucide="plus"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="book-card">
+
+                        <a
+                            href="produto.html?id=4"
+                            class="book-image"
+                        >
+
+                            <img
+                                src="assets/livros/1984.jpg"
+                                alt="1984"
+                                loading="lazy"
+                            >
+
+                            <span class="book-status">
+                                Bom estado
+                            </span>
+
+                        </a>
+
+                        <div class="book-info">
+
+                            <p class="book-category">
+                                Ficção
+                            </p>
+
+                            <h3>
+                                <a href="produto.html?id=4">
+                                    1984
+                                </a>
+                            </h3>
+
+                            <p class="book-author">
+                                George Orwell
+                            </p>
+
+                            <div class="book-bottom">
+
+                                <strong>
+                                    R$ 32,00
+                                </strong>
+
+                                <button
+                                    type="button"
+                                    class="add-button"
+                                    aria-label="Adicionar 1984 ao carrinho"
+                                >
+                                    <i data-lucide="plus"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GARIMPOS
+        ================================================== -->
+
+        <section class="discover section">
+
+            <div class="container discover-grid">
+
+                <div class="discover-image">
+
+                    <img
+                        src="assets/livros/garimpo.jpg"
+                        alt="Livros antigos sobre uma mesa"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="discover-content">
+
+                    <p class="eyebrow">
+                        Garimpos
+                    </p>
+
+                    <h2>
+                        Algumas histórias
+                        merecem ser
+                        <em>reencontradas.</em>
+                    </h2>
+
+                    <p>
+                        Entre edições antigas, clássicos esquecidos
+                        e descobertas inesperadas, nosso acervo muda
+                        constantemente.
+                    </p>
+
+                    <a
+                        href="livros.html"
+                        class="button button-dark"
+                    >
+                        Ver garimpos
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
+        <section
+            class="about section"
+            id="sobre"
+        >
+
+            <div class="container about-grid">
+
+                <div class="about-content">
+
+                    <p class="eyebrow">
+                        O sebo
+                    </p>
+
+                    <h2>
+                        Mais do que livros.
+                        <br>
+                        <em>Histórias em circulação.</em>
+                    </h2>
+
+                    <p>
+                        Acreditamos que um bom livro não precisa
+                        terminar sua história na primeira estante.
+                        Por isso, reunimos exemplares que podem
+                        ganhar novos leitores e novas memórias.
+                    </p>
+
+                    <a
+                        href="sobre.html"
+                        class="text-link"
+                    >
+                        Conheça nossa história
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="about-details">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Acervo selecionado</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Exemplares revisados</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Novas histórias</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COMO COMPRAR
+        ================================================== -->
+
+        <section class="how-to section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Como comprar
+                        </p>
+
+                        <h2>
+                            Seu próximo livro,
+                            sem complicação.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <div class="step">
+
+                        <span>01</span>
+
+                        <i data-lucide="search"></i>
+
+                        <h3>
+                            Encontre
+                        </h3>
+
+                        <p>
+                            Explore o acervo e encontre
+                            um livro que combine com você.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <span>02</span>
+
+                        <i data-lucide="shopping-bag"></i>
+
+                        <h3>
+                            Adicione
+                        </h3>
+
+                        <p>
+                            Coloque seus exemplares favoritos
+                            no carrinho.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <span>03</span>
+
+                        <i data-lucide="message-circle"></i>
+
+                        <h3>
+                            Finalize
+                        </h3>
+
+                        <p>
+                            Envie seu pedido pelo WhatsApp
+                            e combine os detalhes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    Ainda procurando?
+                </p>
+
+                <h2>
+                    Talvez o livro que você procura
+                    esteja esperando por você.
+                </h2>
+
+                <a
+                    href="livros.html"
+                    class="button button-light"
+                >
+                    Explorar o acervo
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    Entrelinhas
+                </a>
+
+                <p>
+                    Livros que já viveram outras histórias.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Navegação
+                </h3>
+
+                <a href="livros.html">Livros</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#sobre">Sobre</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Atendimento
+                </h3>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    contato@exemplo.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 Entrelinhas. Todos os direitos reservados.
+            </span>
+
+            <span>
+                Modelo demonstrativo KM Studio
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

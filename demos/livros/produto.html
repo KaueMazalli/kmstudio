@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        id="product-description"
+        content="Confira os detalhes deste livro no Entrelinhas — Sebo & Livraria."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1c1916"
+    >
+
+    <title>Livro — Entrelinhas</title>
+
+    <link
+        rel="icon"
+        href="assets/favicon.svg"
+        type="image/svg+xml"
+    >
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/produto.css"
+    >
+
+    <!-- LUCIDE -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="Entrelinhas — início"
+            >
+                Entrelinhas
+            </a>
+
+
+            <nav
+                class="desktop-nav"
+                aria-label="Navegação principal"
+            >
+
+                <a href="livros.html">
+                    Livros
+                </a>
+
+                <a href="index.html#categorias">
+                    Categorias
+                </a>
+
+                <a href="index.html#sobre">
+                    Sobre
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                    aria-label="Pesquisar"
+                >
+                    <i data-lucide="search"></i>
+                </button>
+
+
+                <a
+                    href="carrinho.html"
+                    class="cart-button"
+                    aria-label="Abrir carrinho"
+                >
+
+                    <i data-lucide="shopping-bag"></i>
+
+                    <span class="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="menu-button"
+                    id="menu-button"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <nav
+            class="mobile-menu"
+            id="mobile-menu"
+            aria-label="Navegação mobile"
+        >
+
+            <a href="livros.html">
+                Livros
+            </a>
+
+            <a href="index.html#categorias">
+                Categorias
+            </a>
+
+            <a href="index.html#sobre">
+                Sobre
+            </a>
+
+            <a href="carrinho.html">
+                Carrinho
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =================================================
+             PRODUCT
+        ================================================== -->
+
+        <section class="product-section">
+
+            <div class="container">
+
+
+                <a
+                    href="livros.html"
+                    class="back-link"
+                >
+
+                    <i data-lucide="arrow-left"></i>
+
+                    Voltar ao acervo
+
+                </a>
+
+
+                <div
+                    class="product-layout"
+                    id="product-content"
+                >
+
+                    <!-- CONTEÚDO INSERIDO PELO JS -->
+
+                </div>
+
+
+                <!-- =========================================
+                     PRODUCT DETAILS
+                ========================================== -->
+
+                <div
+                    class="product-details"
+                    id="product-details"
+                >
+
+                    <!-- INSERIDO PELO JS -->
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RELATED BOOKS
+        ================================================== -->
+
+        <section class="related-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Você também pode gostar
+                        </p>
+
+                        <h2>
+                            Outros livros para descobrir.
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="livros.html"
+                        class="text-link"
+                    >
+
+                        Ver todo o acervo
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="books-grid"
+                    id="related-books"
+                >
+
+                    <!-- INSERIDO PELO JS -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUCT NOT FOUND
+        ================================================== -->
+
+        <section
+            class="product-not-found"
+            id="product-not-found"
+            hidden
+        >
+
+            <div class="container">
+
+                <i data-lucide="book-open"></i>
+
+                <p class="eyebrow">
+                    Acervo
+                </p>
+
+                <h1>
+                    Livro não encontrado.
+                </h1>
+
+                <p>
+                    O exemplar que você procura não está
+                    disponível ou o endereço pode estar incorreto.
+                </p>
+
+                <a
+                    href="livros.html"
+                    class="button button-dark"
+                >
+                    Voltar ao acervo
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+                    Entrelinhas
+                </a>
+
+                <p>
+                    Livros que já viveram outras histórias.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Navegação
+                </h3>
+
+                <a href="livros.html">
+                    Livros
+                </a>
+
+                <a href="index.html#categorias">
+                    Categorias
+                </a>
+
+                <a href="index.html#sobre">
+                    Sobre
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Atendimento
+                </h3>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    contato@exemplo.com
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 Entrelinhas. Todos os direitos reservados.
+            </span>
+
+            <span>
+                Modelo demonstrativo KM Studio
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/produto.js"></script>
+
+</body>
+
+</html>
