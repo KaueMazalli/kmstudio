@@ -116,6 +116,13 @@
 
     <main>
 
+        <div class="store-announcement">
+            <div class="container store-announcement-inner">
+                <span>Acervo atualizado toda semana</span>
+                <a href="livros.html">Ver novidades <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+
         <!-- =================================================
              HERO
         ================================================== -->
@@ -131,15 +138,23 @@
                     </p>
 
                     <h1>
-                        Livros que já
-                        <em>viveram</em>
-                        outras histórias.
+                        Encontre seu próximo
+                        <em>livro favorito.</em>
                     </h1>
 
                     <p class="hero-description">
-                        Clássicos, descobertas e exemplares que
-                        merecem encontrar uma nova estante.
+                        Explore nosso acervo de clássicos, raridades e
+                        boas descobertas. Escolha, adicione ao carrinho
+                        e receba em casa.
                     </p>
+
+                    <form class="home-search" action="livros.html" method="get" role="search">
+                        <label class="sr-only" for="home-search-input">Buscar livros</label>
+                        <input id="home-search-input" name="busca" type="search" placeholder="Buscar por título ou autor..." autocomplete="off">
+                        <button type="submit" aria-label="Buscar">
+                            <i data-lucide="search"></i>
+                        </button>
+                    </form>
 
                     <div class="hero-actions">
 
@@ -147,8 +162,8 @@
                             href="livros.html"
                             class="button button-primary"
                         >
-                            Explorar acervo
-                            <i data-lucide="arrow-up-right"></i>
+                            Comprar livros
+                            <i data-lucide="shopping-bag"></i>
                         </a>
 
                         <a
@@ -185,6 +200,26 @@
 
         </section>
 
+        <section class="store-benefits" aria-label="Vantagens da loja">
+            <div class="container store-benefits-grid">
+                <div class="benefit">
+                    <i data-lucide="package-check"></i>
+                    <div><strong>Envio cuidadoso</strong><span>Embalagem preparada para proteger seu pedido.</span></div>
+                </div>
+                <div class="benefit">
+                    <i data-lucide="shield-check"></i>
+                    <div><strong>Acervo revisado</strong><span>Livros selecionados e descritos com transparência.</span></div>
+                </div>
+                <div class="benefit">
+                    <i data-lucide="message-circle"></i>
+                    <div><strong>Atendimento próximo</strong><span>Fale conosco sempre que precisar.</span></div>
+                </div>
+                <div class="benefit">
+                    <i data-lucide="refresh-cw"></i>
+                    <div><strong>Novas descobertas</strong><span>Novos exemplares entram no acervo com frequência.</span></div>
+                </div>
+            </div>
+        </section>
 
         <!-- =================================================
              CATEGORIAS
@@ -206,7 +241,7 @@
                         </p>
 
                         <h2>
-                            Encontre sua próxima leitura.
+                            Compre por categoria.
                         </h2>
 
                     </div>
@@ -268,11 +303,11 @@
                     <div>
 
                         <p class="eyebrow">
-                            Seleção
+                            Mais procurados
                         </p>
 
                         <h2>
-                            Destaques do acervo.
+                            Destaques para levar agora.
                         </h2>
 
                     </div>
@@ -281,7 +316,7 @@
                         href="livros.html"
                         class="text-link"
                     >
-                        Ver todos
+                        Ver todo o acervo
                         <i data-lucide="arrow-up-right"></i>
                     </a>
 
