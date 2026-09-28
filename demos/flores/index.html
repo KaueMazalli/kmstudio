@@ -3,11 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flores</title>
+  <meta name="description" content="Floricultura — flores, presentes e arranjos para momentos especiais.">
+  <title>Flores — Floricultura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#">Flores</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="nav-cta">Fale conosco</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Flores</h1>
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="eyebrow">Flores para todos os momentos</span>
+        <h1>Presentes que florescem em memória.</h1>
+        <p>Arranjos, buquês e presentes escolhidos com cuidado para celebrar, agradecer, surpreender e transformar dias comuns em momentos especiais.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#catalogo">Ver catálogo</a>
+          <a class="button button-secondary" href="#contato">Fazer um pedido</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section catalog" id="catalogo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Catálogo</div>
+            <h2>Escolha por sentimento.</h2>
+          </div>
+          <p>Uma seleção de flores e arranjos para diferentes ocasiões. Consulte a disponibilidade e personalize seu pedido.</p>
+        </div>
+
+        <div class="filters" aria-label="Categorias do catálogo">
+          <button class="filter active" type="button">Todos</button>
+          <button class="filter" type="button">Buquês</button>
+          <button class="filter" type="button">Arranjos</button>
+          <button class="filter" type="button">Presentes</button>
+        </div>
+
+        <div class="products">
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=900&q=85" alt="Buquê de flores coloridas" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Buquês</span>
+              <h3>Buquê Primavera</h3>
+              <p>Flores selecionadas em uma composição leve e colorida.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?auto=format&fit=crop&w=900&q=85" alt="Arranjo de flores em vaso" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Arranjos</span>
+              <h3>Jardim em Flor</h3>
+              <p>Um arranjo delicado para deixar qualquer ambiente especial.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=900&q=85" alt="Rosas em composição elegante" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Buquês</span>
+              <h3>Clássico Rosas</h3>
+              <p>Uma composição atemporal para demonstrar carinho.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1455582916367-25f75bfc6710?auto=format&fit=crop&w=900&q=85" alt="Flores em tons claros" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Presentes</span>
+              <h3>Delicadeza</h3>
+              <p>Uma opção suave para marcar uma data ou gesto especial.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="Buquê elegante de flores" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Buquês</span>
+              <h3>Essencial</h3>
+              <p>Flores frescas em uma composição elegante e natural.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" alt="Arranjo floral sofisticado" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-category">Arranjos</span>
+              <h3>Casa em Flor</h3>
+              <p>Uma composição pensada para trazer vida ao ambiente.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span>
+                <a class="order" href="#contato">Encomendar →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about">
+        <div class="about-image" role="img" aria-label="Flores naturais"></div>
+        <div class="about-copy">
+          <div class="section-label">Sobre a floricultura</div>
+          <h2>Flores escolhidas para dizer o que palavras não dizem.</h2>
+          <p>Nosso trabalho une flores frescas, composição cuidadosa e atenção aos detalhes para criar presentes que tenham significado.</p>
+          <p>Do buquê ao arranjo personalizado, cada pedido pode ser pensado de acordo com a ocasião, o estilo e a mensagem que você deseja transmitir.</p>
+
+          <div class="highlights">
+            <div class="highlight">
+              <strong>Frescor</strong>
+              <span>Flores selecionadas com cuidado.</span>
+            </div>
+            <div class="highlight">
+              <strong>Personalidade</strong>
+              <span>Composições que combinam com cada ocasião.</span>
+            </div>
+            <div class="highlight">
+              <strong>Cuidado</strong>
+              <span>Detalhes pensados em cada pedido.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container">
+        <div class="section-label">Pedidos e atendimento</div>
+        <h2>Gostou de alguma composição?</h2>
+        <p>Entre em contato para consultar disponibilidade, valores, opções de personalização e formas de entrega.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          <a class="button button-secondary" href="#catalogo">Voltar ao catálogo</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Flores — Floricultura</span>
+      <span>Site demonstrativo desenvolvido pela KM Studio</span>
+    </div>
+  </footer>
 </body>
 </html>
