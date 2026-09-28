@@ -717,6 +717,13 @@ function loadCategoryFromURL() {
     const category =
         params.get("categoria");
 
+    const search =
+        params.get("busca");
+
+    if (search && searchInput) {
+        searchInput.value = search;
+    }
+
 
     if (
         category &&
