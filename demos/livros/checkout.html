@@ -48,10 +48,10 @@
                 <div class="page-heading">
                     <p class="eyebrow">Finalização</p>
                     <h1>Dados para envio</h1>
-                    <p class="page-intro">Escolha a forma de entrega e pagamento e finalize seu pedido. Esta é uma demonstração de e-commerce.</p>
+                    <p class="page-intro">Preencha o endereço de entrega. Depois, seu pedido será enviado pelo WhatsApp para confirmação.</p>
                 </div>
 
-                <div class="checkout-layout" id="checkout-layout">
+                <div class="checkout-layout">
                     <form class="checkout-form" id="checkout-form" novalidate>
                         <div class="form-section">
                             <div class="form-section-heading">
@@ -132,65 +132,6 @@
                             <div class="form-section-heading">
                                 <span>03</span>
                                 <div>
-                                    <p class="eyebrow">Entrega</p>
-                                    <h2>Como receber</h2>
-                                </div>
-                            </div>
-
-                            <div class="form-grid">
-                                <div class="form-field form-field-full">
-                                    <label for="shipping-method">Forma de entrega *</label>
-                                    <select id="shipping-method" required>
-                                        <option value="">Selecione</option>
-                                        <option value="pac" data-price="24.90">Correios — PAC · R$ 24,90</option>
-                                        <option value="sedex" data-price="39.90">Correios — SEDEX · R$ 39,90</option>
-                                        <option value="pickup" data-price="0">Retirada local · Grátis</option>
-                                    </select>
-                                    <small class="field-help">Valores ilustrativos para a demonstração.</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section">
-                            <div class="form-section-heading">
-                                <span>04</span>
-                                <div>
-                                    <p class="eyebrow">Pagamento</p>
-                                    <h2>Forma de pagamento</h2>
-                                </div>
-                            </div>
-
-                            <div class="payment-options">
-                                <label class="payment-option">
-                                    <input type="radio" name="payment-method" value="Pix" required>
-                                    <span>
-                                        <strong>Pix</strong>
-                                        <small>Pagamento instantâneo</small>
-                                    </span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment-method" value="Cartão de crédito">
-                                    <span>
-                                        <strong>Cartão de crédito</strong>
-                                        <small>Pagamento seguro</small>
-                                    </span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment-method" value="Boleto bancário">
-                                    <span>
-                                        <strong>Boleto bancário</strong>
-                                        <small>Vencimento após a compra</small>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <p class="demo-payment-note">Nesta versão demonstrativa, nenhum pagamento é processado.</p>
-                        </div>
-
-                        <div class="form-section">
-                            <div class="form-section-heading">
-                                <span>05</span>
-                                <div>
                                     <p class="eyebrow">Pedido</p>
                                     <h2>Observações</h2>
                                 </div>
@@ -204,8 +145,8 @@
                         <p class="form-error" id="checkout-error" hidden>Preencha todos os campos obrigatórios para continuar.</p>
 
                         <button type="submit" class="button button-dark checkout-submit">
-                            Finalizar pedido
-                            <i data-lucide="arrow-right"></i>
+                            Enviar pedido pelo WhatsApp
+                            <i data-lucide="message-circle"></i>
                         </button>
 
                         <a href="carrinho.html" class="back-link">
@@ -214,39 +155,17 @@
                         </a>
                     </form>
 
-                    <section class="order-success" id="order-success" hidden>
-                        <div class="success-icon"><i data-lucide="check"></i></div>
-                        <p class="eyebrow">Pedido demonstrativo</p>
-                        <h2>Pedido pronto para confirmação.</h2>
-                        <p>O fluxo de compra foi concluído nesta demonstração. Em um e-commerce real, aqui entraria a confirmação do pagamento e o acompanhamento do pedido.</p>
-                        <div class="success-order-number">
-                            <span>Número do pedido</span>
-                            <strong id="success-order-number">ENT-0000</strong>
-                        </div>
-                        <div class="success-actions">
-                            <button type="button" class="button button-dark" id="whatsapp-order">
-                                Enviar resumo pelo WhatsApp
-                                <i data-lucide="message-circle"></i>
-                            </button>
-                            <a href="livros.html" class="back-link">Continuar comprando</a>
-                        </div>
-                    </section>
-
                     <aside class="order-summary">
                         <div class="summary-heading">
                             <span>Seu pedido</span>
                             <span id="summary-items">0 itens</span>
                         </div>
                         <div id="checkout-items" class="checkout-items"></div>
-                        <div class="summary-breakdown">
-                            <div><span>Subtotal</span><strong id="checkout-subtotal">R$ 0,00</strong></div>
-                            <div><span>Entrega</span><strong id="checkout-shipping">A calcular</strong></div>
-                        </div>
                         <div class="summary-total">
-                            <span>Total</span>
+                            <span>Total dos livros</span>
                             <strong id="checkout-total">R$ 0,00</strong>
                         </div>
-                        <p class="summary-note">Demonstração: valores de frete e pagamento são ilustrativos e não geram uma cobrança real.</p>
+                        <p class="summary-note">O frete e a forma de pagamento serão combinados pelo WhatsApp após o envio do pedido.</p>
                     </aside>
                 </div>
             </div>
