@@ -1,109 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#201c19">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f3eee7">
 <title>Élan — Estética & Bem-estar</title>
-<meta name="description" content="Élan — conceito de site para estética, beleza e bem-estar, com atendimento personalizado e naturalidade.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<meta name="description" content="Élan — conceito de site editorial para estética, beleza e bem-estar.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-  <div class="container header-inner">
-    <a href="#inicio" class="logo" aria-label="Élan — início">
-      <span class="logo-main">Élan</span><span class="logo-sub">Estética & bem-estar</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
-    <nav class="nav" id="site-nav" aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#experiencia">Experiência</a><a href="#duvidas">Dúvidas</a>
-      <a class="nav-cta" href="#contato">Agendar atendimento</a>
-    </nav>
-  </div>
-</header>
-
+<header class="header"><div class="container header-inner">
+<a href="#inicio" class="logo"><span>Élan</span><small>estética / beleza / bem-estar</small></a>
+<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i></button>
+<nav class="nav" id="site-nav"><a href="#sobre">Manifesto</a><a href="#servicos">Cuidados</a><a href="#experiencia">Espaço</a><a href="#duvidas">FAQ</a><a class="nav-cta" href="#contato">Agendar ↗</a></nav>
+</div></header>
 <main id="inicio">
-<section class="hero">
-  <div class="hero-image" aria-hidden="true"></div><div class="hero-overlay" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <p class="eyebrow">Estética · Beleza · Bem-estar</p>
-    <h1>Realce sua beleza.<br><em>Preserve sua essência.</em></h1>
-    <p class="hero-description">Um cuidado pensado para valorizar seus traços, respeitar sua individualidade e tornar cada atendimento uma experiência tranquila.</p>
-    <div class="hero-actions"><a class="button button-light" href="#servicos">Conhecer serviços</a><a class="hero-link" href="#contato">Agendar atendimento <span>↗</span></a></div>
-  </div>
-  <div class="hero-meta"><span>01</span><span>Jales · SP</span></div>
-</section>
-
-<section class="intro section" id="sobre">
-  <div class="container split">
-    <div class="section-label"><span>01</span><span>Sobre</span></div>
-    <div class="intro-content">
-      <p class="kicker">Cuidado antes de tudo.</p>
-      <h2>Estética não precisa <em>transformar</em> quem você é.</h2>
-      <p>A Élan parte de uma ideia simples: cada pessoa tem sua própria beleza. Por isso, o atendimento combina técnica, atenção aos detalhes e uma abordagem que busca resultados naturais e coerentes com você.</p>
-      <div class="stats"><div><strong>01</strong><span>Atendimento<br>personalizado</span></div><div><strong>02</strong><span>Olhar para<br>cada detalhe</span></div><div><strong>03</strong><span>Beleza com<br>naturalidade</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="services section" id="servicos">
-  <div class="container">
-    <div class="section-heading split">
-      <div class="section-label"><span>02</span><span>Serviços</span></div>
-      <div><p class="kicker">Cuidado sob medida.</p><h2>Tratamentos pensados <em>para você.</em></h2></div>
-    </div>
-    <div class="service-grid">
-      <article class="service-card"><div class="service-top"><span>01</span><span>01</span></div><div class="service-image"><img src="assets/treatment-01.jpg" alt="Procedimento de cuidado facial" loading="lazy"></div><div class="service-info"><h3>Limpeza de pele</h3><p>Cuidado profundo para manter a pele limpa, equilibrada e com aparência saudável.</p><a href="#contato">Saiba mais <span>↗</span></a></div></article>
-      <article class="service-card"><div class="service-top"><span>02</span><span>02</span></div><div class="service-image"><img src="assets/treatment-02.jpg" alt="Procedimento estético corporal" loading="lazy"></div><div class="service-info"><h3>Cuidados corporais</h3><p>Protocolos voltados ao bem-estar e ao cuidado individual de cada corpo.</p><a href="#contato">Saiba mais <span>↗</span></a></div></article>
-      <article class="service-card"><div class="service-top"><span>03</span><span>03</span></div><div class="service-image"><img src="assets/treatment-03.jpg" alt="Cuidados personalizados para a pele" loading="lazy"></div><div class="service-info"><h3>Tratamentos para pele</h3><p>Rotinas e protocolos escolhidos de acordo com as necessidades da sua pele.</p><a href="#contato">Saiba mais <span>↗</span></a></div></article>
-      <article class="service-card"><div class="service-top"><span>04</span><span>04</span></div><div class="service-image"><img src="assets/treatment-04.jpg" alt="Momento de relaxamento e bem-estar" loading="lazy"></div><div class="service-info"><h3>Bem-estar</h3><p>Uma pausa na rotina para cuidar de você com calma, conforto e atenção.</p><a href="#contato">Saiba mais <span>↗</span></a></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="experience" id="experiencia">
-  <div class="experience-image" aria-hidden="true"></div><div class="experience-overlay"></div>
-  <div class="container experience-content"><span class="section-number">03 / Experiência</span><p class="eyebrow">Um momento para você.</p><h2>Do primeiro contato ao cuidado final, <em>cada detalhe importa.</em></h2><p>Um ambiente pensado para que você desacelere, converse sobre o que deseja e se sinta confortável durante todo o atendimento.</p><a class="outline-link" href="#contato">Conhecer a experiência <span>↗</span></a></div>
-</section>
-
-<section class="philosophy section">
-  <div class="container split">
-    <div class="section-label"><span>04</span><span>Filosofia</span></div>
-    <div class="philosophy-content"><p class="kicker">Menos excesso. Mais essência.</p><h2>Beleza com <em>intenção.</em></h2><div class="line"></div><p>Mais do que seguir tendências, o cuidado começa entendendo o que faz sentido para você. O objetivo é valorizar, não padronizar.</p></div>
-  </div>
-</section>
-
-<section class="duvidas section" id="duvidas">
-  <div class="container faq-grid">
-    <div><div class="section-label"><span>05</span><span>Dúvidas</span></div><h2>Antes de <em>começar.</em></h2><p class="faq-intro">Algumas respostas para deixar seu primeiro contato mais simples.</p></div>
-    <div class="faq-list">
-      <details><summary>Como funciona o primeiro atendimento?<span>+</span></summary><p>O primeiro contato é uma conversa para entender suas necessidades, expectativas e orientar sobre os cuidados mais adequados.</p></details>
-      <details><summary>Os tratamentos são personalizados?<span>+</span></summary><p>Sim. A indicação deve considerar as características individuais e os objetivos de cada pessoa.</p></details>
-      <details><summary>Como faço para agendar?<span>+</span></summary><p>Entre em contato pelo canal de atendimento para consultar horários disponíveis e tirar suas dúvidas.</p></details>
-      <details><summary>Preciso saber qual tratamento quero?<span>+</span></summary><p>Não. Você pode começar contando o que gostaria de cuidar. O atendimento ajuda a direcionar as opções.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contato">
-  <div class="container contact-inner">
-    <p class="eyebrow">Vamos conversar</p><h2>Seu cuidado <em>começa aqui.</em></h2><p>Conte o que você gostaria de cuidar e descubra a melhor forma de começar.</p>
-    <a class="button button-light" href="#inicio">Solicitar atendimento <span>↗</span></a>
-    <small>WhatsApp · Atendimento personalizado</small>
-  </div>
-</section>
+<section class="hero"><div class="hero-image"></div><div class="container hero-inner">
+<span class="hero-index">01 — ÉLAN</span><div class="hero-copy"><p class="eyebrow">Estética contemporânea</p><h1>Beleza que<br><em>continua sendo você.</em></h1><p>Tratamentos pensados para valorizar seus traços, cuidar da sua pele e transformar o momento de se cuidar em um ritual.</p><a class="hero-link" href="#contato">Agendar atendimento <b>↗</b></a></div>
+<span class="hero-note">Jales · SP<br>Atendimento personalizado</span></div></section>
+<section class="section manifesto" id="sobre"><div class="container grid">
+<div class="marker"><span>02</span><span>Manifesto</span></div><div><p class="kicker">O nosso ponto de partida</p><h2>Não é sobre mudar.<br><em>É sobre revelar.</em></h2><div class="manifesto-bottom"><p>Na Élan, cada atendimento começa com escuta. A proposta é encontrar o cuidado que faz sentido para você — com técnica, delicadeza e resultados que respeitam sua individualidade.</p><div class="stamp">EL / 01<br><small>natural<br>por intenção</small></div></div></div></div></section>
+<section class="section services" id="servicos"><div class="container">
+<div class="services-head"><div class="marker"><span>03</span><span>Cuidados</span></div><div><p class="kicker">Selecione seu momento</p><h2>Um cuidado para<br><em>cada necessidade.</em></h2></div></div>
+<div class="service-list">
+<article class="service"><span>01</span><img src="assets/treatment-01.jpg" alt="Cuidado facial" loading="lazy"><div><h3>Limpeza de pele</h3><p>Cuidado profundo para uma pele limpa, equilibrada e saudável.</p><a href="#contato">Conhecer cuidado ↗</a></div></article><article class="service"><span>02</span><img src="assets/treatment-02.jpg" alt="Cuidado corporal" loading="lazy"><div><h3>Cuidados corporais</h3><p>Protocolos pensados para o bem-estar e as necessidades de cada corpo.</p><a href="#contato">Conhecer cuidado ↗</a></div></article><article class="service"><span>03</span><img src="assets/treatment-03.jpg" alt="Tratamento para a pele" loading="lazy"><div><h3>Tratamentos para pele</h3><p>Rotinas e protocolos escolhidos de acordo com sua pele e seus objetivos.</p><a href="#contato">Conhecer cuidado ↗</a></div></article><article class="service"><span>04</span><img src="assets/treatment-04.jpg" alt="Relaxamento" loading="lazy"><div><h3>Bem-estar</h3><p>Uma pausa na rotina para desacelerar e voltar a olhar para você.</p><a href="#contato">Conhecer cuidado ↗</a></div></article>
+</div></div></section>
+<section class="experience" id="experiencia"><div class="experience-image"></div><div class="container experience-inner"><div class="experience-top"><span>04</span><span>O espaço</span></div><div class="experience-copy"><p class="kicker">Um intervalo na rotina</p><h2>Entre.<br>Respire.<br><em>Cuide-se.</em></h2><p>Um ambiente pensado para receber você com calma, conforto e atenção aos detalhes — do primeiro contato ao último cuidado.</p><a href="#contato">Conhecer a Élan ↗</a></div></div></section>
+<section class="section philosophy"><div class="container grid"><div class="marker"><span>05</span><span>Princípios</span></div><div class="principles">
+<div><span>01</span><h3>Naturalidade</h3><p>Resultados coerentes com seus traços e com aquilo que você busca.</p></div>
+<div><span>02</span><h3>Intenção</h3><p>Cada protocolo parte de uma necessidade real, não de uma tendência.</p></div>
+<div><span>03</span><h3>Presença</h3><p>Tempo, escuta e atenção fazem parte do cuidado.</p></div>
+</div></div></section>
+<section class="section faq" id="duvidas"><div class="container faq-grid"><div><div class="marker"><span>06</span><span>Dúvidas</span></div><h2>Antes do<br><em>primeiro passo.</em></h2></div><div class="faq-list">
+<details><summary>Como funciona o primeiro atendimento?<b>+</b></summary><p>O primeiro contato é uma conversa para entender suas necessidades, expectativas e orientar sobre os cuidados mais adequados.</p></details>
+<details><summary>Os tratamentos são personalizados?<b>+</b></summary><p>Sim. A indicação considera as características individuais e os objetivos de cada pessoa.</p></details>
+<details><summary>Como faço para agendar?<b>+</b></summary><p>Entre em contato pelo canal de atendimento para consultar horários disponíveis e tirar suas dúvidas.</p></details>
+<details><summary>Preciso saber qual tratamento quero?<b>+</b></summary><p>Não. Você pode começar contando o que gostaria de cuidar.</p></details>
+</div></div></section>
+<section class="contact" id="contato"><div class="container"><span>07 — CONTATO</span><p class="kicker">Seu momento começa aqui</p><h2>Vamos conversar<br><em>sobre você.</em></h2><p>Conte o que gostaria de cuidar e encontre o atendimento que faz sentido para você.</p><a href="https://wa.me/5517996316866" target="_blank" rel="noopener">Agendar pelo WhatsApp ↗</a><small>WhatsApp · Atendimento personalizado</small></div></section>
 </main>
-
-<footer class="footer">
-  <div class="container footer-main">
-    <div><a href="#inicio" class="logo"><span class="logo-main">Élan</span><span class="logo-sub">Estética & bem-estar</span></a><p>Cuidado, equilíbrio e naturalidade.</p></div>
-    <div class="footer-links"><div><span>Explorar</span><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#experiencia">Experiência</a></div><div><span>Atendimento</span><a href="#contato">Agendar</a><a href="#duvidas">Dúvidas</a></div></div>
-  </div>
-  <div class="container footer-bottom"><span>Modelo demonstrativo · KM Studio</span><span>© <span data-year>2026</span> Élan</span></div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+<footer class="footer"><div class="container footer-main"><div><a class="logo" href="#inicio"><span>Élan</span><small>estética / beleza / bem-estar</small></a><p>Beleza com intenção.</p></div><div class="footer-links"><div><b>Explorar</b><a href="#sobre">Manifesto</a><a href="#servicos">Cuidados</a><a href="#experiencia">Espaço</a></div><div><b>Atendimento</b><a href="#contato">Agendar</a><a href="#duvidas">Dúvidas</a></div></div></div><div class="container footer-bottom"><span>Modelo demonstrativo · KM Studio</span><span>© <span data-year>2026</span> Élan</span></div></footer>
+<script src="script.js"></script></body></html>
