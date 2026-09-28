@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de buquês, arranjos e presentes da Flores.">
+  <title>Catálogo — Flores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .catalog-page { padding: 170px 0 110px; }
+    .catalog-intro { max-width: 720px; margin-bottom: 48px; }
+    .catalog-intro p { margin-top: 20px; color: var(--muted); max-width: 560px; }
+    .catalog-page .product-bottom a { cursor: pointer; }
+    @media (max-width: 560px) { .catalog-page { padding-top: 125px; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">F</span>Flores</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="catalogo.html">Catálogo</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato" class="nav-cta">Fale conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <div class="container">
+      <div class="catalog-intro">
+        <div class="section-label">Nosso catálogo</div>
+        <h1 class="section-title">Flores para cada ocasião.</h1>
+        <p>Explore nossa seleção de buquês, arranjos e presentes. Consulte disponibilidade e personalize seu pedido diretamente com a floricultura.</p>
+      </div>
+
+      <div class="filters" aria-label="Categorias do catálogo">
+        <button class="filter active" type="button" data-category="todos">Todos</button>
+        <button class="filter" type="button" data-category="Buquês">Buquês</button>
+        <button class="filter" type="button" data-category="Arranjos">Arranjos</button>
+        <button class="filter" type="button" data-category="Presentes">Presentes</button>
+      </div>
+
+      <div class="products">
+        <article class="product" data-category="Buquês">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=900&q=85" alt="Buquê de flores coloridas" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Buquês</span><h3>Buquê Primavera</h3><p>Flores selecionadas em uma composição leve e colorida.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+
+        <article class="product" data-category="Arranjos">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?auto=format&fit=crop&w=900&q=85" alt="Arranjo de flores em vaso" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Arranjos</span><h3>Jardim em Flor</h3><p>Um arranjo delicado para deixar qualquer ambiente especial.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+
+        <article class="product" data-category="Buquês">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=900&q=85" alt="Rosas em composição elegante" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Buquês</span><h3>Clássico Rosas</h3><p>Uma composição atemporal para demonstrar carinho.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+
+        <article class="product" data-category="Presentes">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1455582916367-25f75bfc6710?auto=format&fit=crop&w=900&q=85" alt="Flores em tons claros" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Presentes</span><h3>Delicadeza</h3><p>Uma opção suave para marcar uma data ou gesto especial.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+
+        <article class="product" data-category="Buquês">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="Buquê elegante de flores" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Buquês</span><h3>Essencial</h3><p>Flores frescas em uma composição elegante e natural.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+
+        <article class="product" data-category="Arranjos">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" alt="Arranjo floral sofisticado" loading="lazy"></div>
+          <div class="product-info"><span class="product-category">Arranjos</span><h3>Casa em Flor</h3><p>Uma composição pensada para trazer vida ao ambiente.</p><div class="product-bottom"><span class="price">Sob consulta</span><a class="order" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar →</a></div></div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Flores — Floricultura</span>
+      <span>Site demonstrativo desenvolvido pela KM Studio</span>
+    </div>
+  </footer>
+
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const products = document.querySelectorAll('.product');
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        filters.forEach(item => item.classList.remove('active'));
+        filter.classList.add('active');
+
+        const category = filter.dataset.category;
+
+        products.forEach(product => {
+          product.hidden = category !== 'todos' && product.dataset.category !== category;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
