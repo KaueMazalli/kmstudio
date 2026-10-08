@@ -92,21 +92,25 @@
 <script src="script.js"></script>
 <script>
 const models={
-institucional:{number:"01",title:"Sites <em>institucionais.</em>",description:"Modelos para apresentar uma empresa, seus serviços, diferenciais e formas de contato com uma presença digital profissional.",items:[]},
+institucional:{number:"01",title:"Sites <em>institucionais.</em>",description:"Modelos para apresentar uma empresa, seus serviços, diferenciais e formas de contato com uma presença digital profissional.",items:[
+["01","Atelier","MODA · IDENTIDADE + APRESENTAÇÃO","demos/atelier/index.html","kmstudios.pages.dev/demos/atelier/index.html"]]},
 landing:{number:"02",title:"Landing <em>Pages.</em>",description:"Páginas criadas para destacar uma oferta, serviço ou campanha com uma experiência direta e focada em conversão.",items:[]},
 catalogo:{number:"03",title:"Catálogo <em>Digital.</em>",description:"Modelos pensados para apresentar produtos de forma visual e facilitar o contato e os pedidos pelo WhatsApp.",items:[
 ["01","Flores","FLORICULTURA · CATÁLOGO + WHATSAPP","demos/flores/index.html","kmstudios.pages.dev/demos/flores/index.html"],
-["02","Pata & Cia","PET SHOP · CATÁLOGO + WHATSAPP","demos/pataecia/index.html","kmstudios.pages.dev/demos/pataecia/index.html"]]},
+["02","Pata & Cia","PET SHOP · CATÁLOGO + WHATSAPP","demos/pataecia/index.html","kmstudios.pages.dev/demos/pataecia/index.html"],
+["03","Noma","CATÁLOGO DIGITAL · PRODUTOS + WHATSAPP","demos/noma/index.html","kmstudios.pages.dev/demos/noma/index.html"]]},
 servicos:{number:"04",title:"Sites para <em>serviços.</em>",description:"Estruturas para profissionais e negócios que precisam apresentar seus serviços, preços e facilitar o contato.",items:[
-["01","Aura","SERVIÇOS · PREÇOS + WHATSAPP","demos/aura/index.html","kmstudios.pages.dev/demos/aura/index.html"],
-["02","Nobre Detail","ESTÉTICA AUTOMOTIVA · SERVIÇOS","demos/nobre-detail/index.html","kmstudios.pages.dev/demos/nobre-detail/index.html"]]},
+["01","Aura","BELEZA · SERVIÇOS + WHATSAPP","demos/aura/index.html","kmstudios.pages.dev/demos/aura/index.html"],
+["02","Élan","ESTÉTICA · SERVIÇOS","demos/elan/index.html","kmstudios.pages.dev/demos/elan/index.html"],
+["03","Nobre Detail","ESTÉTICA AUTOMOTIVA · SERVIÇOS","demos/nobre-detail/index.html","kmstudios.pages.dev/demos/nobre-detail/index.html"],
+["04","Noir","TATTOO · SERVIÇOS","demos/noir/index.html","kmstudios.pages.dev/demos/noir/index.html"]]},
 portfolio:{number:"05",title:"Sites de <em>portfólio.</em>",description:"Modelos para mostrar trabalhos, projetos e uma identidade visual mais autoral.",items:[
 ["01","Forma","ARQUITETURA · PORTFÓLIO","demos/forma/index.html","kmstudios.pages.dev/demos/forma/index.html"],
-["02","Lume","FOTOGRAFIA · PORTFÓLIO","demos/lume/index.html","kmstudios.pages.dev/demos/lume/index.html"],
-["03","Noir","TATTOO · SERVIÇOS","demos/noir/index.html","kmstudios.pages.dev/demos/noir/index.html"]]},
-comercio:{number:"06",title:"Sites para <em>comércio.</em>",description:"Modelos para lojas e pequenos negócios que querem apresentar produtos e receber pedidos de forma simples.",items:[
-["01","Minha Loja","COMÉRCIO · CATÁLOGO + PEDIDOS","demos/venda/index.html","kmstudios.pages.dev/demos/venda/index.html"]]}
-};
+["02","Lume","FOTOGRAFIA · PORTFÓLIO","demos/lume/index.html","kmstudios.pages.dev/demos/lume/index.html"]]},
+comercio:{number:"06",title:"Sites para <em>comércio.</em>",description:"Modelos para lojas e pequenos negócios que querem apresentar produtos e receber pedidos.",items:[
+["01","Entrelinhas","SEBO & LIVRARIA · LOJA ONLINE","demos/livros/index.html","kmstudios.pages.dev/demos/livros/index.html"],
+["02","Minha Loja","COMÉRCIO · CATÁLOGO + PEDIDOS","demos/venda/index.html","kmstudios.pages.dev/demos/venda/index.html"]]}
+}
 const type=new URLSearchParams(location.search).get("tipo")||"catalogo";
 const data=models[type]||models.catalogo;
 document.title=(data.title.replace(/<[^>]*>/g,"")+" | KM Studio");
