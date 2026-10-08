@@ -11,36 +11,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.portfolio-page{padding:145px 0 90px}
-.portfolio-page-header{max-width:720px;margin-bottom:55px}
-.portfolio-page-header h1{margin-top:25px;font-size:clamp(46px,6vw,72px);letter-spacing:-1.5px}
-.portfolio-page-header p{max-width:560px;margin-top:20px;line-height:1.75}
-.portfolio-back{margin-top:20px}
-.portfolio-grid{gap:52px 25px}
+.portfolio-page{padding:150px 0 100px}
+.portfolio-page-header{max-width:760px;margin-bottom:65px}
+.portfolio-page-header h1{margin-top:28px;font-size:clamp(48px,6vw,76px);letter-spacing:-1.8px;line-height:1.02}
+.portfolio-page-header p{max-width:610px;margin-top:22px;line-height:1.8}
+.portfolio-back{margin-top:22px}
+.portfolio-grid{gap:58px 26px}
 .model-card{display:block;color:inherit}
 .model-preview{position:relative;overflow:hidden;aspect-ratio:16/10;background:#0d141c;border:1px solid var(--border)}
-.model-preview img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .35s ease}
-.model-card:hover .model-preview img{transform:scale(1.02);filter:brightness(.82)}
-.model-preview-label{position:absolute;right:18px;bottom:18px;padding:9px 12px;border:1px solid rgba(217,199,166,.5);background:rgba(6,11,17,.78);color:var(--gold);font-size:8px;letter-spacing:1.5px}
-.model-preview-label span{margin-left:6px;font-size:10px}
-.project-info{padding-top:18px}
-.project-info h3{font-size:25px}
-.project-info p{margin-top:7px;font-size:8px;letter-spacing:1.1px;line-height:1.6;color:var(--muted)}
-.portfolio-page-cta{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:75px;padding-top:30px}
-.portfolio-page-cta h2{max-width:620px;font-size:clamp(28px,4vw,42px)}
+.model-preview img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease,filter .3s ease}
+.model-card:hover .model-preview img{transform:scale(1.015);filter:brightness(.9)}
+.model-preview-label{position:absolute;right:16px;bottom:16px;padding:9px 11px;border:1px solid rgba(217,199,166,.5);background:rgba(6,11,17,.82);color:var(--gold);font-size:8px;letter-spacing:1.4px}
+.project-info{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;padding-top:17px}
+.project-number{padding-top:4px}
+.project-info h3{font-size:26px;line-height:1.1}
+.project-info p{margin-top:7px;font-size:8px;letter-spacing:1px;line-height:1.5;color:var(--muted)}
+.portfolio-page-cta{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:90px;padding-top:35px;border-top:1px solid var(--border)}
+.portfolio-page-cta h2{max-width:650px;font-size:clamp(29px,4vw,43px)}
 .portfolio-page-cta .btn{margin-top:0;white-space:nowrap}
 @media(max-width:700px){
-.portfolio-page{padding:125px 0 65px}
-.portfolio-page-header{margin-bottom:38px}
+.portfolio-page{padding:120px 0 70px}
+.portfolio-page-header{margin-bottom:42px}
 .portfolio-page-header h1{font-size:43px}
-.portfolio-page-header p{font-size:12px}
-.portfolio-grid{gap:38px}
-.model-preview-label{right:12px;bottom:12px}
-.project-info{padding-top:15px}
-.project-info h3{font-size:23px}
-.portfolio-page-cta{display:block;margin-top:55px;padding-top:25px}
+.portfolio-page-header p{font-size:11px}
+.portfolio-grid{gap:40px}
+.model-preview-label{right:11px;bottom:11px;padding:8px 9px;font-size:7px}
+.project-info{grid-template-columns:25px minmax(0,1fr);gap:10px;padding-top:13px}
+.project-info h3{font-size:24px}
+.project-info p{font-size:8px}
+.portfolio-page-cta{display:block;margin-top:60px;padding-top:28px}
 .portfolio-page-cta h2{font-size:31px}
-.portfolio-page-cta .btn{margin-top:22px}
+.portfolio-page-cta .btn{display:block;width:100%;margin-top:22px}
 }
 </style>
 </head>
@@ -56,20 +57,20 @@
 <main class="portfolio-page"><div class="container">
 <div class="portfolio-page-header">
 <div class="section-label"><span>01</span><span>MODELOS</span></div>
-<h1>Um ponto de partida <em>para o seu site.</em></h1>
-<p>Modelos navegáveis para diferentes negócios. Escolha uma direção e adaptamos visual, conteúdo e estrutura para a sua marca.</p>
+<h1>Escolha uma direção <em>para o seu site.</em></h1>
+<p>Modelos navegáveis para diferentes negócios. Escolha uma direção e adaptamos o site para a sua marca.</p>
 <a class="portfolio-back" href="index.html#projetos">← Voltar ao portfólio</a>
 </div>
 
 <div class="portfolio-grid">
-<a href="demos/flores/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fflores%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Flores — floricultura" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">02</span><div><h3>Flores</h3><p>FLORICULTURA · CATÁLOGO + WHATSAPP</p></div></div></a>
-<a href="demos/forma/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fforma%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Forma — arquitetura" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">03</span><div><h3>Forma</h3><p>ARQUITETURA · PORTFÓLIO</p></div></div></a>
-<a href="demos/lume/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Flume%2Findex.html&meta=false&screenshot=true&embed=screenshot.quality=75&viewport.width=1200&viewport.height=800&screenshot.type=jpeg" alt="Prévia do modelo Lume — fotografia" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">04</span><div><h3>Lume</h3><p>FOTOGRAFIA · PORTFÓLIO</p></div></div></a>
-<a href="demos/noir/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fnoir%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Noir — tattoo" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">05</span><div><h3>Noir</h3><p>TATTOO · SERVIÇOS</p></div></div></a>
+<a href="demos/flores/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fflores%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Flores — floricultura" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">01</span><div><h3>Flores</h3><p>FLORICULTURA · CATÁLOGO + WHATSAPP</p></div></div></a>
+<a href="demos/pataecia/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fpataecia%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Pata & Cia — pet shop" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">02</span><div><h3>Pata & Cia</h3><p>PET SHOP · CATÁLOGO + WHATSAPP</p></div></div></a>
+<a href="demos/venda/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fvenda%2Findex.html&meta=false&screenshot=true&embed=screenshot.quality=75&viewport.width=1200&viewport.height=800&screenshot.type=jpeg" alt="Prévia do modelo Minha Loja — catálogo local" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">03</span><div><h3>Minha Loja</h3><p>COMÉRCIO · CATÁLOGO + PEDIDOS</p></div></div></a>
+<a href="demos/aura/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Faura%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Aura — serviços" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">04</span><div><h3>Aura</h3><p>SERVIÇOS · PREÇOS + WHATSAPP</p></div></div></a>
+<a href="demos/forma/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fforma%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Forma — arquitetura" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">05</span><div><h3>Forma</h3><p>ARQUITETURA · PORTFÓLIO</p></div></div></a>
+<a href="demos/lume/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Flume%2Findex.html&meta=false&screenshot=true&embed=screenshot.quality=75&viewport.width=1200&viewport.height=800&screenshot.type=jpeg" alt="Prévia do modelo Lume — fotografia" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">06</span><div><h3>Lume</h3><p>FOTOGRAFIA · PORTFÓLIO</p></div></div></a>
 <a href="demos/nobre-detail/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fnobre-detail%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Nobre Detail — estética automotiva" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">07</span><div><h3>Nobre Detail</h3><p>ESTÉTICA AUTOMOTIVA · SERVIÇOS</p></div></div></a>
-<a href="demos/pataecia/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fpataecia%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Pata & Cia — pet shop" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">08</span><div><h3>Pata & Cia</h3><p>PET SHOP · CATÁLOGO + WHATSAPP</p></div></div></a>
-<a href="demos/venda/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fvenda%2Findex.html&meta=false&screenshot=true&embed=screenshot.quality=75&viewport.width=1200&viewport.height=800&screenshot.type=jpeg" alt="Prévia do modelo Minha Loja — catálogo local" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">09</span><div><h3>Minha Loja</h3><p>COMÉRCIO · CATÁLOGO + PEDIDOS</p></div></div></a>
-<a href="demos/aura/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Faura%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Aura — serviços" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">10</span><div><h3>Aura</h3><p>SERVIÇOS · PREÇOS + WHATSAPP</p></div></div></a>
+<a href="demos/noir/index.html" class="project-card model-card"><div class="project-image model-preview"><img src="https://api.microlink.io/?url=https%3A%2F%2Fkmstudios.pages.dev%2Fdemos%2Fnoir%2Findex.html&meta=false&screenshot=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo Noir — tattoo" loading="lazy" width="1200" height="800"><span class="model-preview-label">VER MODELO ↗</span></div><div class="project-info"><span class="project-number">08</span><div><h3>Noir</h3><p>TATTOO · SERVIÇOS</p></div></div></a>
 </div>
 
 <div class="portfolio-page-cta"><h2>Viu uma direção que combina com seu negócio? <em>Podemos adaptar.</em></h2><a href="https://wa.me/17996316866" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a></div>
