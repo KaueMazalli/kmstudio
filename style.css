@@ -2516,3 +2516,199 @@ section {
         font-size: 28px;
     }
 }
+
+
+
+/* =========================================================
+   HOME — VISUAL SIMPLES
+   ========================================================= */
+
+.hero {
+    min-height: 680px;
+}
+
+.hero::before {
+    animation: none;
+    transform: none;
+}
+
+.hero-text {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
+.btn {
+    transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.btn:hover {
+    transform: none;
+}
+
+.services,
+.projects,
+.about,
+.contact {
+    padding: 105px 0;
+}
+
+.section-heading {
+    margin-top: 38px;
+    margin-bottom: 48px;
+}
+
+.services-grid {
+    border-color: var(--border-soft);
+}
+
+.service-card {
+    min-height: 260px;
+    padding: 32px;
+    transition: background .25s ease;
+}
+
+.service-card:hover {
+    transform: none;
+    background: rgba(16, 40, 67, .16);
+}
+
+.service-card h3 {
+    margin-top: 58px;
+    font-size: 27px;
+}
+
+.service-card p {
+    max-width: 360px;
+    margin-top: 14px;
+    line-height: 1.7;
+}
+
+.portfolio-panel {
+    transition: border-color .25s ease;
+}
+
+.portfolio-panel:hover {
+    transform: none;
+    border-color: rgba(217,199,166,.4);
+}
+
+.portfolio-panel-link {
+    transition: color .25s ease;
+}
+
+.portfolio-panel:hover .portfolio-panel-link {
+    transform: none;
+}
+
+.projects-cta {
+    margin-top: 70px;
+    padding: 40px 0;
+}
+
+.about-content {
+    margin-top: 55px;
+    gap: 90px;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin-top: 55px;
+}
+
+.footer-main {
+    grid-template-columns: 1.6fr 1fr 1fr;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: -1.4px;
+    }
+
+    .hero-description {
+        margin-top: 22px;
+    }
+
+    .hero-actions {
+        margin-top: 28px;
+    }
+
+    .services,
+    .projects,
+    .about,
+    .contact {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 205px;
+        padding: 25px 22px;
+    }
+
+    .service-card h3 {
+        margin-top: 48px;
+        font-size: 24px;
+    }
+
+    .service-card p {
+        font-size: 11px;
+        line-height: 1.65;
+    }
+
+    .projects-cta {
+        margin-top: 45px;
+        padding: 32px 0;
+    }
+
+    .projects-cta h3 {
+        font-size: 30px;
+    }
+
+    .about-content {
+        margin-top: 40px;
+        gap: 35px;
+    }
+
+    .contact-content {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero {
+        min-height: 590px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-actions {
+        gap: 9px;
+    }
+
+    .services,
+    .projects,
+    .about,
+    .contact {
+        padding: 65px 0;
+    }
+}
