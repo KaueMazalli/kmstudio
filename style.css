@@ -2446,3 +2446,73 @@ section {
         font-size: 8px;
     }
 }
+
+
+/* =========================================================
+   PORTFÓLIO — VISUAL COMPACTO
+========================================================= */
+
+.portfolio-panel {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-panel-models {
+    background-image:
+        linear-gradient(180deg, rgba(6,11,17,.12), rgba(6,11,17,.9)),
+        url("assets/portfolio-modelos.webp");
+}
+
+.portfolio-panel-projects {
+    background-image:
+        linear-gradient(180deg, rgba(6,11,17,.12), rgba(6,11,17,.9)),
+        url("assets/portfolio-projetos.webp");
+}
+
+@media (max-width: 700px) {
+    .portfolio-split {
+        gap: 12px;
+    }
+
+    .portfolio-panel {
+        min-height: 300px;
+    }
+
+    .portfolio-panel-content {
+        padding: 22px 20px;
+    }
+
+    .portfolio-panel-number,
+    .portfolio-panel-label {
+        margin-bottom: 10px;
+    }
+
+    .portfolio-panel h3 {
+        font-size: 31px;
+        max-width: 280px;
+    }
+
+    .portfolio-panel p {
+        display: none;
+    }
+
+    .portfolio-panel-link {
+        margin-top: 15px;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .portfolio-panel {
+        min-height: 270px;
+    }
+
+    .portfolio-panel-content {
+        padding: 20px 18px;
+    }
+
+    .portfolio-panel h3 {
+        font-size: 28px;
+    }
+}
