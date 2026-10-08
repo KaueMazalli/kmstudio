@@ -365,7 +365,7 @@ section {
 .hero {
     position: relative;
 
-    min-height: 760px;
+    min-height: 720px;
 
     display: flex;
 
@@ -405,7 +405,7 @@ section {
 
     transform: scale(1.02);
 
-    animation: heroZoom 12s ease-out forwards;
+    animation: heroZoom 18s ease-out forwards;
 }
 
 .hero::after {
@@ -447,7 +447,7 @@ section {
 
     z-index: 2;
 
-    padding-top: 78px;
+    padding-top: 64px;
 }
 
 .hero-text {
@@ -685,9 +685,9 @@ section {
 .service-card {
     position: relative;
 
-    min-height: 330px;
+    min-height: 300px;
 
-    padding: 38px 35px;
+    padding: 42px 38px;
 
     border-right: 1px solid var(--border);
 
@@ -709,7 +709,7 @@ section {
 .service-card:hover {
     background: rgba(16, 40, 67, 0.28);
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .service-number {
@@ -729,7 +729,7 @@ section {
 
     font-family: var(--serif);
 
-    font-size: 28px;
+    font-size: 31px;
 
     font-weight: 400;
 
@@ -739,7 +739,7 @@ section {
 .service-card p {
     max-width: 330px;
 
-    margin-top: 18px;
+    margin-top: 16px;
 
     color: var(--muted);
 
@@ -754,7 +754,7 @@ section {
 ========================================================= */
 
 .projects {
-    padding: 140px 0;
+    padding: 125px 0;
     background: var(--black);
 }
 
@@ -871,9 +871,9 @@ section {
 
     gap: 40px;
 
-    margin-top: 100px;
+    margin-top: 85px;
 
-    padding: 55px 0;
+    padding: 48px 0;
 
     border-top: 1px solid var(--border);
 
@@ -914,9 +914,9 @@ section {
 
     grid-template-columns: 1fr 0.8fr;
 
-    gap: 130px;
+    gap: 100px;
 
-    margin-top: 70px;
+    margin-top: 62px;
 }
 
 .about-content h2 {
@@ -957,7 +957,7 @@ section {
 ========================================================= */
 
 .contact {
-    padding: 150px 0;
+    padding: 125px 0;
 }
 
 .contact-content {
@@ -1195,6 +1195,115 @@ section {
     opacity: 1;
 
     transform: translateY(0);
+}
+
+
+/* =========================================================
+   HOME REFINEMENT
+========================================================= */
+
+.hero {
+    border-color: rgba(59, 107, 143, 0.11);
+}
+
+.hero::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 10, 16, 0.97) 0%,
+            rgba(5, 10, 16, 0.88) 34%,
+            rgba(5, 10, 16, 0.58) 62%,
+            rgba(5, 10, 16, 0.68) 100%
+        ),
+        url("assets/hero.webp");
+}
+
+.hero h1 {
+    max-width: 700px;
+}
+
+.hero-description {
+    max-width: 520px;
+}
+
+.services-grid {
+    background: transparent;
+}
+
+.service-card {
+    background: rgba(16, 40, 67, 0.055);
+}
+
+.service-card:hover {
+    background: rgba(16, 40, 67, 0.14);
+}
+
+.portfolio-panel {
+    background-color: #080e16;
+}
+
+.portfolio-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+.about-content {
+    align-items: start;
+}
+
+.contact-content {
+    padding-left: 0;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+    }
+
+    .services {
+        padding: 100px 0;
+    }
+
+    .service-card {
+        min-height: 250px;
+        padding: 30px 25px;
+    }
+
+    .service-card h3 {
+        margin-top: 48px;
+        font-size: 27px;
+    }
+
+    .portfolio-panel {
+        min-height: 390px;
+    }
+
+    .portfolio-panel-content {
+        padding: 30px;
+    }
+
+    .projects {
+        padding: 105px 0;
+    }
+
+    .about {
+        padding: 105px 0;
+    }
+
+    .contact {
+        padding: 105px 0;
+    }
 }
 
 
@@ -1708,7 +1817,7 @@ section {
 
 .portfolio-panel {
     position: relative;
-    min-height: 480px;
+    min-height: 450px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -1757,7 +1866,7 @@ section {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 45px;
+    padding: 42px;
 }
 
 .portfolio-panel-number {
