@@ -3048,3 +3048,131 @@ button:focus-visible {
 .contact-content{padding:30px 0 34px}
 .contact-content::after{top:27px;font-size:27px}
 }
+
+
+/* HOME — SERVIÇOS EDITORIAL / MENOS CARDS */
+.services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:1px solid var(--border-soft);
+    border-left:0;
+}
+
+.service-card{
+    min-height:0;
+    display:grid;
+    grid-template-columns:58px minmax(0,1fr) 24px;
+    align-items:start;
+    gap:20px;
+    padding:28px 4px;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid var(--border-soft);
+    border-radius:0;
+    overflow:visible;
+    transition:padding-left .3s ease,color .3s ease;
+}
+
+.service-card:nth-child(2n),
+.service-card:nth-child(n+3){
+    border-right:0;
+    border-bottom:1px solid var(--border-soft);
+}
+
+.service-card::after{
+    display:none;
+}
+
+.service-number{
+    position:static;
+    width:30px;
+    height:30px;
+    margin-top:1px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    color:var(--gold);
+    font-size:8px;
+}
+
+.service-card h3{
+    margin:0;
+    max-width:420px;
+    font-family:var(--serif);
+    font-size:clamp(25px,3vw,34px);
+    font-weight:400;
+    line-height:1.05;
+}
+
+.service-card p{
+    max-width:520px;
+    margin-top:9px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+}
+
+.service-card::before{
+    content:"↗";
+    grid-column:3;
+    grid-row:1 / span 2;
+    justify-self:end;
+    color:var(--gold);
+    font-family:var(--serif);
+    font-size:18px;
+    opacity:.45;
+    transition:transform .3s ease,opacity .3s ease;
+}
+
+.service-card:hover{
+    padding-left:12px;
+    background:transparent;
+    border-color:var(--border-soft);
+    transform:none;
+}
+
+.service-card:hover::before{
+    opacity:1;
+    transform:translate(3px,-3px);
+}
+
+.projects-cta{
+    border-radius:0;
+}
+
+@media(max-width:700px){
+    .services-grid{
+        border-top:1px solid var(--border-soft);
+    }
+
+    .service-card{
+        grid-template-columns:36px minmax(0,1fr) 18px;
+        gap:12px;
+        padding:22px 0;
+    }
+
+    .service-number{
+        width:26px;
+        height:26px;
+        font-size:7px;
+    }
+
+    .service-card h3{
+        margin:0;
+        font-size:23px;
+    }
+
+    .service-card p{
+        margin-top:7px;
+        font-size:10.5px;
+        line-height:1.65;
+    }
+
+    .service-card::before{
+        font-size:15px;
+    }
+
+    .service-card:hover{
+        padding-left:5px;
+    }
+}
