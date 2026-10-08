@@ -799,3 +799,107 @@ body:before{opacity:.12;background-image:radial-gradient(rgba(255,255,255,.8) .8
   .manifesto-copy:after{font-size:22px;letter-spacing:8px}
   .footer-inner:before{font-size:19px;letter-spacing:5px}
 }
+
+
+/* AURA ALT — PETALS / SCATTERED FLORAL DETAILS */
+.hero-copy:after{
+  content:"✿  ❀  ✽  ✾";
+  letter-spacing:14px;
+}
+.hero:after{
+  text-shadow:
+    55px 18px 0 var(--aura-pink),
+    130px -8px 0 var(--aura-cyan),
+    210px 34px 0 var(--aura-purple),
+    300px -12px 0 var(--aura-lime);
+}
+.hero-grid:after{
+  content:"❋  ·  ✿  ·  ❀  ·  ✽  ·  ❁";
+  position:absolute;
+  right:2%;
+  bottom:5%;
+  font-family:Georgia,serif;
+  font-size:22px;
+  letter-spacing:13px;
+  color:var(--aura-pink);
+  transform:rotate(-7deg);
+  text-shadow:6px 5px 0 var(--aura-blue);
+  pointer-events:none;
+}
+.intro{
+  overflow:hidden;
+}
+.intro-grid{
+  position:relative;
+}
+.intro-lead:after{
+  content:"·  ❀  ·  ✿  ·  ❁  ·";
+  display:block;
+  margin-top:28px;
+  font-family:Georgia,serif;
+  font-size:23px;
+  letter-spacing:9px;
+  color:var(--aura-pink);
+  transform:rotate(-4deg);
+}
+.mini-tags>span:nth-child(1):after{
+  content:"❀  ·  ·  ✿";
+}
+.mini-tags>span:nth-child(2):after{
+  content:"✽  ·  ❁  ·  ❀";
+}
+.mini-tags>span:nth-child(3):after{
+  content:"✾  ·  ✿  ·  ❋";
+}
+.mini-tags>span:nth-child(4):after{
+  content:"❁  ·  ❀  ·  ✽";
+}
+.service-card div:nth-child(2):after{
+  content:"·  ✿  ·  ❀  ·";
+  display:block;
+  margin-top:18px;
+  font-family:Georgia,serif;
+  font-size:18px;
+  letter-spacing:8px;
+  color:currentColor;
+  opacity:.7;
+}
+.services .container:after{
+  content:"✿   ❀   ✽   ❁   ✾   ❋";
+  display:block;
+  margin-top:55px;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:25px;
+  letter-spacing:17px;
+  color:var(--aura-lime);
+  transform:rotate(-2deg);
+  text-shadow:5px 5px 0 var(--aura-pink);
+}
+.manifesto-list:after{
+  content:"❀  ·  ✿  ·  ✽  ·  ❁  ·  ✾";
+  display:block;
+  margin-top:28px;
+  font-family:Georgia,serif;
+  font-size:21px;
+  letter-spacing:10px;
+  color:var(--aura-cyan);
+}
+.footer-inner:after{
+  content:"·  ❀  ·  ✿  ·  ❁  ·  ✽  ·";
+  position:absolute;
+  left:38%;
+  bottom:-5px;
+  font-family:Georgia,serif;
+  font-size:18px;
+  letter-spacing:9px;
+  color:var(--aura-lime);
+}
+@media(max-width:700px){
+  .hero-grid:after{right:1%;bottom:3%;font-size:16px;letter-spacing:7px}
+  .intro-lead:after{font-size:18px;letter-spacing:6px;margin-top:22px}
+  .service-card div:nth-child(2):after{font-size:15px;letter-spacing:5px}
+  .services .container:after{font-size:19px;letter-spacing:8px;margin-top:35px}
+  .manifesto-list:after{font-size:17px;letter-spacing:6px}
+  .footer-inner:after{left:0;bottom:-28px;font-size:15px;letter-spacing:5px}
+}
