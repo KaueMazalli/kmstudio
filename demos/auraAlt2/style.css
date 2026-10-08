@@ -55,3 +55,20 @@ body{background:#fbf9ff;color:#241735}
  .service-card{box-shadow:0 12px 30px rgba(48,24,76,.08)}
  .mini-tags>span{box-shadow:0 10px 24px rgba(57,28,92,.06)}
 }
+
+
+/* CONTRAST FIX */
+body{color:#21152f}
+.hero-copy p,.section-top>p,.intro-lead,.mini-tags small,.service-card p,.manifesto-copy p{color:#4f435c}
+.nav a,.text-link{color:#34283f}
+.nav a:hover,.text-link:hover{color:#5f20d9}
+.section h2,.hero-copy h1{color:#21152f}
+.section h2 em,.hero-copy h1 em{color:#6422d9}
+.mini-tags b,.service-card h3,.manifesto-list span{color:#21152f}
+.service-meta strong{color:#5a1fd0}
+.service-meta span{color:#4f435c;opacity:1}
+.service-number{color:#5f20d9}
+.section-kicker,.eyebrow{color:#5b3787;font-weight:700}
+.service-button{color:#21152f}
+.service-button:hover{color:#fff}
+.footer{color:#f8f5ff}
