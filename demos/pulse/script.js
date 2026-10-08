@@ -1,1 +1,6 @@
-const h=document.querySelector("header");if(h){const f=()=>h.classList.toggle("scrolled",scrollY>45);f();addEventListener("scroll",f,{passive:true})}
+const header=document.querySelector("header");
+if(header){
+  const update=()=>header.classList.toggle("is-scrolled",window.scrollY>30);
+  update();
+  window.addEventListener("scroll",update,{passive:true});
+}
