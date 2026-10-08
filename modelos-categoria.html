@@ -125,3 +125,18 @@ content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href=
 <style>
 .category-number{display:none !important;}
 </style>
+
+<style>
+/* Sem numeração visual */
+.section-label > span:first-child,
+#category-number,
+.category-index,
+.category-number,
+.project-number,
+.portfolio-panel-number{
+  display:none !important;
+}
+.completed-project-preview::before{
+  content:none !important;
+}
+</style>
