@@ -66,102 +66,7 @@
 .portfolio-page-cta .btn{display:inline-flex;margin-top:20px;min-height:46px}
 }
 <style>
-/* MODELOS — CATEGORIAS VISUAIS */
-.model-categories{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-}
-.model-category{
-  display:grid;
-  grid-template-columns:150px minmax(0,1fr) 40px;
-  align-items:stretch;
-  gap:20px;
-  min-height:270px;
-  padding:14px;
-  background:#0b121b;
-}
-.model-category > .category-image{
-  grid-column:1;
-  grid-row:1;
-  min-height:240px;
-  border-radius:16px;
-  background-position:center;
-  background-size:cover;
-  position:relative;
-  overflow:hidden;
-}
-.category-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(6,11,17,.04),rgba(6,11,17,.28));
-}
-.model-category > .category-copy{
-  grid-column:2;
-  grid-row:1;
-  align-self:center;
-  min-width:0;
-  padding:12px 0;
-}
-.model-category h2{
-  margin-top:17px;
-  font-size:clamp(30px,2.8vw,43px);
-}
-.model-category p{
-  max-width:330px;
-  margin-top:14px;
-}
-.category-arrow{
-  grid-column:3;
-  grid-row:1;
-  align-self:end;
-  margin-bottom:5px;
-}
-.model-category:nth-child(2n){transform:translateY(24px)}
-.model-category:hover{transform:translateY(-5px)}
-.model-category:nth-child(2n):hover{transform:translateY(19px)}
-@media(max-width:850px){
-  .model-category{
-    grid-template-columns:120px minmax(0,1fr) 34px;
-    gap:16px;
-  }
-  .model-category > .category-image{min-height:230px}
-}
-@media(max-width:700px){
-  .model-categories{display:block}
-  .model-category,.model-category:nth-child(2n){
-    display:grid;
-    grid-template-columns:92px minmax(0,1fr) 32px;
-    gap:13px;
-    min-height:185px;
-    margin-bottom:14px;
-    padding:10px;
-    transform:none;
-    border-radius:18px;
-  }
-  .model-category:hover,.model-category:nth-child(2n):hover{transform:translateY(-3px)}
-  .model-category > .category-image{
-    min-height:165px;
-    border-radius:13px;
-  }
-  .model-category > .category-copy{padding:5px 0}
-  .category-label{padding:5px 7px;font-size:6px;letter-spacing:1.5px}
-  .model-category h2{margin-top:10px;font-size:25px;line-height:.98}
-  .model-category p{margin-top:8px;font-size:9.5px;line-height:1.55}
-  .category-arrow{width:30px;height:30px;font-size:14px}
-}
-@media(max-width:430px){
-  .model-category{
-    grid-template-columns:78px minmax(0,1fr) 28px;
-    gap:10px;
-    min-height:170px;
-  }
-  .model-category > .category-image{min-height:150px}
-  .model-category h2{font-size:22px}
-  .model-category p{font-size:9px}
-  .category-arrow{width:27px;height:27px;font-size:13px}
-}
-</style></style></head>
+</style></head>
 <body>
 <header class="header"><div class="container header-inner">
 <a href="index.html" class="logo" aria-label="KM Studio — início"><span class="logo-main">KM</span><span class="logo-sub">Studio</span></a>
@@ -181,27 +86,21 @@
 
 <div class="model-categories">
 <a class="model-category" href="modelos-categoria.html?tipo=institucional">
-  <div class="category-image" style="background-image:url('demos/atelier/assets/hero.jpg')"></div>
   <div class="category-copy"><span class="category-label">APRESENTAÇÃO</span><h2>Institucional</h2><p>Para empresas, profissionais e negócios que precisam de uma presença digital clara e profissional.</p></div><span class="category-arrow">↗</span>
 </a>
 <a class="model-category" href="modelos-categoria.html?tipo=landing">
-  <div class="category-image" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85')"></div>
   <div class="category-copy"><span class="category-label">CONVERSÃO</span><h2>Landing Pages</h2><p>Páginas focadas em apresentar uma oferta, serviço ou campanha e gerar contatos.</p></div><span class="category-arrow">↗</span>
 </a>
 <a class="model-category" href="modelos-categoria.html?tipo=catalogo">
-  <div class="category-image" style="background-image:url('demos/noma/assets/hero.jpg')"></div>
   <div class="category-copy"><span class="category-label">PRODUTOS</span><h2>Catálogo Digital</h2><p>Produtos organizados de forma visual, com detalhes e contato direto pelo WhatsApp.</p></div><span class="category-arrow">↗</span>
 </a>
 <a class="model-category" href="modelos-categoria.html?tipo=servicos">
-  <div class="category-image" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85')"></div>
   <div class="category-copy"><span class="category-label">ATENDIMENTO</span><h2>Serviços</h2><p>Para profissionais e negócios que precisam apresentar serviços, preços e facilitar o agendamento.</p></div><span class="category-arrow">↗</span>
 </a>
 <a class="model-category" href="modelos-categoria.html?tipo=portfolio">
-  <div class="category-image" style="background-image:url('demos/forma/assets/hero.jpg')"></div>
   <div class="category-copy"><span class="category-label">TRABALHOS</span><h2>Portfólio</h2><p>Projetos visuais para arquitetura, fotografia, arte, design e outros trabalhos autorais.</p></div><span class="category-arrow">↗</span>
 </a>
 <a class="model-category" href="modelos-categoria.html?tipo=comercio">
-  <div class="category-image" style="background-image:url('demos/livros/assets/hero.webp')"></div>
   <div class="category-copy"><span class="category-label">VENDAS</span><h2>Comércio</h2><p>Para lojas e pequenos negócios que querem apresentar produtos e receber pedidos.</p></div><span class="category-arrow">↗</span>
 </a>
 </div>
