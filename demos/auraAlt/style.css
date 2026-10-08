@@ -394,3 +394,37 @@ body{background:var(--paper)}
  .final-cta h2{font-size:clamp(57px,14vw,76px)}
  .footer-brand{font-size:47px}
 }
+
+
+/* ENTRADA — animação editorial leve */
+@keyframes auraRiseIn {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes auraImageIn {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.97) rotate(1.5deg); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0); }
+}
+@keyframes auraStampIn {
+  from { opacity: 0; transform: scale(.72) rotate(-18deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+.header { animation: auraRiseIn .65s cubic-bezier(.2,.7,.2,1) both; }
+.hero-copy > * { animation: auraRiseIn .7s cubic-bezier(.2,.7,.2,1) both; }
+.hero-copy > *:nth-child(1) { animation-delay: .08s; }
+.hero-copy > *:nth-child(2) { animation-delay: .16s; }
+.hero-copy > *:nth-child(3) { animation-delay: .24s; }
+.hero-copy > *:nth-child(4) { animation-delay: .32s; }
+.hero-copy > *:nth-child(5) { animation-delay: .4s; }
+.hero-image-main { animation: auraImageIn .9s .12s cubic-bezier(.2,.7,.2,1) both; }
+.hero-image-small { animation: auraImageIn .8s .32s cubic-bezier(.2,.7,.2,1) both; }
+.round-stamp { animation: auraStampIn .7s .55s cubic-bezier(.2,.7,.2,1) both; }
+.hero-bottom { animation: auraRiseIn .7s .42s ease both; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
