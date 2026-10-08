@@ -316,96 +316,43 @@
              PRODUTOS
         ========================================== -->
 
-        <section
-            class="products-section"
-            id="produtos"
-        >
+        <section class="products-section" id="produtos">
 
             <div class="section-container">
 
                 <div class="products-header">
-
                     <div>
-
-                        <p class="eyebrow">
-                            SELEÇÃO PATA & CIA
-                        </p>
-
-                        <h2>
-                            Produtos em destaque
-                        </h2>
-
+                        <p class="eyebrow">CATÁLOGO</p>
+                        <h2>O que seu pet<br>precisa está aqui.</h2>
                     </div>
-
-                    <p>
-                        Escolha por categoria ou encontre
-                        exatamente o que procura.
-                    </p>
-
+                    <p>Rações, brinquedos e acessórios selecionados para a rotina de cães e gatos.</p>
                 </div>
 
-
-                <!-- FILTROS -->
-
-                <div class="product-filters">
-
+                <div class="product-toolbar">
                     <div class="search-box">
-
                         <i class="fa-solid fa-magnifying-glass"></i>
-
-                        <input
-                            type="search"
-                            id="searchInput"
-                            placeholder="Buscar produto..."
-                        >
-
+                        <input type="search" id="searchInput" placeholder="Buscar no catálogo..." aria-label="Buscar produto">
                     </div>
 
-
-                    <div class="filter-buttons">
-
-                        <button
-                            class="filter-button active"
-                            data-filter="todos"
-                        >
-                            Todos
-                        </button>
-
+                    <div class="filter-buttons" aria-label="Categorias de produtos">
+                        <button class="filter-button active" data-filter="todos">Todos</button>
                         <button class="filter-button" data-filter="Rações">Rações</button>
                         <button class="filter-button" data-filter="Brinquedos">Brinquedos</button>
                         <button class="filter-button" data-filter="Acessórios">Acessórios</button>
-
                     </div>
-
                 </div>
 
+                <div class="product-grid" id="productGrid"></div>
 
-                <!-- GRID -->
-
-                <div
-                    class="product-grid"
-                    id="productGrid"
-                >
-                </div>
-
-
-                <div
-                    class="empty-products"
-                    id="emptyProducts"
-                >
-
+                <div class="empty-products" id="emptyProducts">
                     <i class="fa-solid fa-paw"></i>
-
-                    <p>
-                        Nenhum produto encontrado.
-                    </p>
-
+                    <p>Nenhum produto encontrado.</p>
+                    <span>Tente outra busca ou categoria.</span>
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- =========================================
