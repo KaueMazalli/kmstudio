@@ -124,9 +124,30 @@ const content=document.getElementById("category-content");
 if(!data.items.length){
 content.innerHTML='<div class="empty-category"><h2>Novos modelos em desenvolvimento.</h2><p>Esta categoria vai receber novas direções em breve. Se você precisa desse tipo de site agora, podemos desenvolver uma proposta personalizada para o seu negócio.</p></div>';
 }else{
-content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href="'+item[3]+'" class="category-card"><div class="category-preview"><img src="https://api.microlink.io/?url='+encodeURIComponent('https://'+item[4])+'&meta=false&screenshot=true&force=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo '+item[1]+'" loading="lazy" width="1200" height="800"><span class="category-tag">VER MODELO ↗</span></div><div class="category-info"><span class="category-index">'+item[0]+'</span><div><h2>'+item[1]+'</h2><p>'+item[2]+'</p></div></div></a>').join("")+'</div>';
+content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href="'+item[3]+'" class="category-card"><div class="category-preview"><div class="preview-site"><div class="preview-browser"><span></span><span></span><span></span></div><div class="preview-screen"><div class="preview-brand">'+item[1]+'</div><div class="preview-line preview-line-main"></div><div class="preview-line"></div><div class="preview-line short"></div><div class="preview-blocks"><i></i><i></i><i></i></div></div></div><span class="category-tag">VER MODELO ↗</span></div><div class="category-info"><span class="category-index">'+item[0]+'</span><div><h2>'+item[1]+'</h2><p>'+item[2]+'</p></div></div></a>').join("")+'</div>';
 }
 </script>
+
+<style>
+.category-preview{position:relative;overflow:hidden;min-height:300px;background:#e9e5df;border-radius:22px}
+.preview-site{position:absolute;inset:18px 18px 0;background:#fff;border-radius:12px 12px 0 0;overflow:hidden;box-shadow:0 12px 30px #00000018}
+.preview-browser{height:24px;display:flex;align-items:center;gap:5px;padding:0 10px;background:#f2f0ed;border-bottom:1px solid #e5e1db}
+.preview-browser span{width:6px;height:6px;border-radius:50%;background:#b9b4ad}
+.preview-screen{padding:25px 24px;height:100%;background:linear-gradient(145deg,#fff 0%,#f7f5f1 100%)}
+.preview-brand{font:700 11px/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:34px;color:#202020}
+.preview-line{width:48%;height:7px;border-radius:4px;background:#c9c5bf;margin-bottom:10px}
+.preview-line-main{width:78%;height:25px;background:#292929;margin-bottom:14px}
+.preview-line.short{width:32%}
+.preview-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:28px}
+.preview-blocks i{display:block;height:72px;border-radius:8px;background:#ddd8d0}
+.category-card:nth-child(2) .preview-screen{background:linear-gradient(145deg,#f5f8ff,#fff)}
+.category-card:nth-child(2) .preview-line-main{background:#3158a5}
+.category-card:nth-child(3) .preview-screen{background:linear-gradient(145deg,#fff8ef,#fff)}
+.category-card:nth-child(3) .preview-line-main{background:#b65345}
+.category-card:nth-child(4) .preview-screen{background:linear-gradient(145deg,#eef5f1,#fff)}
+.category-card:nth-child(4) .preview-line-main{background:#2f5d50}
+@media(max-width:700px){.category-preview{min-height:230px}.preview-site{inset:12px 12px 0}.preview-screen{padding:18px}.preview-blocks i{height:55px}}
+</style>
 </body>
 </html>
 <style>
