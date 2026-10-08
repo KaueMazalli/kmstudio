@@ -2232,3 +2232,217 @@ section {
         padding: 45px 28px;
     }
 }
+
+
+/* =========================================================
+   PORTFÓLIO — MOBILE FIRST
+   Ajustes específicos para projetos concluídos e modelos
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Entrada do portfólio na home */
+    .portfolio-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 0;
+    }
+
+    .portfolio-panel {
+        min-height: 0;
+        min-height: 360px;
+        align-items: flex-end;
+        border-radius: 2px;
+    }
+
+    .portfolio-panel-content {
+        padding: 28px 22px 25px;
+    }
+
+    .portfolio-panel-number {
+        margin-bottom: 14px;
+        font-size: 9px;
+    }
+
+    .portfolio-panel-label {
+        margin-bottom: 15px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .portfolio-panel h3 {
+        max-width: 100%;
+        font-size: clamp(31px, 9vw, 40px);
+        line-height: 1.05;
+    }
+
+    .portfolio-panel p {
+        max-width: 100%;
+        margin-top: 16px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .portfolio-panel-link {
+        margin-top: 20px;
+        font-size: 9px;
+    }
+
+    /* Páginas Projetos / Modelos */
+    .portfolio-page {
+        padding: 125px 0 75px;
+    }
+
+    .portfolio-page-header {
+        margin-bottom: 38px;
+    }
+
+    .portfolio-page-header .section-label {
+        gap: 11px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .portfolio-page-header h1 {
+        max-width: 100%;
+        margin-top: 25px;
+        font-size: clamp(42px, 12vw, 52px);
+        line-height: .98;
+        letter-spacing: -1.5px;
+    }
+
+    .portfolio-page-header p {
+        max-width: 100%;
+        margin-top: 20px;
+        font-size: 11px;
+        line-height: 1.75;
+    }
+
+    .portfolio-back {
+        margin-top: 20px;
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    /* Cards de modelos e projetos */
+    .project-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .project-image,
+    .model-preview,
+    .completed-project-preview {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+    }
+
+    .model-preview img,
+    .completed-project-preview img {
+        object-fit: cover;
+    }
+
+    .model-preview-label,
+    .completed-project-label {
+        right: 12px;
+        bottom: 12px;
+        padding: 9px 10px;
+        font-size: 7px;
+        letter-spacing: 1.2px;
+        opacity: 1;
+        transform: none;
+    }
+
+    .model-preview-label span,
+    .completed-project-label span {
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    .project-info {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        align-items: start;
+        gap: 12px;
+        padding-top: 13px;
+    }
+
+    .project-number {
+        padding-top: 3px;
+        font-size: 8px;
+    }
+
+    .project-info h3 {
+        font-size: 25px;
+        line-height: 1.1;
+    }
+
+    .project-info p {
+        margin-top: 5px;
+        font-size: 9px;
+        line-height: 1.5;
+        letter-spacing: .2px;
+    }
+
+    .portfolio-page-cta {
+        margin-top: 65px;
+        padding-top: 32px;
+    }
+
+    .portfolio-page-cta h2 {
+        max-width: 100%;
+        font-size: clamp(31px, 9vw, 40px);
+        line-height: 1.08;
+    }
+
+    .portfolio-page-cta .btn {
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .portfolio-panel {
+        min-height: 335px;
+    }
+
+    .portfolio-panel-content {
+        padding: 25px 19px 22px;
+    }
+
+    .portfolio-panel h3 {
+        font-size: 32px;
+    }
+
+    .portfolio-panel p {
+        font-size: 10px;
+    }
+
+    .portfolio-page {
+        padding-top: 115px;
+    }
+
+    .portfolio-page-header h1 {
+        font-size: 41px;
+    }
+
+    .portfolio-grid {
+        gap: 36px;
+    }
+
+    .project-info h3 {
+        font-size: 23px;
+    }
+
+    .project-info p {
+        font-size: 8px;
+    }
+}
