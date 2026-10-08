@@ -3220,3 +3220,59 @@ button:focus-visible {
         padding-left:3px;
     }
 }
+
+
+/* HOME — SERVIÇOS: TEXTO SEM COLUNA */
+.services-grid{
+    display:block;
+}
+
+.service-card{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    min-height:0;
+    padding:27px 0;
+    border:0;
+    border-bottom:1px solid var(--border-soft);
+    background:transparent;
+}
+
+.service-number{
+    position:static;
+    flex:0 0 28px;
+    width:28px;
+    height:28px;
+    margin:0;
+}
+
+.service-card h3,
+.service-card p{
+    max-width:none;
+}
+
+.service-card h3{
+    margin:0;
+}
+
+.service-card p{
+    margin-top:9px;
+}
+
+.service-card::before{
+    flex:0 0 auto;
+    margin-left:auto;
+}
+
+@media(max-width:700px){
+    .service-card{
+        gap:12px;
+        padding:22px 0;
+    }
+
+    .service-number{
+        flex-basis:25px;
+        width:25px;
+        height:25px;
+    }
+}
