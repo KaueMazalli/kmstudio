@@ -98,3 +98,8 @@ footer span{color:var(--orange)}
   .contact{padding:92px 0 100px}
   .contact .wrap>h2{font-size:clamp(70px,20vw,108px)}
 }
+
+
+/* CTA FINAL — contraste */
+.contact h2 i{color:var(--ink)}
+.contact .section-meta.light{color:#12151b99;border-color:#12151b35}
