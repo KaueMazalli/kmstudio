@@ -1326,3 +1326,48 @@ body:before{opacity:.12;background-image:radial-gradient(rgba(255,255,255,.8) .8
     radial-gradient(ellipse at 8% 48%,#7B6CFF 0 25%,transparent 26%);
 }
 .opening-mark{background:var(--aura-blue);box-shadow:9px 9px 0 var(--aura-cyan)}
+
+
+/* AURA ALT — SNOWFLAKES */
+.snow-field{
+  position:fixed;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  overflow:hidden;
+}
+.snowflake{
+  position:absolute;
+  top:-8vh;
+  width:22px;
+  height:22px;
+  color:#DCEBFF;
+  font-family:Arial,sans-serif;
+  font-size:20px;
+  line-height:1;
+  text-align:center;
+  text-shadow:0 0 12px rgba(66,223,255,.55);
+  opacity:.82;
+  animation:snowFall linear infinite;
+}
+.snowflake:nth-child(1){left:7%;animation-duration:13s;animation-delay:-4s;transform:scale(.65)}
+.snowflake:nth-child(2){left:19%;animation-duration:17s;animation-delay:-10s;transform:scale(.9)}
+.snowflake:nth-child(3){left:31%;animation-duration:15s;animation-delay:-2s;transform:scale(.55)}
+.snowflake:nth-child(4){left:43%;animation-duration:19s;animation-delay:-12s;transform:scale(.78)}
+.snowflake:nth-child(5){left:56%;animation-duration:14s;animation-delay:-7s;transform:scale(.6)}
+.snowflake:nth-child(6){left:68%;animation-duration:18s;animation-delay:-15s;transform:scale(.95)}
+.snowflake:nth-child(7){left:79%;animation-duration:16s;animation-delay:-5s;transform:scale(.5)}
+.snowflake:nth-child(8){left:91%;animation-duration:20s;animation-delay:-13s;transform:scale(.72)}
+@keyframes snowFall{
+  0%{top:-8vh;opacity:0;transform:translateX(0) rotate(0deg) scale(.7)}
+  10%{opacity:.82}
+  50%{transform:translateX(28px) rotate(180deg) scale(1)}
+  100%{top:108vh;opacity:.15;transform:translateX(-35px) rotate(360deg) scale(.75)}
+}
+@media(max-width:700px){
+  .snowflake{font-size:16px;width:18px;height:18px}
+  .snow-field{opacity:.7}
+}
+@media(prefers-reduced-motion:reduce){
+  .snowflake{animation:none;opacity:.5}
+}
