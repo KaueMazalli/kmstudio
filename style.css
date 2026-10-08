@@ -3341,3 +3341,31 @@ button:focus-visible {
         margin-top:7px;
     }
 }
+
+
+/* HOME — SERVIÇOS: SEM NUMERAÇÃO */
+.service-card{
+    grid-template-columns:minmax(0,1fr) 20px;
+}
+
+.service-number{
+    display:none;
+}
+
+.service-card h3{
+    grid-column:1;
+}
+
+.service-card p{
+    grid-column:1;
+}
+
+.service-card::before{
+    grid-column:2;
+}
+
+@media(max-width:700px){
+    .service-card{
+        grid-template-columns:minmax(0,1fr) 18px;
+    }
+}
