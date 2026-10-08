@@ -122,59 +122,28 @@ if (header) {
 ========================================================= */
 
 const revealElements = document.querySelectorAll(
-    [
-        ".service-card",
-        ".benefit-card",
-        ".project-card",
-        ".projects-cta",
-        ".process-item",
-        ".faq-item",
-        ".about-content",
-        ".intro-content"
-    ].join(", ")
+    ".service-card, .project-card, .projects-cta, .about-content"
 );
 
-
 if ("IntersectionObserver" in window) {
-
     const observer = new IntersectionObserver(
         (entries) => {
-
             entries.forEach((entry) => {
-
-                if (!entry.isIntersecting) {
-                    return;
-                }
+                if (!entry.isIntersecting) return;
 
                 entry.target.classList.add("visible");
-
                 observer.unobserve(entry.target);
-
             });
-
         },
-        {
-            threshold: 0.12
-        }
+        { threshold: 0.12 }
     );
 
-
     revealElements.forEach((element) => {
-
         element.classList.add("reveal");
-
         observer.observe(element);
-
     });
-
 } else {
-
-    /* Fallback para navegadores sem IntersectionObserver */
-
     revealElements.forEach((element) => {
-
         element.classList.add("visible");
-
     });
-
 }
