@@ -2574,3 +2574,288 @@ a {
 
     .product-image::after { display: none; }
 }
+
+
+/* =========================================================
+   REFINAMENTO VISUAL — PATA & CIA
+   Direção: editorial, leve e mais autoral
+========================================================= */
+
+:root {
+    --green: #315b49;
+    --green-dark: #234638;
+    --green-light: #e8eee9;
+    --cream: #f7f4ed;
+    --beige: #e5ddce;
+    --black: #171916;
+    --gray: #687069;
+    --border: #d9d8d0;
+}
+
+body { background: var(--cream); }
+
+.site-header {
+    background: rgba(247,244,237,.88);
+    border-bottom-color: rgba(23,25,22,.07);
+}
+
+/* HERO — menos "pet shop template", mais editorial */
+.hero {
+    min-height: 800px;
+}
+
+.hero-container {
+    min-height: 718px;
+    grid-template-columns: .82fr 1.18fr;
+    gap: 75px;
+}
+
+.hero-content {
+    padding-bottom: 35px;
+}
+
+.hero h1 {
+    max-width: 590px;
+    font-size: clamp(52px, 5.2vw, 78px);
+    line-height: .96;
+}
+
+.hero h1 em {
+    color: var(--green);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 445px;
+    margin-top: 27px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-actions { margin-top: 34px; }
+
+.hero-visual {
+    padding: 12px 0 62px 32px;
+}
+
+.hero-image {
+    height: 600px;
+}
+
+.hero-image::after {
+    background: linear-gradient(180deg, rgba(0,0,0,.02) 45%, rgba(0,0,0,.28));
+}
+
+.hero-note {
+    right: -10px;
+    bottom: 5px;
+    width: 300px;
+    padding: 20px 22px;
+}
+
+/* pequenos detalhes editoriais */
+.hero-content::before {
+    content: "PATA & CIA  /  CUIDADO ANIMAL";
+    display: block;
+    margin-bottom: 24px;
+    color: #8a918b;
+    font-size: 8px;
+    letter-spacing: .2em;
+}
+
+/* CATEGORIAS — composição menos uniforme */
+.categories { padding: 135px 0; }
+
+.section-heading { margin-bottom: 50px; }
+
+.category-grid {
+    grid-template-columns: 1.15fr .9fr .9fr 1.15fr;
+    grid-template-rows: 250px 190px;
+    gap: 12px;
+}
+
+.category-card { min-height: 0; }
+.category-card:nth-child(1) { grid-row: span 2; }
+.category-card:nth-child(4) { grid-row: span 2; }
+.category-card:nth-child(5) { display: none; }
+
+.category-card strong { font-size: 30px; }
+
+.category-image img { filter: saturate(.88); }
+
+/* SERVIÇOS — mais sofisticado e menos "cards" */
+.services { padding: 135px 0; }
+
+.services .section-heading { margin-bottom: 48px; }
+
+.service-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.service-card {
+    min-height: 300px;
+    padding: 30px;
+    background: var(--cream);
+    transition: background .25s ease, transform .25s ease;
+}
+
+.service-card:hover {
+    transform: none;
+    background: var(--white);
+}
+
+.service-card-dark {
+    background: var(--green);
+}
+
+.service-card-dark:hover { background: var(--green-dark); }
+
+.service-card i { color: var(--green); }
+.service-card-dark i { color: #dce8df; }
+
+.service-card h3 { font-size: 27px; }
+
+/* CATÁLOGO — mais respiro e menos aspecto de e-commerce genérico */
+.products-section { padding: 140px 0; }
+
+.products-header h2 { max-width: 560px; }
+
+.product-toolbar {
+    margin-bottom: 38px;
+    padding: 15px 0;
+}
+
+.product-card {
+    background: transparent;
+}
+
+.product-image {
+    height: 300px;
+    background: var(--beige);
+}
+
+.product-info { padding: 17px 2px 20px; }
+
+.product-bottom {
+    border-color: var(--border);
+}
+
+.add-product {
+    border-radius: 0;
+}
+
+/* SOBRE — bloco mais editorial */
+.about { padding: 145px 0; }
+
+.about-container {
+    grid-template-columns: .92fr 1.08fr;
+    gap: 90px;
+}
+
+.about-image {
+    height: 620px;
+}
+
+.about-content h2 { font-size: clamp(42px, 4vw, 59px); }
+
+/* CONTATO */
+.contact { padding: 140px 0; }
+
+.contact-whatsapp {
+    background: transparent;
+    padding: 20px 0;
+    border-width: 1px 0;
+}
+
+.contact-whatsapp:hover {
+    transform: none;
+    padding-left: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .hero { min-height: auto; }
+
+    .hero-container {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding-top: 58px;
+        padding-bottom: 70px;
+    }
+
+    .hero-content {
+        padding-bottom: 0;
+        text-align: left;
+    }
+
+    .hero-content::before { margin-bottom: 18px; }
+
+    .hero h1 { margin-inline: 0; }
+    .hero-description { margin-inline: 0; }
+    .hero-actions { justify-content: flex-start; }
+
+    .hero-visual {
+        padding: 0 0 48px;
+    }
+
+    .hero-image { height: 470px; }
+    .hero-note { right: 12px; }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 220px 220px;
+    }
+
+    .category-card:nth-child(1),
+    .category-card:nth-child(4) { grid-row: span 1; }
+
+    .category-card:nth-child(5) { display: flex; }
+
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .about-container { gap: 55px; }
+}
+
+@media (max-width: 520px) {
+    .hero-container { padding-top: 48px; padding-bottom: 62px; }
+
+    .hero h1 { font-size: 44px; }
+    .hero-description { font-size: 13px; line-height: 1.75; }
+    .hero-actions { flex-direction: row; align-items: center; gap: 18px; }
+    .hero-actions .button-primary { width: auto; }
+
+    .hero-image { height: 390px; }
+    .hero-note { width: calc(100% - 24px); right: 12px; padding: 17px; }
+    .hero-note-icon { width: 38px; height: 38px; }
+
+    .categories,
+    .services,
+    .products-section,
+    .about,
+    .contact { padding: 92px 0; }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 190px 190px 190px;
+    }
+
+    .category-card { padding: 20px; }
+    .category-card strong { font-size: 24px; }
+    .category-icon { top: 35px; left: 20px; font-size: 23px; }
+    .category-number { top: 19px; right: 19px; }
+
+    .service-grid { grid-template-columns: 1fr; }
+    .service-card { min-height: 205px; padding: 24px; }
+    .service-card h3 { font-size: 25px; }
+
+    .products-section .product-grid { gap: 12px; }
+    .product-image { height: 195px; }
+
+    .about-image { height: 350px; }
+    .about-content h2 { font-size: 39px; }
+}
