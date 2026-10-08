@@ -3276,3 +3276,68 @@ button:focus-visible {
         height:25px;
     }
 }
+
+
+/* HOME — SERVIÇOS: NÚMERO + TÍTULO / DESCRIÇÃO ABAIXO */
+.service-card{
+    display:grid;
+    grid-template-columns:28px minmax(0,1fr) 20px;
+    grid-template-rows:auto auto;
+    column-gap:14px;
+    row-gap:0;
+    align-items:start;
+    padding:27px 0;
+}
+
+.service-number{
+    grid-column:1;
+    grid-row:1;
+    position:static;
+    width:28px;
+    height:28px;
+    margin:0;
+    flex:none;
+}
+
+.service-card h3{
+    grid-column:2;
+    grid-row:1;
+    margin:0;
+    max-width:none;
+    align-self:center;
+}
+
+.service-card p{
+    grid-column:2;
+    grid-row:2;
+    margin:9px 0 0;
+    max-width:620px;
+}
+
+.service-card::before{
+    grid-column:3;
+    grid-row:1;
+    margin:0;
+    align-self:center;
+}
+
+@media(max-width:700px){
+    .service-card{
+        grid-template-columns:25px minmax(0,1fr) 18px;
+        column-gap:11px;
+        padding:22px 0;
+    }
+
+    .service-number{
+        width:25px;
+        height:25px;
+    }
+
+    .service-card h3{
+        font-size:23px;
+    }
+
+    .service-card p{
+        margin-top:7px;
+    }
+}
