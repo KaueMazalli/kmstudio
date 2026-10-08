@@ -101,7 +101,152 @@
 .category-arrow{font-size:19px}
 .portfolio-page-cta{margin-top:68px;padding-top:28px}
 }
-</style></head>
+<style>
+/* PERSONALIDADE — CATEGORIAS */
+.model-categories{
+    border-top:0;
+    gap:16px;
+    background:none;
+}
+.model-category,
+.model-category:nth-child(odd),
+.model-category:nth-child(even){
+    min-height:285px;
+    padding:32px 30px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:
+        radial-gradient(circle at 88% 12%, rgba(59,107,143,.12), transparent 34%),
+        linear-gradient(145deg, rgba(16,40,67,.24), rgba(6,11,17,.12));
+    box-shadow:0 14px 38px rgba(0,0,0,.12);
+    overflow:hidden;
+    transition:transform .35s ease, border-color .35s ease, background .35s ease, box-shadow .35s ease;
+}
+.model-category:nth-child(even){
+    transform:translateY(28px);
+}
+.model-category::before{
+    left:24px;
+    top:auto;
+    bottom:0;
+    width:38px;
+    height:2px;
+    border-radius:99px;
+    background:var(--gold);
+    opacity:.75;
+    transition:width .4s ease;
+}
+.model-category:hover{
+    transform:translateY(-5px);
+    border-color:rgba(217,199,166,.38);
+    background:
+        radial-gradient(circle at 88% 12%, rgba(217,199,166,.11), transparent 34%),
+        linear-gradient(145deg, rgba(16,40,67,.38), rgba(6,11,17,.2));
+    box-shadow:0 22px 52px rgba(0,0,0,.2);
+}
+.model-category:nth-child(even):hover{
+    transform:translateY(23px);
+}
+.model-category:hover::before{
+    height:2px;
+    width:70px;
+}
+.category-number{
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:rgba(6,11,17,.35);
+}
+.category-label{
+    display:inline-block;
+    padding:6px 9px;
+    border:1px solid rgba(217,199,166,.2);
+    border-radius:999px;
+    background:rgba(217,199,166,.045);
+}
+.model-category h2{
+    margin-top:18px;
+    font-size:clamp(32px,3.2vw,46px);
+}
+.model-category p{
+    max-width:390px;
+    margin-top:18px;
+    font-size:10.5px;
+}
+.category-arrow{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:rgba(6,11,17,.28);
+}
+.model-category:hover .category-arrow{
+    border-color:rgba(217,199,166,.45);
+}
+.portfolio-page-cta{
+    margin-top:105px;
+}
+@media(max-width:700px){
+    .model-categories{
+        display:block;
+    }
+    .model-category,
+    .model-category:nth-child(odd),
+    .model-category:nth-child(even){
+        min-height:215px;
+        margin-bottom:14px;
+        padding:25px 22px;
+        border-radius:18px;
+        gap:12px;
+        transform:none;
+    }
+    .model-category:hover,
+    .model-category:nth-child(even):hover{
+        transform:translateY(-3px);
+    }
+    .model-category::before{
+        left:18px;
+        width:30px;
+    }
+    .model-category:hover::before{
+        width:55px;
+    }
+    .category-number{
+        width:27px;
+        height:27px;
+        font-size:7px;
+    }
+    .category-label{
+        padding:5px 8px;
+        font-size:6.5px;
+    }
+    .model-category h2{
+        margin-top:13px;
+        font-size:30px;
+    }
+    .model-category p{
+        margin-top:10px;
+        font-size:10px;
+        line-height:1.68;
+    }
+    .category-arrow{
+        width:34px;
+        height:34px;
+        font-size:17px;
+    }
+    .portfolio-page-cta{
+        margin-top:65px;
+    }
+}
+</style></style></head>
 <body>
 <header class="header"><div class="container header-inner">
 <a href="index.html" class="logo" aria-label="KM Studio — início"><span class="logo-main">KM</span><span class="logo-sub">Studio</span></a>
