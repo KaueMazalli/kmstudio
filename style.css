@@ -3176,3 +3176,47 @@ button:focus-visible {
         padding-left:5px;
     }
 }
+
+
+/* HOME — AJUSTE DE ALINHAMENTO DOS SERVIÇOS */
+.service-card{
+    grid-template-columns:32px minmax(0,1fr) 20px;
+    gap:14px;
+    padding-left:0;
+    padding-right:0;
+}
+
+.service-number{
+    width:27px;
+    height:27px;
+    font-size:7px;
+}
+
+.service-card h3{
+    max-width:none;
+}
+
+.service-card p{
+    max-width:620px;
+}
+
+.service-card:hover{
+    padding-left:5px;
+}
+
+@media(max-width:700px){
+    .service-card{
+        grid-template-columns:29px minmax(0,1fr) 18px;
+        gap:10px;
+        padding-left:0;
+    }
+
+    .service-number{
+        width:25px;
+        height:25px;
+    }
+
+    .service-card:hover{
+        padding-left:3px;
+    }
+}
