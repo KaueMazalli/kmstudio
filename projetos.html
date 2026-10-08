@@ -167,3 +167,12 @@
   content:none !important;
 }
 </style>
+<style>
+/* PROJETOS — remover a coluna reservada ao número */
+.project-info{
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+.project-number{display:none !important;}
+.completed-project-preview::before{content:none !important;}
+</style>
