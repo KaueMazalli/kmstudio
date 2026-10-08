@@ -124,7 +124,7 @@ const content=document.getElementById("category-content");
 if(!data.items.length){
 content.innerHTML='<div class="empty-category"><h2>Novos modelos em desenvolvimento.</h2><p>Esta categoria vai receber novas direções em breve. Se você precisa desse tipo de site agora, podemos desenvolver uma proposta personalizada para o seu negócio.</p></div>';
 }else{
-content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href="'+item[3]+'" class="category-card"><div class="category-preview"><img src="https://api.microlink.io/?url='+encodeURIComponent(item[4])+'&meta=false&screenshot=true&force=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo '+item[1]+'" loading="lazy" width="1200" height="800"><span class="category-tag">VER MODELO ↗</span></div><div class="category-info"><span class="category-index">'+item[0]+'</span><div><h2>'+item[1]+'</h2><p>'+item[2]+'</p></div></div></a>').join("")+'</div>';
+content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href="'+item[3]+'" class="category-card"><div class="category-preview"><img src="https://api.microlink.io/?url='+encodeURIComponent('https://'+item[4])+'&meta=false&screenshot=true&force=true&embed=screenshot.url&viewport.width=1200&viewport.height=800&screenshot.type=jpeg&screenshot.quality=75" alt="Prévia do modelo '+item[1]+'" loading="lazy" width="1200" height="800"><span class="category-tag">VER MODELO ↗</span></div><div class="category-info"><span class="category-index">'+item[0]+'</span><div><h2>'+item[1]+'</h2><p>'+item[2]+'</p></div></div></a>').join("")+'</div>';
 }
 </script>
 </body>
