@@ -1,0 +1,1 @@
+const h=document.querySelector("header");if(h){const f=()=>h.classList.toggle("scrolled",scrollY>45);f();addEventListener("scroll",f,{passive:true})}
