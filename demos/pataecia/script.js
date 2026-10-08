@@ -12,137 +12,74 @@ const products = [
 
     {
         id: 1,
-
-        name: "Ração Golden Fórmula Cães Adultos",
-
-        category: "Cães",
-
-        price: 139.90,
-
-        image:
-            "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Ração premium especial para cães adultos, desenvolvida para uma alimentação completa e equilibrada."
+        name: "Ração Premium para Cães Adultos",
+        category: "Rações",
+        price: 129.90,
+        image: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=85",
+        description: "Alimentação completa para cães adultos."
     },
-
 
     {
         id: 2,
-
-        name: "Ração Premier Gatos Castrados",
-
-        category: "Gatos",
-
-        price: 219.90,
-
-        image:
-            "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Fórmula desenvolvida para gatos castrados, com nutrientes selecionados para uma alimentação equilibrada."
+        name: "Ração para Gatos Castrados",
+        category: "Rações",
+        price: 109.90,
+        image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=700&q=85",
+        description: "Opção de alimentação para gatos castrados."
     },
-
 
     {
         id: 3,
-
-        name: "Ração Pedigree Filhotes",
-
-        category: "Cães",
-
-        price: 24.90,
-
-        image:
-            "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Alimentação completa para filhotes, com nutrientes importantes para a fase de crescimento."
+        name: "Ração para Filhotes",
+        category: "Rações",
+        price: 89.90,
+        image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=85",
+        description: "Alimentação para a fase de crescimento."
     },
-
 
     {
         id: 4,
-
-        name: "Mistura Premium para Calopsitas",
-
-        category: "Pássaros",
-
-        price: 19.90,
-
-        image:
-            "https://images.unsplash.com/photo-1522858547137-f1d52d274431?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Seleção de sementes para complementar a alimentação de calopsitas e outros pequenos pássaros."
+        name: "Brinquedo Mordedor",
+        category: "Brinquedos",
+        price: 29.90,
+        image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=85",
+        description: "Brinquedo para diversão e entretenimento."
     },
-
 
     {
         id: 5,
-
-        name: "Alcon Goldfish",
-
-        category: "Peixes",
-
-        price: 16.50,
-
-        image:
-            "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Alimento em flocos desenvolvido para peixes ornamentais de água fria."
+        name: "Bola Interativa",
+        category: "Brinquedos",
+        price: 34.90,
+        image: "https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?auto=format&fit=crop&w=700&q=85",
+        description: "Bola para estimular a brincadeira do seu pet."
     },
-
 
     {
         id: 6,
-
-        name: "Areia Higiênica para Gatos",
-
-        category: "Gatos",
-
-        price: 28.90,
-
-        image:
-            "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Granulado sanitário de alta absorção desenvolvido para facilitar a rotina de higiene."
+        name: "Pelúcia para Cães",
+        category: "Brinquedos",
+        price: 39.90,
+        image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=700&q=85",
+        description: "Brinquedo macio para momentos de diversão."
     },
-
 
     {
         id: 7,
-
-        name: "Ração Royal Canin Sênior",
-
-        category: "Cães",
-
-        price: 98.00,
-
-        image:
-            "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Alimentação desenvolvida para cães em fase sênior, com nutrientes selecionados."
+        name: "Coleira Ajustável",
+        category: "Acessórios",
+        price: 44.90,
+        image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85",
+        description: "Coleira confortável para o dia a dia."
     },
-
 
     {
         id: 8,
-
-        name: "Brinquedo Mordedor Osso",
-
+        name: "Guia para Passeio",
         category: "Acessórios",
-
-        price: 34.90,
-
-        image:
-            "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=85",
-
-        description:
-            "Mordedor resistente para cães, ideal para momentos de diversão e entretenimento."
+        price: 49.90,
+        image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=700&q=85",
+        description: "Guia prática para passeios com seu pet."
     }
 
 ];
