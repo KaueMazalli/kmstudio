@@ -140,3 +140,11 @@ content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href=
   content:none !important;
 }
 </style>
+<style>
+/* CATEGORIA — remover a coluna reservada ao índice dos modelos */
+.category-info{
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+.category-index{display:none !important;}
+</style>
