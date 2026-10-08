@@ -1543,3 +1543,14 @@ body{
         min-height:125px;
     }
 }
+
+/* =========================================================
+   MINHA LOJA — SITE PUBLICADO / VAREJO
+========================================================= */
+.hero-label > span[data-store-name]{display:inline;}
+.hero-label{gap:4px;}
+.products-section{padding-top:92px;}
+.site-footer{margin-top:20px;}
+@media(max-width:650px){
+  .products-section{padding-top:72px;}
+}
