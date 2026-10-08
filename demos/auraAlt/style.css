@@ -472,3 +472,124 @@ body:before{opacity:.12;background-image:radial-gradient(rgba(255,255,255,.8) .8
  .hero-copy h1{font-size:clamp(57px,18vw,90px);letter-spacing:-4px}
  .mini-tags>span{transform:none!important;margin-bottom:4px}.service-card{transform:none!important;min-height:350px}
 }
+
+
+/* AURA ALT — FLOWERS / BOTANICAL COLLAGE */
+.hero-copy:after{
+  content:"✿";
+  position:absolute;
+  right:-80px;
+  top:18px;
+  z-index:-1;
+  font-family:Georgia,serif;
+  font-size:150px;
+  line-height:1;
+  color:var(--aura-pink);
+  transform:rotate(17deg);
+  text-shadow:14px 14px 0 var(--aura-blue);
+  opacity:.9;
+}
+.hero-copy:before{
+  content:"✦  ❀";
+  position:absolute;
+  right:-145px;
+  top:145px;
+  font-size:34px;
+  letter-spacing:24px;
+  color:var(--aura-lime);
+  transform:rotate(-12deg);
+}
+.hero-spark.spark-one:after{
+  content:"❀";
+  display:inline-block;
+  margin-left:22px;
+  color:var(--aura-pink);
+  font-size:30px;
+  transform:rotate(15deg);
+}
+.intro-grid:before{
+  content:"✿";
+  font-family:Georgia,serif;
+  font-size:52px;
+}
+.intro-grid:after{
+  content:"❀";
+  position:absolute;
+  right:-20px;
+  top:-25px;
+  font-size:70px;
+  color:var(--aura-blue);
+  transform:rotate(20deg);
+  text-shadow:7px 7px 0 var(--aura-pink);
+}
+.mini-tags>span:before{
+  content:"✿";
+  position:absolute;
+  right:18px;
+  top:12px;
+  font-family:Georgia,serif;
+  font-size:31px;
+  line-height:1;
+  color:#fff;
+  transform:rotate(-12deg);
+  opacity:.9;
+}
+.mini-tags>span:nth-child(2):before{content:"❀";color:var(--aura-lime)}
+.mini-tags>span:nth-child(3):before{content:"✽";color:#fff}
+.mini-tags>span:nth-child(4):before{content:"✿";color:#16061F}
+.service-card:before{
+  content:"✿";
+  width:auto;
+  height:auto;
+  right:20px;
+  top:18px;
+  border:0;
+  font-family:Georgia,serif;
+  font-size:74px;
+  line-height:1;
+  opacity:.9;
+  transform:rotate(13deg);
+}
+.card-purple:before{color:var(--aura-cyan)}
+.card-blue:before{color:var(--aura-pink)}
+.card-pink:before{color:var(--aura-blue)}
+.card-dark:before{color:var(--aura-purple)}
+.manifesto-grid:after{
+  content:"✿  ✦  ❀";
+  font-family:Georgia,serif;
+  font-size:58px;
+  letter-spacing:12px;
+  color:var(--aura-lime);
+  text-shadow:7px 7px 0 var(--aura-pink);
+  transform:rotate(-10deg);
+}
+.manifesto:after{
+  content:"✽";
+  position:absolute;
+  left:7%;
+  bottom:16%;
+  font-family:Georgia,serif;
+  font-size:110px;
+  color:var(--aura-blue);
+  transform:rotate(18deg);
+  opacity:.85;
+}
+.footer-inner:before{
+  content:"✿";
+  position:absolute;
+  right:11%;
+  font-family:Georgia,serif;
+  font-size:34px;
+  color:var(--aura-pink);
+  transform:rotate(-15deg);
+}
+.footer-inner{position:relative}
+@media(max-width:700px){
+  .hero-copy:after{right:-35px;top:30px;font-size:85px;text-shadow:8px 8px 0 var(--aura-blue)}
+  .hero-copy:before{right:-20px;top:105px;font-size:22px;letter-spacing:10px}
+  .intro-grid:after{right:5px;top:-35px;font-size:46px}
+  .mini-tags>span:before{font-size:25px;right:12px;top:10px}
+  .service-card:before{font-size:55px;right:14px;top:14px}
+  .manifesto:after{left:auto;right:4%;bottom:13%;font-size:70px}
+  .footer-inner:before{right:3%;top:4px;font-size:25px}
+}
