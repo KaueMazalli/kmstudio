@@ -60,3 +60,6 @@
 @media(prefers-reduced-motion:reduce){
  .mobile-menu-toggle span{transition:none}
 }
+
+/* Compatibilidade com os estilos das páginas de detalhe e lista */
+:root{--border:var(--line);--radius:16px;--text:var(--ink);--text-light:var(--muted);--primary-color:var(--blue)}
