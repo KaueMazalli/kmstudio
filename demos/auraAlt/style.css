@@ -677,3 +677,99 @@ body {
   .manifesto-art-image img, .service-button, .button, .nav-cta, .mobile-cta a,
   .under-link span, .text-link span, .back-top, .service-row, .service-no { transition: none !important; }
 }
+
+/* Detalhes botânicos: flores e pétalas em movimento */
+.hero, .intro, .gallery, .services, .manifesto { position: relative; }
+.hero, .intro, .gallery, .manifesto { isolation: isolate; }
+.hero::after, .intro::before, .gallery::after, .manifesto::before {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  font-family: Georgia, serif;
+  line-height: 1;
+  user-select: none;
+}
+.hero::after {
+  content: "✿";
+  top: 16%;
+  right: 3.5%;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: #a98be9;
+  opacity: .72;
+  text-shadow: 12px 24px 0 rgba(255,139,175,.45);
+  transform: rotate(-17deg);
+  animation: auraFlowerDrift 7s ease-in-out infinite;
+}
+.intro::before {
+  content: "❀";
+  left: 4%;
+  top: 18%;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  color: #ff8baf;
+  opacity: .76;
+  transform: rotate(14deg);
+  animation: auraFlowerDrift 8s ease-in-out infinite reverse;
+}
+.gallery::after {
+  content: "✾";
+  right: 5%;
+  top: 7%;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  color: #7182ed;
+  opacity: .68;
+  transform: rotate(12deg);
+  animation: auraFlowerDrift 9s ease-in-out infinite;
+}
+.manifesto::before {
+  content: "✿";
+  left: 3%;
+  top: 8%;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  color: #ff8baf;
+  opacity: .82;
+  text-shadow: 18px 18px 0 rgba(166,139,233,.35);
+  animation: auraFlowerDrift 7.5s ease-in-out infinite reverse;
+}
+.hero-visual::before, .hero-visual::after,
+.gallery-grid::before, .gallery-grid::after,
+.manifesto-art::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  width: 13px;
+  height: 25px;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(145deg, #f7b6d0, #9e83ed 78%);
+  box-shadow: 18px 22px 0 -3px rgba(111,130,237,.75),
+              -12px 39px 0 -4px rgba(255,139,175,.85);
+  opacity: .82;
+  animation: auraPetalFall 8s ease-in-out infinite;
+}
+.hero-visual, .gallery-grid, .manifesto-art { position: relative; }
+.hero-visual::before { top: 10%; left: -3%; transform: rotate(24deg); }
+.hero-visual::after { right: 4%; bottom: 12%; transform: rotate(115deg); animation-delay: -3s; }
+.gallery-grid::before { top: 18%; right: -2%; transform: rotate(45deg); animation-delay: -2s; }
+.gallery-grid::after { bottom: 5%; left: 28%; transform: rotate(130deg); animation-delay: -5s; }
+.manifesto-art::after { top: 3%; right: 4%; transform: rotate(75deg); animation-delay: -4s; }
+@keyframes auraFlowerDrift {
+  0%, 100% { translate: 0 0; rotate: -5deg; }
+  50% { translate: 5px -13px; rotate: 8deg; }
+}
+@keyframes auraPetalFall {
+  0%, 100% { translate: 0 -4px; rotate: 0deg; }
+  50% { translate: 7px 12px; rotate: 22deg; }
+}
+@media (max-width: 700px) {
+  .hero::after { top: 5%; right: 2%; font-size: 2.2rem; }
+  .intro::before { left: 2%; top: 5%; font-size: 1.9rem; }
+  .gallery::after { right: 2%; top: 2%; font-size: 2rem; }
+  .manifesto::before { left: 2%; font-size: 2.2rem; }
+  .hero-visual::before, .hero-visual::after,
+  .gallery-grid::before, .gallery-grid::after, .manifesto-art::after { opacity: .55; transform: scale(.75); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::after, .intro::before, .gallery::after, .manifesto::before,
+  .hero-visual::before, .hero-visual::after, .gallery-grid::before,
+  .gallery-grid::after, .manifesto-art::after { animation: none !important; }
+}
