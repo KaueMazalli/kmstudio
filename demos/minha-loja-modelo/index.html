@@ -11,7 +11,7 @@
 <div class="topbar"><div class="container topbar-inner"><span>Produtos para limpeza doméstica e profissional</span><a href="#contato">Atendimento local em Jales, SP</a></div></div>
 <header class="site-header"><div class="container header-container">
 <a class="brand" href="index.html" aria-label="Unishop Vital Clean - início"><span class="brand-mark">VC</span><span class="brand-name"><strong data-store-name>Unishop Vital Clean</strong><small>Produtos de limpeza</small></span></a>
-<nav class="main-nav" aria-label="Navegação principal"><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#sobre">A loja</a><a class="cart-link" href="carrinho.html"><span aria-hidden="true">☷</span> Minha lista <span class="cart-count">0</span></a></nav>
+<button class="mobile-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button><nav class="main-nav" id="primary-navigation" aria-label="Navegação principal"><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#sobre">A loja</a><a class="cart-link" href="carrinho.html"><span aria-hidden="true">☷</span> Minha lista <span class="cart-count">0</span></a></nav>
 </div></header>
 <main>
 <section class="hero"><div class="container hero-grid"><div class="hero-copy">
@@ -35,11 +35,13 @@
 <button class="category-card category-blue active" type="button" data-category="Todos"><span class="category-symbol">✳</span><strong>Todos os produtos</strong><small>Ver catálogo completo</small><span class="category-arrow">↗</span></button>
 <button class="category-card category-teal" type="button" data-category="Limpeza doméstica"><span class="category-symbol">⌂</span><strong>Limpeza doméstica</strong><small>Para a rotina da casa</small><span class="category-arrow">↗</span></button>
 <button class="category-card category-yellow" type="button" data-category="Lavanderia"><span class="category-symbol">≋</span><strong>Lavanderia</strong><small>Cuidado com as roupas</small><span class="category-arrow">↗</span></button>
+<button class="category-card category-coral" type="button" data-category="Cozinha"><span class="category-symbol">⌂</span><strong>Cozinha</strong><small>Limpeza do dia a dia</small><span class="category-arrow">↗</span></button>
+<button class="category-card category-slate" type="button" data-category="Acessórios"><span class="category-symbol">✣</span><strong>Acessórios</strong><small>Panos, esponjas e mais</small><span class="category-arrow">↗</span></button>
 <button class="category-card category-navy" type="button" data-category="Uso profissional"><span class="category-symbol">▦</span><strong>Uso profissional</strong><small>Para negócios e equipes</small><span class="category-arrow">↗</span></button>
 </div></div></section>
 <section class="products-section" id="produtos"><div class="container">
 <div class="section-heading product-heading"><div><span class="section-kicker">Nosso catálogo</span><h2>Produtos em destaque</h2><p class="section-description">Adicione os itens à sua lista e consulte preços e estoque diretamente com a loja.</p></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos" autocomplete="off"></label></div>
-<div class="catalog-toolbar"><span id="results-count" aria-live="polite">Produtos do catálogo</span><a href="carrinho.html">Ver minha lista <span class="cart-count">0</span> ↗</a></div>
+<div class="catalog-toolbar"><span id="results-count" aria-live="polite">Produtos do catálogo</span><button class="clear-filters" id="clear-filters" type="button" hidden>Limpar filtros ×</button><a href="carrinho.html">Ver minha lista <span class="cart-count">0</span> ↗</a></div>
 <div class="products-grid" id="featured-products"></div><p class="empty-products" id="empty-products" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p>
 <p class="catalog-note">As imagens são ilustrativas. Consulte a loja para confirmar marcas, embalagens, preços e disponibilidade.</p>
 </div></section>
@@ -53,7 +55,7 @@
 <script src="js/products.js"></script><script src="js/cart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
- const grid=document.getElementById("featured-products"),search=document.getElementById("product-search"),filters=document.getElementById("category-cards"),empty=document.getElementById("empty-products"),count=document.getElementById("results-count");
+ const grid=document.getElementById("featured-products"),search=document.getElementById("product-search"),filters=document.getElementById("category-cards"),empty=document.getElementById("empty-products"),count=document.getElementById("results-count"),clearFilters=document.getElementById("clear-filters"),menuToggle=document.querySelector(".mobile-menu-toggle"),nav=document.getElementById("primary-navigation");
  let activeCategory="Todos",searchTerm="";
  const availableProducts=products.filter(function(product){return product.stock!==false;});
  function renderProducts(){
@@ -64,10 +66,12 @@ document.addEventListener("DOMContentLoaded",function(){
    return matchesCategory&&matchesSearch;
   });
   grid.innerHTML=filtered.map(function(product){return '<article class="product-card"><a href="produto.html?id='+product.id+'" class="product-image-link" aria-label="Ver detalhes de '+product.name+'"><img src="'+product.image+'" alt="'+product.name+'" class="product-img" loading="lazy"><span class="product-image-label">Ver detalhes ↗</span></a><div class="product-info"><span class="product-category">'+product.category+'</span><h3><a href="produto.html?id='+product.id+'">'+product.name+'</a></h3><p>'+product.description+'</p><div class="product-card-bottom"><span class="price-consult">Consulte o preço</span><button type="button" class="btn btn-add" onclick="addToCart('+product.id+')">+ Adicionar à lista</button></div></div></article>';}).join("");
-  empty.hidden=filtered.length>0;count.textContent=filtered.length+(filtered.length===1?" produto encontrado":" produtos encontrados");
+  empty.hidden=filtered.length>0;count.textContent=filtered.length+(filtered.length===1?" produto encontrado":" produtos encontrados");clearFilters.hidden=activeCategory==="Todos"&&!searchTerm.trim();
  }
  filters.addEventListener("click",function(event){const button=event.target.closest("[data-category]");if(!button)return;activeCategory=button.dataset.category;filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item===button);});renderProducts();document.getElementById("produtos").scrollIntoView({behavior:"smooth",block:"start"});});
  search.addEventListener("input",function(event){searchTerm=event.target.value;renderProducts();});
+ clearFilters.addEventListener("click",function(){activeCategory="Todos";searchTerm="";search.value="";filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item.dataset.category==="Todos");});renderProducts();});
+ if(menuToggle&&nav){menuToggle.addEventListener("click",function(){const isOpen=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!isOpen));menuToggle.setAttribute("aria-label",isOpen?"Abrir menu":"Fechar menu");nav.classList.toggle("is-open",!isOpen);});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Abrir menu");nav.classList.remove("is-open");});});}
  document.getElementById("current-year").textContent=new Date().getFullYear();renderProducts();
 });
 </script>
