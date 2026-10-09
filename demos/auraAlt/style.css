@@ -773,3 +773,116 @@ body {
   .hero-visual::before, .hero-visual::after, .gallery-grid::before,
   .gallery-grid::after, .manifesto-art::after { animation: none !important; }
 }
+
+/* Objetos de nail art: esmalte, unhas coloridas e brilho editorial */
+.nail-polish-decor {
+  position: absolute;
+  z-index: 5;
+  left: -2%;
+  bottom: 8%;
+  width: 66px;
+  height: 112px;
+  transform: rotate(-13deg);
+  filter: drop-shadow(7px 9px 0 rgba(37, 17, 72, .12));
+  pointer-events: none;
+  animation: polishBob 5.5s ease-in-out infinite;
+}
+.polish-cap {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 22px;
+  height: 29px;
+  border-radius: 5px 5px 2px 2px;
+  background: repeating-linear-gradient(90deg, #3b276e 0 3px, #6043a1 3px 5px);
+  border: 1px solid rgba(255,255,255,.4);
+}
+.polish-neck {
+  position: absolute;
+  top: 26px;
+  left: 27px;
+  width: 16px;
+  height: 13px;
+  background: #b9a2f2;
+  border: 1px solid #7455bd;
+}
+.polish-bottle {
+  position: absolute;
+  top: 36px;
+  left: 8px;
+  width: 54px;
+  height: 68px;
+  border-radius: 12px 12px 17px 17px;
+  background: linear-gradient(110deg, #f7c4dc 0%, #b79bf3 42%, #7155d4 100%);
+  border: 2px solid rgba(255,255,255,.85);
+  box-shadow: inset 5px 0 7px rgba(255,255,255,.35), inset -5px 0 8px rgba(43,20,94,.15);
+}
+.polish-bottle i {
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  width: 4px;
+  height: 34px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.55);
+}
+.polish-label {
+  position: absolute;
+  top: 57px;
+  left: 20px;
+  z-index: 1;
+  color: #fff;
+  font: italic 700 20px/1 "Playfair Display", serif;
+}
+.nail-swatches-decor {
+  position: absolute;
+  z-index: 4;
+  top: 7%;
+  left: -5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+.nail-swatches-decor > span {
+  width: 16px;
+  height: 36px;
+  border-radius: 12px 12px 8px 8px;
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 2px 4px 8px rgba(43,20,94,.13);
+}
+.nail-swatches-decor > span:nth-child(1) { background: linear-gradient(#f5d2e5, #ee85b5); }
+.nail-swatches-decor > span:nth-child(2) { background: linear-gradient(#d8d1ff, #7958dd); margin-top: 8px; }
+.nail-swatches-decor > span:nth-child(3) { background: linear-gradient(#c4d2ff, #4e69e9); }
+.nail-swatches-decor > span:nth-child(4) { background: linear-gradient(#f5e5ff, #ad83d8); margin-top: 6px; }
+.nail-swatches-decor b {
+  margin: 39px 0 0 2px;
+  color: var(--aura-violet, #6d36d9);
+  font: 800 7px/1.25 "Manrope", sans-serif;
+  letter-spacing: .13em;
+}
+.nail-sparkle-decor {
+  position: absolute;
+  z-index: 4;
+  right: 1%;
+  top: -6%;
+  color: #6d36d9;
+  font: 700 clamp(1.2rem, 2.5vw, 2rem)/1 "Playfair Display", serif;
+  letter-spacing: .22em;
+  transform: rotate(9deg);
+  pointer-events: none;
+  text-shadow: 2px 3px 0 rgba(255,139,175,.35);
+}
+@keyframes polishBob {
+  0%, 100% { translate: 0 0; rotate: -13deg; }
+  50% { translate: 0 -8px; rotate: -8deg; }
+}
+@media (max-width: 700px) {
+  .nail-polish-decor { width: 44px; height: 76px; left: -1%; bottom: 5%; transform: scale(.72) rotate(-13deg); transform-origin: bottom left; }
+  .nail-swatches-decor { left: -1%; top: 2%; transform: scale(.78) rotate(-12deg); transform-origin: top left; }
+  .nail-sparkle-decor { right: 2%; top: -3%; font-size: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nail-polish-decor { animation: none !important; }
+}
