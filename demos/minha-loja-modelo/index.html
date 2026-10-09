@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Produtos selecionados para você. Escolha seus produtos, monte o carrinho e faça seu pedido.">
+<title>Minha Loja — Catálogo Local</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-container">
+        <a href="index.html" class="logo" data-store-name>Minha Loja</a>
+        <nav class="main-nav" aria-label="Navegação principal">
+            <a href="#produtos">Produtos</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="carrinho.html" class="cart-link" aria-label="Abrir carrinho">
+                <span class="cart-icon">🛒</span><span>Carrinho</span><span class="cart-count">0</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-label">Bem-vindo à <span data-store-name>Minha Loja</span></span>
+        <h1 data-hero-title>Tudo o que você precisa, em um só lugar.</h1>
+        <p data-hero-description>Encontre seus produtos, confira os preços e faça seu pedido de forma rápida e prática.</p>
+        <div class="hero-actions">
+            <a href="#produtos" class="btn btn-primary">Ver produtos</a>
+            <a href="carrinho.html" class="btn btn-secondary">Ver carrinho</a>
+        </div>
+    </div>
+</section>
+
+<section class="benefits-strip" aria-label="Informações da loja">
+    <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Compra fácil</strong><span>Escolha seus produtos e monte o pedido.</span></div></div>
+    <div class="benefit-item"><span class="benefit-icon">⌖</span><div><strong>Retirada ou entrega</strong><span>Escolha a melhor forma de receber.</span></div></div>
+    <div class="benefit-item"><span class="benefit-icon">↗</span><div><strong>Atendimento direto</strong><span>Fale com a loja sempre que precisar.</span></div></div>
+</section>
+
+<section class="products-section" id="produtos">
+    <div class="section-header">
+        <div><span class="section-label">Produtos em destaque</span><h2>Compre online</h2></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Buscar produto..." autocomplete="off"></label>
+    </div>
+    <div class="category-bar" id="category-filters" aria-label="Categorias"></div>
+    <div class="products-grid" id="featured-products"></div>
+    <p class="empty-products" id="empty-products" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p>
+</section>
+
+
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div><strong data-store-name>Minha Loja</strong><span>Catálogo digital para pedidos locais.</span></div>
+        <a href="#produtos">Ver produtos ↑</a>
+    </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("featured-products");
+    const search = document.getElementById("product-search");
+    const filters = document.getElementById("category-filters");
+    const empty = document.getElementById("empty-products");
+    if (!grid || typeof products === "undefined") return;
+
+    const availableProducts = products.filter(product => product.stock !== false);
+    const categories = ["Todos", ...new Set(availableProducts.map(product => product.category))];
+    let activeCategory = "Todos";
+    let searchTerm = "";
+
+    filters.innerHTML = categories.map(category => `
+        <button type="button" class="category-filter ${category === "Todos" ? "active" : ""}" data-category="${category}">${category}</button>
+    `).join("");
+
+    function renderProducts() {
+        const query = searchTerm.toLowerCase().trim();
+        const filtered = availableProducts.filter(product => {
+            const matchesCategory = activeCategory === "Todos" || product.category === activeCategory;
+            const matchesSearch = !query ||
+                product.name.toLowerCase().includes(query) ||
+                product.category.toLowerCase().includes(query) ||
+                product.description.toLowerCase().includes(query);
+            return matchesCategory && matchesSearch;
+        });
+
+        grid.innerHTML = filtered.map(product => {
+            const oldPrice = product.oldPrice ? `<span class="product-old-price">R$ ${product.oldPrice.toFixed(2).replace(".", ",")}</span>` : "";
+            return `
+                <article class="product-card">
+                    <a href="./produto.html?id=${product.id}" class="product-image-link" aria-label="Ver ${product.name}">
+                        <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
+                        <span class="product-view">Ver detalhes</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">${product.category}</span>
+                        <a href="./produto.html?id=${product.id}" class="product-title-link"><h3 class="product-title">${product.name}</h3></a>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ ${product.price.toFixed(2).replace(".", ",")} ${oldPrice}</div>
+                            <button type="button" class="btn btn-primary product-add" onclick="addToCart(${product.id})">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join("");
+        empty.hidden = filtered.length !== 0;
+    }
+
+    filters.addEventListener("click", event => {
+        const button = event.target.closest("[data-category]");
+        if (!button) return;
+        activeCategory = button.dataset.category;
+        filters.querySelectorAll(".category-filter").forEach(item => item.classList.toggle("active", item === button));
+        renderProducts();
+    });
+
+    search.addEventListener("input", event => {
+        searchTerm = event.target.value;
+        renderProducts();
+    });
+
+    renderProducts();
+});
+</script>
+</body>
+</html>
