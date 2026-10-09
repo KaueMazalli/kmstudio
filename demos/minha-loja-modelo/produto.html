@@ -37,7 +37,8 @@
                 <span class="brand-mark">VC</span>
                 <span class="brand-name"><strong data-store-name>Unishop Vital Clean</strong><small>Produtos de limpeza</small></span>
             </a>
-            <nav class="main-nav" aria-label="Navegação principal">
+            <button class="mobile-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="primary-navigation" aria-label="Navegação principal">
                 <a href="index.html#categorias">Categorias</a>
                 <a href="index.html#produtos">Produtos</a>
                 <a href="index.html#sobre">A loja</a>
@@ -84,11 +85,29 @@
 
     <script src="js/cart.js"></script>
 
-    <script src="js/main.js"></script>
 
     <script src="js/produto.js"></script>
 
 
+    <script>
+        const menuToggle = document.querySelector(".mobile-menu-toggle");
+        const nav = document.getElementById("primary-navigation");
+        if (menuToggle && nav) {
+            menuToggle.addEventListener("click", function () {
+                const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+                menuToggle.setAttribute("aria-expanded", String(!isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "Abrir menu" : "Fechar menu");
+                nav.classList.toggle("is-open", !isOpen);
+            });
+            nav.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-label", "Abrir menu");
+                    nav.classList.remove("is-open");
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>
