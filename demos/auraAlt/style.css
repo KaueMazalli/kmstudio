@@ -428,3 +428,73 @@ body{background:var(--paper)}
     scroll-behavior: auto !important;
   }
 }
+
+
+/* AURA ALT — ENTRADA ARTÍSTICA / REVELAÇÃO DE CAMPANHA */
+@keyframes auraCurtain {
+  0% { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(22px); }
+  65% { opacity: 1; clip-path: inset(0 0 0 0); transform: translateY(-3px); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+@keyframes auraPrintReveal {
+  0% { opacity: 0; clip-path: inset(12% 12% 12% 12% round 48% 48% 4% 4%); transform: rotate(5deg) scale(.88); filter: saturate(.55); }
+  70% { opacity: 1; clip-path: inset(0 0 0 0 round 0); transform: rotate(-1.5deg) scale(1.02); filter: saturate(1.15); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0 round 0); transform: rotate(0) scale(1); filter: saturate(1); }
+}
+@keyframes auraInk {
+  0% { opacity: 0; transform: translateY(14px) skewY(5deg); letter-spacing: .08em; }
+  100% { opacity: 1; transform: translateY(0) skewY(0); letter-spacing: normal; }
+}
+@keyframes auraOrbit {
+  0% { opacity: 0; transform: rotate(-75deg) scale(.45); }
+  70% { opacity: 1; transform: rotate(12deg) scale(1.08); }
+  100% { opacity: 1; transform: rotate(0) scale(1); }
+}
+@keyframes auraDrawLine {
+  from { transform: scaleX(0); transform-origin: left center; }
+  to { transform: scaleX(1); transform-origin: left center; }
+}
+@keyframes auraDrift {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-9px) rotate(1deg); }
+}
+
+/* Tipografia como cartaz editorial: revelada em camadas */
+.hero-copy .eyebrow { animation: auraInk .65s .05s both cubic-bezier(.2,.8,.2,1); }
+.hero-copy h1 { animation: auraCurtain .95s .12s both cubic-bezier(.2,.75,.2,1); }
+.hero-copy .hero-lead { animation: auraInk .75s .32s both cubic-bezier(.2,.8,.2,1); }
+.hero-copy .hero-actions { animation: auraInk .75s .43s both cubic-bezier(.2,.8,.2,1); }
+.hero-copy .hero-note { animation: auraInk .75s .56s both cubic-bezier(.2,.8,.2,1); }
+.hero-copy h1 em { display: inline-block; animation: auraDrift 5s 1.2s ease-in-out infinite; }
+.hero-copy h1 em::after { animation: auraDrawLine .7s .8s both cubic-bezier(.2,.8,.2,1); }
+.hero-image-main { animation: auraPrintReveal 1.2s .18s both cubic-bezier(.16,.75,.25,1); }
+.hero-image-small { animation: auraPrintReveal 1s .48s both cubic-bezier(.16,.75,.25,1); }
+.round-stamp { animation: auraOrbit .85s .72s both cubic-bezier(.2,.8,.2,1); }
+.hero-image-main::after { content: ""; position: absolute; inset: 0; pointer-events: none; border: 1px solid rgba(255,255,255,.6); animation: auraCurtain 1s .55s both; }
+.hero-bottom { animation: auraInk .7s .65s both; }
+
+/* As próximas seções revelam-se ao entrar no campo de visão */
+@supports (animation-timeline: view()) {
+  .intro-heading, .intro-copy, .section-head, .gallery-item, .service-row,
+  .manifesto-art, .manifesto-copy, .final-cta .container {
+    animation-name: auraCurtain;
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 8% entry 68%;
+  }
+  .intro-copy, .gallery-item:nth-child(2), .service-row:nth-child(even), .manifesto-copy {
+    animation-name: auraInk;
+  }
+  .gallery-item:nth-child(1), .gallery-item:nth-child(3) { animation-name: auraPrintReveal; }
+  .service-row { animation-duration: 1ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy h1 em { animation: none !important; }
+  .hero-copy h1 em::after { animation: none !important; }
+  .hero-image-main::after { animation: none !important; }
+  @supports (animation-timeline: view()) {
+    .intro-heading, .intro-copy, .section-head, .gallery-item, .service-row,
+    .manifesto-art, .manifesto-copy, .final-cta .container { animation: none !important; }
+  }
+}
