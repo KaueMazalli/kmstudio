@@ -448,3 +448,53 @@ body{
   .manifesto:after{right:-10%;top:17%;font-size:130px}
   .manifesto-copy h2{font-size:clamp(58px,16vw,80px)}
 }
+
+
+/* AURA — abertura cinematográfica e detalhes botânicos */
+.aura-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#30231f;color:#fbf1e9;isolation:isolate;animation:intro-curtain-out 1s cubic-bezier(.76,0,.24,1) 2.6s forwards}
+.aura-intro:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 46%,rgba(196,126,108,.25),transparent 34%),radial-gradient(ellipse at 15% 90%,rgba(139,151,113,.18),transparent 30%);z-index:-1}
+.intro-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;animation:intro-content-in 1.25s cubic-bezier(.2,.8,.2,1) both}
+.intro-kicker,.intro-caption{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#dfb5a7}
+.intro-kicker{opacity:0;animation:intro-fade-up .8s .2s forwards}
+.intro-monogram{font:italic 138px/.95 var(--serif);color:#f9e9df;text-shadow:0 8px 45px rgba(218,159,141,.24);margin:16px 0 8px;animation:intro-letter 1.2s .25s both}
+.intro-name{font:400 33px var(--serif);letter-spacing:.5px;opacity:0;animation:intro-fade-up .8s .65s forwards}
+.intro-name i{font-style:italic;color:#d99b8b}
+.intro-line{height:1px;width:0;background:#d99b8b;margin:22px 0 17px;animation:intro-line-grow .8s .85s forwards}
+.intro-caption{font-size:8px;letter-spacing:3px;opacity:0;animation:intro-fade-up .8s 1s forwards}
+.intro-ring{position:absolute;left:50%;top:50%;border:1px solid rgba(223,181,167,.24);border-radius:50%;transform:translate(-50%,-50%);animation:intro-ring-in 1.8s cubic-bezier(.16,1,.3,1) both}
+.ring-one{width:min(72vw,590px);aspect-ratio:1}
+.ring-two{width:min(88vw,730px);aspect-ratio:1;border-style:dashed;animation-delay:.18s}
+.intro-bloom{position:absolute;width:140px;height:140px;opacity:0;animation:intro-bloom-in 1.3s .55s forwards}
+.intro-bloom:before,.intro-bloom:after,.intro-bloom span:before,.intro-bloom span:after{content:"";position:absolute;left:50%;top:50%;width:39px;height:65px;border:1px solid rgba(224,166,151,.8);border-radius:80% 15% 80% 15%;transform-origin:0 0}
+.intro-bloom:before{transform:rotate(0deg) translate(-50%,-95%)}
+.intro-bloom:after{transform:rotate(90deg) translate(-50%,-95%)}
+.intro-bloom span:before{transform:rotate(180deg) translate(-50%,-95%)}
+.intro-bloom span:after{transform:rotate(270deg) translate(-50%,-95%)}
+.bloom-one{left:9%;top:18%;transform:rotate(-22deg) scale(.9)}
+.bloom-two{right:8%;bottom:15%;transform:rotate(25deg) scale(.65);animation-delay:.85s}
+.bloom-two:before,.bloom-two:after,.bloom-two span:before,.bloom-two span:after{border-color:rgba(173,190,147,.8)}
+.intro-petals{position:absolute;inset:0;pointer-events:none}
+.intro-petal{position:absolute;top:-12%;width:15px;height:24px;border-radius:90% 8% 90% 8%;background:linear-gradient(145deg,#edc4b6,#b96f5b);opacity:0;animation:intro-petal-fall var(--fall-time,4s) linear var(--fall-delay,0s) forwards}
+.intro-petal:nth-child(3n){background:linear-gradient(145deg,#e9e7d5,#a3ad8b);width:11px;height:19px}
+.intro-petal:nth-child(4n){width:8px;height:14px;opacity:.7}
+.aura-intro.is-gone{display:none}
+.aura-petal-field{position:absolute;inset:0;height:100vh;overflow:hidden;pointer-events:none;z-index:4}
+.floating-petal{position:absolute;top:-35px;width:13px;height:20px;border-radius:90% 8% 90% 8%;background:linear-gradient(145deg,#efc9bb,#bd7c6c);opacity:0;animation:petal-drift var(--duration,13s) linear var(--delay,0s) infinite}
+.floating-petal:nth-child(3n){background:linear-gradient(145deg,#e8e8d7,#a6b18f);width:10px;height:16px}
+.hero,.experience-intro,.services,.manifesto{position:relative}
+.experience-intro:before,.services:before{content:"✿";position:absolute;right:5%;top:8%;font-size:58px;line-height:1;color:rgba(185,111,91,.15);transform:rotate(15deg);pointer-events:none}
+.services:before{content:"❀";left:3%;right:auto;top:14%;font-size:76px;color:rgba(127,145,103,.17)}
+.experience-grid article:after{content:"✿";position:absolute;right:15px;top:12px;font-size:24px;color:rgba(127,91,76,.25);transform:rotate(18deg)}
+.service-card:after{content:"✧";position:absolute;right:15px;top:12px;font-size:18px;color:rgba(185,111,91,.55)}
+.manifesto:before{content:"❀";position:absolute;left:4%;top:8%;font-size:85px;color:rgba(223,181,167,.1);transform:rotate(-20deg);pointer-events:none}
+@keyframes intro-curtain-out{0%{opacity:1;visibility:visible;transform:scale(1)}70%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;transform:scale(1.035);pointer-events:none}}
+@keyframes intro-content-in{from{opacity:0;transform:translateY(18px) scale(.96);filter:blur(7px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes intro-fade-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes intro-letter{from{opacity:0;transform:scale(.65) rotate(-10deg);filter:blur(8px)}to{opacity:1;transform:scale(1) rotate(0);filter:blur(0)}}
+@keyframes intro-line-grow{to{width:95px}}
+@keyframes intro-ring-in{from{opacity:0;transform:translate(-50%,-50%) scale(.72) rotate(-20deg)}to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes intro-bloom-in{from{opacity:0;scale:.3;rotate:-55deg}to{opacity:.9;scale:1;rotate:0}}
+@keyframes intro-petal-fall{0%{opacity:0;transform:translate3d(0,-5vh,0) rotate(0)}12%{opacity:.9}85%{opacity:.8}100%{opacity:0;transform:translate3d(var(--drift,60px),115vh,0) rotate(560deg)}}
+@keyframes petal-drift{0%{opacity:0;transform:translate3d(0,0,0) rotate(0)}10%{opacity:.6}85%{opacity:.35}100%{opacity:0;transform:translate3d(var(--drift,40px),110vh,0) rotate(500deg)}}
+@media(max-width:760px){.intro-monogram{font-size:115px}.intro-kicker{font-size:8px;letter-spacing:3px}.intro-caption{font-size:7px;letter-spacing:2px}.intro-bloom{scale:.7}.bloom-one{left:-4%;top:17%}.bloom-two{right:-5%;bottom:15%}.ring-one{width:82vw}.ring-two{width:100vw}.experience-intro:before{right:3%;top:4%;font-size:38px}.services:before{left:2%;top:6%;font-size:48px}.service-card:after{right:8px;top:7px}.manifesto:before{font-size:55px;left:auto;right:3%;top:4%}}
+@media(prefers-reduced-motion:reduce){.aura-intro{animation:intro-curtain-out .3s ease 1.1s forwards}.intro-content,.intro-kicker,.intro-name,.intro-caption,.intro-monogram,.intro-line,.intro-ring,.intro-bloom,.intro-petal,.floating-petal{animation-duration:.01ms!important;animation-delay:0ms!important}.aura-petal-field{display:none}}
