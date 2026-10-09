@@ -210,3 +210,78 @@ body{background:#090808;background-image:radial-gradient(ellipse at 76% 18%,rgba
   .service-list h3{font-size:22px}
   .footer span:nth-child(2){display:none}
 }
+
+
+/* NOIR — seção “O que fazemos” no mobile */
+@media(max-width:760px){
+  .services{
+    padding-top:76px;
+    padding-bottom:82px;
+  }
+  .services>.index{
+    margin-bottom:24px;
+  }
+  .services .section-head{
+    display:block;
+    margin-bottom:28px;
+    padding-bottom:22px;
+  }
+  .services .section-head h2{
+    max-width:310px;
+    font-size:clamp(38px,10.8vw,52px);
+    line-height:1.02;
+    margin-top:15px;
+    text-wrap:balance;
+  }
+  .service-list{
+    border-top:1px solid rgba(162,45,38,.38);
+  }
+  .service-list article{
+    grid-template-columns:30px minmax(0,1fr);
+    gap:12px;
+    align-items:start;
+    padding:24px 26px 24px 0;
+    min-height:0;
+    border-bottom:1px solid rgba(162,45,38,.3);
+  }
+  .service-list article>span{
+    padding-top:5px;
+    font-size:8px;
+  }
+  .service-list article>div{
+    min-width:0;
+  }
+  .service-list h3{
+    max-width:100%;
+    padding-right:0;
+    font-size:clamp(23px,6.5vw,27px);
+    line-height:1.12;
+    overflow-wrap:break-word;
+  }
+  .service-list p{
+    max-width:290px;
+    padding-right:0;
+    margin-top:9px;
+    font-size:11px;
+    line-height:1.75;
+    color:#5e5751;
+  }
+  .service-list article:after{
+    right:1px;
+    top:25px;
+    font-size:13px;
+    color:#a22d26;
+  }
+  .service-list article:hover{
+    padding-left:0;
+    padding-right:26px;
+    background:rgba(162,45,38,.035);
+  }
+}
+@media(max-width:380px){
+  .services .section-head h2{font-size:37px}
+  .service-list article{grid-template-columns:25px minmax(0,1fr);gap:10px;padding-right:23px}
+  .service-list h3{font-size:22px}
+  .service-list p{font-size:10.5px}
+  .service-list article:after{font-size:12px}
+}
