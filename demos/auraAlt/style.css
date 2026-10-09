@@ -886,3 +886,50 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .nail-polish-decor { animation: none !important; }
 }
+
+
+/* ABERTURA ANIMADA — AURA NAIL ART STUDIO */
+body.intro-loading { overflow: hidden; }
+.aura-intro-screen {
+  position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center;
+  overflow: hidden; isolation: isolate; background: #21113f; color: #fbf8ff;
+  opacity: 1; visibility: visible; transition: opacity .65s ease, visibility .65s ease;
+}
+.aura-intro-screen::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at 50% 44%, rgba(109,54,217,.48), transparent 42%),
+              radial-gradient(ellipse at 80% 15%, rgba(255,139,175,.16), transparent 30%);
+}
+.aura-intro-screen.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.intro-center { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.intro-wordmark { margin-top: 21px; font: 600 clamp(66px, 12vw, 104px)/.9 "Playfair Display", Georgia, serif; letter-spacing: -.075em; animation: introWordIn .85s .12s both cubic-bezier(.2,.8,.2,1); }
+.intro-wordmark span { color: #ff8baf; }
+.intro-center p { margin-top: 13px; font: 800 9px "Manrope", sans-serif; letter-spacing: .34em; animation: introWordIn .7s .3s both; }
+.intro-center small { margin-top: 15px; color: #c7b9e7; font: 700 7px "Manrope", sans-serif; letter-spacing: .22em; animation: introWordIn .7s .55s both; }
+.intro-polish { position: relative; width: 43px; height: 75px; transform: rotate(-24deg); animation: introPolish 1.15s .05s both cubic-bezier(.2,.8,.2,1); }
+.intro-polish-cap { position: absolute; top: 0; left: 14px; width: 16px; height: 27px; border-radius: 4px 4px 2px 2px; background: repeating-linear-gradient(90deg,#59408b 0 3px,#8d6dd2 3px 5px); border: 1px solid rgba(255,255,255,.5); }
+.intro-polish-glass { position: absolute; top: 25px; left: 2px; width: 40px; height: 48px; border: 1px solid rgba(255,255,255,.8); border-radius: 9px 9px 13px 13px; background: linear-gradient(115deg,#ffb9d7 0%,#a78aef 48%,#6542c6 100%); box-shadow: inset 5px 0 8px rgba(255,255,255,.3), 0 7px 22px rgba(255,139,175,.22); }
+.intro-polish-shine { position: absolute; z-index: 1; top: 33px; left: 9px; width: 4px; height: 27px; border-radius: 5px; background: rgba(255,255,255,.65); }
+.intro-progress { width: 132px; height: 2px; margin-top: 28px; overflow: hidden; background: rgba(255,255,255,.18); }
+.intro-progress span { display: block; width: 100%; height: 100%; background: linear-gradient(90deg,#ff8baf,#c6b3ff,#fff); transform: scaleX(0); transform-origin: left; animation: introProgress 1.65s .15s ease-in-out forwards; }
+.intro-orbit { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(230,216,255,.17); border-radius: 50%; pointer-events: none; }
+.intro-orbit-one { width: min(76vw,520px); aspect-ratio: 1; transform: translate(-50%,-50%) rotate(-25deg) scaleY(.72); animation: introOrbit 9s linear infinite; }
+.intro-orbit-two { width: min(92vw,650px); aspect-ratio: 1; border-color: rgba(255,139,175,.14); transform: translate(-50%,-50%) rotate(32deg) scaleY(.72); animation: introOrbit 13s linear infinite reverse; }
+.intro-flower { position: absolute; color: #ff8baf; line-height: 1; pointer-events: none; animation: introFlowerFloat 3.6s ease-in-out infinite; }
+.intro-flower-one { top: 19%; left: 18%; font-size: clamp(34px,7vw,72px); transform: rotate(-18deg); }
+.intro-flower-two { right: 17%; bottom: 19%; color: #a78aef; font-size: clamp(28px,5vw,54px); animation-delay: -.9s; }
+@keyframes introWordIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes introPolish { from { opacity: 0; transform: translateY(25px) rotate(-42deg) scale(.7); } to { opacity: 1; transform: translateY(0) rotate(-24deg) scale(1); } }
+@keyframes introProgress { to { transform: scaleX(1); } }
+@keyframes introOrbit { from { rotate: 0deg; } to { rotate: 360deg; } }
+@keyframes introFlowerFloat { 0%,100% { translate: 0 0; rotate: -12deg; } 50% { translate: 7px -13px; rotate: 9deg; } }
+@media (max-width: 600px) {
+  .intro-flower-one { top: 22%; left: 9%; }
+  .intro-flower-two { right: 8%; bottom: 22%; }
+  .intro-orbit-one { width: 84vw; }
+  .intro-orbit-two { width: 105vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aura-intro-screen, .intro-wordmark, .intro-center p, .intro-center small, .intro-polish,
+  .intro-progress span, .intro-orbit, .intro-flower { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
