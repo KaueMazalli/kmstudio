@@ -285,3 +285,31 @@ body{background:#090808;background-image:radial-gradient(ellipse at 76% 18%,rgba
   .service-list p{font-size:10.5px}
   .service-list article:after{font-size:12px}
 }
+
+
+/* Centraliza o conteúdo de “O que fazemos” e remove a coluna lateral vazia no mobile */
+@media(max-width:760px){
+  .services{
+    display:block;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .services>.index{
+    display:none;
+  }
+  .services-content{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .services .section-head{
+    width:100%;
+    margin:0 0 28px;
+  }
+  .services .section-head h2{
+    max-width:100%;
+  }
+  .service-list{
+    width:100%;
+  }
+}
