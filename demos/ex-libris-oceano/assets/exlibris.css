@@ -17,3 +17,52 @@ dialog{width:min(440px,calc(100% - 28px));max-height:85dvh;overflow:auto;border:
 @media(min-width:650px){body{padding-bottom:25px}.topbar{padding:0 max(24px,calc((100% - 1016px)/2))}main{padding:0 24px}.welcome{padding-top:45px}.stats{max-width:480px}.book-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.cover{height:auto;max-height:none}.filters{margin-left:0;padding-left:0}.floating-add{bottom:25px;right:max(25px,calc((100% - 1016px)/2))}.bottom-nav{display:none}}
 @media(min-width:900px){.book-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.cover{height:auto;max-height:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Deep-sea cosmic horror art direction */
+:root{--bg:#030a12;--panel:#081725;--panel2:#0b2232;--blue:#236b80;--sand:#a8e8dc;--text:#e3f0f2;--muted:#88a7b5;--line:#79d9d01c;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+body{background:radial-gradient(ellipse at 50% -15%,#10364a 0,transparent 44%),radial-gradient(ellipse at 100% 45%,#092436 0,transparent 38%),#030a12;position:relative}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.36;background:radial-gradient(ellipse at 18% 20%,#247c8b22 0,transparent 30%),radial-gradient(ellipse at 78% 72%,#226c8a18 0,transparent 34%),repeating-linear-gradient(112deg,transparent 0 74px,#5ab9c008 75px 76px,transparent 77px 145px)}
+.topbar{background:#030a12df;border-bottom-color:#63c7d018}
+.seal{border-color:#77d6ce66;color:#a8e8dc;box-shadow:0 0 22px #35b8b322}
+.brand-sub,.welcome p{color:#89a9b8}
+.welcome{padding-top:32px;padding-bottom:27px}
+.welcome:before{content:"";position:absolute;right:-70px;top:-45px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,#1b718033 0,transparent 68%);filter:blur(8px);pointer-events:none}
+.tentacle-art{right:-18px;top:0;width:170px;height:190px;stroke:#49a9b4;stroke-width:2.1;opacity:.62;filter:drop-shadow(0 0 5px #37b5c455)}
+.tentacle-art path{stroke-linecap:round}
+.eyebrow{color:#70c9c7;letter-spacing:3px}
+h1 em{color:#a8e8dc;text-shadow:0 0 24px #55bcb633}
+.stat{background:linear-gradient(145deg,#0c2637d9,#07131fe8);border-color:#72c7d01c;box-shadow:inset 0 1px #a7e7e509}
+.stat strong{color:#d7f0ed}
+.search{background:#071522;border-color:#65b8c31f}
+.search:focus{border-color:#56b9b3;box-shadow:0 0 0 3px #56b9b315}
+.chip{border-color:#75c7cc2a;color:#a3bac4}
+.chip.active{background:#a8e8dc;color:#04202a;border-color:#a8e8dc}
+.sort-row select{background:#071522;border-color:#65b8c31f}
+.book{background:linear-gradient(155deg,#0b2030ed,#06121deF);border-color:#68b8c51d;box-shadow:0 9px 24px #0002;transition:transform .25s,border-color .25s,box-shadow .25s}
+.book:hover{transform:translateY(-3px);border-color:#64c6c055;box-shadow:0 12px 30px #0004,0 0 20px #2d879012}
+.cover{background-color:#071b29;box-shadow:inset 5px 0 0 #0005,0 8px 16px #0004}
+.cover:before{border-color:#8de0d322}
+.cover:after{border-color:#7bd5d01e}
+.cover.ocean{background:radial-gradient(ellipse at 50% 78%,#397c8b,#123b50 53%,#061521)}
+.cover.earth{background:radial-gradient(ellipse at 45% 35%,#536d72,#263f49 55%,#0a1821)}
+.cover.forest{background:radial-gradient(ellipse at 50% 75%,#356c69,#173f43 55%,#071820)}
+.cover.wine{background:radial-gradient(ellipse at 50% 35%,#526d79,#283e51 55%,#0a1521)}
+.cover.violet{background:radial-gradient(ellipse at 50% 40%,#4c6c83,#243b53 58%,#0a1522)}
+.cover.ink{background:radial-gradient(ellipse at 50% 35%,#456675,#1b3543 55%,#07131c)}
+.status{color:#a6dfe7;background:#143a4b}
+.status.reading{color:#a8e8dc;background:#164a4b88}
+.status.wishlist{color:#b9cde7;background:#263f5877}
+.more{color:#9fc4cf}
+.empty{border-color:#66bdc522}
+.empty strong{color:#d6e9ed}
+.floating-add{background:#a8e8dc;color:#05202a;box-shadow:0 8px 30px #0007,0 0 22px #43b9b326}
+.bottom-nav{background:#04111df5;border-top-color:#62c9cc20}
+.bottom-nav a.active{color:#a8e8dc}
+dialog{background:#071724;border-color:#66c7ca35}
+.field input,.field select{background:#030d16;border-color:#65b8c325}
+.form-actions .save{background:#a8e8dc;border-color:#a8e8dc;color:#05202a}
+.relic-tag{background:#a8e8dc;color:#05202a}
+.relic-cover{outline-color:#69c9c0}
+.detail-actions button{background:#0d2938;border-color:#65b8c325}
+@media(min-width:650px){.welcome{padding-top:52px}}
