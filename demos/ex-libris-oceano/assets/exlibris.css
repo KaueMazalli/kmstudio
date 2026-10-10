@@ -350,3 +350,184 @@ dialog h2{color:#c3d0ca}
 .relic-cover{outline-color:#315e5b;box-shadow:0 0 12px #45c9b308}
 ::selection{background:#214846;color:#d8e4df}
 @media(max-width:520px){.welcome:before{opacity:.42}.tentacle-art{opacity:.28}.stat{background:linear-gradient(145deg,#040d14,#000205)}}
+
+
+/* THE YELLOW SIGN — eldritch cosmic horror art direction */
+:root{
+  --abyss-ink:#020103;
+  --abyss-blue:#07050c;
+  --abyss-teal:#28211b;
+  --abyss-glow:#b89a4d;
+  --abyss-bone:#d4c9a0;
+  --abyss-violet:#241629;
+}
+html,body{background:#020103;color:#c9c0a5}
+body{
+  background:
+    radial-gradient(ellipse 38% 25% at 78% 8%,#4b32151c,transparent 78%),
+    radial-gradient(ellipse 42% 36% at 12% 44%,#34204a19,transparent 76%),
+    radial-gradient(ellipse 52% 28% at 52% 86%,#1b2b3514,transparent 78%),
+    linear-gradient(180deg,#08060b 0%,#030206 42%,#010102 100%);
+}
+body:before{
+  opacity:.34;
+  background-image:
+    radial-gradient(1px 1px at 7% 19%,#d6c28b99 99%,transparent),
+    radial-gradient(1px 1px at 19% 73%,#a89bca88 99%,transparent),
+    radial-gradient(2px 2px at 39% 31%,#b9a56b66 99%,transparent),
+    radial-gradient(1px 1px at 57% 12%,#d4c69a88 99%,transparent),
+    radial-gradient(1px 1px at 74% 61%,#a89bca77 99%,transparent),
+    radial-gradient(2px 2px at 92% 36%,#d2b75f66 99%,transparent),
+    radial-gradient(ellipse at 50% 50%,transparent 0 38%,#bba15c07 38.2% 38.5%,transparent 39%),
+    radial-gradient(ellipse at 50% 50%,transparent 0 48%,#9c8bba06 48.2% 48.5%,transparent 49%);
+}
+body:after{opacity:.16;filter:sepia(.4) hue-rotate(210deg)}
+.topbar{
+  background:linear-gradient(90deg,#020104fc,#0a0710f5 48%,#020104fc);
+  border-bottom-color:#b49a5b26;
+}
+.topbar:after{background:linear-gradient(90deg,transparent,#4a354c,#b59a55,#4a354c,transparent);opacity:.55}
+.brand-name{color:#d2c8aa}
+.brand-sub{color:#877b61}
+.seal{
+  color:#d0b56b;
+  border-color:#8b713b88;
+  background:radial-gradient(circle at 50% 45%,#302418,#09060c 72%);
+  box-shadow:0 0 0 3px #030206,0 0 0 4px #66512c55,0 0 20px #b49a4b12;
+}
+.welcome{
+  isolation:isolate;
+}
+.welcome:before{
+  opacity:.9;
+  filter:brightness(.55) saturate(.75) sepia(.25) drop-shadow(0 0 35px #a27c3512);
+  transform:rotate(-7deg) scale(1.08);
+}
+.welcome:after{
+  background:linear-gradient(90deg,transparent,#44304b 12%,#b69a54 50%,#44304b 88%,transparent);
+  opacity:.65;
+}
+.welcome .eyebrow:before,.welcome .eyebrow:after{color:#b49b61}
+.eyebrow{color:#a9935d;letter-spacing:3px}
+h1{
+  color:#d9d0b6;
+  text-shadow:0 4px 40px #000,0 0 35px #8c6e3510;
+}
+h1 em{
+  color:#b7a16a;
+  text-shadow:0 0 28px #b89a4d22;
+}
+.welcome p{color:#8f8778}
+.tentacle-art{
+  stroke:#9b8450;
+  opacity:.48;
+  filter:drop-shadow(0 0 9px #8f673322);
+}
+.stats .stat{
+  background:linear-gradient(145deg,#100d13f5,#060408 60%,#020103);
+  border-color:#8b713b30;
+  box-shadow:inset 0 0 0 1px #e5d49b05,inset 0 12px 28px #b58e4205,0 16px 36px #000d;
+}
+.stat:before{color:#b49b613f}
+.stat:after{background:linear-gradient(180deg,transparent,#88703b,#5b3d63,transparent);opacity:.8}
+.stat strong{color:#d0c29c}
+.stat span{color:#827969}
+.search{background:linear-gradient(100deg,#0a0710,#020104);border-color:#76613a40;color:#d6ccb0}
+.search::placeholder{color:#746a5b}
+.search:focus{border-color:#b49a55;box-shadow:0 0 0 3px #b49a5512}
+.search-wrap>span{color:#b49a61}
+.filters .chip{background:#07050a;border-color:#66543455;color:#8c8069}
+.filters .chip.active{
+  background:linear-gradient(135deg,#d0b66f,#786039);
+  color:#100b06;border-color:#d3b86e;box-shadow:0 4px 18px #b58c3218;
+}
+.sort-row{color:#756b5c;border-bottom-color:#6b543021}
+.sort-row select{background:#050309;border-color:#6955323b;color:#c1b38f}
+.section-head{border-bottom-color:#8b713b30}
+.section-head:before{color:#9e824b77}
+.section-head:after{background:linear-gradient(90deg,#b99c5a,#57415e,transparent);opacity:.8}
+.section-head h2{color:#d0c5a8}
+.count{background:#08060b;border-color:#8b713b42;color:#b5a273}
+.book{
+  background:linear-gradient(145deg,#100c13 0%,#08060b 48%,#020103 100%);
+  border-color:#8d713b36;
+  box-shadow:inset 0 0 0 1px #d8c48a08,0 18px 36px #000c;
+}
+.book:after{background:linear-gradient(90deg,transparent,#b79b5a66,#65507555,transparent)}
+.book:before{
+  background:
+    radial-gradient(ellipse at 50% 0%,#b69a4d0c,transparent 58%),
+    linear-gradient(135deg,#d6c18408,transparent 38%,transparent 70%,#74527b0c);
+}
+.book:hover{
+  border-color:#c0a15a80;
+  box-shadow:inset 0 0 0 1px #d8c48a0b,0 24px 50px #000e,0 0 30px #8c6d3510;
+}
+.cover{box-shadow:inset 6px 0 0 #000c,inset 0 0 35px #0009,0 12px 28px #000d}
+.cover:before{border-color:#d2bd8050;box-shadow:inset 0 0 18px #0007}
+.cover:after{border-color:#c1a35a38;box-shadow:0 0 0 8px #c1a35a08,0 0 0 17px #a38ac008,0 0 35px #a98b3a12}
+.cover.ocean{background:radial-gradient(ellipse at 50% 70%,#3b3327 0%,#171521 28%,#090811 59%,#010102 100%)}
+.cover.earth{background:radial-gradient(ellipse at 45% 35%,#63553a 0%,#302637 30%,#100d17 62%,#010102 100%)}
+.cover.forest{background:radial-gradient(ellipse at 50% 75%,#4a4930 0%,#20251f 34%,#0d0b12 66%,#010102 100%)}
+.cover.wine{background:radial-gradient(ellipse at 50% 35%,#5a4431 0%,#30202e 38%,#100913 72%,#010102 100%)}
+.cover.violet{background:radial-gradient(ellipse at 50% 40%,#55415d 0%,#2b2039 38%,#100b19 68%,#010102 100%)}
+.cover.ink{background:radial-gradient(ellipse at 50% 35%,#4e4935 0%,#28232b 42%,#0d0a12 70%,#010102 100%)}
+.cover small{color:#d8c994;text-shadow:0 1px 9px #000}
+.cover strong{color:#e0d6bb;text-shadow:0 2px 20px #000}
+.cover em{color:#c1a76a}
+.book-meta{color:#9b8759}
+.book h3{color:#d4c9ac}
+.author{color:#958875}
+.status{border-color:#79613b55;background:#171018;color:#c4aa6d}
+.status.reading{background:#1a1b16;color:#c3c18a;border-color:#7c784355}
+.status.wishlist{background:#1a1220;color:#c2a8d0;border-color:#6f527d55}
+.more{color:#c0a15d}
+.empty{border-color:#78613a55;background:radial-gradient(ellipse at 50% 0%,#21172a99,transparent 75%),#030205;color:#8d806a}
+.empty strong{color:#d0c4a5}
+.floating-add{
+  background:linear-gradient(135deg,#d3bb76,#80633d);
+  color:#100b06;
+  box-shadow:0 12px 38px #000e,0 0 25px #b18b371c;
+}
+.bottom-nav{
+  background:linear-gradient(90deg,#020104fa,#0a0710f7,#020104fa);
+  border-top-color:#8b713b3d;
+  box-shadow:0 -10px 38px #000c;
+}
+.bottom-nav:before{background:linear-gradient(90deg,transparent,#57415e,#b59a55,#57415e,transparent);opacity:.55}
+.bottom-nav a{color:#8d816d}
+.bottom-nav a.active{color:#d2b86d;text-shadow:0 0 18px #c4a45625}
+dialog{
+  border-color:#a2874b66;
+  background:radial-gradient(ellipse at 50% 0%,#201626,#08060d 55%,#020103);
+  box-shadow:0 25px 100px #000e,inset 0 0 0 1px #d9c98a08;
+}
+dialog .modal-head{border-bottom-color:#7d61352e}
+dialog h2{color:#d7c9a6}
+.field span{color:#b09a65}
+.field input,.field select{background:#020104;border-color:#725b373d;color:#d2c7ac}
+.form-actions .save{background:linear-gradient(135deg,#d3bb76,#80633d);box-shadow:0 5px 20px #b18b3710}
+.detail-actions button{background:#100b14;border-color:#735b373d;color:#c9b991}
+.relic-tag{background:#bba15f;color:#100b06}
+.relic-cover{outline-color:#8f713d;box-shadow:0 0 18px #b18b3715}
+::selection{background:#6e552e;color:#fff0c2}
+@media(max-width:520px){
+  .welcome:before{opacity:.68}
+  .tentacle-art{opacity:.34;filter:drop-shadow(0 0 8px #b49a4b20)}
+  .stat{background:linear-gradient(145deg,#0b0810,#020103)}
+}
+/* Fine etched sigils and occult editorial framing */
+.welcome .eyebrow{position:relative;text-shadow:0 0 18px #b89a4d1c}
+.welcome .eyebrow:before{content:"⟡  ";display:inline-block;margin-right:7px;color:#b49a61}
+.welcome .eyebrow:after{content:"  ⟡";display:inline-block;margin-left:7px;color:#b49a61}
+.section-head h2:before{content:"⌬";font-family:serif;color:#b49a61;font-size:.7em;margin-right:12px;vertical-align:12%}
+.book{position:relative}
+.book:after{height:1px}
+.cover{position:relative;isolation:isolate}
+.cover:before{border-style:solid}
+@media(prefers-reduced-motion:no-preference){
+  .tentacle-art{animation:abyssal-drift 16s ease-in-out infinite alternate}
+  .welcome:before{animation:eldritch-pulse 13s ease-in-out infinite alternate}
+  @keyframes abyssal-drift{from{transform:translate3d(0,0,0) rotate(-1deg)}to{transform:translate3d(-7px,5px,0) rotate(2deg)}}
+  @keyframes eldritch-pulse{from{opacity:.45;transform:rotate(-8deg) scale(1.03)}to{opacity:.78;transform:rotate(-3deg) scale(1.1)}}
+}
