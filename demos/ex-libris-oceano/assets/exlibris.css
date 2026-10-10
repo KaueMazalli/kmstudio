@@ -141,3 +141,57 @@ dialog::backdrop{background:#000b12e8}
 @media(min-width:650px){.welcome{min-height:270px;padding-top:58px;padding-bottom:43px}.welcome:before{width:420px;height:420px;right:-65px;top:-90px}.tentacle-art{width:235px;height:225px;right:20px;top:10px}.stats{gap:14px}.stat{padding:17px 16px}.book-grid{gap:18px}.cover{max-height:none}}
 @media(max-width:380px){.welcome{min-height:190px;padding-top:28px}.tentacle-art{right:-18px;width:145px;opacity:.42}h1{max-width:290px;font-size:36px}.eyebrow{font-size:8px;letter-spacing:1.8px}.stat{padding:11px 9px}.stat strong{font-size:25px}.book h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){body:before,.welcome:before,.tentacle-art path{animation:none!important}}
+
+
+/* DARKER ABYSS — deeper blacks, restrained bioluminescence */
+:root{--bg:#000308;--panel:#030b12;--panel2:#06131c;--blue:#124655;--sand:#73c9c0;--text:#d5e4e7;--muted:#6d8a96;--line:#3c96951a}
+html,body{background-color:#000308;color:#d5e4e7}
+body{background:radial-gradient(ellipse 85% 32% at 50% -8%,#071c29 0%,#030d15 42%,transparent 78%),radial-gradient(ellipse 55% 40% at 100% 42%,#04151d44,transparent 72%),linear-gradient(180deg,#020811 0%,#01050a 52%,#000308 100%)}
+body:before{opacity:.28;background:linear-gradient(104deg,transparent 8%,#247c8a06 17%,transparent 26%),linear-gradient(78deg,transparent 37%,#3d9c9906 45%,transparent 54%),linear-gradient(113deg,transparent 66%,#17657809 73%,transparent 80%),radial-gradient(1px 1px at 14% 22%,#8adbd477 99%,transparent),radial-gradient(2px 2px at 77% 32%,#7acfc055 99%,transparent),radial-gradient(1px 1px at 52% 71%,#8be4d855 99%,transparent),radial-gradient(2px 2px at 31% 85%,#66b7c044 99%,transparent)}
+.topbar{background:#00060df2;border-bottom-color:#3eaaa815;box-shadow:0 10px 35px #0007}
+.seal{color:#7bcac4;border-color:#4faaa94d;box-shadow:inset 0 0 12px #3baca90d,0 0 14px #269c9810}
+.eyebrow,.search-wrap span{color:#58aaa8;text-shadow:none}
+h1 em{color:#82c9c2;text-shadow:0 0 20px #48b9b51a}
+.welcome:before{opacity:.65;filter:brightness(.72) drop-shadow(0 0 18px #2eafb510)}
+.tentacle-art{stroke:#4ca9a5;opacity:.4;filter:drop-shadow(0 0 5px #287f7e33)}
+.welcome p{color:#78939c}
+.stat{background:linear-gradient(145deg,#061722e8,#020910f5);border-color:#438d9014;box-shadow:inset 0 1px #b1fff504,0 8px 28px #0006}
+.stat:after{background:linear-gradient(180deg,transparent,#3b9e9980,transparent)}
+.stat strong{color:#bddbdc;text-shadow:none}
+.search,.sort-row select{background:#020a11;border-color:#3d888b20;color:#c4d9dd}
+.search:focus{border-color:#438f8c;box-shadow:0 0 0 3px #438f8c0d}
+.chip{background:#030c13bb;border-color:#438d901c;color:#829ba4}
+.chip.active{background:#72c5bd;color:#001012;border-color:#72c5bd;box-shadow:0 0 14px #5ce0d00b}
+.section-head h2{color:#d1e1e4}
+.count,.sort-row{color:#63848f}
+.book{background:linear-gradient(155deg,#06131cf5,#01060bf8);border-color:#3b8e9416;box-shadow:0 12px 30px #0008,inset 0 1px #c3fffa04}
+.book:before{background:linear-gradient(135deg,#8af4e503,transparent 38%,transparent 70%,#318ca404)}
+.book:hover{border-color:#438f8b55;box-shadow:0 18px 40px #0009,0 0 20px #35bcb506}
+.cover{background-color:#020b12;box-shadow:inset 5px 0 0 #0009,0 9px 24px #0008}
+.cover:before{border-color:#a1eee516}
+.cover:after{border-color:#9cece110;box-shadow:none}
+.cover.ocean{background:radial-gradient(ellipse at 50% 70%,#1c4b56 0%,#0d2c39 30%,#061722 60%,#01060b 100%)}
+.cover.earth{background:radial-gradient(ellipse at 45% 35%,#344d4e 0%,#1a333a 34%,#091a25 65%,#01060b 100%)}
+.cover.forest{background:radial-gradient(ellipse at 50% 75%,#244d49 0%,#103137 35%,#071a24 67%,#01060b 100%)}
+.cover.wine{background:radial-gradient(ellipse at 50% 35%,#2d4d57 0%,#172f3d 38%,#091824 66%,#01060b 100%)}
+.cover.violet{background:radial-gradient(ellipse at 50% 40%,#354f61 0%,#1b3548 40%,#0a1b29 68%,#01060b 100%)}
+.cover.ink{background:radial-gradient(ellipse at 50% 35%,#304f59 0%,#172f39 42%,#071923 70%,#01060b 100%)}
+.cover small{color:#9fc9c8}.cover em{color:#85b5b8}
+.book-meta{color:#5f7f8a}.author{color:#78939c}
+.status{color:#91c9cf;background:#092532}
+.status.reading{color:#8ed4ca;background:#0a302e99}
+.status.wishlist{color:#a4bbce;background:#10263799}
+.more{color:#6f9da5}
+.empty{border-color:#327b7920;background:#020b1255;color:#73939d}
+.empty strong{color:#bcd4d8}
+.floating-add{background:#72c5bd;color:#001012;box-shadow:0 10px 35px #000b,0 0 20px #46d6c50c}
+.bottom-nav{background:#00070df5;border-top-color:#3eaaa817;box-shadow:0 -10px 35px #0007}
+.bottom-nav a.active{color:#83cbc4;text-shadow:none}
+dialog{background:radial-gradient(ellipse at 50% 0%,#09212b,#030b12 65%);border-color:#438f8b2b}
+dialog::backdrop{background:#00040af2}
+.field input,.field select{background:#01060b;border-color:#3d888b1c;color:#d5e4e7}
+.form-actions .save{background:#72c5bd;border-color:#72c5bd;color:#001012}
+.relic-tag{background:#72c5bd;color:#001012}
+.relic-cover{outline-color:#4a9f98;box-shadow:0 0 16px #45c9b310}
+.detail-actions button{background:#061722;border-color:#3d888b1c}
+::selection{background:#286c6c;color:#e4ffff}
