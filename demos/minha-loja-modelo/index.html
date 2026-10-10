@@ -40,9 +40,9 @@
 <button class="category-card category-navy" type="button" data-category="Uso profissional"><span class="category-symbol">▦</span><strong>Uso profissional</strong><small>Para negócios e equipes</small><span class="category-arrow">↗</span></button>
 </div></div></section>
 <section class="products-section" id="produtos"><div class="container">
-<div class="section-heading product-heading"><div><span class="section-kicker">Nosso catálogo</span><h2>Produtos em destaque</h2><p class="section-description">Adicione os itens à sua lista e consulte preços e estoque diretamente com a loja.</p></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos" autocomplete="off"></label></div>
+<div class="section-heading product-heading"><div><span class="section-kicker">Nosso catálogo</span><h2>Produtos em destaque</h2><p class="section-description">Adicione os itens à sua lista e consulte preços e estoque diretamente com a loja.</p></div><div class="catalog-controls"><label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Buscar por nome ou categoria..." aria-label="Buscar produtos" autocomplete="off"></label><label class="sort-control"><span>Ordenar</span><select id="product-sort" aria-label="Ordenar produtos"><option value="featured">Recomendados</option><option value="name-asc">Nome: A–Z</option><option value="name-desc">Nome: Z–A</option><option value="category">Categoria</option></select></label></div></div>
 <div class="catalog-toolbar"><span id="results-count" aria-live="polite">Produtos do catálogo</span><button class="clear-filters" id="clear-filters" type="button" hidden>Limpar filtros ×</button><a href="carrinho.html">Ver minha lista <span class="cart-count">0</span> ↗</a></div>
-<div class="products-grid" id="featured-products"></div><p class="empty-products" id="empty-products" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p>
+<div class="products-grid" id="featured-products"></div><div class="catalog-more" id="catalog-more" hidden><span id="visible-count"></span><button class="btn btn-more" id="load-more" type="button">Mostrar mais produtos <span aria-hidden="true">↓</span></button></div><p class="empty-products" id="empty-products" hidden><strong>Nenhum produto encontrado</strong><span>Tente outro termo ou limpe os filtros para ver o catálogo completo.</span></p>
 <p class="catalog-note">As imagens são ilustrativas. Consulte a loja para confirmar marcas, embalagens, preços e disponibilidade.</p>
 </div></section>
 <section class="about-section" id="sobre"><div class="container about-grid"><div class="about-accent"><span class="about-big-mark">VC</span><span class="about-caption">Unishop Vital Clean · Jales/SP</span></div><div class="about-copy"><span class="section-kicker">Mais praticidade no dia a dia</span><h2>Seu próximo produto de limpeza começa aqui.</h2><p>Use o catálogo para encontrar o que precisa. Nossa equipe pode ajudar você a consultar opções para sua casa, comércio ou rotina profissional.</p><a class="btn btn-light" href="https://wa.me/5517996149320" target="_blank" rel="noopener noreferrer">Conversar com a equipe ↗</a></div></div></section>
@@ -55,22 +55,33 @@
 <script src="js/products.js"></script><script src="js/cart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
- const grid=document.getElementById("featured-products"),search=document.getElementById("product-search"),filters=document.getElementById("category-cards"),empty=document.getElementById("empty-products"),count=document.getElementById("results-count"),clearFilters=document.getElementById("clear-filters"),menuToggle=document.querySelector(".mobile-menu-toggle"),nav=document.getElementById("primary-navigation");
- let activeCategory="Todos",searchTerm="";
+ const grid=document.getElementById("featured-products"),search=document.getElementById("product-search"),sortSelect=document.getElementById("product-sort"),filters=document.getElementById("category-cards"),empty=document.getElementById("empty-products"),count=document.getElementById("results-count"),clearFilters=document.getElementById("clear-filters"),moreWrap=document.getElementById("catalog-more"),visibleCount=document.getElementById("visible-count"),loadMore=document.getElementById("load-more"),menuToggle=document.querySelector(".mobile-menu-toggle"),nav=document.getElementById("primary-navigation");
+ let activeCategory="Todos",searchTerm="",sortMode="featured",pageSize=12,visibleLimit=pageSize;
  const availableProducts=products.filter(function(product){return product.stock!==false;});
  function renderProducts(){
   const query=searchTerm.toLocaleLowerCase("pt-BR").trim();
-  const filtered=availableProducts.filter(function(product){
+  let filtered=availableProducts.filter(function(product){
    const matchesCategory=activeCategory==="Todos"||product.category===activeCategory;
-   const matchesSearch=!query||[product.name,product.category,product.description].some(function(value){return value.toLocaleLowerCase("pt-BR").includes(query);});
+   const matchesSearch=!query||[product.name,product.category,product.description].some(function(value){return String(value||"").toLocaleLowerCase("pt-BR").includes(query);});
    return matchesCategory&&matchesSearch;
   });
-  grid.innerHTML=filtered.map(function(product){return '<article class="product-card"><a href="produto.html?id='+product.id+'" class="product-image-link" aria-label="Ver detalhes de '+product.name+'"><img src="'+product.image+'" alt="'+product.name+'" class="product-img" loading="lazy"><span class="product-image-label">Ver detalhes ↗</span></a><div class="product-info"><span class="product-category">'+product.category+'</span><h3><a href="produto.html?id='+product.id+'">'+product.name+'</a></h3><p>'+product.description+'</p><div class="product-card-bottom"><span class="price-consult">Consulte o preço</span><button type="button" class="btn btn-add" onclick="addToCart('+product.id+')">+ Adicionar à lista</button></div></div></article>';}).join("");
-  empty.hidden=filtered.length>0;count.textContent=filtered.length+(filtered.length===1?" produto encontrado":" produtos encontrados");clearFilters.hidden=activeCategory==="Todos"&&!searchTerm.trim();
+  if(sortMode==="name-asc")filtered.sort(function(a,b){return a.name.localeCompare(b.name,"pt-BR");});
+  if(sortMode==="name-desc")filtered.sort(function(a,b){return b.name.localeCompare(a.name,"pt-BR");});
+  if(sortMode==="category")filtered.sort(function(a,b){return a.category.localeCompare(b.category,"pt-BR")||a.name.localeCompare(b.name,"pt-BR");});
+  const visible=filtered.slice(0,visibleLimit);
+  grid.innerHTML=visible.map(function(product){return '<article class="product-card"><a href="produto.html?id='+product.id+'" class="product-image-link" aria-label="Ver detalhes de '+product.name+'"><img src="'+product.image+'" alt="'+product.name+'" class="product-img" loading="lazy"><span class="product-image-label">Detalhes <span aria-hidden="true">↗</span></span></a><div class="product-info"><span class="product-category">'+product.category+'</span><h3><a href="produto.html?id='+product.id+'">'+product.name+'</a></h3><p>'+product.description+'</p><div class="product-card-bottom"><span class="price-consult">Consulte o preço</span><button type="button" class="btn btn-add" onclick="addToCart('+product.id+')"><span aria-hidden="true">+</span> Adicionar à lista</button></div></div></article>';}).join("");
+  empty.hidden=filtered.length>0;
+  count.textContent=filtered.length+(filtered.length===1?" produto encontrado":" produtos encontrados");
+  clearFilters.hidden=activeCategory==="Todos"&&!searchTerm.trim();
+  moreWrap.hidden=filtered.length<=visible.length;
+  visibleCount.textContent="Exibindo "+visible.length+" de "+filtered.length+" produtos";
+  loadMore.hidden=filtered.length<=visible.length;
  }
- filters.addEventListener("click",function(event){const button=event.target.closest("[data-category]");if(!button)return;activeCategory=button.dataset.category;filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item===button);});renderProducts();document.getElementById("produtos").scrollIntoView({behavior:"smooth",block:"start"});});
- search.addEventListener("input",function(event){searchTerm=event.target.value;renderProducts();});
- clearFilters.addEventListener("click",function(){activeCategory="Todos";searchTerm="";search.value="";filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item.dataset.category==="Todos");});renderProducts();});
+ filters.addEventListener("click",function(event){const button=event.target.closest("[data-category]");if(!button)return;activeCategory=button.dataset.category;visibleLimit=pageSize;filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item===button);});renderProducts();document.getElementById("produtos").scrollIntoView({behavior:"smooth",block:"start"});});
+ search.addEventListener("input",function(event){searchTerm=event.target.value;visibleLimit=pageSize;renderProducts();});
+ sortSelect.addEventListener("change",function(event){sortMode=event.target.value;visibleLimit=pageSize;renderProducts();});
+ loadMore.addEventListener("click",function(){visibleLimit+=pageSize;renderProducts();});
+ clearFilters.addEventListener("click",function(){activeCategory="Todos";searchTerm="";visibleLimit=pageSize;sortMode="featured";sortSelect.value="featured";search.value="";filters.querySelectorAll("[data-category]").forEach(function(item){item.classList.toggle("active",item.dataset.category==="Todos");});renderProducts();});
  if(menuToggle&&nav){menuToggle.addEventListener("click",function(){const isOpen=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!isOpen));menuToggle.setAttribute("aria-label",isOpen?"Abrir menu":"Fechar menu");nav.classList.toggle("is-open",!isOpen);});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Abrir menu");nav.classList.remove("is-open");});});}
  document.getElementById("current-year").textContent=new Date().getFullYear();renderProducts();
 });
