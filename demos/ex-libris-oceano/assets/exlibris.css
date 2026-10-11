@@ -561,3 +561,55 @@ dialog h2{color:#d7c9a6}
 
 
 .connection-note{margin:1rem auto;padding:.85rem 1rem;max-width:70rem;border:1px solid rgba(205,152,62,.38);background:rgba(16,12,8,.92);color:#d9c7a6;font-size:.9rem;line-height:1.5;text-align:center}
+
+
+/* Desktop refinement — spacious editorial layout without changing mobile */
+@media (min-width: 900px) {
+  body { padding-bottom: 32px; }
+  .topbar { height: 76px; padding-inline: max(40px, calc((100% - 1240px) / 2)); }
+  .brand { gap: 13px; }
+  .seal { width: 40px; height: 40px; font-size: 20px; }
+  .brand-name { font-size: 19px; }
+  .brand-sub { font-size: 9px; }
+  main { max-width: 1240px; padding-inline: 40px; }
+  .welcome {
+    min-height: 340px;
+    padding: 72px 0 58px;
+    max-width: none;
+  }
+  .welcome h1 { max-width: 760px; font-size: clamp(64px, 6.2vw, 88px); line-height: .98; }
+  .welcome p { max-width: 460px; font-size: 14px; line-height: 1.8; }
+  .welcome:before { width: 560px; height: 560px; right: 0; top: -115px; }
+  .tentacle-art { width: 360px; height: 310px; right: 5%; top: 20px; }
+  .stats { max-width: 680px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 4px 0 34px; }
+  .stat { min-height: 124px; padding: 24px 25px; }
+  .stat strong { font-size: 36px; }
+  .stat span { font-size: 11px; margin-top: 7px; }
+  .search-wrap { max-width: 620px; margin-bottom: 22px; }
+  .search { height: 54px; font-size: 14px; }
+  .sort-row { font-size: 12px; margin: -61px 0 38px auto; width: fit-content; gap: 12px; }
+  .sort-row select { min-width: 175px; max-width: none; padding: 11px 13px; font-size: 12px; }
+  .section-head { margin: 28px 0 20px; padding-top: 18px; }
+  .section-head h2 { font-size: 36px; }
+  .count { font-size: 11px; }
+  .book-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .book { padding: 13px; }
+  .cover { max-height: 350px; margin-bottom: 16px; }
+  .book h3 { font-size: 25px; margin-top: 11px; }
+  .book-meta { font-size: 9px; }
+  .author { font-size: 12px; }
+  .status { font-size: 9px; padding: 7px 9px; }
+  .floating-add { right: max(40px, calc((100% - 1240px) / 2)); bottom: 30px; padding: 16px 22px; font-size: 13px; }
+}
+@media (min-width: 1200px) {
+  .book-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; }
+  .cover { max-height: 320px; }
+  .welcome { min-height: 370px; }
+}
+@media (min-width: 900px) and (max-width: 1050px) {
+  main { padding-inline: 28px; }
+  .topbar { padding-inline: 28px; }
+  .welcome h1 { max-width: 620px; font-size: 62px; }
+  .tentacle-art { right: 0; width: 280px; opacity: .3; }
+  .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
