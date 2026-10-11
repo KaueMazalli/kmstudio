@@ -558,3 +558,6 @@ dialog h2{color:#d7c9a6}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+.connection-note{margin:1rem auto;padding:.85rem 1rem;max-width:70rem;border:1px solid rgba(205,152,62,.38);background:rgba(16,12,8,.92);color:#d9c7a6;font-size:.9rem;line-height:1.5;text-align:center}
