@@ -978,3 +978,69 @@ dialog h2{color:#d7c9a6}
  .progress-editor input{padding:10px 8px}
 }
 @media(prefers-reduced-motion:reduce){.book-progress-track span{transition:none}}
+
+
+/* RELÍQUIAS — página editorial de arquivo e edições especiais */
+body[data-page="reliquias"] main{max-width:1120px}
+body[data-page="reliquias"] .relics-hero{min-height:320px;padding:42px 0 34px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(210px,.7fr);align-items:center;gap:22px;border-bottom:1px solid #77d9d51c}
+body[data-page="reliquias"] .relics-hero-copy{position:relative;z-index:1;max-width:650px}
+body[data-page="reliquias"] .relics-eyebrow,.relics-overline{display:block;color:#8bcfc8;font-size:9px;letter-spacing:2.2px;font-weight:700;text-transform:uppercase}
+body[data-page="reliquias"] .relics-eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:17px}
+body[data-page="reliquias"] .relics-orbit{display:grid;place-items:center;width:26px;height:26px;border:1px solid #7be5d65c;border-radius:50%;font-size:15px;color:#a8e8dc}
+body[data-page="reliquias"] .relics-hero h1{font-size:clamp(44px,7vw,76px);line-height:.94;letter-spacing:-1.8px;margin:0 0 17px;max-width:650px}
+body[data-page="reliquias"] .relics-hero h1 em{display:inline;color:#a8e8dc}
+body[data-page="reliquias"] .relics-hero-copy>p{font-size:13px;line-height:1.85;max-width:550px;color:#a3bdc5}
+body[data-page="reliquias"] .relics-hero-note{display:flex;align-items:center;gap:12px;margin-top:23px;color:#88aeb9;font-size:10px;line-height:1.7}
+body[data-page="reliquias"] .relics-note-mark{width:33px;height:33px;display:grid;place-items:center;border:1px solid #80dcd64a;border-radius:50%;color:#a8e8dc;font-size:14px;flex:none}
+body[data-page="reliquias"] .relics-hero-note strong{font-weight:600;color:#d8efec}
+body[data-page="reliquias"] .relics-seal-art{position:relative;min-height:220px;display:grid;place-items:center;isolation:isolate}
+body[data-page="reliquias"] .relics-seal-art:before,body[data-page="reliquias"] .relics-seal-art:after{content:"";position:absolute;aspect-ratio:1;border:1px solid #5dc9c43b;border-radius:50%;width:210px;z-index:-1}
+body[data-page="reliquias"] .relics-seal-art:after{width:270px;border-color:#5dc9c41a}
+body[data-page="reliquias"] .relics-seal-ring{width:170px;aspect-ratio:1;border:1px solid #8be3d66e;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;box-shadow:inset 0 0 0 8px #54c5bc08,inset 0 0 0 9px #7bd8d31d,0 0 65px #3dc1ba12;background:radial-gradient(circle,#0a2632d9,#04131de8 72%);transform:rotate(-8deg)}
+body[data-page="reliquias"] .relics-seal-ring span,body[data-page="reliquias"] .relics-seal-ring small{font-size:8px;letter-spacing:2.8px;color:#9adbd4}
+body[data-page="reliquias"] .relics-seal-ring strong{font:58px/1 var(--serif);color:#b0eee2;text-shadow:0 0 28px #6fe3d477}
+body[data-page="reliquias"] .relics-star{position:absolute;color:#9cece1;text-shadow:0 0 20px #6fe3d477}
+body[data-page="reliquias"] .relics-star-one{top:17%;right:20%;font-size:17px}
+body[data-page="reliquias"] .relics-star-two{bottom:18%;left:20%;font-size:21px}
+body[data-page="reliquias"] .relics-star-three{top:25%;left:15%;font-size:32px}
+body[data-page="reliquias"] .relics-intro-strip{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;padding:27px 0 23px;border-bottom:1px solid #77d9d51c}
+body[data-page="reliquias"] .relics-intro-strip h2{font:500 clamp(24px,3.4vw,34px)/1.15 var(--serif);margin:10px 0 0;color:#e1f4f2}
+body[data-page="reliquias"] .relics-intro-strip>p{font-size:11px;line-height:1.8;color:#91aeb9;margin:0;max-width:450px;justify-self:end}
+body[data-page="reliquias"] .relics-stats{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px;margin:18px 0 29px}
+body[data-page="reliquias"] .relics-stat-main,body[data-page="reliquias"] .relics-stat{position:relative;min-width:0;min-height:102px;padding:17px 18px;border:1px solid #68c8c324;border-radius:12px;background:linear-gradient(135deg,#0a2432e8,#06131fe8);overflow:hidden}
+body[data-page="reliquias"] .relics-stat-main:after{content:"✧";position:absolute;right:15px;bottom:-20px;font:92px var(--serif);color:#8be3d60d}
+body[data-page="reliquias"] .relics-stat-main strong{display:block;font:600 36px/1 var(--serif);color:#b0eee2;margin:9px 0 5px}
+body[data-page="reliquias"] .relics-stat-main>span:last-child,body[data-page="reliquias"] .relics-stat>span:last-child{font-size:9px;color:#8baab5}
+body[data-page="reliquias"] .relics-stat{display:flex;flex-direction:column;justify-content:center;gap:5px}
+body[data-page="reliquias"] .relics-stat-icon{font-size:16px;color:#8bd9d1}
+body[data-page="reliquias"] .relics-stat strong{font:500 23px var(--serif);color:#e0f1ef;overflow-wrap:anywhere}
+body[data-page="reliquias"] .relics-catalog-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 15px}
+body[data-page="reliquias"] .relics-catalog-head>div{min-width:0;flex:1}
+body[data-page="reliquias"] .relics-catalog-head .section-head{margin:8px 0 0}
+body[data-page="reliquias"] .relics-catalog-head .section-head h2{font-size:clamp(25px,4vw,34px)}
+body[data-page="reliquias"] .relics-catalog-seal{width:46px;height:46px;flex:none;border:1px solid #76d5ce55;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font:20px var(--serif);color:#a8e8dc;transform:rotate(10deg)}
+body[data-page="reliquias"] .relics-catalog-seal small{font:5px var(--sans);letter-spacing:1px}
+body[data-page="reliquias"] .relic-cover{box-shadow:0 0 0 1px #a8e8dc22,0 8px 25px #0005}
+body[data-page="reliquias"] .book-grid .book{background:linear-gradient(155deg,#0a2230f2,#06111bed);border-color:#71cfc022}
+@media(max-width:600px){
+ body[data-page="reliquias"] .relics-hero{min-height:0;grid-template-columns:1fr;padding:30px 0 24px;gap:0}
+ body[data-page="reliquias"] .relics-hero h1{font-size:clamp(43px,12vw,60px);max-width:400px}
+ body[data-page="reliquias"] .relics-hero-copy>p{font-size:12px;line-height:1.8;max-width:100%;padding-right:2px}
+ body[data-page="reliquias"] .relics-hero-note{margin-top:17px}
+ body[data-page="reliquias"] .relics-seal-art{position:absolute;right:-55px;top:2px;min-height:0;width:140px;height:140px;opacity:.23;pointer-events:none;z-index:0}
+ body[data-page="reliquias"] .relics-seal-ring{width:115px}
+ body[data-page="reliquias"] .relics-seal-ring strong{font-size:38px}
+ body[data-page="reliquias"] .relics-seal-art:before{width:145px}
+ body[data-page="reliquias"] .relics-seal-art:after{width:185px}
+ body[data-page="reliquias"] .relics-intro-strip{grid-template-columns:1fr;gap:11px;padding:23px 0 19px}
+ body[data-page="reliquias"] .relics-intro-strip h2{font-size:27px}
+ body[data-page="reliquias"] .relics-intro-strip>p{justify-self:start;font-size:10px}
+ body[data-page="reliquias"] .relics-stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 25px}
+ body[data-page="reliquias"] .relics-stat-main{grid-column:1/-1;min-height:91px}
+ body[data-page="reliquias"] .relics-stat-main strong{font-size:32px}
+ body[data-page="reliquias"] .relics-stat{min-height:88px;padding:13px}
+ body[data-page="reliquias"] .relics-stat strong{font-size:20px}
+ body[data-page="reliquias"] .relics-catalog-head{align-items:flex-start}
+ body[data-page="reliquias"] .relics-catalog-seal{width:39px;height:39px;font-size:17px}
+ body[data-page="reliquias"] .relics-catalog-head .section-head{align-items:flex-start;flex-direction:column;gap:5px}
+}
