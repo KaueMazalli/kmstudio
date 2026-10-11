@@ -738,3 +738,52 @@ dialog h2{color:#d7c9a6}
  .detail-layout{grid-template-columns:minmax(135px,.65fr) minmax(0,1.5fr);gap:20px}
  #bookDetail .detail-cover{max-width:190px}
 }
+
+
+/* Paleta final unificada — preto, dourado envelhecido e bege */
+:root{
+  --abyss-ink:#020103;
+  --abyss-blue:#07050c;
+  --abyss-teal:#28211b;
+  --abyss-glow:#b89a4d;
+  --abyss-bone:#d4c9a0;
+  --abyss-violet:#241629;
+  --bg:#020103;
+  --panel:#100c13;
+  --panel2:#171018;
+  --blue:#6b5840;
+  --sand:#bba15f;
+  --text:#d9d0b6;
+  --muted:#958875;
+  --line:#8b713b36;
+}
+#bookDetail{
+  border-color:#8b713b66;
+  background:
+    radial-gradient(ellipse at 12% 0%,#201626 0%,#08060d 48%,#020103 100%);
+  box-shadow:0 28px 100px #000d,inset 0 0 0 1px #d9c98a08;
+}
+#bookDetail .modal-head{border-bottom-color:#7d61352e}
+#bookDetail .modal-head h2{color:#d7c9a6}
+#bookDetail .detail-rating{border-color:#8b713b40;background:#bba15f0a}
+#bookDetail .detail-rating span{color:#958875}
+#bookDetail .detail-rating strong{color:#bba15f}
+#bookDetail .detail-kicker{color:#958875}
+#bookDetail .detail-kicker span{color:#bba15f}
+#bookDetail .detail-title{color:#d9d0b6}
+#bookDetail .detail-author{color:#958875}
+#bookDetail .detail-status{border-color:#8b713b45;background:#bba15f0b;color:#c9b991}
+#bookDetail .detail-status.relic{color:#bba15f;border-color:#8b713b70}
+#bookDetail .detail-section h3{color:#d4c9ac}
+#bookDetail .detail-facts{border-top-color:#8b713b36}
+#bookDetail .detail-fact{border-bottom-color:#8b713b2b}
+#bookDetail .detail-fact span{color:#958875}
+#bookDetail .detail-fact strong{color:#d9d0b6}
+#bookDetail .detail-actions{border-top-color:#8b713b36}
+#bookDetail .detail-actions button{background:#100b14;border-color:#735b373d;color:#c9b991}
+#bookDetail .detail-actions button:hover{background:#241629;border-color:#bba15f80;color:#d9d0b6}
+#bookDetail .detail-actions .delete{color:#d7a8a2;border-color:#a85e5e45}
+#bookDetail .detail-actions .delete:hover{background:#351b20;border-color:#a85e5e88}
+#bookDetail .relic-tag{background:#bba15f;color:#100b06}
+#bookDetail .relic-cover{outline-color:#8f713d}
+#bookDetail::backdrop{background:#010102e8;backdrop-filter:blur(7px)}
