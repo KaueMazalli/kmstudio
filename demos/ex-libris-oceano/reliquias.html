@@ -13,7 +13,7 @@
 <script src="assets/supabase-config.js" defer></script>
 <script src="assets/exlibris.js" defer></script></head>
 <body data-page="reliquias">
-<header class="topbar"><a class="brand" href="index.html" style="text-decoration:none;color:inherit"><span class="seal">◉</span><span><span class="brand-name">Ex Libris Mazalli</span><span class="brand-sub" style="display:block">Minha biblioteca</span></span></a><button class="icon-btn" id="quickAdd" aria-label="Adicionar livro">＋</button></header>
+<header class="topbar"><a class="brand" href="index.html" style="text-decoration:none;color:inherit"><span class="seal">◉</span><span><span class="brand-name">Ex Libris Mazalli</span><span class="brand-sub" style="display:block">Minha biblioteca</span></span></a></header>
 <main id="inicio">
 <section class="welcome relics-hero">
 <div class="relics-hero-copy">
@@ -38,9 +38,9 @@
 <div class="relics-catalog-head"><div><span class="relics-overline">02 / CATÁLOGO PRIVADO</span><div class="section-head"><h2 id="listTitle">Relíquias catalogadas</h2><span class="count" id="visibleCount" aria-live="polite">— livros</span></div></div><span class="relics-catalog-seal" aria-hidden="true">R<br><small>· MMXXVI ·</small></span></div>
 <section class="book-grid" id="bookGrid" aria-label="Meus livros"></section><div class="empty" id="empty" role="status" aria-live="polite"><strong>Nenhum livro encontrado</strong>Tente outra busca ou adicione um livro à coleção.</div>
 </main>
-<button class="floating-add" id="addBook"><span style="font-size:18px">＋</span> Adicionar livro</button>
+
 <nav class="bottom-nav" aria-label="Navegação inferior"><a class="" href="index.html"><span>⟁</span>Acervo</a><a class="active" href="reliquias.html"><span>⌬</span>Relíquias</a><a class="" href="leitura.html"><span>≋</span>Leitura</a></nav>
-<dialog id="bookForm"><form id="addForm"><div class="modal-head"><h2>Adicionar livro</h2><button type="button" class="close" data-close="bookForm" aria-label="Fechar">×</button></div><label class="field"><span>Título *</span><input name="title" required maxlength="100" placeholder="Nome do livro"></label><label class="field"><span>Autor</span><input name="author" maxlength="80" placeholder="Nome do autor"></label><label class="field"><span>Categoria</span><select name="category"><option>Fantasia</option><option>Ficção</option><option>Clássico</option><option>Romance</option><option>Suspense</option><option>História</option><option>Mangá</option><option>Não ficção</option><option>Outro</option></select></label><label class="field"><span>Status</span><select name="status"><option>Não lido</option><option>Quero ler</option><option>Lendo</option><option>Lido</option></select></label><label class="field"><span>Ano de publicação</span><input name="year" type="number" min="0" max="2100" placeholder="Opcional"></label><div class="form-actions"><button type="button" data-close="bookForm">Cancelar</button><button class="save" type="submit">Salvar livro</button></div></form></dialog>
+
 <dialog id="bookDetail"><div class="modal-head"><h2>Detalhes do livro</h2><button type="button" class="close" data-close="bookDetail" aria-label="Fechar">×</button></div><div id="detailContent"></div></dialog>
 
 </body>
