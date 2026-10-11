@@ -15,11 +15,27 @@
 <body data-page="reliquias">
 <header class="topbar"><a class="brand" href="index.html" style="text-decoration:none;color:inherit"><span class="seal">◉</span><span><span class="brand-name">Ex Libris Mazalli</span><span class="brand-sub" style="display:block">Minha biblioteca</span></span></a><button class="icon-btn" id="quickAdd" aria-label="Adicionar livro">＋</button></header>
 <main id="inicio">
-<section class="welcome"><svg class="tentacle-art" viewBox="0 0 230 210" aria-hidden="true"><path d="M225 8 C175 24 205 68 158 85 S115 112 148 142 S151 185 112 204" /><path d="M198 0 C157 27 177 57 135 69 S92 101 119 121 S116 169 76 195" /><path d="M230 52 C203 65 220 96 186 112 S171 153 188 170" /><path d="M167 1 C142 21 145 39 119 49 S83 70 88 90" /></svg><h1>Relíquias</h1><p>Edições especiais da coleção.</p></section>
-<section class="stats" aria-label="Resumo da biblioteca"><div class="stat"><strong id="totalBooks">53</strong><span>Livros no acervo</span></div><div class="stat"><strong id="readingCount">3</strong><span>Lendo agora</span></div><div class="stat"><strong id="readCount">8</strong><span>Concluídos</span></div></section>
+<section class="welcome relics-hero">
+<div class="relics-hero-copy">
+<span class="relics-eyebrow"><span class="relics-orbit">✳</span> ARQUIVO DE EDIÇÕES ESPECIAIS</span>
+<h1>Relíquias <em>do acervo.</em></h1>
+<p>Alguns livros são mais do que histórias: guardam marcas do tempo, edições que já não se encontram facilmente e memórias que merecem um lugar à parte.</p>
+<div class="relics-hero-note"><span class="relics-note-mark">✦</span><span>Uma coleção dentro da coleção.<br><strong>Peças escolhidas para permanecer.</strong></span></div>
+</div>
+<div class="relics-seal-art" aria-hidden="true"><div class="relics-seal-ring"><span>EX LIBRIS</span><strong>✧</strong><small>MAZALLI · ARCHIVUM</small></div><span class="relics-star relics-star-one">✳</span><span class="relics-star relics-star-two">✦</span><span class="relics-star relics-star-three">·</span></div>
+</section>
+<section class="relics-intro-strip" aria-label="Sobre as relíquias">
+<div><span class="relics-overline">01 / A COLEÇÃO ESPECIAL</span><h2>Vestígios de outras épocas.</h2></div>
+<p>Primeiras histórias, reedições antigas e volumes singulares catalogados com cuidado. Abra uma peça para consultar sua ficha bibliográfica.</p>
+</section>
+<section class="relics-stats" aria-label="Resumo das relíquias">
+<div class="relics-stat-main"><span class="relics-overline">PEÇAS CATALOGADAS</span><strong id="relicTotal">—</strong><span>marcadas como relíquia</span></div>
+<div class="relics-stat"><span class="relics-stat-icon">⌘</span><strong id="relicPublishers">—</strong><span>editoras representadas</span></div>
+<div class="relics-stat"><span class="relics-stat-icon">◷</span><strong id="relicOldest">—</strong><span>ano mais antigo registrado</span></div>
+</section>
 <div class="search-wrap"><span>⌖</span><input class="search" id="search" type="search" placeholder="Buscar título ou autor..." autocomplete="off" aria-label="Buscar livros"></div>
 <div class="sort-row"><span>Ordenar por</span><select id="sortBy" aria-label="Ordenar livros"><option value="title">Título A–Z</option><option value="author">Autor A–Z</option><option value="oldest">Mais antigos</option><option value="newest">Mais recentes</option></select></div>
-<div class="section-head"><h2 id="listTitle">Relíquias</h2><span class="count" id="visibleCount" aria-live="polite">53 livros</span></div>
+<div class="relics-catalog-head"><div><span class="relics-overline">02 / CATÁLOGO PRIVADO</span><div class="section-head"><h2 id="listTitle">Relíquias catalogadas</h2><span class="count" id="visibleCount" aria-live="polite">— livros</span></div></div><span class="relics-catalog-seal" aria-hidden="true">R<br><small>· MMXXVI ·</small></span></div>
 <section class="book-grid" id="bookGrid" aria-label="Meus livros"></section><div class="empty" id="empty" role="status" aria-live="polite"><strong>Nenhum livro encontrado</strong>Tente outra busca ou adicione um livro à coleção.</div>
 </main>
 <button class="floating-add" id="addBook"><span style="font-size:18px">＋</span> Adicionar livro</button>
