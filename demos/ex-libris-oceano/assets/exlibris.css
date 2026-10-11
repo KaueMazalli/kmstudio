@@ -613,3 +613,51 @@ dialog h2{color:#d7c9a6}
   .tentacle-art { right: 0; width: 280px; opacity: .3; }
   .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+
+/* Desktop navigation: keep page links available when the mobile bottom bar is hidden */
+@media (min-width: 650px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    inset: 0 max(24px, calc((100% - 1240px) / 2 + 82px)) auto auto;
+    width: auto;
+    height: 76px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .bottom-nav:before { display: none; }
+  .bottom-nav a {
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px 13px;
+    border: 1px solid transparent;
+    border-radius: 3px 10px 3px 10px;
+    font-size: 11px;
+    letter-spacing: .35px;
+    white-space: nowrap;
+    transition: color .2s, background .2s, border-color .2s;
+  }
+  .bottom-nav a span { font-size: 16px; }
+  .bottom-nav a:hover {
+    color: #d2c8aa;
+    background: #b49a550a;
+    border-color: #b49a552b;
+  }
+  .bottom-nav a.active {
+    color: #d2b86d;
+    background: #b49a550d;
+    border-color: #b49a552b;
+  }
+}
+@media (min-width: 650px) and (max-width: 850px) {
+  .bottom-nav { right: 76px; gap: 0; }
+  .bottom-nav a { padding-inline: 8px; font-size: 10px; }
+  .bottom-nav a span { display: none; }
+}
