@@ -1,24 +1,29 @@
-# Conectar o Supabase do Ex Libris original
+# Integração Supabase — Ex Libris Oceano
 
-O Ex Libris Oceano foi adaptado para usar a mesma tabela `public.books` do repositório `KaueMazalli/ex-libris-mazalli`.
+O Oceano usa o mesmo projeto Supabase do repositório `KaueMazalli/ex-libris-mazalli`. O banco original é a fonte de verdade; o Oceano não importa, duplica nem sincroniza cópias locais dos livros.
 
-## 1. Configuração do cliente
+## Configuração
 
-Edite `assets/supabase-config.js` e preencha:
-- `EXLIBRIS_SUPABASE_URL`: valor de `NEXT_PUBLIC_SUPABASE_URL` do projeto original.
-- `EXLIBRIS_SUPABASE_PUBLISHABLE_KEY`: valor de `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (ou a chave anon legada, se esse for o valor configurado no projeto).
+As credenciais públicas do projeto estão em `assets/supabase-config.js`:
+- URL do projeto Supabase
+- Chave publishable (ou chave anon legada)
 
-Não coloque uma chave `service_role` ou secret no navegador.
+Nunca use `service_role` ou uma secret key no navegador.
 
-## 2. Tabela esperada
+## Tabela usada
 
-O código consulta `public.books`, usando os campos existentes no projeto original:
-`id`, `title`, `author`, `publisher`, `country`, `year`, `edition_year`, `type`, `volume`, `status`, `genre`, `rating`, `cover`, `relic`.
+A página consulta `public.books` e os campos existentes: `id`, `title`, `author`, `publisher`, `country`, `year`, `edition_year`, `type`, `volume`, `status`, `genre`, `rating`, `cover` e `relic`.
 
-A aplicação converte `edition_year` para `editionYear` e normaliza os status `lido`/`lendo` para a apresentação. Capas armazenadas como `/covers/arquivo.jpg` são resolvidas para os arquivos públicos do repositório original.
+O código adapta `edition_year` para a propriedade visual `editionYear`, converte os status do original — incluindo `Concluído` e `Próxima leitura` — e resolve capas guardadas como caminhos `/covers/...` para os arquivos públicos do repositório original.
 
-## 3. Segurança
+## Comportamento e permissões
 
-A chave publishable/anon pode aparecer no frontend; a segurança precisa ser aplicada com Row Level Security (RLS). O código não cria nem altera políticas automaticamente. Não habilite escrita pública anônima para a biblioteca pessoal: sem autenticação e políticas restritivas, qualquer pessoa que acesse a página poderia modificar ou apagar registros.
+- Com a conexão ativa, o Oceano carrega o acervo diretamente do banco e não usa `localStorage` nem os dados estáticos de demonstração como substitutos.
+- Se a consulta falhar, a página mostra um erro em vez de exibir um acervo local desatualizado.
+- O Oceano público é somente para leitura. Os controles de adicionar, alterar status, marcar relíquias e excluir ficam indisponíveis para evitar operações que as políticas atuais não permitem.
+- Para administrar registros, use o painel autenticado do Ex Libris original. A tabela tem RLS habilitado; escrita requer autenticação e políticas apropriadas.
+- Não habilite escrita anônima irrestrita. A chave publishable/anon é pública por definição, então RLS é a barreira de segurança real.
 
-Enquanto a URL e a chave estiverem vazias, a demo continua usando os dados locais de demonstração. Depois de preencher a configuração, ela tenta carregar os livros do Supabase. Se a consulta falhar, confira as credenciais e as permissões de leitura da tabela.
+## Diagnóstico
+
+Se os livros não carregarem, confira a URL/chave, a exposição da tabela à Data API e a política RLS de leitura para `anon`. O código registra detalhes técnicos no console e apresenta uma mensagem amigável na página.
