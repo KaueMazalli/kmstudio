@@ -661,3 +661,80 @@ dialog h2{color:#d7c9a6}
   .bottom-nav a { padding-inline: 8px; font-size: 10px; }
   .bottom-nav a span { display: none; }
 }
+
+
+/* Ficha editorial aprimorada — Ex Libris Oceano */
+#bookDetail{
+ width:min(790px,calc(100% - 28px));
+ max-width:790px;
+ max-height:min(88dvh,900px);
+ padding:clamp(18px,3vw,30px);
+ overflow:auto;
+ border:1px solid #d9c7a64a;
+ border-radius:5px 20px 5px 20px;
+ background:radial-gradient(ellipse at 12% 0%,#142b3a 0%,#091521 48%,#050c13 100%);
+ box-shadow:0 28px 100px #000d,inset 0 0 0 1px #d9c7a609;
+}
+#bookDetail .modal-head{margin-bottom:22px;padding-bottom:15px;border-bottom:1px solid #d9c7a626}
+#bookDetail .modal-head h2{font:500 25px/1.1 var(--serif);color:var(--sand);letter-spacing:-.3px}
+#bookDetail .close{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.detail-layout{display:grid;grid-template-columns:minmax(160px, .72fr) minmax(0,1.5fr);gap:clamp(22px,4vw,38px);align-items:start}
+.detail-visual{min-width:0;position:sticky;top:0}
+#bookDetail .detail-cover{width:100%;max-width:245px;aspect-ratio:2/3;height:auto;max-height:none;margin:0 auto 15px;border-radius:4px 12px 4px 12px;box-shadow:inset 6px 0 0 #0005,0 18px 35px #0007}
+#bookDetail .detail-cover .cover-fallback{padding:20px 12px}
+#bookDetail .detail-cover .cover-fallback strong{font-size:clamp(18px,2.5vw,27px)}
+.detail-relic-mark{display:block;text-align:center;color:var(--sand);font:italic 13px var(--serif);line-height:1.4;margin:13px auto 0;max-width:220px}
+.detail-rating{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:11px 13px;border:1px solid #d9c7a629;background:#d9c7a608;border-radius:4px 10px 4px 10px}
+.detail-rating span{font-size:9px;letter-spacing:1.4px;color:var(--muted)}
+.detail-rating strong{font:600 16px var(--serif);color:var(--sand)}
+.detail-main{min-width:0}
+.detail-kicker{font-size:9px;line-height:1.5;letter-spacing:1.7px;color:#a9b7c0;margin:2px 0 13px}
+.detail-kicker span{color:var(--sand);padding:0 3px}
+#bookDetail .detail-title{text-align:left;font:500 clamp(27px,4vw,42px)/1.08 var(--serif);letter-spacing:-.6px;margin:0 0 9px;overflow-wrap:anywhere;color:#f2eee5}
+#bookDetail .detail-author{text-align:left;font-size:13px;line-height:1.6;color:#a8b6bf;margin:0}
+.detail-status-row{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0 23px}
+.detail-status{display:inline-flex;align-items:center;gap:6px;border:1px solid #d9c7a62b;background:#d9c7a60a;color:#d8d0be;border-radius:3px 9px 3px 9px;padding:7px 10px;font-size:10px}
+.detail-status:before{content:"";width:5px;height:5px;border-radius:50%;background:#8a9aa4}
+.detail-status.reading:before{background:#8bc6b4}
+.detail-status.wishlist:before{background:#d9c7a6}
+.detail-status.finished:before{background:#9bb8d2}
+.detail-status.relic{color:var(--sand);border-color:#d9c7a64a}
+.detail-status.relic:before{background:var(--sand)}
+.detail-section{margin-top:22px}
+.detail-section h3{font:500 19px var(--serif);color:#e0d5bf;margin:0 0 8px}
+.detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin-top:0;border-top:1px solid #d9c7a622}
+.detail-fact{padding:12px 0;border-bottom:1px solid #d9c7a61b;min-width:0}
+.detail-fact span{display:block;color:#8294a1;font-size:9px;letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px}
+.detail-fact strong{display:block;color:#e4e6e2;font-size:12px;line-height:1.55;font-weight:500;overflow-wrap:anywhere}
+.detail-reading-section{padding-top:1px}
+.detail-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:25px;padding-top:17px;border-top:1px solid #d9c7a622}
+.detail-actions button{min-width:0;min-height:42px;padding:10px 12px;background:#102533;border:1px solid #d9c7a62b;border-radius:3px 10px 3px 10px;color:#e5e2d9;font-size:11px;transition:background .2s,border-color .2s,color .2s}
+.detail-actions button:hover{background:#193448;border-color:#d9c7a66b;color:var(--sand)}
+.detail-actions .delete{color:#d7a8a2;border-color:#a85e5e35}
+.detail-actions .delete:hover{background:#351b20;border-color:#a85e5e88}
+#bookDetail::backdrop{background:#01060bdc;backdrop-filter:blur(7px)}
+@media(max-width:560px){
+ #bookDetail{width:calc(100% - 20px);max-height:90dvh;padding:17px;border-radius:4px 15px 4px 15px}
+ #bookDetail .modal-head{margin-bottom:17px;padding-bottom:12px}
+ #bookDetail .modal-head h2{font-size:22px}
+ .detail-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .detail-visual{position:relative;display:grid;grid-template-columns:minmax(105px,38%) minmax(0,1fr);align-items:center;gap:14px}
+ #bookDetail .detail-cover{width:100%;max-width:155px;margin:0}
+ .detail-relic-mark{font-size:12px;text-align:left;margin:10px 0 0;grid-column:1/-1;max-width:none}
+ .detail-rating{margin-top:0;display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:12px 10px}
+ .detail-rating strong{font-size:18px}
+ .detail-kicker{font-size:8px;letter-spacing:1.2px;margin:0 0 9px}
+ #bookDetail .detail-title{font-size:30px}
+ .detail-status-row{margin:13px 0 19px}
+ .detail-section{margin-top:19px}
+ .detail-section h3{font-size:18px}
+ .detail-facts{gap:0 13px}
+ .detail-fact{padding:11px 0}
+ .detail-fact strong{font-size:11px}
+ .detail-actions{grid-template-columns:1fr 1fr}
+ .detail-actions .delete{grid-column:1/-1}
+}
+@media(min-width:561px) and (max-width:760px){
+ .detail-layout{grid-template-columns:minmax(135px,.65fr) minmax(0,1.5fr);gap:20px}
+ #bookDetail .detail-cover{max-width:190px}
+}
