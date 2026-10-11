@@ -787,3 +787,150 @@ dialog h2{color:#d7c9a6}
 #bookDetail .relic-tag{background:#bba15f;color:#100b06}
 #bookDetail .relic-cover{outline-color:#8f713d}
 #bookDetail::backdrop{background:#010102e8;backdrop-filter:blur(7px)}
+
+
+/* Acervo — acabamento editorial final dos cards e capas */
+.book-grid{
+  align-items:stretch;
+  gap:clamp(12px,2vw,22px);
+}
+.book{
+  display:flex;
+  flex-direction:column;
+  padding:clamp(9px,1.2vw,13px);
+  border:1px solid #8b713b35;
+  border-radius:4px 15px 4px 15px;
+  background:
+    radial-gradient(ellipse at 50% 0%,#241a241a,transparent 52%),
+    linear-gradient(155deg,#151018 0%,#0b080e 72%,#070509 100%);
+  box-shadow:0 9px 24px #0003,inset 0 1px #d9d0b608;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.book:before{
+  background:linear-gradient(135deg,#bba15f08,transparent 44%,#24162925);
+}
+.book:after{
+  left:12px;right:12px;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,#bba15f75,#8b713b22,transparent);
+}
+.book:hover{
+  transform:translateY(-4px);
+  border-color:#bba15f80;
+  background:linear-gradient(155deg,#1c1420 0%,#0d0910 75%);
+  box-shadow:0 18px 34px #0008,0 0 0 1px #bba15f0b,inset 0 1px #d9d0b60b;
+}
+.book[role="button"]:focus-visible{outline:2px solid #bba15f;outline-offset:4px}
+.cover{
+  flex:0 0 auto;
+  width:100%;
+  max-height:none;
+  margin-bottom:14px;
+  border-radius:3px 10px 3px 10px;
+  background-color:#171018;
+  box-shadow:inset 5px 0 0 #0005,0 12px 22px #0005;
+  transition:filter .25s ease,transform .25s ease;
+}
+.book:hover .cover{filter:saturate(1.06) contrast(1.025)}
+.cover:before{inset:8px;border-color:#d9d0b644;pointer-events:none}
+.cover.has-image:before{content:"";z-index:2;inset:7px;border-color:#d9d0b63b}
+.cover.has-image:after{
+  content:"";
+  position:absolute;inset:0;width:auto;height:auto;bottom:auto;
+  border:0;border-radius:inherit;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,#02010312 0%,transparent 38%,#02010308 58%,#020103a8 100%);
+}
+.cover img{z-index:1;transition:transform .45s ease}
+.book:hover .cover img{transform:scale(1.025)}
+.cover-fallback{padding:16px 11px;color:#e3d7b8}
+.cover-fallback small{color:#d0b978}
+.cover-fallback em{color:#d0c4a5}
+.relic-tag{
+  z-index:3;left:12px;top:12px;
+  padding:6px 8px;
+  background:#bba15f;color:#100b06;
+  border:1px solid #f0d99b88;
+  border-radius:2px 7px 2px 7px;
+  font-size:8px;font-weight:700;letter-spacing:1px;
+  box-shadow:0 4px 12px #0006;
+}
+.book-info{display:flex;flex:1;flex-direction:column;padding:0 2px 3px}
+.book-meta{
+  align-items:center;
+  color:#a99b82;
+  font-size:8px;letter-spacing:1px;
+}
+.book-meta span:last-child{color:#bba15f}
+.book h3{
+  color:#e1d7c2;
+  font-size:clamp(16px,1.45vw,21px);
+  line-height:1.18;
+  letter-spacing:-.25px;
+  margin:10px 0 5px;
+  min-height:2.36em;
+}
+.author{color:#9e9382;font-size:11px;line-height:1.45}
+.book-bottom{margin-top:auto;padding-top:13px;min-height:45px}
+.status{
+  display:inline-flex;align-items:center;gap:6px;
+  max-width:calc(100% - 36px);
+  overflow:hidden;text-overflow:ellipsis;
+  border:1px solid #8b713b45;
+  border-radius:2px 8px 2px 8px;
+  background:#171018;color:#c9b991;
+  padding:6px 8px;font-size:8px;letter-spacing:.35px;
+}
+.status:before{content:"";width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:#958875}
+.status.reading{background:#2b2113;border-color:#bba15f75;color:#e2c878}
+.status.reading:before{background:#d9b65f;box-shadow:0 0 8px #d9b65f66}
+.status.wishlist{background:#201624;border-color:#6e536e80;color:#d2b8d2}
+.status.wishlist:before{background:#ad8cac}
+.book .more{
+  flex:0 0 34px;width:34px;height:34px;
+  border:1px solid #8b713b35;border-radius:50%;
+  color:#bba15f;background:#100c13;
+  font-size:17px;line-height:1;
+  transition:background .2s,border-color .2s,color .2s;
+}
+.book .more:hover{background:#241629;border-color:#bba15f80;color:#e5d6a6}
+.section-head{border-bottom:1px solid #8b713b24;padding-bottom:13px}
+.section-head h2{color:#e0d4ba}
+.count{color:#bba15f;border:1px solid #8b713b35;background:#100c13;padding:6px 9px;border-radius:2px 8px 2px 8px}
+.stats .stat{
+  background:linear-gradient(145deg,#171018,#0b080e);
+  border-color:#8b713b3d;border-radius:3px 13px 3px 13px;
+  box-shadow:inset 0 1px #d9d0b607;
+}
+.stats .stat strong{color:#d9c58d}
+.stats .stat span{color:#a69a86}
+.search{
+  background:#100c13;border-color:#8b713b45;border-radius:3px 12px 3px 12px;
+}
+.search:focus{border-color:#bba15f80;outline-color:#bba15f}
+.search::placeholder{color:#8d8273}
+.sort-row select{background:#100c13;border-color:#8b713b45;color:#d9d0b6}
+.sort-row select:focus{border-color:#bba15f}
+@media(min-width:650px){
+  .book-grid{gap:18px}
+  .book h3{font-size:clamp(18px,1.65vw,23px)}
+}
+@media(min-width:1200px){
+  .book-grid{gap:22px}
+  .book{padding:13px}
+  .cover{margin-bottom:17px}
+}
+@media(max-width:520px){
+  .book-grid{gap:10px}
+  .book{padding:8px;border-radius:3px 11px 3px 11px}
+  .cover{margin-bottom:11px}
+  .cover:before{inset:6px}
+  .cover.has-image:before{inset:6px}
+  .book h3{font-size:16px;line-height:1.2;margin-top:8px;min-height:2.4em}
+  .book-meta{font-size:7px;letter-spacing:.6px}
+  .author{font-size:10px}
+  .book-bottom{padding-top:10px;min-height:40px}
+  .status{font-size:7px;padding:5px 6px}
+  .book .more{width:30px;height:30px;flex-basis:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .book,.cover,.cover img,.book .more{transition:none!important}
+}
