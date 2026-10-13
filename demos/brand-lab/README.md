@@ -13,7 +13,9 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Símbolos ajustáveis: monograma, órbita, flora, arquitetura, ondas, brasão, brilho, letra desenhada e abstrato.
 - Editor de composição com controles para layout, símbolo, detalhe, escala e espaçamento tipográfico.
 - Favoritos e filtros por tipo de fundo.
-- Exportação de logo em SVG, PNG e versão monocromática SVG.
+- Kit de exportação por variação: logo principal, composição horizontal, versão empilhada, símbolo isolado e monocromia em SVG.
+- Exportação de tokens de marca em CSS com as cores e a tipografia selecionadas.
+- Auditoria de contraste WCAG para combinações principais da paleta, com indicadores AA e alertas para combinações que precisam de revisão.
 - Exportação de kit JSON com briefing, paleta e SVGs das propostas.
 - Geração de posts quadrados com exportação PNG.
 - Prévia de seis aplicações visuais (cartão, interface mobile, post social, monocromia, papelaria e fundo alternativo) com base no conceito selecionado.
@@ -22,7 +24,7 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Biblioteca vetorial integrada via API pública do Iconify: pesquisa símbolos, filtra coleções e importa um SVG higienizado para o conceito selecionado.
 - Sugestões locais de direção criativa.
 - Salvar projeto em JSON e reabrir com o botão **Abrir projeto**.
-- Exportar apresentação para PDF pela impressão do navegador.
+- Manual de identidade visual para impressão/salvamento em PDF; o navegador abre a janela de impressão, onde é possível escolher “Salvar como PDF”.
 
 ## Limitações importantes
 
