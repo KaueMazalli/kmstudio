@@ -1,26 +1,31 @@
-# KM Studio Brand Lab
+# KM Studio Brand Lab Studio
 
-Ferramenta experimental para criar propostas de identidade visual e artes sociais usando HTML, CSS e JavaScript, sem dependências.
+Gerador experimental de conceitos de identidade visual e artes para redes sociais em HTML, CSS e JavaScript, sem dependências externas.
 
 ## Como executar
 
-Abra `index.html` diretamente no navegador (Firefox, Chrome ou Edge). Não é necessário instalar pacotes nem iniciar servidor.
+Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário instalar pacotes nem iniciar servidor.
 
 ## Recursos
 
-- Formulário de marca: nome, slogan, segmento, estilo, descrição e paleta.
-- Galeria de propostas de logos vetoriais em SVG, com composições diferentes.
-- Favoritar propostas e filtrar versões com fundo escuro.
-- Exportar logo em SVG e PNG.
-- Criar posts quadrados e exportá-los em PNG.
-- Sugestões locais para slogan, direção visual e conteúdo.
-- Salvar um projeto em JSON e reabri-lo pelo botão **Abrir projeto**.
-- Exportar uma apresentação/folha de trabalho para PDF usando a impressão do navegador.
+- Briefing de marca com nome, slogan, segmento, personalidade, descrição, direção criativa e paleta.
+- Galeria com 18 conceitos vetoriais por rodada, combinando famílias de símbolos, composições, ornamentos, cores e tipografia.
+- Símbolos ajustáveis: monograma, órbita, flora, arquitetura, ondas, brasão, brilho, letra desenhada e abstrato.
+- Editor de composição com controles para layout, símbolo, detalhe, escala e espaçamento tipográfico.
+- Favoritos e filtros por tipo de fundo.
+- Exportação de logo em SVG, PNG e versão monocromática SVG.
+- Exportação de kit JSON com briefing, paleta e SVGs das propostas.
+- Geração de posts quadrados com exportação PNG.
+- Sugestões locais de direção criativa.
+- Salvar projeto em JSON e reabrir com o botão **Abrir projeto**.
+- Exportar apresentação para PDF pela impressão do navegador.
 
-## Limitações
+## Limitações importantes
 
-As propostas de logo são geradas por estruturas SVG e regras locais; não são desenhos exclusivos feitos por IA. As sugestões criativas também são locais e não chamam uma API de IA. Antes de usar comercialmente, revise legibilidade, qualidade visual e possíveis semelhanças com marcas existentes.
+Os conceitos são compostos por regras locais e formas vetoriais programadas; não são desenhos exclusivos criados por IA generativa. As sugestões criativas também são locais e não chamam uma API de IA. Os conceitos podem precisar de ajustes manuais para alcançar qualidade de marca profissional. Antes de usar comercialmente, revise legibilidade, qualidade visual, originalidade e possíveis semelhanças com marcas existentes.
 
-## Privacidade
+Uma integração real com um modelo de IA deve ser feita por um backend seguro, com a chave da API guardada no servidor — nunca dentro deste HTML público.
 
-Os dados não são enviados a um servidor. O botão **Salvar projeto** baixa um arquivo JSON e também grava uma cópia no armazenamento local do navegador.
+## Privacidade e arquivos
+
+O briefing permanece no navegador até você exportar um arquivo. **Salvar projeto** baixa um JSON e tenta guardar uma cópia no armazenamento local do navegador. Guarde o JSON exportado para backup e transferência entre computadores.
