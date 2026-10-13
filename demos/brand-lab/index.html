@@ -125,7 +125,8 @@ $('#downloadMono').onclick=()=>{const c=selected();if(c)download(safeName($v('co
 $('#downloadKit').onclick=()=>{const c=selected();if(!c)return;const b=getBrief(),kit={brand:b,selectedConcept:c,logos:concepts.map(x=>({name:typeNames[x.type]||x.customIconName||x.type,source:x.customIconUrl||null,license:x.customIconLicense||null,svg:logoSvg(x,{transparent:true})})),palette:[b.primary,b.accent,b.secondary,b.paper],generatedAt:new Date().toISOString()};download(safeName(b.name)+'-kit-identidade.json',JSON.stringify(kit,null,2),'application/json')};
 $('#saveBtn').onclick=()=>{const s=saveState(),file=safeName($v('company'))+'-brand-lab.json';try{localStorage.setItem('km-brand-lab-v2:'+safeName($v('company')),JSON.stringify(s))}catch(e){}download(file,JSON.stringify(s,null,2),'application/json');toast('Projeto salvo em JSON')};
 $('#openBtn').onclick=()=>$('#fileInput').click();$('#fileInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{applyState(JSON.parse(await f.text()))}catch(err){toast('Arquivo de projeto inválido')}e.target.value=''};
-$('#pdfBtn').onclick=()=>window.print();\n$('#manualPdfBtn').onclick=exportBrandManual;
+$('#pdfBtn').onclick=()=>window.print();
+$('#manualPdfBtn').onclick=exportBrandManual;
 ['company','slogan','segment','direction','personality','brief','primary','accent','secondary','paper','typeface','postHeadline','postCTA'].forEach(id=>$('#'+id).addEventListener('change',()=>{if(['primary','accent','secondary','paper','typeface','direction','segment'].includes(id)&&selected()){const c=selected();c.primary=$v('primary');c.accent=$v('accent');c.secondary=$v('secondary');c.paper=$v('paper');c.typeface=$v('typeface');c.direction=$v('direction');c.segment=$v('segment')}renderAll()}));
 makeConcepts();updateReferenceLinks();
 ['company','segment','direction','personality'].forEach(id=>$('#'+id).addEventListener('input',updateReferenceLinks));
