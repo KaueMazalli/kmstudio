@@ -16,6 +16,8 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Exportação de logo em SVG, PNG e versão monocromática SVG.
 - Exportação de kit JSON com briefing, paleta e SVGs das propostas.
 - Geração de posts quadrados com exportação PNG.
+- Prévia de seis aplicações visuais (cartão, interface mobile, post social, monocromia, papelaria e fundo alternativo) com base no conceito selecionado.
+- Geração de manual de identidade visual para impressão/salvamento em PDF, com fundamentos da marca, paleta, tipografia, versões da logo e recomendações de uso.
 - Painel de referências externas com pesquisas contextuais no SVG Repo, Dribbble e Behance, além de atalhos para Logosystem e Brandfetch.
 - Biblioteca vetorial integrada via API pública do Iconify: pesquisa símbolos, filtra coleções e importa um SVG higienizado para o conceito selecionado.
 - Sugestões locais de direção criativa.
