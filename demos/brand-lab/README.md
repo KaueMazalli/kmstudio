@@ -15,6 +15,9 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Favoritos e filtros por tipo de fundo.
 - Kit de exportação por variação: logo principal, composição horizontal, versão empilhada, símbolo isolado e monocromia em SVG.
 - Exportação de tokens de marca em CSS com as cores e a tipografia selecionadas.
+- Exportação da paleta em JSON com funções, valores HEX, tipografia e metadados.
+- Exportação de uma prancha SVG com os conceitos da rodada para comparação e apresentação.
+- Variação de selo/emblema incluída no kit de logos.
 - Auditoria de contraste WCAG para combinações principais da paleta, com indicadores AA e alertas para combinações que precisam de revisão.
 - Exportação de kit JSON com briefing, paleta e SVGs das propostas.
 - Geração de posts quadrados com exportação PNG.
