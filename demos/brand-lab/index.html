@@ -129,11 +129,11 @@ $('#saveBtn').onclick=()=>{const s=saveState(),file=safeName($v('company'))+'-br
 $('#openBtn').onclick=()=>$('#fileInput').click();$('#fileInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{applyState(JSON.parse(await f.text()))}catch(err){toast('Arquivo de projeto inválido')}e.target.value=''};
 $('#pdfBtn').onclick=exportBrandManual;
 $('#manualPdfBtn').onclick=exportBrandManual;
-$('[data-export-layout]').forEach(function(btn){btn.onclick=function(){exportVariant(btn.dataset.exportLayout,false)}});
-$('[data-export-mono]').forEach(function(btn){btn.onclick=function(){exportVariant((selected()||{}).layout||'center',true)}});
-$('[data-export-css]').forEach(function(btn){btn.onclick=exportBrandTokens});
-$('[data-export-palette]').forEach(function(btn){btn.onclick=exportPaletteJSON});
-$('[data-export-sheet]').forEach(function(btn){btn.onclick=exportConceptSheet});
+$$('[data-export-layout]').forEach(function(btn){btn.onclick=function(){exportVariant(btn.dataset.exportLayout,false)}});
+$$('[data-export-mono]').forEach(function(btn){btn.onclick=function(){exportVariant((selected()||{}).layout||'center',true)}});
+$$('[data-export-css]').forEach(function(btn){btn.onclick=exportBrandTokens});
+$$('[data-export-palette]').forEach(function(btn){btn.onclick=exportPaletteJSON});
+$$('[data-export-sheet]').forEach(function(btn){btn.onclick=exportConceptSheet});
 ['company','slogan','segment','direction','personality','brief','primary','accent','secondary','paper','typeface','postHeadline','postSubtitle','postCTA','artFormat','artStyle','artMotif'].forEach(id=>$('#'+id).addEventListener('change',()=>{if(['primary','accent','secondary','paper','typeface','direction','segment'].includes(id)&&selected()){const c=selected();c.primary=$v('primary');c.accent=$v('accent');c.secondary=$v('secondary');c.paper=$v('paper');c.typeface=$v('typeface');c.direction=$v('direction');c.segment=$v('segment')}renderAll()}));
 makeConcepts();updateReferenceLinks();
 ['company','segment','direction','personality'].forEach(id=>$('#'+id).addEventListener('input',updateReferenceLinks));
