@@ -11,7 +11,9 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Briefing de marca com nome, slogan, segmento, personalidade, descrição, direção criativa e paleta.
 - Galeria com 18 conceitos vetoriais por rodada, combinando famílias de símbolos, composições, ornamentos, cores e tipografia.
 - Símbolos ajustáveis: monograma, órbita, flora, arquitetura, ondas, brasão, brilho, letra desenhada e abstrato.
-- Editor de composição com controles para layout, símbolo, detalhe, escala e espaçamento tipográfico.
+- Editor de composição com controles de layout, detalhe, escala, espaçamento, forma vetorial personalizada, cor e rotação do símbolo.
+- Controles tipográficos para família, peso, caixa (maiúsculas/minúsculas) e tamanho do nome.
+- Formas customizáveis: círculo, losango, hexágono, arco, flor, sol radial, escudo, onda, estrela, órbitas e cruz geométrica.
 - Favoritos e filtros por tipo de fundo.
 - Kit de exportação por variação: logo principal, composição horizontal, versão empilhada, símbolo isolado e monocromia em SVG.
 - Exportação de tokens de marca em CSS com as cores e a tipografia selecionadas.
@@ -19,8 +21,8 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 - Exportação de uma prancha SVG com os conceitos da rodada para comparação e apresentação.
 - Variação de selo/emblema incluída no kit de logos.
 - Auditoria de contraste WCAG para combinações principais da paleta, com indicadores AA e alertas para combinações que precisam de revisão.
-- Exportação de kit JSON com briefing, paleta e SVGs das propostas.
-- Geração de posts quadrados com exportação PNG.
+- Pacote de identidade em JSON com briefing, seis variações de logo em SVG, conceitos da rodada, paleta, tokens CSS e seis artes sociais exportáveis como SVG.
+- Estúdio de artes para redes sociais com seis composições, formatos quadrado (1080×1080), feed vertical (1080×1350), story/reels (1080×1920) e horizontal (1200×630), estilos editorial, tipográfico, modular, orgânico e minimalista, ornamentos selecionáveis e exportação PNG/SVG.
 - Prévia de seis aplicações visuais (cartão, interface mobile, post social, monocromia, papelaria e fundo alternativo) com base no conceito selecionado.
 - Geração de manual de identidade visual para impressão/salvamento em PDF, com fundamentos da marca, paleta, tipografia, versões da logo e recomendações de uso.
 - Painel de referências externas com pesquisas contextuais no SVG Repo, Dribbble e Behance, além de atalhos para Logosystem e Brandfetch.
@@ -31,7 +33,7 @@ Abra `index.html` diretamente no Firefox, Chrome ou Edge. Não é necessário in
 
 ## Limitações importantes
 
-Os conceitos são compostos por regras locais e formas vetoriais programadas; não são desenhos exclusivos criados por IA generativa. As sugestões criativas também são locais e não chamam uma API de IA. O painel de referências abre sites externos com termos relacionados ao briefing; ele não importa imagens ou logos automaticamente. A biblioteca do Iconify faz uma integração real com API para pesquisar e importar símbolos SVG. A API pública depende de internet e pode estar indisponível ocasionalmente. As licenças variam por coleção; confira a licença exibida nos resultados e as condições da fonte antes do uso comercial. Um ícone de biblioteca é um elemento gráfico de partida, não um logo exclusivo. Os conceitos podem precisar de ajustes manuais para alcançar qualidade de marca profissional. Antes de usar comercialmente, revise legibilidade, qualidade visual, originalidade e possíveis semelhanças com marcas existentes.
+Os conceitos são compostos por regras locais e formas vetoriais programadas; não são desenhos exclusivos criados por IA generativa. As novas formas e controles de composição permitem personalizar o símbolo, mas ainda não oferecem edição livre de nós Bézier como um editor vetorial dedicado. As sugestões criativas também são locais e não chamam uma API de IA. O painel de referências abre sites externos com termos relacionados ao briefing; ele não importa imagens ou logos automaticamente. A biblioteca do Iconify faz uma integração real com API para pesquisar e importar símbolos SVG. A API pública depende de internet e pode estar indisponível ocasionalmente. As licenças variam por coleção; confira a licença exibida nos resultados e as condições da fonte antes do uso comercial. Um ícone de biblioteca é um elemento gráfico de partida, não um logo exclusivo. Os conceitos podem precisar de ajustes manuais para alcançar qualidade de marca profissional. Antes de usar comercialmente, revise legibilidade, qualidade visual, originalidade e possíveis semelhanças com marcas existentes.
 
 Uma integração real com um modelo de IA deve ser feita por um backend seguro, com a chave da API guardada no servidor — nunca dentro deste HTML público.
 
