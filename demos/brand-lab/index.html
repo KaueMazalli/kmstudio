@@ -130,7 +130,27 @@ function initials(s){return (String(s||'KM').trim().split(/\s+/).slice(0,3).map(
 function safeName(s){return String(s||'marca').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'marca'}
 function getBrief(){return {name:$v('company').trim()||'Sua Marca',slogan:$v('slogan').trim(),segment:$v('segment'),direction:$v('direction'),personality:$v('personality'),brief:$v('brief'),primary:$v('primary'),accent:$v('accent'),secondary:$v('secondary'),paper:$v('paper'),typeface:$v('typeface')}}
 function contrast(hex){const m=String(hex||'#ffffff').match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);if(!m)return '#18202a';const rgb=m.slice(1,4).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2));return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]<.42?'#ffffff':'#18202a'}
-function chooseSymbol(c){if(c.symbol!=='auto')return c.symbol;const map={architecture:'architecture',beauty:'flora',tech:'abstract',food:'badge',fashion:'monogram',pet:'spark',wellness:'wave',retail:'abstract',travel:'orbit',nature:'flora',creative:'letter',finance:'architecture'};return map[c.segment]||['monogram','abstract','orbit','letter'][c.type%4]}
+function chooseSymbol(c){
+if(c.customIconName)return 'custom';
+if(c.symbol&&c.symbol!=='auto')return c.symbol;
+const families={
+architecture:['architecture','compass','mountain','abstract','arch','shield','orbit','monogram','key','badge','letter','celestial','rings','crown','sun','wave','flora','infinity'],
+beauty:['flora','butterfly','botanical','sun','flower','celestial','eye','monogram','spark','wave','crown','letter','shell','orbit','abstract','droplet','rings','badge'],
+tech:['abstract','orbit','bolt','rings','architecture','celestial','infinity','monogram','compass','shield','letter','sun','wave','badge','key','mountain','spark','crown'],
+food:['flora','sun','badge','botanical','flower','wave','leaf','abstract','monogram','shell','droplet','crown','letter','spark','mountain','rings','butterfly','celestial'],
+fashion:['monogram','letter','crown','butterfly','eye','flora','celestial','abstract','botanical','shell','rings','spark','badge','sun','infinity','flower','wave','key'],
+pet:['paw','spark','flora','butterfly','sun','wave','badge','monogram','eye','mountain','flower','shield','letter','celestial','infinity','droplet','crown','abstract'],
+wellness:['wave','sun','flora','botanical','moon','celestial','infinity','droplet','shell','butterfly','flower','eye','mountain','rings','spark','monogram','letter','crown'],
+retail:['badge','abstract','monogram','sun','crown','letter','shield','rings','spark','architecture','flora','bolt','compass','celestial','infinity','wave','mountain','key'],
+travel:['compass','mountain','celestial','wave','sun','orbit','shell','abstract','badge','flora','rings','infinity','letter','shield','droplet','crown','spark','monogram'],
+nature:['botanical','flora','leaf','mountain','sun','moon','shell','butterfly','droplet','wave','celestial','flower','eye','infinity','compass','feather','rings','spark'],
+creative:['abstract','butterfly','eye','spark','letter','celestial','flora','bolt','monogram','wave','flower','crown','rings','mountain','sun','infinity','badge','shell'],
+finance:['architecture','shield','compass','monogram','abstract','crown','key','rings','badge','letter','mountain','sun','celestial','infinity','orbit','wave','spark','flora']
+};
+const general=['monogram','abstract','orbit','letter','flora','architecture','wave','badge','spark','botanical','celestial','mountain','flame','paw','eye','butterfly','crown','compass'];
+const list=families[c.segment]||general;
+return list[((Number(c.type)||0)%list.length+list.length)%list.length]
+}
 function makeConcepts(){const b=getBrief(),seed=hash(JSON.stringify(b)+':'+(++round)+':'+Date.now()),dirs=['editorial','expressive','geometric','organic','heritage','future','playful'];concepts=Array.from({length:18},(_,i)=>{const p=palettes[(i+Math.floor(seed/13))%palettes.length],layout=['center','horizontal','seal','stack','symbol'][(i+Math.floor(seed/7))%5],type=(i+seed)%18;return {id:seed+i,type,layout,symbol:'auto',primary:i%3===0?b.primary:p[0],accent:i%3===0?b.accent:p[1],secondary:i%3===0?b.secondary:p[2],paper:i%3===0?b.paper:p[3],bg:i%4===0?'#101927':i%4===1?(i%2?p[3]:'#f3efe7'):i%4===2?'#e7dfd1':'#ffffff',dark:i%4===0,detail:35+((seed+i*17)%66),scale:88+((seed+i*11)%29),spacing:(seed+i)%6,typeface:b.typeface,direction:b.direction,segment:b.segment,personality:b.personality,custom:false}});selectedId=concepts[0].id;editSnapshot=null;renderAll()}
 function selected(){return concepts.find(c=>c.id===selectedId)||concepts[0]}
 function conceptLabel(c){if(!c)return 'Conceito de marca';if(c.customIconName)return 'Símbolo vetorial · '+c.customIconName.split(':').slice(1).join(':').replace(/-/g,' ');return typeNames[c.type]||'Conceito de marca'}
