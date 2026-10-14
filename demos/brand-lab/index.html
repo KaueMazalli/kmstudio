@@ -199,5 +199,41 @@ $('exportEditor').onclick=()=>{let svg=makeSvg().replace('</svg>',editorLayers.f
 const originalRender=render;
 render=function(){originalRender();renderVectorEditor()};
 
+
+const conceptStyles=['editorial','botanical','geometric','classic','monogram','abstract','line','badge','petal','orbit','diamond'];
+const monoBuilds=['interlock','overlay','ligature','initials','negative','crest','seal','architect','woven','modern','ornate','minimal'];
+const logoBuilds=['auto','crest','medallion','botanical','architecture','ribbon','orbit','sunburst','floral','geometric','stamp','luxury','organic','emblem','monogram','wordmark'];
+const conceptPalettes=[
+ {bg:'#17151C',fg:'#F5EFE6',accent:'#C9A96E'},
+ {bg:'#F4EBDD',fg:'#29212D',accent:'#8A5D91'},
+ {bg:'#10252B',fg:'#F1F5EE',accent:'#72B9AD'},
+ {bg:'#241B33',fg:'#F8F0FF',accent:'#B79AE8'},
+ {bg:'#E7E1D6',fg:'#222222',accent:'#A24F36'},
+ {bg:'#152B4A',fg:'#F5F5F0',accent:'#82B5F0'},
+ {bg:'#25221D',fg:'#F4E8D0',accent:'#C5A66B'},
+ {bg:'#F0E8EA',fg:'#33212A',accent:'#A95D79'}
+];
+const choose=arr=>arr[Math.floor(Math.random()*arr.length)];
+function generateConceptSheet(){
+ const used=new Set(),concepts=[];
+ for(let i=0;i<12;i++){
+  let changes={},key='';
+  for(let tries=0;tries<20;tries++){
+   const pal=conceptPalettes[(i+Math.floor(Math.random()*conceptPalettes.length))%conceptPalettes.length];
+   changes={...pal,style:choose(conceptStyles),monoBuild:choose(monoBuilds),logoBuild:choose(logoBuilds),font:choose(['serif','sans','script','slab','mono']),layout:choose(['stack','seal','horizontal','wordmark','icon']),weight:choose(['light','regular','bold']),detail:String(2+Math.floor(Math.random()*3)),complexity:String(3+Math.floor(Math.random()*3)),spacing:String(Math.floor(Math.random()*6)-1),showFrame:Math.random()>.55,uppercase:Math.random()>.25};
+   key=[changes.style,changes.monoBuild,changes.logoBuild,changes.font,changes.layout,changes.bg].join('|');
+   if(!used.has(key))break;
+  }
+  used.add(key);
+  concepts.push({id:i+1,name:['Conceito','Direção','Estudo','Proposta'][i%4]+' '+String(i+1).padStart(2,'0'),changes});
+ }
+ $('conceptStatus').textContent='12 propostas geradas';
+ $('conceptGrid').innerHTML=concepts.map(p=>'<article class="conceptCard"><div class="conceptArt" style="background:'+p.changes.bg+'">'+makeSvg(p.changes)+'</div><div class="conceptMeta"><b>'+p.name+'</b><small>'+p.changes.style+' · '+p.changes.monoBuild+' · '+p.changes.logoBuild+'</small><button data-concept="'+p.id+'">Editar esta proposta</button></div></article>').join('');
+ $('conceptGrid').querySelectorAll('[data-concept]').forEach(btn=>btn.onclick=()=>{const p=concepts.find(x=>x.id===+btn.dataset.concept);if(!p)return;Object.assign(state,p.changes);sync();render();$('canvas').scrollIntoView({behavior:'smooth',block:'center'});notify('Conceito carregado para edição')});
+}
+$('generateConcepts').onclick=generateConceptSheet;
+$('generateLogo').onclick=()=>{const p=choose(conceptPalettes);Object.assign(state,p,{style:choose(conceptStyles),monoBuild:choose(monoBuilds),logoBuild:choose(logoBuilds),font:choose(['serif','sans','script','slab','mono']),layout:choose(['stack','seal','horizontal','wordmark']),complexity:String(3+Math.floor(Math.random()*3)),detail:String(2+Math.floor(Math.random()*3)),showFrame:Math.random()>.5,uppercase:Math.random()>.3});sync();render();notify('Nova direção de identidade criada')};
+$('complexity').addEventListener('input',()=>{$('complexityValue').textContent=$('complexity').value+' / 5 · '+(['','Sutil','Leve','Equilibrado','Detalhado','Ornamental'][+$('complexity').value]||'Detalhado');render()});
+
 state={...defaults};sync();render();
 </script></body></html>
