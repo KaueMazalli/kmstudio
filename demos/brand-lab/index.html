@@ -131,21 +131,20 @@ function safeName(s){return String(s||'marca').normalize('NFD').replace(/[\u0300
 function getBrief(){return {name:$v('company').trim()||'Sua Marca',slogan:$v('slogan').trim(),segment:$v('segment'),direction:$v('direction'),personality:$v('personality'),brief:$v('brief'),primary:$v('primary'),accent:$v('accent'),secondary:$v('secondary'),paper:$v('paper'),typeface:$v('typeface')}}
 function contrast(hex){const m=String(hex||'#ffffff').match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);if(!m)return '#18202a';const rgb=m.slice(1,4).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2));return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]<.42?'#ffffff':'#18202a'}
 function chooseSymbol(c){
-if(c.customIconName)return 'custom';
 if(c.symbol&&c.symbol!=='auto')return c.symbol;
 const families={
-architecture:['architecture','compass','mountain','abstract','arch','shield','orbit','monogram','key','badge','letter','celestial','rings','crown','sun','wave','flora','infinity'],
-beauty:['flora','butterfly','botanical','sun','flower','celestial','eye','monogram','spark','wave','crown','letter','shell','orbit','abstract','droplet','rings','badge'],
-tech:['abstract','orbit','bolt','rings','architecture','celestial','infinity','monogram','compass','shield','letter','sun','wave','badge','key','mountain','spark','crown'],
-food:['flora','sun','badge','botanical','flower','wave','leaf','abstract','monogram','shell','droplet','crown','letter','spark','mountain','rings','butterfly','celestial'],
-fashion:['monogram','letter','crown','butterfly','eye','flora','celestial','abstract','botanical','shell','rings','spark','badge','sun','infinity','flower','wave','key'],
-pet:['paw','spark','flora','butterfly','sun','wave','badge','monogram','eye','mountain','flower','shield','letter','celestial','infinity','droplet','crown','abstract'],
-wellness:['wave','sun','flora','botanical','moon','celestial','infinity','droplet','shell','butterfly','flower','eye','mountain','rings','spark','monogram','letter','crown'],
-retail:['badge','abstract','monogram','sun','crown','letter','shield','rings','spark','architecture','flora','bolt','compass','celestial','infinity','wave','mountain','key'],
-travel:['compass','mountain','celestial','wave','sun','orbit','shell','abstract','badge','flora','rings','infinity','letter','shield','droplet','crown','spark','monogram'],
-nature:['botanical','flora','leaf','mountain','sun','moon','shell','butterfly','droplet','wave','celestial','flower','eye','infinity','compass','feather','rings','spark'],
-creative:['abstract','butterfly','eye','spark','letter','celestial','flora','bolt','monogram','wave','flower','crown','rings','mountain','sun','infinity','badge','shell'],
-finance:['architecture','shield','compass','monogram','abstract','crown','key','rings','badge','letter','mountain','sun','celestial','infinity','orbit','wave','spark','flora']
+architecture:['architecture','compass','mountain','abstract','architecture','shield','orbit','monogram','shield','badge','letter','celestial','orbit','crown','sun','wave','flora','infinity'],
+beauty:['flora','butterfly','botanical','sun','flora','celestial','eye','monogram','spark','wave','crown','letter','shell','orbit','abstract','droplet','orbit','badge'],
+tech:['abstract','orbit','spark','orbit','architecture','celestial','infinity','monogram','compass','shield','letter','sun','wave','badge','shield','mountain','spark','crown'],
+food:['flora','sun','badge','botanical','flora','wave','botanical','abstract','monogram','shell','droplet','crown','letter','spark','mountain','orbit','butterfly','celestial'],
+fashion:['monogram','letter','crown','butterfly','eye','flora','celestial','abstract','botanical','shell','orbit','spark','badge','sun','infinity','flora','wave','shield'],
+pet:['paw','spark','flora','butterfly','sun','wave','badge','monogram','eye','mountain','flora','shield','letter','celestial','infinity','droplet','crown','abstract'],
+wellness:['wave','sun','flora','botanical','celestial','celestial','infinity','droplet','shell','butterfly','flora','eye','mountain','orbit','spark','monogram','letter','crown'],
+retail:['badge','abstract','monogram','sun','crown','letter','shield','orbit','spark','architecture','flora','spark','compass','celestial','infinity','wave','mountain','shield'],
+travel:['compass','mountain','celestial','wave','sun','orbit','shell','abstract','badge','flora','orbit','infinity','letter','shield','droplet','crown','spark','monogram'],
+nature:['botanical','flora','botanical','mountain','sun','celestial','shell','butterfly','droplet','wave','celestial','flora','eye','infinity','compass','flora','orbit','spark'],
+creative:['abstract','butterfly','eye','spark','letter','celestial','flora','spark','monogram','wave','flora','crown','orbit','mountain','sun','infinity','badge','shell'],
+finance:['architecture','shield','compass','monogram','abstract','crown','shield','orbit','badge','letter','mountain','sun','celestial','infinity','orbit','wave','spark','flora']
 };
 const general=['monogram','abstract','orbit','letter','flora','architecture','wave','badge','spark','botanical','celestial','mountain','flame','paw','eye','butterfly','crown','compass'];
 const list=families[c.segment]||general;
