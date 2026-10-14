@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><div class="brand-mark">KM</div><div><strong>KM STUDIO</strong><small>BRAND LAB STUDIO / IDENTIDADE COM PERSONALIDADE</small></div></div><div class="top-actions no-print"><button id="saveBtn">Salvar projeto</button><button id="openBtn">Abrir projeto</button><button class="primary" id="pdfBtn">Manual de identidade PDF</button><input type="file" id="fileInput" accept=".json,application/json" class="hidden"></div></header>
+<header class="top"><div class="brand"><div class="brand-mark">KM</div><div><strong>KM STUDIO</strong><small>BRAND LAB STUDIO / IDENTIDADE COM PERSONALIDADE</small></div></div><div class="top-actions no-print"><button id="saveBtn">Salvar projeto</button><button id="openBtn">Abrir projeto</button><button class="primary" id="pdfBtn">Manual de identidade PDF</button><input type="file" id="fileInput" accept=".json,application/json" class="hidden"><span id="autosaveStatus" role="status" aria-live="polite" style="align-self:center;color:var(--muted);font-size:10px;white-space:nowrap">Rascunho local automático</span></div></header>
 <section class="hero"><div><div class="eyebrow">Ferramenta de direção criativa</div><h1>Marcas com forma,<br>ritmo e personalidade.</h1><p>Explore propostas vetoriais com símbolos construídos, ornamentos, tipografia e composição. Escolha uma direção e refine-a no editor antes de exportar.</p></div><span class="status">VERSÃO 4.0 · EDITOR + ARTES DE MARCA</span></section>
 <div class="layout">
 <aside class="panel sidebar"><div class="panel-head"><h2>Briefing da marca</h2><span class="eyebrow">01 / BASE</span></div><div class="panel-body config-grid">
@@ -135,7 +135,57 @@ $$('[data-export-css]').forEach(function(btn){btn.onclick=exportBrandTokens});
 $$('[data-export-palette]').forEach(function(btn){btn.onclick=exportPaletteJSON});
 $$('[data-export-sheet]').forEach(function(btn){btn.onclick=exportConceptSheet});
 ['company','slogan','segment','direction','personality','brief','primary','accent','secondary','paper','typeface','postHeadline','postSubtitle','postCTA','artFormat','artStyle','artMotif'].forEach(id=>$('#'+id).addEventListener('change',()=>{if(['primary','accent','secondary','paper','typeface','direction','segment'].includes(id)&&selected()){const c=selected();c.primary=$v('primary');c.accent=$v('accent');c.secondary=$v('secondary');c.paper=$v('paper');c.typeface=$v('typeface');c.direction=$v('direction');c.segment=$v('segment')}renderAll()}));
+
 makeConcepts();updateReferenceLinks();
+
+// Salvamento automático local: evita perder o briefing e os conceitos ao fechar a página.
+(function(){
+  const autosaveKey = 'km-brand-lab-autosave-v1';
+  const status = document.getElementById('autosaveStatus');
+  let autosaveTimer = null;
+  function setStatus(message){
+    if(status) status.textContent = message;
+  }
+  function persistDraft(){
+    try{
+      const snapshot = saveState();
+      localStorage.setItem(autosaveKey, JSON.stringify(snapshot));
+      setStatus('Rascunho salvo neste navegador');
+    }catch(error){
+      setStatus('Não foi possível salvar automaticamente');
+    }
+  }
+  function queueDraftSave(){
+    setStatus('Salvando rascunho…');
+    if(autosaveTimer) clearTimeout(autosaveTimer);
+    autosaveTimer = setTimeout(persistDraft, 450);
+  }
+  try{
+    const draft = localStorage.getItem(autosaveKey);
+    if(draft){
+      applyState(JSON.parse(draft));
+      setStatus('Rascunho anterior recuperado');
+    }
+  }catch(error){
+    setStatus('Novo rascunho');
+  }
+  document.addEventListener('input', function(event){
+    if(event.target && event.target.id !== 'fileInput') queueDraftSave();
+  });
+  document.addEventListener('change', queueDraftSave);
+  document.addEventListener('click', function(event){
+    if(event.target && event.target.closest && event.target.closest('button')) queueDraftSave();
+  });
+  window.addEventListener('beforeunload', persistDraft);
+  document.addEventListener('keydown', function(event){
+    if((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's'){
+      event.preventDefault();
+      const saveButton = document.getElementById('saveBtn');
+      if(saveButton) saveButton.click();
+    }
+  });
+})();
+
 ['company','segment','direction','personality'].forEach(id=>$('#'+id).addEventListener('input',updateReferenceLinks));
 
 function wcagContrast(a,b){function lum(h){var v=String(h||'').replace('#','');if(v.length!==6)return 0;var rgb=[0,2,4].map(function(i){return parseInt(v.slice(i,i+2),16)/255}).map(function(v){return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2)});return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]}var x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
