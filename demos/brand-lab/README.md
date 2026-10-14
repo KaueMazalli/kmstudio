@@ -8,23 +8,31 @@ Abra `index.html` no Chrome, Edge ou Firefox. Não precisa instalar pacotes nem 
 
 ## Recursos
 
-- Personalização de nome, segmento, slogan e monograma de até quatro caracteres.
-- 11 famílias visuais de símbolo: editorial, botânico, geométrico, clássico, monograma em moldura, abstrato orgânico, traço contínuo, selo contemporâneo, pétalas, órbita e diamante.
-- Cinco caminhos tipográficos: serifada editorial, sans-serif, caligráfica, serifada robusta e monoespaçada.
-- Ajustes de peso visual, espaçamento entre letras, caixa alta, moldura e nível de ornamentos.
+- Catálogo de 120 presets de identidade visual, combinando 12 direções de arte e 10 paletas.
+- Busca por nome, família visual e paleta; filtro por família e carregamento progressivo.
+- Famílias: editorial, botânico, geométrico, clássico, monograma, orgânico, traço contínuo, selo, floral, órbita, diamante e wordmark.
+- Personalização de nome, segmento, slogan e monograma.
+- Cinco caminhos tipográficos, peso visual, espaçamento, caixa alta, moldura e nível de ornamentos.
 - Composições vertical, horizontal, emblema, somente lettering e somente símbolo.
 - Cores personalizáveis para fundo, elemento principal e detalhe.
-- Variações rápidas de paleta, versões clara, escura, monocromática e alto contraste.
+- Variações rápidas de paleta, versões claras, escuras, monocromáticas e de alto contraste.
 - Painel de aplicações para comparar a identidade em fundos diferentes.
 - Exportação do logotipo em SVG e PNG.
-- Exportação de um kit JSON com quatro versões SVG e os parâmetros editáveis.
-- Copiar o código SVG.
-- Salvar e abrir projetos em JSON.
+- Exportação de kit JSON com quatro versões SVG.
+- Exportação da coleção completa com os 120 estilos, parâmetros e SVGs.
+- Copiar o código SVG, salvar projetos e reabri-los em JSON.
 - Interface adaptável para desktop e celular.
+
+## Como usar a biblioteca
+
+1. Use a busca ou o filtro para explorar os estilos.
+2. Selecione **Usar este estilo** para aplicar a composição, a tipografia e a paleta ao editor.
+3. Ajuste o nome, o segmento e outros parâmetros para personalizar a marca.
+4. Exporte o SVG/PNG ou gere o kit/coleção JSON.
 
 ## Limitações
 
-Os logotipos são desenhados por regras vetoriais programadas; não são imagens geradas por IA. As fontes podem variar de acordo com o sistema. O kit é exportado como JSON contendo os SVGs (não como arquivo ZIP). O editor não substitui um software vetorial com edição livre de nós Bézier. Antes do uso comercial, revise legibilidade, originalidade e possíveis semelhanças com marcas existentes.
+Os 120 presets são combinações programadas de 12 famílias visuais e 10 paletas, não 120 sistemas vetoriais totalmente independentes. Os logotipos são desenhados por regras vetoriais; não são imagens geradas por IA. As fontes podem variar de acordo com o sistema. A coleção é exportada como JSON (não como ZIP). Antes do uso comercial, revise legibilidade, originalidade e possíveis semelhanças com marcas existentes.
 
 ## Privacidade
 
