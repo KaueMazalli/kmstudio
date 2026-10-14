@@ -126,9 +126,9 @@ $('exportAll').onclick=()=>{const collection={app:'KM Studio Brand Lab',version:
 }
 $('reset').onclick=()=>{state={...defaults};sync();render();notify('Restaurado')};
 initializeStyleLibrary();
-$('save').onclick=()=>download(base()+'-projeto.json',new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));
+$('save').onclick=()=>download(base()+'-projeto.json',new Blob([JSON.stringify({app:'KM Studio Brand Lab',version:4,identity:state,editorLayers,selectedLayerId,nextLayerId,pattern:$('pattern').value},null,2)],{type:'application/json'}));
 $('open').onclick=()=>$('picker').click();
-$('picker').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{state={...defaults,...JSON.parse(await f.text())};sync();render();notify('Projeto carregado')}catch(err){notify('Arquivo JSON inválido')}e.target.value=''};
+$('picker').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());state={...defaults,...(data.identity||data)};if(data.identity){editorLayers=Array.isArray(data.editorLayers)?data.editorLayers:[];selectedLayerId=data.selectedLayerId??null;nextLayerId=data.nextLayerId||Math.max(0,...editorLayers.map(l=>l.id))+1;if(data.pattern)$('pattern').value=data.pattern;}sync();render();notify('Projeto carregado')}catch(err){notify('Arquivo JSON inválido')}e.target.value=''};
 
 /* Editor vetorial: camadas adicionais independentes da marca-base. */
 let editorLayers=[];
