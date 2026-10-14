@@ -72,7 +72,7 @@ $('exportKit').onclick=()=>{const kit={app:'KM Studio Brand Lab',version:3,expor
 $('exportPng').onclick=()=>{const url=URL.createObjectURL(new Blob([makeSvg()],{type:'image/svg+xml'})),img=new Image();img.onload=()=>{const c=document.createElement('canvas');c.width=2400;c.height=2400;c.getContext('2d').drawImage(img,0,0,2400,2400);c.toBlob(blob=>{download(base()+'.png',blob);URL.revokeObjectURL(url);notify('PNG exportado')},'image/png')};img.onerror=()=>notify('Falha ao gerar PNG');img.src=url};
 $('copy').onclick=async()=>{try{await navigator.clipboard.writeText(makeSvg());notify('SVG copiado')}catch(e){const t=document.createElement('textarea');t.value=makeSvg();document.body.append(t);t.select();document.execCommand('copy');t.remove();notify('SVG copiado')}};
 $('variation').onclick=()=>{const p=[['#211628','#F6F0E9','#B49ACF'],['#101E2B','#F1E7D7','#6FA3B8'],['#F5EFE7','#28202A','#9271AA'],['#171717','#F5F1E9','#B79A6B'],['#18241F','#F2EDE1','#9EBAA1']][Math.floor(Math.random()*5)];state.bg=p[0];state.fg=p[1];state.accent=p[2];state.style=['editorial','botanical','geometric','classic','monogram','abstract','line','badge','petal','orbit','diamond'][Math.floor(Math.random()*11)];state.detail=String(1+Math.floor(Math.random()*3));sync();render();notify('Nova direção visual criada')};
-$('reset').onclick=()=>{
+function initializeStyleLibrary(){
 /* Biblioteca de 120 direções de arte combinando 12 famílias e 10 paletas. */
 const paletteSets=[
 {name:'Noite violeta',bg:'#211628',fg:'#F6F0E9',accent:'#B49ACF'},
@@ -123,7 +123,9 @@ $('loadMore').onclick=()=>{shownStyles+=24;renderStyleLibrary()};
 $('randomStyle').onclick=()=>{const p=stylePresets[Math.floor(Math.random()*stylePresets.length)];Object.assign(state,p.changes);sync();render();notify('Explorando: '+p.name)};
 $('exportAll').onclick=()=>{const collection={app:'KM Studio Brand Lab',version:1,generatedAt:new Date().toISOString(),count:stylePresets.length,styles:stylePresets.map(p=>({id:p.id,name:p.name,family:p.family,palette:p.palette,settings:p.changes,svg:makeSvg(p.changes)}))};download('km-studio-brand-lab-120-estilos.json',new Blob([JSON.stringify(collection,null,2)],{type:'application/json'}));notify('Coleção completa: 120 estilos exportados')};
 
-state={...defaults};sync();render();notify('Restaurado')};
+}
+$('reset').onclick=()=>{state={...defaults};sync();render();notify('Restaurado')};
+initializeStyleLibrary();
 $('save').onclick=()=>download(base()+'-projeto.json',new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));
 $('open').onclick=()=>$('picker').click();
 $('picker').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{state={...defaults,...JSON.parse(await f.text())};sync();render();notify('Projeto carregado')}catch(err){notify('Arquivo JSON inválido')}e.target.value=''};
