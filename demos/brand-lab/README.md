@@ -8,20 +8,23 @@ Abra `index.html` no Chrome, Edge ou Firefox. Não precisa instalar pacotes nem 
 
 ## Recursos
 
-- Personalização de nome, segmento, slogan e monograma.
-- Estilos de símbolo: editorial, botânico, geométrico e clássico.
-- Tipografia serifada, sans-serif ou caligráfica.
-- Paleta editável de três cores.
-- Composições vertical, horizontal e emblema.
-- Níveis de ornamentos e variações rápidas de identidade.
-- Exportação de logotipo em SVG e PNG.
+- Personalização de nome, segmento, slogan e monograma de até quatro caracteres.
+- 11 famílias visuais de símbolo: editorial, botânico, geométrico, clássico, monograma em moldura, abstrato orgânico, traço contínuo, selo contemporâneo, pétalas, órbita e diamante.
+- Cinco caminhos tipográficos: serifada editorial, sans-serif, caligráfica, serifada robusta e monoespaçada.
+- Ajustes de peso visual, espaçamento entre letras, caixa alta, moldura e nível de ornamentos.
+- Composições vertical, horizontal, emblema, somente lettering e somente símbolo.
+- Cores personalizáveis para fundo, elemento principal e detalhe.
+- Variações rápidas de paleta, versões clara, escura, monocromática e alto contraste.
+- Painel de aplicações para comparar a identidade em fundos diferentes.
+- Exportação do logotipo em SVG e PNG.
+- Exportação de um kit JSON com quatro versões SVG e os parâmetros editáveis.
 - Copiar o código SVG.
 - Salvar e abrir projetos em JSON.
 - Interface adaptável para desktop e celular.
 
 ## Limitações
 
-Os logotipos são desenhados por regras vetoriais programadas; não são imagens geradas por IA. As fontes podem variar de acordo com o sistema. O editor não substitui um software vetorial com edição livre de nós Bézier. Antes do uso comercial, revise legibilidade, originalidade e possíveis semelhanças com marcas existentes.
+Os logotipos são desenhados por regras vetoriais programadas; não são imagens geradas por IA. As fontes podem variar de acordo com o sistema. O kit é exportado como JSON contendo os SVGs (não como arquivo ZIP). O editor não substitui um software vetorial com edição livre de nós Bézier. Antes do uso comercial, revise legibilidade, originalidade e possíveis semelhanças com marcas existentes.
 
 ## Privacidade
 
