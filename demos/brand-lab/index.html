@@ -182,7 +182,7 @@ function startDrag(e){
  const svg=$('vectorCanvas').querySelector('svg'),pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
  const p=pt.matrixTransform(svg.getScreenCTM().inverse());
  dragInfo={id,dx:p.x-layer.x,dy:p.y-layer.y};
- e.currentTarget.setPointerCapture?.(e.pointerId);e.preventDefault();renderVectorEditor();
+ $('vectorCanvas').setPointerCapture?.(e.pointerId);e.preventDefault();
 }
 $('vectorCanvas').addEventListener('pointermove',e=>{if(!dragInfo)return;const svg=$('vectorCanvas').querySelector('svg');if(!svg)return;const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());const l=editorLayers.find(x=>x.id===dragInfo.id);if(l){l.x=Math.max(0,Math.min(1200,p.x-dragInfo.dx));l.y=Math.max(0,Math.min(1200,p.y-dragInfo.dy));const el=svg.querySelector('[data-layer-id="'+l.id+'"]');if(el)el.setAttribute('transform','translate('+l.x+' '+l.y+')')}});
 $('vectorCanvas').addEventListener('pointerup',()=>{if(dragInfo){dragInfo=null;renderVectorEditor()}});
