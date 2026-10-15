@@ -7,7 +7,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "modelos.html", "modelos-categoria.html", "projetos.html"]
+PAGES = sorted(str(path.relative_to(ROOT)) for path in ROOT.rglob("*.html") if ".agents" not in path.parts and ".git" not in path.parts)
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
 class Inspector(HTMLParser):
@@ -64,7 +64,7 @@ def validate(page):
             continue
         if not url.path:
             continue
-        target = (ROOT / page).parent / unquote(url.path)
+        target = (ROOT / unquote(url.path.lstrip("/"))) if url.path.startswith("/") else (ROOT / page).parent / unquote(url.path)
         if not target.exists():
             errors.append(f"Missing local {tag} target: {address}")
     return errors
