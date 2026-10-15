@@ -441,3 +441,8 @@ section[id] { scroll-margin-top: 88px; }
   .aura-intro { animation-duration: .15s !important; animation-delay: .1s !important; }
   .hero-visual, .portrait-frame, .experience-grid article, .service-card { transform: none; }
 }
+
+/* Fallback para a imagem remota indisponível. */
+.hero-portrait[hidden] { display: none; }
+.portrait-frame.image-unavailable { display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, #f3d9ce, transparent 35%), linear-gradient(145deg, #d7b4a8, #bd7968 55%, #78564c); }
+.portrait-frame.image-unavailable::after { content: "Aura Studio"; color: rgba(255, 250, 245, .9); font: italic 42px var(--serif); }
