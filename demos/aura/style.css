@@ -289,13 +289,6 @@ section[id] { scroll-margin-top: 88px; }
 .bloom-one { top: 18%; left: 9%; transform: rotate(-22deg) scale(.9); }
 .bloom-two { right: 8%; bottom: 15%; transform: rotate(25deg) scale(.65); animation-delay: .5s; }
 .bloom-two::before, .bloom-two::after, .bloom-two span::before, .bloom-two span::after { border-color: rgba(173, 190, 147, .8); }
-.intro-petals, .aura-petal-field { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.intro-petal, .floating-petal { position: absolute; top: -35px; width: 13px; height: 20px; border-radius: 90% 8% 90% 8%; background: linear-gradient(145deg, #efc9bb, #bd7c6c); opacity: 0; }
-.intro-petal { animation: intro-petal-fall var(--fall-time, 4s) linear var(--fall-delay, 0s) forwards; }
-.floating-petal { animation: petal-drift var(--duration, 13s) linear var(--delay, 0s) infinite; }
-.intro-petal:nth-child(3n), .floating-petal:nth-child(3n) { width: 10px; height: 16px; background: linear-gradient(145deg, #e8e8d7, #a6b18f); }
-.intro-petal:nth-child(4n) { width: 8px; height: 14px; }
-.aura-petal-field { z-index: 4; height: 100svh; }
 .aura-intro.is-gone { display: none; }
 @keyframes intro-curtain-out { to { opacity: 0; visibility: hidden; transform: scale(1.025); pointer-events: none; } }
 @keyframes intro-content-in { from { opacity: 0; transform: translateY(14px) scale(.97); filter: blur(5px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
@@ -304,8 +297,6 @@ section[id] { scroll-margin-top: 88px; }
 @keyframes intro-line-grow { to { width: 92px; } }
 @keyframes intro-ring-in { from { opacity: 0; transform: translate(-50%, -50%) scale(.78) rotate(-14deg); } to { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); } }
 @keyframes intro-bloom-in { from { opacity: 0; scale: .4; rotate: -35deg; } to { opacity: .9; scale: 1; rotate: 0; } }
-@keyframes intro-petal-fall { 0% { opacity: 0; transform: translate3d(0, -5vh, 0) rotate(0); } 12% { opacity: .85; } 85% { opacity: .7; } 100% { opacity: 0; transform: translate3d(var(--drift, 60px), 115vh, 0) rotate(500deg); } }
-@keyframes petal-drift { 0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); } 10% { opacity: .55; } 85% { opacity: .3; } 100% { opacity: 0; transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(460deg); } }
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -437,7 +428,6 @@ section[id] { scroll-margin-top: 88px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
-  .aura-petal-field, .intro-petals { display: none; }
   .aura-intro { animation-duration: .15s !important; animation-delay: .1s !important; }
   .hero-visual, .portrait-frame, .experience-grid article, .service-card { transform: none; }
 }
