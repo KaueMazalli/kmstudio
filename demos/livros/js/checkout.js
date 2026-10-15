@@ -2,10 +2,16 @@
    ENTRELINHAS — CHECKOUT
 ========================================================= */
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "";
 
 function getCart() {
-    return JSON.parse(localStorage.getItem("entrelinhas-cart")) || [];
+    try {
+        const cart = JSON.parse(localStorage.getItem("entrelinhas-cart") || "[]");
+        return Array.isArray(cart) ? cart : [];
+    } catch (error) {
+        console.warn("Carrinho salvo inválido; iniciando carrinho vazio.", error);
+        return [];
+    }
 }
 
 function formatPrice(value) {
@@ -111,6 +117,10 @@ function value(id) {
 
 function handleCheckout(event) {
     event.preventDefault();
+    if (!WHATSAPP_NUMBER) {
+        alert("Configure o número de WhatsApp da loja antes de finalizar o pedido.");
+        return;
+    }
 
     const form = document.getElementById("checkout-form");
     const error = document.getElementById("checkout-error");
