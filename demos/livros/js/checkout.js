@@ -190,7 +190,8 @@ function handleCheckout(event) {
 
     window.open(
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
 }
 
