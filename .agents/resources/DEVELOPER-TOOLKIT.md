@@ -6,6 +6,7 @@ Este catálogo reúne os repositórios que complementam as skills de `.agents/sk
 - **Ponytail** — orienta mudanças pequenas, completas e verificáveis. Arquivo local: `.agents/skills/ponytail/SKILL.md`. Origem: https://github.com/DietrichGebert/ponytail
 - **Design Taste** — direção de arte para sites públicos, portfólios e landing pages, com foco em fugir de layouts genéricos. Arquivo local: `.agents/skills/design-taste-frontend/SKILL.md`. Origem: https://github.com/Leonxlnx/taste-skill
 - **Redesign Existing Projects** — auditoria e melhoria visual de sites existentes preservando comportamento e stack. Arquivo local: `.agents/skills/redesign-existing-projects/SKILL.md`. Origem: https://github.com/Leonxlnx/taste-skill
+- **i-have-adhd** — modo opcional de formatação de respostas orientado à ação, com passos pequenos e progresso explícito. Arquivo local: `.agents/skills/i-have-adhd/SKILL.md`. É ativado sob demanda e não presume diagnóstico. Origem: https://github.com/ayghri/i-have-adhd
 
 ## Aplicativos independentes
 - **HTML Anything** — editor local que usa CLIs de agentes já autenticadas para gerar, pré-visualizar e exportar artefatos HTML. Não foi copiado para este repositório porque é uma aplicação Next.js separada. Origem: https://github.com/nexu-io/html-anything
@@ -30,13 +31,15 @@ Este catálogo reúne os repositórios que complementam as skills de `.agents/sk
 1. Leia a skill mais específica para a tarefa; não aplique todas de forma mecânica.
 2. Para frontend, combine **Design Taste** com `make-interfaces-feel-better` ou **Oil UI** conforme o tipo de trabalho. Use **Redesign Existing Projects** quando estiver refinando algo que já existe.
 3. Use **Ponytail** para controlar escopo e evitar dependências ou abstrações desnecessárias.
-4. Use os catálogos para pesquisar opções, mas valide os detalhes no projeto original e nos fornecedores.
-5. Não diga que uma CLI, aplicativo ou teste foi executado sem executá-lo de fato.
-6. Estas referências não autorizam ignorar o briefing, a segurança, a acessibilidade, nem as convenções do projeto.
+4. Ative **i-have-adhd** somente quando esse formato de resposta for solicitado.
+5. Use os catálogos para pesquisar opções, mas valide os detalhes no projeto original e nos fornecedores.
+6. Não diga que uma CLI, aplicativo ou teste foi executado sem executá-lo de fato.
+7. Estas referências não autorizam ignorar o briefing, a segurança, a acessibilidade, nem as convenções do projeto.
 
 ## Fontes upstream
 - https://github.com/DietrichGebert/ponytail
 - https://github.com/Leonxlnx/taste-skill
+- https://github.com/ayghri/i-have-adhd
 - https://github.com/nexu-io/open-design
 - https://github.com/nexu-io/html-anything
 - https://github.com/alibaba/open-code-review
