@@ -125,7 +125,15 @@ const revealElements = document.querySelectorAll(
     ".service-card, .project-card, .projects-cta, .about-content"
 );
 
-if ("IntersectionObserver" in window) {
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+    revealElements.forEach((element) => {
+        element.classList.add("visible");
+    });
+} else if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
