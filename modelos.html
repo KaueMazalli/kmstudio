@@ -66,7 +66,47 @@
 .portfolio-page-cta .btn{display:inline-flex;margin-top:20px;min-height:46px}
 }
 <style>
-</style></head>
+</style><style>
+
+.category-number{display:none !important;}
+
+
+/* Sem numeração visual */
+.section-label > span:first-child,
+#category-number,
+.category-index,
+.category-number,
+.project-number,
+.portfolio-panel-number{
+  display:none !important;
+}
+.completed-project-preview::before{
+  content:none !important;
+}
+
+
+/* MODELOS — cards sem a coluna vazia da numeração removida */
+.model-category{
+  grid-template-columns:minmax(0,1fr) 42px;
+  gap:20px;
+}
+.model-category > div{
+  grid-column:1;
+}
+.category-arrow{
+  grid-column:2;
+  grid-row:1;
+}
+@media(max-width:700px){
+  .model-category,
+  .model-category:nth-child(2n){
+    grid-template-columns:minmax(0,1fr) 36px;
+    gap:12px;
+  }
+}
+
+</style>
+</head>
 <body>
 <header class="header"><div class="container header-inner">
 <a href="index.html" class="logo" aria-label="KM Studio — início"><span class="logo-main">KM</span><span class="logo-sub">Studio</span></a>
@@ -142,43 +182,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-<style>
-.category-number{display:none !important;}
-</style>
-
-<style>
-/* Sem numeração visual */
-.section-label > span:first-child,
-#category-number,
-.category-index,
-.category-number,
-.project-number,
-.portfolio-panel-number{
-  display:none !important;
-}
-.completed-project-preview::before{
-  content:none !important;
-}
-</style>
-
-<style>
-/* MODELOS — cards sem a coluna vazia da numeração removida */
-.model-category{
-  grid-template-columns:minmax(0,1fr) 42px;
-  gap:20px;
-}
-.model-category > div{
-  grid-column:1;
-}
-.category-arrow{
-  grid-column:2;
-  grid-row:1;
-}
-@media(max-width:700px){
-  .model-category,
-  .model-category:nth-child(2n){
-    grid-template-columns:minmax(0,1fr) 36px;
-    gap:12px;
-  }
-}
-</style>
