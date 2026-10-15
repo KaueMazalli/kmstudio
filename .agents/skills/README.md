@@ -1,31 +1,42 @@
 # KM Studio — Agent Skills
 
-Skills installed in `.agents/skills/` for coding agents that support the Agent Skills format.
+Skills locais em `.agents/skills/` para agentes de programação que reconhecem o formato Agent Skills.
 
-## UI and design
-- **oil-ui** — explore distinct visual directions, compare real first-screen concepts, and refine interfaces using the full design and visual-review workflow. See `.agents/skills/oil-ui/SKILL.md`.
-- **make-interfaces-feel-better** — refine responsive UI details: typography, surfaces, animation, icons, and performance.
-- **superdesign** — design and iterate on frontend UI and visual assets using the Superdesign workflow. Requires the Superdesign CLI/authentication when its workflow is invoked.
-- **better-icons** — discover and use icons from supported icon libraries. Follow its `SKILL.md`; its CLI/MCP features may require setup.
+## UI e design
+- **design-taste-frontend** — direção de arte para sites públicos, landing pages e portfólios; evita composições genéricas e orienta inspeção visual. Leia `.agents/skills/design-taste-frontend/SKILL.md`.
+- **redesign-existing-projects** — audita e melhora sites existentes sem quebrar funcionalidades nem trocar a stack sem motivo. Leia `.agents/skills/redesign-existing-projects/SKILL.md`.
+- **oil-ui** — explorar direções visuais distintas, comparar conceitos e refinar interfaces com revisão visual.
+- **make-interfaces-feel-better** — aprimorar detalhes responsivos: tipografia, superfícies, animação, ícones e performance.
+- **superdesign** — projetar e iterar interfaces e assets pelo fluxo Superdesign; requer CLI/autenticação quando usado.
+- **better-icons** — descobrir e usar ícones de bibliotecas compatíveis; recursos de CLI/MCP podem exigir configuração.
 
-## Writing
-- **anti-ai-slop-writing** — avoid formulaic AI writing patterns, with a reference list of words and phrases.
-- **no-ai-slop** — edit or evaluate writing for clarity and naturalness while preserving intent; includes an evaluation checklist.
-- **humanizer** — identify and remove AI-sounding prose patterns while retaining meaning and the writer's voice.
+## Engenharia
+- **ponytail** — manter as mudanças pequenas, completas, seguras e verificadas. Leia `.agents/skills/ponytail/SKILL.md`.
 
-## Usage guidance
-- For frontend work, read `.agents/skills/make-interfaces-feel-better/SKILL.md` first; consult its linked reference files as needed.
-- Use `superdesign` only when the requested workflow and its CLI are available. Do not claim to have run its canvas or CLI if it was not actually run.
-- Use one writing skill appropriate to the request; the writing skills overlap, so do not mechanically apply every rule at once.
-- Skills are guidance, not permission to override the user's brief, project conventions, accessibility, security, or maintainability.
+## Escrita
+- **anti-ai-slop-writing** — evitar padrões formulaicos de escrita de IA, com lista de palavras e expressões de referência.
+- **no-ai-slop** — avaliar e editar textos para clareza e naturalidade, preservando a intenção.
+- **humanizer** — identificar e remover padrões de prosa que soam artificiais.
 
-## Upstream sources
-These files are sourced from their respective open-source projects. Check each upstream repository for current versions, full licensing terms, and updates before refreshing them.
+## Como escolher
+- Para trabalho novo de frontend, leia **Design Taste** e consulte **Oil UI** ou **make-interfaces-feel-better** conforme necessário.
+- Para redesenho, leia **Redesign Existing Projects** e preserve o comportamento existente.
+- Para qualquer alteração de código, use **Ponytail** para manter o escopo sob controle.
+- As skills são orientação, não autorização para ignorar o briefing, as convenções do projeto, acessibilidade, segurança ou manutenção.
+- Evite aplicar todas as skills de uma vez; escolha as mais relevantes para a tarefa.
 
+## Ferramentas e catálogos externos
+Veja [`.agents/resources/DEVELOPER-TOOLKIT.md`](../resources/DEVELOPER-TOOLKIT.md) para Open Design, HTML Anything, Open Code Review, SkillSpector, Awesome, Public APIs e Free for Dev. Esses projetos foram documentados, mas aplicativos e CLIs independentes não foram copiados nem instalados automaticamente.
+
+## Fontes das skills
 - https://github.com/oil-oil/oil-ui
 - https://github.com/jakubkrehel/make-interfaces-feel-better
 - https://github.com/better-auth/better-icons
+- https://github.com/superdesigndev/superdesign-skill
+- https://github.com/DietrichGebert/ponytail
+- https://github.com/Leonxlnx/taste-skill
 - https://github.com/jalaalrd/anti-ai-slop-writing
 - https://github.com/petergyang/no-ai-slop
-- https://github.com/superdesigndev/superdesign-skill
 - https://github.com/blader/humanizer
+
+Confira os repositórios originais para versões atuais, licenças completas e atualizações.
