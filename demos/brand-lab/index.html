@@ -50,7 +50,7 @@
   </div>
  </div>
 </section>
-<section class="panel conceptPanel" style="padding:16px"><div class="libraryHead"><div><h2>Estúdio de conceitos</h2><p class="muted">Gere 12 propostas com símbolos, estruturas, monogramas, cores e tipografias diferentes. Selecione uma para continuar editando.</p></div><span class="muted" id="conceptStatus">Pronto para gerar</span></div><div id="conceptGrid" class="conceptGrid"><p class="muted">Clique em “Gerar 12 conceitos” para começar.</p></div></section><section class="panel" style="padding:16px"><div class="libraryHead"><div><h2>Biblioteca de estilos</h2><p class="muted">120 combinações prontas, organizadas em 12 direções visuais e 10 paletas.</p></div><div class="libraryTools"><input id="styleSearch" type="search" placeholder="Buscar estilo ou paleta…" aria-label="Buscar estilo"><select id="styleFilter" aria-label="Filtrar família"><option value="all">Todas as famílias</option></select></div></div><div class="libraryMeta"><span id="styleCount" class="muted">120 estilos</span><button id="randomStyle">Estilo aleatório</button></div><div id="styleLibrary" class="styleLibrary"></div><div class="libraryFooter"><button id="loadMore">Mostrar mais estilos</button></div></section><section><div class="head" style="padding:0 0 12px;border:0"><h2>Variações rápidas</h2><p>Selecione uma versão para continuar editando.</p></div><div id="variants" class="variants"></div></section><section class="panel" style="padding:16px"><div class="previewtop"><div><h2 style="font-size:14px;margin:0">Aplicações da marca</h2><p class="muted">Confira a identidade em fundos diferentes.</p></div></div><div class="applications" id="applications"></div><p class="muted">Pré-visualizações ilustrativas. Confira legibilidade e contraste antes de publicar.</p></section></main></div></div><div id="toast" class="toast"></div><input id="picker" type="file" accept=".json,application/json" hidden>
+<section class="panel conceptPanel" style="padding:16px"><div class="libraryHead"><div><h2>Estúdio de conceitos</h2><p class="muted">Gere 12 propostas orientadas pelo segmento informado, com estruturas, monogramas, cores e tipografias diferentes. Selecione uma para continuar editando.</p></div><span class="muted" id="conceptStatus">Pronto para gerar</span></div><div id="conceptGrid" class="conceptGrid"><p class="muted">Clique em “Gerar 12 conceitos” para começar.</p></div></section><section class="panel" style="padding:16px"><div class="libraryHead"><div><h2>Biblioteca de estilos</h2><p class="muted">120 combinações prontas, organizadas em 12 direções visuais e 10 paletas.</p></div><div class="libraryTools"><input id="styleSearch" type="search" placeholder="Buscar estilo ou paleta…" aria-label="Buscar estilo"><select id="styleFilter" aria-label="Filtrar família"><option value="all">Todas as famílias</option></select></div></div><div class="libraryMeta"><span id="styleCount" class="muted">120 estilos</span><button id="randomStyle">Estilo aleatório</button></div><div id="styleLibrary" class="styleLibrary"></div><div class="libraryFooter"><button id="loadMore">Mostrar mais estilos</button></div></section><section><div class="head" style="padding:0 0 12px;border:0"><h2>Variações rápidas</h2><p>Selecione uma versão para continuar editando.</p></div><div id="variants" class="variants"></div></section><section class="panel" style="padding:16px"><div class="previewtop"><div><h2 style="font-size:14px;margin:0">Aplicações da marca</h2><p class="muted">Confira a identidade em fundos diferentes.</p></div></div><div class="applications" id="applications"></div><p class="muted">Pré-visualizações ilustrativas. Confira legibilidade e contraste antes de publicar.</p></section></main></div></div><div id="toast" class="toast"></div><input id="picker" type="file" accept=".json,application/json" hidden>
 <script>
 const $=id=>document.getElementById(id);
 const ids=['name','segment','tagline','monogram','monoBuild','logoBuild','complexity','style','font','bg','fg','accent','layout','detail','weight','spacing','showTag','uppercase','showFrame'];
@@ -268,25 +268,44 @@ const conceptPalettes=[
  {bg:'#F0E8EA',fg:'#33212A',accent:'#A95D79'}
 ];
 const choose=arr=>arr[Math.floor(Math.random()*arr.length)];
+/* Perfis criativos por segmento: orientam a geração sem limitar a exploração. */
+const segmentProfiles=[
+ {keys:['beleza','estetica','estética','nail','unha','cabelo','salão','salao','makeup','maquiagem','sobrancelha','lash'],styles:['botanical','editorial','petal','line','monogram'],monos:['ligature','overlay','interlock','minimal','ornate'],logos:['botanical','floral','luxury','medallion','wordmark'],palettes:[1,3,7]},
+ {keys:['arquitet','interior','engenharia','construção','construcao','imobili','design de interiores'],styles:['geometric','editorial','diamond','monogram','abstract'],monos:['architect','modern','negative','overlay','minimal'],logos:['architecture','geometric','monogram','luxury','wordmark'],palettes:[0,1,6]},
+ {keys:['café','cafe','restaurante','bar ','padaria','confeitaria','doceria','food','gastronomia','quitanda'],styles:['classic','botanical','badge','editorial','abstract'],monos:['seal','crest','woven','initials','interlock'],logos:['stamp','emblem','botanical','ribbon','wordmark'],palettes:[0,2,4]},
+ {keys:['tecnologia','tech','software','digital','startup','sistema','inovação','inovacao','consultoria','marketing','agência','agencia'],styles:['geometric','orbit','diamond','editorial','abstract'],monos:['modern','negative','architect','overlay','minimal'],logos:['geometric','orbit','monogram','wordmark','emblem'],palettes:[1,5,6]},
+ {keys:['tattoo','tatu','barbearia','barber','streetwear','música','musica','artista'],styles:['classic','badge','monogram','line','diamond'],monos:['crest','woven','overlay','modern','ornate'],logos:['stamp','emblem','crest','monogram','wordmark'],palettes:[0,4,6]},
+ {keys:['flor','jardim','plant','paisag','orgânico','organico','natural','sustent'],styles:['botanical','abstract','line','petal','editorial'],monos:['ligature','woven','minimal','interlock','ornate'],logos:['botanical','organic','floral','medallion','wordmark'],palettes:[2,4,7]},
+ {keys:['advocacia','juríd','jurid','contab','financ','médic','medic','dent','saúde','saude','psic','profissional'],styles:['editorial','classic','monogram','geometric','diamond'],monos:['initials','overlay','negative','minimal','architect'],logos:['luxury','monogram','geometric','wordmark','emblem'],palettes:[0,1,3]}
+];
+function getSegmentProfile(segment){
+ const value=(segment||'').toLowerCase();
+ return segmentProfiles.find(p=>p.keys.some(k=>value.includes(k)))||{styles:conceptStyles,monos:monoBuilds,logos:logoBuilds,palettes:[0,1,2,3,4,5,6,7]};
+}
 function generateConceptSheet(){
- const used=new Set(),concepts=[];
+ const profile=getSegmentProfile(state.segment),used=new Set(),concepts=[];
+ const fonts=['serif','sans','script','slab','mono'],layouts=['stack','seal','horizontal','wordmark','icon'];
  for(let i=0;i<12;i++){
   let changes={},key='';
-  for(let tries=0;tries<20;tries++){
-   const pal=conceptPalettes[(i+Math.floor(Math.random()*conceptPalettes.length))%conceptPalettes.length];
-   changes={...pal,style:choose(conceptStyles),monoBuild:choose(monoBuilds),logoBuild:choose(logoBuilds),font:choose(['serif','sans','script','slab','mono']),layout:choose(['stack','seal','horizontal','wordmark','icon']),weight:choose(['light','regular','bold']),detail:String(2+Math.floor(Math.random()*3)),complexity:String(3+Math.floor(Math.random()*3)),spacing:String(Math.floor(Math.random()*6)-1),showFrame:Math.random()>.55,uppercase:Math.random()>.25};
-   key=[changes.style,changes.monoBuild,changes.logoBuild,changes.font,changes.layout,changes.bg].join('|');
+  for(let tries=0;tries<60;tries++){
+   const paletteIndex=profile.palettes[(i+Math.floor(Math.random()*profile.palettes.length))%profile.palettes.length];
+   const pal=conceptPalettes[paletteIndex];
+   const style=profile.styles[(i+Math.floor(Math.random()*profile.styles.length))%profile.styles.length];
+   const monoBuild=profile.monos[(i+Math.floor(Math.random()*profile.monos.length))%profile.monos.length];
+   const logoBuild=profile.logos[(i+Math.floor(Math.random()*profile.logos.length))%profile.logos.length];
+   changes={...pal,style,monoBuild,logoBuild,font:choose(fonts),layout:choose(layouts),weight:choose(['light','regular','bold']),detail:String(1+Math.floor(Math.random()*3)),complexity:String(2+Math.floor(Math.random()*4)),spacing:String(Math.floor(Math.random()*8)-1),showFrame:Math.random()>.62,uppercase:Math.random()>.25};
+   key=[changes.style,changes.monoBuild,changes.logoBuild,changes.font,changes.layout,changes.bg,changes.weight,changes.detail].join('|');
    if(!used.has(key))break;
   }
   used.add(key);
   concepts.push({id:i+1,name:['Conceito','Direção','Estudo','Proposta'][i%4]+' '+String(i+1).padStart(2,'0'),changes});
  }
- $('conceptStatus').textContent='12 propostas geradas';
+ $('conceptStatus').textContent='12 propostas · perfil: '+(state.segment.trim()||'geral');
  $('conceptGrid').innerHTML=concepts.map(p=>'<article class="conceptCard"><div class="conceptArt" style="background:'+p.changes.bg+'">'+makeSvg(p.changes)+'</div><div class="conceptMeta"><b>'+p.name+'</b><small>'+p.changes.style+' · '+p.changes.monoBuild+' · '+p.changes.logoBuild+'</small><button data-concept="'+p.id+'">Editar esta proposta</button></div></article>').join('');
  $('conceptGrid').querySelectorAll('[data-concept]').forEach(btn=>btn.onclick=()=>{const p=concepts.find(x=>x.id===+btn.dataset.concept);if(!p)return;Object.assign(state,p.changes);sync();render();$('canvas').scrollIntoView({behavior:'smooth',block:'center'});notify('Conceito carregado para edição')});
 }
 $('generateConcepts').onclick=generateConceptSheet;
-$('generateLogo').onclick=()=>{const p=choose(conceptPalettes);Object.assign(state,p,{style:choose(conceptStyles),monoBuild:choose(monoBuilds),logoBuild:choose(logoBuilds),font:choose(['serif','sans','script','slab','mono']),layout:choose(['stack','seal','horizontal','wordmark']),complexity:String(3+Math.floor(Math.random()*3)),detail:String(2+Math.floor(Math.random()*3)),showFrame:Math.random()>.5,uppercase:Math.random()>.3});sync();render();notify('Nova direção de identidade criada')};
+$('generateLogo').onclick=()=>{const profile=getSegmentProfile(state.segment),pal=conceptPalettes[choose(profile.palettes)],changes={...pal,style:choose(profile.styles),monoBuild:choose(profile.monos),logoBuild:choose(profile.logos),font:choose(['serif','sans','script','slab','mono']),layout:choose(['stack','seal','horizontal','wordmark','icon']),complexity:String(2+Math.floor(Math.random()*4)),detail:String(1+Math.floor(Math.random()*3)),spacing:String(Math.floor(Math.random()*8)-1),showFrame:Math.random()>.5,uppercase:Math.random()>.3};Object.assign(state,changes);sync();render();notify('Nova direção criada para '+(state.segment.trim()||'a marca'))};
 $('complexity').addEventListener('input',()=>{$('complexityValue').textContent=$('complexity').value+' / 5 · '+(['','Sutil','Leve','Equilibrado','Detalhado','Ornamental'][+$('complexity').value]||'Detalhado');render()});
 
 state={...defaults};sync();render();
