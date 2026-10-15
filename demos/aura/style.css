@@ -498,3 +498,30 @@ body{
 @keyframes petal-drift{0%{opacity:0;transform:translate3d(0,0,0) rotate(0)}10%{opacity:.6}85%{opacity:.35}100%{opacity:0;transform:translate3d(var(--drift,40px),110vh,0) rotate(500deg)}}
 @media(max-width:760px){.intro-monogram{font-size:115px}.intro-kicker{font-size:8px;letter-spacing:3px}.intro-caption{font-size:7px;letter-spacing:2px}.intro-bloom{scale:.7}.bloom-one{left:-4%;top:17%}.bloom-two{right:-5%;bottom:15%}.ring-one{width:82vw}.ring-two{width:100vw}.experience-intro:before{right:3%;top:4%;font-size:38px}.services:before{left:2%;top:6%;font-size:48px}.service-card:after{right:8px;top:7px}.manifesto:before{font-size:55px;left:auto;right:3%;top:4%}}
 @media(prefers-reduced-motion:reduce){.aura-intro{animation:intro-curtain-out .3s ease 1.1s forwards}.intro-content,.intro-kicker,.intro-name,.intro-caption,.intro-monogram,.intro-line,.intro-ring,.intro-bloom,.intro-petal,.floating-petal{animation-duration:.01ms!important;animation-delay:0ms!important}.aura-petal-field{display:none}}
+
+
+/* Ajustes de acabamento, acessibilidade e mobile */
+.hero-portrait{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:center 32%;
+  filter:saturate(.82) contrast(1.02);
+}
+.portrait-frame{overflow:hidden}
+.portrait-placeholder.hero-portrait{background:#d9b8ad}
+:where(a,button,summary,[tabindex]):focus-visible{
+  outline:3px solid #8a6d55;outline-offset:4px;border-radius:2px;
+}
+.menu-toggle,.service-button,.mobile-cta a{min-height:44px}
+.menu-toggle{padding:10px 8px}
+.service-button{padding:10px 0}
+.mobile-cta a{display:flex;align-items:center;justify-content:center;gap:12px}
+.aura-intro{animation-duration:.65s;animation-delay:1.2s}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .aura-intro{animation-duration:.15s;animation-delay:.1s}
+}
+@media(max-width:760px){
+  .hero-portrait{object-position:center 30%}
+  .nav a{min-height:44px;display:flex;align-items:center}
+  .service-button{min-height:44px}
+}
