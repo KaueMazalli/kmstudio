@@ -30,7 +30,7 @@ Skills locais em `.agents/skills/` para agentes de programação que reconhecem 
 - Evite aplicar todas as skills de uma vez; escolha as mais relevantes para a tarefa.
 
 ## Ferramentas e catálogos externos
-Veja [`.agents/resources/DEVELOPER-TOOLKIT.md`](../resources/DEVELOPER-TOOLKIT.md) para Open Design, HTML Anything, Open Code Review, SkillSpector, Awesome, Public APIs e Free for Dev. Esses projetos foram documentados, mas aplicativos e CLIs independentes não foram copiados nem instalados automaticamente.
+Veja [`.agents/resources/DEVELOPER-TOOLKIT.md`](../resources/DEVELOPER-TOOLKIT.md) para Open Design, HTML Anything, Open Code Review, SkillSpector, Awesome, Public APIs, Free for Dev, Superpowers, Agent Browser, UI UX Pro Max e Agent Reach. As ferramentas novas estão documentadas como integrações opcionais; seus códigos e CLIs não foram copiados nem instalados automaticamente.
 
 ## Fontes das skills
 - https://github.com/oil-oil/oil-ui
