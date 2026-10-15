@@ -9,8 +9,8 @@ Abra `index.html` no Chrome, Edge ou Firefox. Não precisa instalar pacotes nem 
 ## Recursos
 
 - Catálogo de 120 presets que combinam 12 famílias visuais e 10 paletas.
-- **Estúdio de conceitos:** gera 12 propostas em uma folha de exploração, com estruturas, tipografias, cores, composições e símbolos variados; clique em uma proposta para continuar editando.
-- **Geração aleatória de logo:** explora novas direções gráficas com um clique.
+- **Estúdio de conceitos contextual:** gera 12 propostas em uma folha de exploração e orienta estilos, monogramas, estruturas e paletas pelo segmento informado (beleza, arquitetura, gastronomia, tecnologia/serviços, tattoo/barbearia, natureza e serviços profissionais); clique em uma proposta para continuar editando.
+- **Geração aleatória de logo:** explora novas direções gráficas com um clique, respeitando o perfil criativo identificado pelo segmento.
 - **12 construções de monograma:** letras entrelaçadas, sobreposição editorial, ligadura caligráfica, iniciais empilhadas, espaço negativo, brasão, selo, arquitetura, trama, modular, ornamental e minimal.
 - **16 estruturas de logo:** brasão detalhado, medalhão, botânico, arco arquitetônico, faixa, órbitas, raios solares, rosácea floral, geometria em camadas, carimbo vintage, luxo editorial, orgânico, emblema, monograma dominante, wordmark e composição automática.
 - Controle de complexidade ornamental em cinco níveis.
@@ -27,7 +27,7 @@ Abra `index.html` no Chrome, Edge ou Firefox. Não precisa instalar pacotes nem 
 
 ## Fluxo recomendado
 
-1. Informe nome, segmento e iniciais.
+1. Informe nome, segmento e iniciais. Use um segmento específico (por exemplo, “nail designer”, “arquitetura” ou “cafeteria”) para orientar as sugestões.
 2. Escolha a construção do monograma, a estrutura da logo e a complexidade.
 3. Gere 12 conceitos ou uma nova logo aleatória.
 4. Selecione uma proposta e refine tipografia, cores e composição.
