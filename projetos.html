@@ -74,6 +74,34 @@
 .portfolio-page-cta .btn{display:inline-flex;margin-top:20px;min-height:46px;padding:0 20px}
 }
 </style>
+<style>
+
+.project-number{display:none !important;}
+
+
+/* Sem numeração visual */
+.section-label > span:first-child,
+#category-number,
+.category-index,
+.category-number,
+.project-number,
+.portfolio-panel-number{
+  display:none !important;
+}
+.completed-project-preview::before{
+  content:none !important;
+}
+
+
+/* PROJETOS — remover a coluna reservada ao número */
+.project-info{
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+.project-number{display:none !important;}
+.completed-project-preview::before{content:none !important;}
+
+</style>
 </head>
 <body>
 <header class="header">
@@ -149,30 +177,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-<style>
-.project-number{display:none !important;}
-</style>
-
-<style>
-/* Sem numeração visual */
-.section-label > span:first-child,
-#category-number,
-.category-index,
-.category-number,
-.project-number,
-.portfolio-panel-number{
-  display:none !important;
-}
-.completed-project-preview::before{
-  content:none !important;
-}
-</style>
-<style>
-/* PROJETOS — remover a coluna reservada ao número */
-.project-info{
-  grid-template-columns:minmax(0,1fr);
-  gap:0;
-}
-.project-number{display:none !important;}
-.completed-project-preview::before{content:none !important;}
-</style>
