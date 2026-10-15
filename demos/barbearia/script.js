@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", event => {
       event.preventDefault();
       if (!/^\d{10,15}$/.test(whatsappNumber)) {
-        showToast("Para ativar o agendamento, configure o número com DDD no atributo data-whatsapp-number do index.html.");
+        showToast("Este é um modelo demonstrativo. O WhatsApp será conectado ao número da barbearia na personalização.");
         return;
       }
       const message = link.dataset.message || "Olá! Gostaria de agendar um horário na Bravo Barbearia.";
