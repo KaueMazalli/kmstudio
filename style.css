@@ -1843,7 +1843,7 @@ section {
 .portfolio-panel-models {
     background-image:
         linear-gradient(180deg, rgba(6,11,17,.12), rgba(6,11,17,.9)),
-        url("assets/portfolio-modelos.webp");
+        url("assets/projetos/noma.png");
 }
 
 .portfolio-panel-models::before {
@@ -1855,7 +1855,7 @@ section {
 .portfolio-panel-projects {
     background-image:
         linear-gradient(180deg, rgba(6,11,17,.12), rgba(6,11,17,.9)),
-        url("assets/portfolio-projetos.webp");
+        url("assets/projetos/forma.png");
 }
 
 .portfolio-panel:hover {
