@@ -682,7 +682,7 @@ function finalizeOrder() {
 
     }
 
-    if (!SHOP_CONFIG.whatsappNumber || !/^\\d{10,15}$/.test(String(SHOP_CONFIG.whatsappNumber))) {
+    if (!SHOP_CONFIG.whatsappNumber || !/^\d{10,15}$/.test(String(SHOP_CONFIG.whatsappNumber))) {
         alert("Configure um número de WhatsApp válido em js/products.js antes de finalizar o pedido.");
         return;
     }
