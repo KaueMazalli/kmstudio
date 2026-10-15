@@ -437,6 +437,11 @@ function getSelectedCalculatorServices() {
 
 function openBookingModalWithSimulatedData() {
 
+    if (!WHATSAPP_NUMBER) {
+        alert("Configure o número de WhatsApp da empresa antes de usar este botão.");
+        return;
+    }
+
     const services =
         getSelectedCalculatorServices();
 
