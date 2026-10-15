@@ -2,11 +2,18 @@
    KM STUDIO — CARRINHO
 ========================================================= */
 
-let cart =
-    JSON.parse(
-        localStorage.getItem("km_cart")
-    ) || [];
-
+let cart = [];
+try {
+    const storedCart = JSON.parse(localStorage.getItem("km_cart") || "[]");
+    if (Array.isArray(storedCart)) {
+        cart = storedCart.filter(item =>
+            item && Number.isSafeInteger(Number(item.id)) &&
+            Number.isFinite(Number(item.quantity)) && Number(item.quantity) > 0
+        ).map(item => ({...item, quantity: Math.floor(Number(item.quantity))}));
+    }
+} catch (error) {
+    console.warn("Carrinho salvo inválido; iniciando carrinho vazio.", error);
+}
 
 /* =========================================================
    SALVAR
