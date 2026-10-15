@@ -20,3 +20,7 @@ jobs:
           python-version: '3.12'
       - name: Check HTML, local links and sitemap
         run: python scripts/check-site.py
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          find demos -type f -name '*.js' -print0 | xargs -0 -r -n1 node --check
