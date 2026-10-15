@@ -3,6 +3,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+import re
 import sys
 import xml.etree.ElementTree as ET
 
@@ -69,6 +70,24 @@ def validate(page):
             errors.append(f"Missing local {tag} target: {address}")
     return errors
 
+def validate_css(path):
+    errors = []
+    source = path.read_text(encoding="utf-8")
+    refs = re.findall(r"url\(\s*(['\"]?)(.*?)\1\s*\)", source, flags=re.IGNORECASE)
+    refs.extend(re.findall(r"@import\s+(?:url\()?\s*['\"]([^'\"]+)['\"]", source, flags=re.IGNORECASE))
+    for raw in refs:
+        address = raw[1] if isinstance(raw, tuple) else raw
+        address = address.strip()
+        url = urlsplit(address)
+        if not address or url.scheme or url.netloc or address.startswith(("#", "//")):
+            continue
+        if not url.path:
+            continue
+        target = path.parent / unquote(url.path)
+        if not target.exists():
+            errors.append(f"Missing CSS asset in {path.relative_to(ROOT)}: {address}")
+    return errors
+
 def main():
     failures = 0
     for page in PAGES:
@@ -78,6 +97,13 @@ def main():
         failures += len(errors)
         if not errors:
             print(f"OK {page}")
+    for css_path in sorted(path for path in ROOT.rglob("*.css") if ".agents" not in path.parts and ".git" not in path.parts):
+        errors = validate_css(css_path)
+        for error in errors:
+            print(f"ERROR {error}")
+        failures += len(errors)
+        if not errors:
+            print(f"OK {css_path.relative_to(ROOT)}")
     sitemap_path = ROOT / "sitemap.xml"
     try:
         sitemap = ET.parse(sitemap_path)
