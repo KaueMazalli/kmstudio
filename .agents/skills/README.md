@@ -13,6 +13,9 @@ Skills locais em `.agents/skills/` para agentes de programação que reconhecem 
 ## Engenharia
 - **ponytail** — manter as mudanças pequenas, completas, seguras e verificadas. Leia `.agents/skills/ponytail/SKILL.md`.
 
+## Produtividade e formato das respostas
+- **i-have-adhd** — modo opcional para respostas orientadas à ação: passos curtos, progresso explícito e menos tangentes. Não presume diagnóstico nem deve ser ativado automaticamente. Leia `.agents/skills/i-have-adhd/SKILL.md`.
+
 ## Escrita
 - **anti-ai-slop-writing** — evitar padrões formulaicos de escrita de IA, com lista de palavras e expressões de referência.
 - **no-ai-slop** — avaliar e editar textos para clareza e naturalidade, preservando a intenção.
@@ -22,6 +25,7 @@ Skills locais em `.agents/skills/` para agentes de programação que reconhecem 
 - Para trabalho novo de frontend, leia **Design Taste** e consulte **Oil UI** ou **make-interfaces-feel-better** conforme necessário.
 - Para redesenho, leia **Redesign Existing Projects** e preserve o comportamento existente.
 - Para qualquer alteração de código, use **Ponytail** para manter o escopo sob controle.
+- Ative **i-have-adhd** apenas quando o usuário pedir esse formato de resposta ou um modo equivalente.
 - As skills são orientação, não autorização para ignorar o briefing, as convenções do projeto, acessibilidade, segurança ou manutenção.
 - Evite aplicar todas as skills de uma vez; escolha as mais relevantes para a tarefa.
 
@@ -35,6 +39,7 @@ Veja [`.agents/resources/DEVELOPER-TOOLKIT.md`](../resources/DEVELOPER-TOOLKIT.m
 - https://github.com/superdesigndev/superdesign-skill
 - https://github.com/DietrichGebert/ponytail
 - https://github.com/Leonxlnx/taste-skill
+- https://github.com/ayghri/i-have-adhd
 - https://github.com/jalaalrd/anti-ai-slop-writing
 - https://github.com/petergyang/no-ai-slop
 - https://github.com/blader/humanizer
