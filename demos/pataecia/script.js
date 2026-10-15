@@ -780,7 +780,8 @@ checkoutButton.addEventListener(
 
         window.open(
             `https://wa.me/${WHATSAPP_NUMBER.replace(/\\D/g, "")}?text=${message}`,
-            "_blank"
+            "_blank",
+            "noopener,noreferrer"
         );
 
     }
