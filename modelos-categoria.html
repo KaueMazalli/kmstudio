@@ -59,6 +59,33 @@
 .category-cta .btn{display:inline-flex;min-height:46px;margin-top:20px}
 }
 </style>
+<style>
+
+.category-number{display:none !important;}
+
+
+/* Sem numeração visual */
+.section-label > span:first-child,
+#category-number,
+.category-index,
+.category-number,
+.project-number,
+.portfolio-panel-number{
+  display:none !important;
+}
+.completed-project-preview::before{
+  content:none !important;
+}
+
+
+/* CATEGORIA — remover a coluna reservada ao índice dos modelos */
+.category-info{
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+.category-index{display:none !important;}
+
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner">
@@ -140,29 +167,3 @@ content.innerHTML='<div class="category-grid">'+data.items.map((item)=>'<a href=
 </style>
 </body>
 </html>
-<style>
-.category-number{display:none !important;}
-</style>
-
-<style>
-/* Sem numeração visual */
-.section-label > span:first-child,
-#category-number,
-.category-index,
-.category-number,
-.project-number,
-.portfolio-panel-number{
-  display:none !important;
-}
-.completed-project-preview::before{
-  content:none !important;
-}
-</style>
-<style>
-/* CATEGORIA — remover a coluna reservada ao índice dos modelos */
-.category-info{
-  grid-template-columns:minmax(0,1fr);
-  gap:0;
-}
-.category-index{display:none !important;}
-</style>
