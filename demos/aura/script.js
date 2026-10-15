@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const intro = document.querySelector(".aura-intro");
-  const introPetals = document.querySelector(".intro-petals");
-  const petalField = document.querySelector(".aura-petal-field");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const header = document.querySelector(".header");
   const menu = document.querySelector(".menu-toggle");
@@ -10,25 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroImage = document.querySelector(".hero-portrait");
   const whatsapp = (document.body.dataset.whatsappNumber || "").replace(/\D/g, "");
   let toastTimer;
-
-  function addPetals(target, count, kind) {
-    if (!target || reducedMotion) return;
-
-    const fragment = document.createDocumentFragment();
-    for (let i = 0; i < count; i++) {
-      const petal = document.createElement("span");
-      petal.className = kind;
-      petal.setAttribute("aria-hidden", "true");
-      petal.style.left = (Math.random() * 100) + "%";
-      petal.style.setProperty("--fall-delay", (Math.random() * 1.6).toFixed(2) + "s");
-      petal.style.setProperty("--fall-time", (3.1 + Math.random() * 1.8).toFixed(2) + "s");
-      petal.style.setProperty("--delay", (-Math.random() * 14).toFixed(2) + "s");
-      petal.style.setProperty("--duration", (11 + Math.random() * 7).toFixed(2) + "s");
-      petal.style.setProperty("--drift", ((Math.random() - .5) * 150).toFixed(0) + "px");
-      fragment.appendChild(petal);
-    }
-    target.appendChild(fragment);
-  }
 
   if (intro) {
     const dismiss = () => {
@@ -41,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fallback in case animationend does not fire.
     window.setTimeout(dismiss, reducedMotion ? 350 : 2200);
   }
-
-  addPetals(introPetals, 10, "intro-petal");
-  addPetals(petalField, 7, "floating-petal");
 
   // If the remote photo fails, retain the designed frame instead of showing a broken image.
   heroImage?.addEventListener("error", () => {
