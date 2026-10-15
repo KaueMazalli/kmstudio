@@ -83,7 +83,7 @@ def validate_css(path):
             continue
         if not url.path:
             continue
-        target = path.parent / unquote(url.path)
+        target = (ROOT / unquote(url.path.lstrip("/"))) if url.path.startswith("/") else path.parent / unquote(url.path)
         if not target.exists():
             errors.append(f"Missing CSS asset in {path.relative_to(ROOT)}: {address}")
     return errors
