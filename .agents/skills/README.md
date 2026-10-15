@@ -22,6 +22,7 @@ Skills installed in `.agents/skills/` for coding agents that support the Agent S
 ## Upstream sources
 These files are sourced from their respective open-source projects. Check each upstream repository for current versions, full licensing terms, and updates before refreshing them.
 
+- https://github.com/oil-oil/oil-ui
 - https://github.com/jakubkrehel/make-interfaces-feel-better
 - https://github.com/better-auth/better-icons
 - https://github.com/jalaalrd/anti-ai-slop-writing
