@@ -32,6 +32,10 @@ Skills locais em `.agents/skills/` para agentes de programação que reconhecem 
 ## Ferramentas e catálogos externos
 Veja [`.agents/resources/DEVELOPER-TOOLKIT.md`](../resources/DEVELOPER-TOOLKIT.md) para Open Design, HTML Anything, Open Code Review, SkillSpector, Awesome, Public APIs, Free for Dev, Superpowers, Agent Browser, UI UX Pro Max e Agent Reach. As ferramentas novas estão documentadas como integrações opcionais; seus códigos e CLIs não foram copiados nem instalados automaticamente.
 
+## Novas referências de engenharia e testes
+
+O [Developer Toolkit](../resources/DEVELOPER-TOOLKIT.md) também documenta **Matt Pocock Skills**, **Anthropic Skills**, **Chrome DevTools MCP**, **Ruflo** e **Awesome Claude Code**, incluindo critérios de adoção, configurações opcionais e cuidados de segurança. Não são skills locais instaladas automaticamente.
+
 ## Fontes das skills
 - https://github.com/oil-oil/oil-ui
 - https://github.com/jakubkrehel/make-interfaces-feel-better
