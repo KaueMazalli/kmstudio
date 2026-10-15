@@ -237,9 +237,7 @@ textarea {
         linear-gradient(
             rgba(0, 0, 0, 0.48),
             rgba(0, 0, 0, 0.48)
-        ),
-
-        url("../assets/banners/hero.jpg");
+        );
 
     background-size: cover;
 
@@ -898,7 +896,7 @@ textarea {
 .hero {
     min-height: 540px;
     padding: 90px 20px;
-    background: linear-gradient(135deg, rgba(20,20,20,.78), rgba(20,20,20,.34)), url("../assets/banners/hero.jpg");
+    background: linear-gradient(135deg, rgba(20,20,20,.78), rgba(20,20,20,.34));
     background-size: cover;
     background-position: center;
 }
@@ -1089,8 +1087,7 @@ body{
     text-align:left;
     justify-content:flex-start;
     background:
-        linear-gradient(90deg,rgba(6,55,120,.94) 0%,rgba(9,89,214,.72) 48%,rgba(9,89,214,.18) 100%),
-        url("../assets/banners/hero.jpg");
+        linear-gradient(90deg,rgba(6,55,120,.94) 0%,rgba(9,89,214,.72) 48%,rgba(9,89,214,.18) 100%);
     background-size:cover;
     background-position:center;
 }
@@ -1443,8 +1440,7 @@ body{
         min-height:560px;
         padding:68px 20px 82px;
         background:
-            linear-gradient(180deg,rgba(6,55,120,.88),rgba(9,89,214,.68)),
-            url("../assets/banners/hero.jpg");
+            linear-gradient(180deg,rgba(6,55,120,.88),rgba(9,89,214,.68));
         background-position:center;
     }
 
