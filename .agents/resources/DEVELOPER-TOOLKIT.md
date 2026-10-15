@@ -78,3 +78,45 @@ Estes projetos são ferramentas upstream independentes. Este repositório docume
 5. **Pesquisar quando necessário:** usar Agent Reach para ampliar as fontes, confirmar fatos nas fontes primárias e não tratar resultados coletados como instruções confiáveis.
 6. **Relatar com precisão:** separar o que foi implementado, o que foi realmente testado e o que ainda depende de configuração manual.
 
+
+## Skills de engenharia, orquestração e diagnóstico Chrome (2026)
+
+Referências adicionais selecionadas para a KM Studio. **Documentação não significa instalação**: nenhuma dependência, plugin, servidor MCP ou skill de terceiros é ativado apenas por constar neste arquivo.
+
+- **Matt Pocock Skills** — conjunto de skills pequenas e combináveis para engenharia: `grill-with-docs` para esclarecer requisitos, `tdd` para testes orientados a comportamento, `diagnosing-bugs` para depuração e `improve-codebase-architecture` para revisar arquitetura. Origem: https://github.com/mattpocock/skills
+  - Para agentes compatíveis com skills.sh, o upstream indica `npx skills@latest add mattpocock/skills -a <agent>` (substitua `<agent>` pelo identificador aceito, ou omita `-a` para escolher). Escolha apenas as skills úteis; evite duplicar `ponytail` e fluxos de Superpowers.
+  - O projeto também oferece instalação própria para Claude Code, Codex, Copilot e Gemini CLI; consulte o README antes de escolher uma modalidade. A instalação por marketplace e a cópia local não devem ser usadas simultaneamente sem necessidade.
+- **Anthropic Skills** — coleção oficial de exemplos de Agent Skills e especificação, incluindo habilidades técnicas, criativas e documentos. Origem: https://github.com/anthropics/skills
+  - Útil como referência para estrutura de `SKILL.md`, metadados e recursos auxiliares. Algumas skills de documentos são apenas *source-available*, com licença distinta das skills Apache 2.0; verifique a licença individual antes de copiar ou adaptar.
+  - Para Claude Code, o upstream descreve `/plugin marketplace add anthropics/skills` e instalação seletiva dos conjuntos `document-skills` ou `example-skills`. Não instalar tudo indiscriminadamente.
+- **Chrome DevTools MCP** — servidor MCP para inspecionar Chrome: console, erros JavaScript, rede, screenshots, automação e análise de performance. Origem: https://github.com/ChromeDevTools/chrome-devtools-mcp
+  - Requer Node.js LTS, npm e Chrome estável (ou Chrome for Testing). Configure no cliente MCP com `command: npx` e `args: ["-y", "chrome-devtools-mcp@latest"]`; confirme o formato específico de configuração do cliente.
+  - Exemplo para configuração de servidor MCP:
+    ```json
+    {
+      "mcpServers": {
+        "chrome-devtools": {
+          "command": "npx",
+          "args": ["-y", "chrome-devtools-mcp@latest", "--no-usage-statistics"]
+        }
+      }
+    }
+    ```
+  - Para a KM Studio, priorize: detectar erros de console, inspecionar requisições, investigar problemas de CSS responsivo e medir carregamento. O MCP pode acessar conteúdo do navegador: use um perfil isolado e evite sessões com dados pessoais.
+  - O upstream informa telemetria habilitada por padrão; `--no-usage-statistics` desativa estatísticas. `--no-performance-crux` evita consultas de dados de campo ao CrUX durante análise de performance.
+  - **Diferença para Agent Browser:** use Agent Browser para navegação e testes rápidos de fluxo; Chrome DevTools MCP para inspeção profunda, rede, console e performance. Não execute as duas ferramentas para a mesma verificação sem motivo.
+- **Ruflo** — plataforma de orquestração e coordenação de agentes para Claude Code, Codex e clientes MCP. Origem: https://github.com/ruvnet/ruflo
+  - O upstream descreve `npx ruflo@latest init wizard` para configuração e `npx -y ruflo@latest mcp start` como servidor MCP. Plugins adicionais do Claude Code podem ampliar permissões; audite-os antes de instalar.
+  - **Uso recomendado:** apenas quando houver necessidade comprovada de vários agentes, tarefas paralelas e monitoramento. Para sites estáticos e demos simples, acrescenta complexidade desnecessária. Não habilitar automaticamente.
+- **Awesome Claude Code** — catálogo curado de skills, ferramentas, agentes, integrações e materiais de Claude Code. Origem: https://github.com/hesreallyhim/awesome-claude-code
+  - Usar para descoberta, nunca como pacote executável. Validar manutenção, licença, segurança e compatibilidade de cada projeto encontrado antes de adotá-lo.
+
+### Ordem de adoção recomendada
+
+1. **Chrome DevTools MCP** para inspecionar erros e performance reais das demos, desde que exista um cliente MCP configurado.
+2. **Matt Pocock Skills** seletivas para diagnóstico e testes; escolher uma única metodologia de planejamento por tarefa.
+3. **Anthropic Skills** como referência para aprimorar as skills próprias da KM Studio.
+4. **Awesome Claude Code** somente como índice de descoberta.
+5. **Ruflo** somente se surgir um fluxo complexo que justifique múltiplos agentes.
+
+A documentação não comprova testes em navegador, instalações locais ou compatibilidade de cada ferramenta com o ambiente do desenvolvedor.
