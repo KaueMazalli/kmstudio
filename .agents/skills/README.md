@@ -3,6 +3,7 @@
 Skills installed in `.agents/skills/` for coding agents that support the Agent Skills format.
 
 ## UI and design
+- **oil-ui** — explore distinct visual directions, compare real first-screen concepts, and refine interfaces using the full design and visual-review workflow. See `.agents/skills/oil-ui/SKILL.md`.
 - **make-interfaces-feel-better** — refine responsive UI details: typography, surfaces, animation, icons, and performance.
 - **superdesign** — design and iterate on frontend UI and visual assets using the Superdesign workflow. Requires the Superdesign CLI/authentication when its workflow is invoked.
 - **better-icons** — discover and use icons from supported icon libraries. Follow its `SKILL.md`; its CLI/MCP features may require setup.
