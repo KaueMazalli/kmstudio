@@ -730,6 +730,7 @@ cartOverlay.addEventListener(
 /* =========================================================
    CHECKOUT
 ========================================================= */
+const WHATSAPP_NUMBER = "";
 
 checkoutButton.addEventListener(
     "click",
@@ -745,6 +746,11 @@ checkoutButton.addEventListener(
 
         }
 
+
+        if (!WHATSAPP_NUMBER) {
+            showToast("Configure o número de WhatsApp da loja antes de usar este botão.");
+            return;
+        }
 
         let message =
             "Olá! Gostaria de fazer um pedido na Pata & Cia:%0A%0A";
@@ -773,7 +779,7 @@ checkoutButton.addEventListener(
 
 
         window.open(
-            `https://wa.me/5514997778899?text=${message}`,
+            `https://wa.me/${WHATSAPP_NUMBER.replace(/\\D/g, "")}?text=${message}`,
             "_blank"
         );
 
