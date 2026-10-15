@@ -540,7 +540,8 @@ Gostaria de confirmar o orçamento e verificar a disponibilidade.`;
 
     window.open(
         whatsappUrl,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
 
 }
