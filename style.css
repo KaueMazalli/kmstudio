@@ -3395,3 +3395,122 @@ button:focus-visible {
         justify-content:flex-end;
     }
 }
+
+
+/* =========================================================
+   QUALITY PASS — LEGIBILIDADE, FOCO E MOVIMENTO
+   ========================================================= */
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.nav a {
+    font-size: 11px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.btn {
+    min-height: 46px;
+    padding: 14px 22px;
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    line-height: 1.35;
+}
+
+.menu-button {
+    width: 44px;
+    height: 44px;
+}
+
+.service-card p {
+    font-size: 13px;
+    line-height: 1.75;
+    text-wrap: pretty;
+}
+
+.project-info p,
+.about-text p,
+.contact p,
+.portfolio-page-header p,
+.model-category p {
+    text-wrap: pretty;
+}
+
+.hero h1,
+.section-heading h2,
+.about-content h2,
+.contact h2,
+.portfolio-page-header h1 {
+    text-wrap: balance;
+}
+
+.footer-column h4 {
+    font-size: 9px;
+}
+
+.footer-column a,
+.footer-column span {
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+    .eyebrow {
+        max-width: calc(100% - 24px);
+        font-size: 10px;
+        letter-spacing: 1.6px;
+    }
+
+    .hero-description {
+        max-width: 34rem;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        min-height: 46px;
+    }
+
+    .service-card p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .nav a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
