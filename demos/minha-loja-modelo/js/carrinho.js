@@ -53,8 +53,8 @@ function removeCartItem(productId) {
 function sendWhatsAppOrder() {
   if (!cart.length) return;
   const lines = cart.map(function(item) { return "• " + item.name + " — quantidade: " + item.quantity; });
-  const message = "Olá, Unishop Vital Clean! Gostaria de consultar preço e disponibilidade destes produtos:\n\n" + lines.join("\n") + "\n\nPoderiam me informar os valores e as opções de retirada/entrega?";
-  const phone = String(SHOP_CONFIG.whatsappNumber || "").replace(/\D/g, "");
+  const message = "Olá, Unishop Vital Clean! Gostaria de consultar preço e disponibilidade destes produtos:" + String.fromCharCode(10,10) + lines.join(String.fromCharCode(10)) + String.fromCharCode(10,10) + "Poderiam me informar os valores e as opções de retirada/entrega?";
+  const phone = String(SHOP_CONFIG.whatsappNumber || "").replace(/[^0-9]/g, "");
   if (!phone) { alert("O WhatsApp da loja ainda precisa ser configurado."); return; }
   window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
 }
